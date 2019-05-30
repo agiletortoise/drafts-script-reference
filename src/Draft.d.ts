@@ -1,11 +1,33 @@
 /**
+ * # Draft 
+ * 
  * The Draft object represents a single draft. When an action is run, the current draft is available as the global variable `draft`. Scripts can also create new drafts, access and set values, and update the draft to persist changes.
+ * 
+ * ### Example: Creating a draft
+ * 
+ * ```javascript
+ * // create a new draft, assign content and save it
+ * let d = Draft.create();
+ * d.content = "My new draft";
+ * d.update();
+ * ```
+ * 
+ * ### Example: Querying drafts
+ * 
+ * ```javascript
+ * // query a list of drafts in the inbox with the tag "blue"
+ * let drafts = Draft.query("", "inbox", ["blue"])
+ * ```
  */
 declare class Draft {
     /**
      * Unique identifier for the draft.
      */
     readonly uuid: string
+
+    /**
+    * The full text content of the draft.
+    */
     content: string
 
     /**
@@ -14,7 +36,7 @@ declare class Draft {
     readonly title: string
 
     /**
-     * The preferred language grammar (syntax) to use for the draft.
+     * The preferred language grammar (syntax) to use for the draft. Can be any valid installed language grammar.
      */
     languageGrammar:
         | 'Plain Text'
@@ -41,26 +63,26 @@ declare class Draft {
     readonly tags: string[]
 
     /**
-     * True if draft is in the archive, false if it is in inbox.
+     * Is the draft current in the archive. If `false`, the draft is in the inbox.
      */
     isArchived: boolean
 
     /**
-     * True if draft is in the trash, false if it is not.
+     * Is the draft currently in the trash.
      */
     isTrashed: boolean
 
     /**
-     * Use to access or set flagged status.
+     * Current flagged status.
      */
     isFlagged: boolean
 
     readonly createdAt: Date
-    createdLongitude: number
-    createdLatitude: number
+    readonly createdLongitude: number
+    readonly createdLatitude: number
     readonly modifiedAt: Date
-    modifiedLongitude: number
-    modifiedLatitude: number
+    readonly modifiedLongitude: number
+    readonly modifiedLatitude: number
 
     /**
      * URL which can be used to open the draft.
@@ -72,45 +94,48 @@ declare class Draft {
      */
     update(): void
 
+    /**
+    * Assign a tag
+    */
     addTag(tag: string): void
 
     /**
-     * remove a tag if it is assigned to the draft.
+     * Remove a tag if it is assigned to the draft.
      */
     removeTag(tag: string): void
 
     /**
-     * returns boolean indicating whether the tag is currently assigned to the draft.
+     * Check whether a tag is currently assigned to the draft.
      */
     hasTag(tag: string): boolean
 
     /**
-     * runs the passed template string through the template engine to evaluate tags (like `[[title]]`, `[[body]]`).
+     * Runs the template string through the template engine to evaluate tags (like `[[title]]`, `[[body]]`).
      */
     processTemplate(template: string): string
 
     /**
-     * set a custom tag value for use in templates. For example, calling `setTemplateTag("mytag", "mytext")` will create a tag `[[mytag]]`, which subsequent action step templates can use.
+     * Set a custom template tag value for use in templates. For example, calling `setTemplateTag("mytag", "mytext")` will create a tag `[[mytag]]`, which subsequent action steps in the same action can use in their templates.
      */
     setTemplateTag(tagName: string, value: string): void
 
     /**
-     * get the current value of a custom template tag.
+     * Get the current value of a custom template tag.
      */
     getTemplateTag(tagName: string): string
 
     /**
-     * create a new draft object. This is an in-memory object only, unless "update()" is called to save the draft.
+     * Create a new draft object. This is an in-memory object only, unless "update()" is called to save the draft.
      */
-    create(): Draft
+    static create(): Draft
 
     /**
-     * find an existing draft based on UUID.
+     * Find an existing draft based on UUID.
      */
-    find(uuid: string): Draft
+    static find(uuid: string): Draft
 
     /**
-     * perform a search for drafts and return an array of matching draft objects.
+     * Perform a search for drafts and return an array of matching draft objects.
      * @param queryString Search string, as you would type in the search box in the draft list. Will find only drafts with a matching string in their contents. Use empty string (`""`) not to filter.
      * @param filter Filter by one of the allowed values
      * @param tags Results will only include drafts with one or more of these tags assigned.
@@ -119,7 +144,7 @@ declare class Draft {
      * @param sortDescending If `true`, sort descending. Defaults to `false`.
      * @param sortFlaggedToTop If `true`, sort flagged drafts to beginning. Defaults to `false`.
      */
-    query(
+    static query(
         queryString: string,
         filter: 'inbox' | 'archive' | 'flagged' | 'trash' | 'all',
         tags: string[],
@@ -130,8 +155,8 @@ declare class Draft {
     ): Draft[]
 
     /**
-     * Returns array of recently used tags. Helpful for building prompts to select tags.
+     * Return array of recently used tags. Helpful for building prompts to select tags.
      */
-    recentTags(): string[]
+    static recentTags(): string[]
 }
 declare const draft: Draft
