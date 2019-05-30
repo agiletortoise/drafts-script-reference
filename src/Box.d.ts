@@ -60,4 +60,3 @@ declare class Box {
      */
     static create(identifier?: string): Box
 }
-declare const box: Box
