@@ -125,6 +125,16 @@ declare class Draft {
     getTemplateTag(tagName: string): string
 
     /**
+     * Array of versions representing the entire saved version history for this draft.
+     */
+    readonly versions: Version[]
+
+    /**
+     * Create a version in the version history representing the current state of the draft.
+     */
+    saveVersion()
+
+    /**
      * Create a new draft object. This is an in-memory object only, unless "update()" is called to save the draft.
      */
     static create(): Draft

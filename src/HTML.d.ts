@@ -8,9 +8,9 @@
  *  ### Examples
  * 
  * ```javascript
- * let s = "One & Two";
- * let escaped = HTML.escape(s); // "One &#x26; Two"
- * let unescaped = HTML.unescape(encoded); // "One & Two"
+ * let s = "<One> & Two";
+ * let escaped = HTML.escape(s); // "&#x3C;One&#x3E &#x26; Two"
+ * let unescaped = HTML.unescape(encoded); // "<One> & Two"
  * ```
  */
 declare class HTML {
