@@ -20,6 +20,11 @@ declare class Event {
     notes: string
 
     /**
+    * URL associated with the event. Setting URL value will fail if the value is not a valid URL.
+    */
+    url?: string
+
+    /**
      * Start date of the event.
      */
     startDate: Date

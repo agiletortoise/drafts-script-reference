@@ -8,8 +8,20 @@ declare class Reminder {
      * The list which this task resides in.
      */
     list: ReminderList
+
+    /**
+      * The title of the event.
+      */
     title: string
+
+    /**
+     * Notes associated with the event.
+     */
     notes: string
+
+    /**
+    * Due date of the reminder
+    */
     dueDate?: Date
 
     /**
