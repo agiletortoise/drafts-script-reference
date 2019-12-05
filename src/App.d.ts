@@ -86,7 +86,12 @@ declare class App {
     loadActionGroup(actionGroup: ActionGroup): boolean
 
     /**
-     * Load the ActionGroup in the extended keyboard row on iOS.
+     * @deprecated Load the ActionGroup in the action bar below editor.
+     */
+    loadActionBarGroup(actionGroup: ActionGroup): boolean
+
+    /**
+     * @deprecated replaced by `loadActionBarGroup`.
      */
     loadKeyboardActionGroup(actionGroup: ActionGroup): boolean
 

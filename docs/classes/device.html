@@ -86,7 +86,15 @@
 s = s + <span class="hljs-string">"System: "</span> + system + <span class="hljs-string">"\n"</span>;
 s = s + <span class="hljs-string">"OS: "</span> + osVersion + <span class="hljs-string">"\n"</span>;
 s = s + <span class="hljs-string">"Battery: "</span> + batteryLevel;
-alert(s);</code></pre>
+alert(s);
+
+<span class="hljs-comment">// branch logic based on platform</span>
+<span class="hljs-keyword">if</span> (device.systemName == <span class="hljs-string">'macOS'</span>) {
+    <span class="hljs-comment">// do something only on Mac</span>
+}
+<span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// do somethign only on iOS</span>
+}</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">

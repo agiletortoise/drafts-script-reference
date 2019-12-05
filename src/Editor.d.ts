@@ -115,12 +115,12 @@ declare class Editor {
     setSelectedText(text: string): void
 
     /**
-    * Get text range that was last selected.
+    * Get the current selected text range extended to the beginning and end of the lines it encompasses.
     */
     getSelectedLineRange(): selectionRange
 
     /**
-    * Get the current selected text range extended to the beginning and end of the lines it encompasses.
+    * Get text range that was last selected.
     */
     getSelectedRange(): selectionRange
 

@@ -101,7 +101,7 @@ declare class Workspace {
     ): void
 
     /**
-     * create a new workspace object. This is an in-memory object only, unless `update()` is called to save the it.
+     * create a new workspace object. This is an in-memory object only, unless `update()` is called to save the it. The initial state of the workspace properties is based on the configuration of the user's default workspace.
      */
     static create(): Workspace
 

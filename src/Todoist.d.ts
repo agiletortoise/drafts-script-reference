@@ -1,7 +1,7 @@
 /**
  * # Todoist
  * 
- * Script integration with [Todoist](http://todoist.com/). This object handles OAuth authentication and request signing. The entire [Todoist REST API](https://developer.todoist.com/rest/v8) can be used with the request method, and convenience methods are provided for common API endpoints to manage tasks, projects, comments and labels.
+ * Script integration with [Todoist](http://todoist.com/). This object handles OAuth authentication and request signing. The entire [Todoist REST API](https://developer.todoist.com/rest/v1/) can be used with the request method, and convenience methods are provided for common API endpoints to manage tasks, projects, comments and labels.
  *
  * The `quickAdd` method is mostly likely what you are looking for to create tasks as it supports the shorthand the task entry box in Todoist supports to parse projects, etc.
  *
@@ -83,7 +83,7 @@ declare class Todoist {
      * @param settings an object configuring the request.
      */
     request(settings: {
-        /** The full URL to the endpoint in the [Todoist REST API](http://doist.github.io/todoist-api/rest/v8/#overview). */
+        /** The full URL to the endpoint in the [Todoist REST API](https://developer.todoist.com/rest/v1/). */
         url: string
         /** The HTTP method, like "GET", "POST", etc. */
         method: string

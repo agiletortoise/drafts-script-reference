@@ -1,13 +1,14 @@
 /**
  * # Action
  * 
- * In addition to being able to lookup an action using the find method, a single global action object is created and available in scripts to inquire about the current action and control flow.
+ * In addition to being able to lookup an action using the find method, a single global `action` object is created and available in scripts to inquire about the current action and control flow.
  * 
  * ### Example
  * 
  * ```javascript
  * // find action
  * let action = Action.find("Copy");
+ * 
  * // queue to action to run after the current action
  * app.queueAction(action, draft);
 ```

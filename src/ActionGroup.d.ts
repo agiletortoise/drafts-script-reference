@@ -1,7 +1,7 @@
 /**
  * # ActionGroup
  * 
- * Represents an action group. Can be used to inquire and load action groups in the action list and extended keyboard using methods on the [[App]] object.
+ * Represents an action group. Can be used to inquire and load action groups in the action list and action bar using methods on the [[App]] object.
  * 
  * ### Examples
  *

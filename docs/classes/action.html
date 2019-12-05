@@ -71,12 +71,13 @@
 							<h1>Action</h1>
 						</a>
 					</div>
-					<p>In addition to being able to lookup an action using the find method, a single global action object is created and available in scripts to inquire about the current action and control flow.</p>
+					<p>In addition to being able to lookup an action using the find method, a single global <code>action</code> object is created and available in scripts to inquire about the current action and control flow.</p>
 					<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 						<h3>Example</h3>
 					</a>
 					<pre><code class="language-javascript"><span class="hljs-comment">// find action</span>
 <span class="hljs-keyword">let</span> action = Action.find(<span class="hljs-string">"Copy"</span>);
+
 <span class="hljs-comment">// queue to action to run after the current action</span>
 app.queueAction(action, draft);</code></pre>
 				</div>

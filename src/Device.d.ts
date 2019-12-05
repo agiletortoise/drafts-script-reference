@@ -18,6 +18,14 @@
  * s = s + "OS: " + osVersion + "\n";
  * s = s + "Battery: " + batteryLevel;
  * alert(s);
+ * 
+ * // branch logic based on platform
+ * if (device.systemName == 'macOS') {
+ *     // do something only on Mac
+ * }
+ * else {
+ *     // do somethign only on iOS
+ * }
  * ```
  */
 declare class Device {

@@ -1,7 +1,7 @@
 /**
  * # Alarm
  * 
- * Alarms are alerts which can be attached to Reminder and Event objects.
+ * Alarms are alerts which can be attached to [[Reminder]] and [[Event]] objects.
  * 
  * ### Examples
  * 

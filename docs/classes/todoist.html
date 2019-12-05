@@ -71,7 +71,7 @@
 							<h1>Todoist</h1>
 						</a>
 					</div>
-					<p>Script integration with <a href="http://todoist.com/">Todoist</a>. This object handles OAuth authentication and request signing. The entire <a href="https://developer.todoist.com/rest/v8">Todoist REST API</a> can be used with the request method, and convenience methods are provided for common API endpoints to manage tasks, projects, comments and labels.</p>
+					<p>Script integration with <a href="http://todoist.com/">Todoist</a>. This object handles OAuth authentication and request signing. The entire <a href="https://developer.todoist.com/rest/v1/">Todoist REST API</a> can be used with the request method, and convenience methods are provided for common API endpoints to manage tasks, projects, comments and labels.</p>
 					<p>The <code>quickAdd</code> method is mostly likely what you are looking for to create tasks as it supports the shorthand the task entry box in Todoist supports to parse projects, etc.</p>
 					<p>Other methods are direct mappings of the REST API calls provided by Todoist. Most take an <code>options</code> parameter which is a javascript object containing the parameters to be passed to the API, and and the method decodes the JSON response from Todoist and returns it as a Javascript object (or array of objects) with the values as specified in the Todoist API docs.</p>
 					<p>If an API calls fails, typically the result will be an <code>undefined</code> value, and the <code>lastError</code> property will contains error detail information for troubleshooting.</p>
@@ -555,7 +555,7 @@ todoist.createTask({
 											<h5>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 											<div class="tsd-comment tsd-typography">
 												<div class="lead">
-													<p>The full URL to the endpoint in the <a href="http://doist.github.io/todoist-api/rest/v8/#overview">Todoist REST API</a>.</p>
+													<p>The full URL to the endpoint in the <a href="https://developer.todoist.com/rest/v1/">Todoist REST API</a>.</p>
 												</div>
 											</div>
 										</li>
