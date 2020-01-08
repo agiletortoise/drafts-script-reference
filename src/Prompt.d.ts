@@ -83,17 +83,26 @@ declare class Prompt {
      * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
      * @param label User-friendly text label to place next to the field.
      * @param initialText The initial text contents for the field.
-     * @param options A dictionary of options for configuring the text field. See [the site](https://reference.getdrafts.com/objects/Prompt.html) for full descriptions of the options.
+     * @param options A dictionary of options for configuring the text field. 
      */
     addTextField(
         name: string,
         label: string,
         initialText: string, // FIXME: is this optional?
         options?: {
+            /**
+            * Placeholder text to use when field is empty
+            */
             placeholder?: string
+            /**
+            * Should system autocorrect be enabled in field, Default: true
+            */
             autocorrect?: boolean
             autocapitalization?: capitalizationTypes
             keyboard?: keyboardTypes
+            /**
+            * If true, focus this field when prompt is displayed
+            */
             wantsFocus?: boolean
         }
     ): void
@@ -111,9 +120,15 @@ declare class Prompt {
         initialText: string,
         options?: {
             height?: number
+            /**
+            * Should system autocorrect be enabled in field, Default: true
+            */
             autocorrect?: boolean
             autocapitalization?: capitalizationTypes
             keyboard?: keyboardTypes
+            /**
+            * If true, focus this field when prompt is displayed
+            */
             wantsFocus?: boolean
         }
     ): void

@@ -24,7 +24,7 @@
  *     // do something only on Mac
  * }
  * else {
- *     // do somethign only on iOS
+ *     // do something only on iOS
  * }
  * ```
  */
