@@ -43,6 +43,11 @@ declare class CallbackURL {
     baseURL: string
 
     /**
+     * The current URL. This is provided as a debugging property, and will output the URL including the baseURL property with any configured parameters added. This property will differ from the actual URL opened when calling `open()` in that it will not contain the `x-success`, `x-error` and `x-cancel` parameters which are added dynamically at the time `open()` is called. 
+     */
+    url: string
+
+    /**
      * If true, the script will pause and wait for the `x-success`, `x-error` or `x-cancel` response from the app being targeted by the URL. If false, execution of the script/action will continue immediately and no response/results will be available.
      */
     waitForResponse: boolean
