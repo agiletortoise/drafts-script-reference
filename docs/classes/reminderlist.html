@@ -75,8 +75,8 @@
 					<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
 						<h3>Examples</h3>
 					</a>
-					<pre><code class="language-javascript"><span class="hljs-keyword">var</span> list = ReminderList.findOrCreate(<span class="hljs-string">"Groceries"</span>);
-<span class="hljs-keyword">var</span> reminder = list.createReminder();
+					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> list = ReminderList.findOrCreate(<span class="hljs-string">"Groceries"</span>);
+<span class="hljs-keyword">let</span> reminder = list.createReminder();
 reminder.title = <span class="hljs-string">"Bananas"</span>;
 reminder.notes = <span class="hljs-string">"Get slightly green ones."</span>
 reminder.update();</code></pre>

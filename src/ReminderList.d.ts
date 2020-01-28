@@ -6,8 +6,8 @@
  * ### Examples
  * 
  * ```javascript
- * var list = ReminderList.findOrCreate("Groceries");
- * var reminder = list.createReminder();
+ * const list = ReminderList.findOrCreate("Groceries");
+ * let reminder = list.createReminder();
  * reminder.title = "Bananas";
  * reminder.notes = "Get slightly green ones."
  * reminder.update();

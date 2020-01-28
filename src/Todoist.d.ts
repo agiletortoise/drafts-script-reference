@@ -97,7 +97,7 @@ declare class Todoist {
 
     /**
      * Creates a new Todoist object.
-     * @param identifier Optional string value used to identify a Todoist account. Typically this can be omitted if you only work with one Todoist account in Drafts. Each unique identifier used for Twitter accounts will share credentials - across both action steps and scripts.
+     * @param identifier Optional string value used to identify a Todoist account. Typically this can be omitted if you only work with one Todoist account in Drafts. Each unique identifier used for Todoist accounts will share credentials - across both action steps and scripts.
      */
     static create(identifier: string): Todoist
 }

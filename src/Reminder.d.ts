@@ -25,6 +25,11 @@ declare class Reminder {
     dueDate?: Date
 
     /**
+    * Does the dueDate property include an assigned time. If false, assignments to the `dueDate` property will ignore time components, making the reminder due on a specific date without a time assigned.
+    */
+     dueDateIncludesTime: Boolean
+
+    /**
      * Integer number representing priority. Assign values matching those Apple uses as follows:
      * * `0`: No priority
      * * `1`: High
