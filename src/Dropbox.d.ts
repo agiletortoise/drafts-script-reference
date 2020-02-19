@@ -17,8 +17,8 @@ interface DropboxRequestSettings {
     parameters?: { [x: string]: string },
     /** An object containing data to be encoded into the HTTP body of the request. */
     data?: { [x: string]: string },
-    /** An object containing the parameters to encode in the `dropbox-api-request` header, per API documentation. Drafts will take care of properly ASCII escaping values. Required only for `contentUploadRequest` and `contentDownloadRequest` functions. */
-    'dropbox-api-request'?: { [x: string]: string },
+    /** An object containing the parameters to encode in the `dropbox-api-args` header, per API documentation. Drafts will take care of properly ASCII escaping values. Required only for `contentUploadRequest` and `contentDownloadRequest` functions. */
+    'dropbox-api-args'?: { [x: string]: string },
 }
 
 /**
