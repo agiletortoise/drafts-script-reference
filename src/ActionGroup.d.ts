@@ -27,4 +27,14 @@ declare class ActionGroup {
      * The display name of the action group.
      */
     readonly name: string
+
+    /**
+    * The unique identifier of the action group.
+    */
+    readonly uuid: string
+
+    /**
+    * The actions contained in the action group.
+    */
+    readonly actions: Action[]
 }

@@ -35,7 +35,7 @@ declare class App {
     isIdleDisabled: boolean
 
     /**
-     * opens URL passed using iOS. Returns true if URL was opened, false if the URL was invalid or no available app can open the URL on the device.
+     * Request system opens the URL passed. Returns true if URL was opened, false if the URL was invalid or no available app can open the URL on the device.
      * @param url url to open
      * @param useSafari whether to use the Safari View Controller (true) or default browser (false).
      */
@@ -64,6 +64,16 @@ declare class App {
      * Close draft list side bar.
      */
     hideDraftList(): void
+
+    /**
+     * Open quick search window, optionally providing a initial query value.
+    */
+    showQuickSearch(initialQuery?: string): void
+
+    /**
+    * Open the "Get Info" view for a draft. If no draft is passed, the current active draft in the editor will be used.
+    */
+    showDraftInfo(draft?: Draft): void
 
     /**
      * Open action list side bar.

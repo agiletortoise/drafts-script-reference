@@ -24,6 +24,16 @@ declare class Action {
      * The display name of the action as displayed in the action list.
      */
     readonly name: string
+
+    /**
+    * The unique identifier of the action group.
+    */
+    readonly uuid: string
+
+    /**
+    * If true, the action is a separator.
+    */
+    readonly isSeparator: boolean
 }
 /**
  * The current running action.

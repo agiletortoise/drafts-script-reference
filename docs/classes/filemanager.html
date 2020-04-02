@@ -103,6 +103,8 @@ fmCloud.moveItem(<span class="hljs-string">"/TestFile.txt"</span>, <span class="
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="filemanager.html#basepath" class="tsd-kind-icon">base<wbr>Path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="filemanager.html#baseurl" class="tsd-kind-icon">baseURL</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="filemanager.html#lasterror" class="tsd-kind-icon">last<wbr>Error</a></li>
 							</ul>
 						</section>
@@ -110,14 +112,14 @@ fmCloud.moveItem(<span class="hljs-string">"/TestFile.txt"</span>, <span class="
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="filemanager.html#copyitem" class="tsd-kind-icon">copy<wbr>Item</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="filemanager.html#createcloud" class="tsd-kind-icon">create<wbr>Cloud</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="filemanager.html#createdirectory" class="tsd-kind-icon">create<wbr>Directory</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="filemanager.html#createlocal" class="tsd-kind-icon">create<wbr>Local</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="filemanager.html#listcontents" class="tsd-kind-icon">list<wbr>Contents</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="filemanager.html#moveitem" class="tsd-kind-icon">move<wbr>Item</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="filemanager.html#readstring" class="tsd-kind-icon">read<wbr>String</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="filemanager.html#writestring" class="tsd-kind-icon">write<wbr>String</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-not-exported"><a href="filemanager.html#create" class="tsd-kind-icon">create</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-not-exported"><a href="filemanager.html#createcloud" class="tsd-kind-icon">create<wbr>Cloud</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-not-exported"><a href="filemanager.html#createlocal" class="tsd-kind-icon">create<wbr>Local</a></li>
 							</ul>
 						</section>
 					</div>
@@ -125,6 +127,30 @@ fmCloud.moveItem(<span class="hljs-string">"/TestFile.txt"</span>, <span class="
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
+					<a name="basepath" class="tsd-anchor"></a>
+					<h3>base<wbr>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">base<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The base POSIX-style path to the directory used by this FileManager.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
+					<a name="baseurl" class="tsd-anchor"></a>
+					<h3>baseURL</h3>
+					<div class="tsd-signature tsd-kind-icon">baseURL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The base local URL (<code>file:///</code> format) to the directory used by this FileManager.</p>
+						</div>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
 					<a name="lasterror" class="tsd-anchor"></a>
 					<h3>last<wbr>Error</h3>
@@ -175,25 +201,6 @@ fmCloud.moveItem(<span class="hljs-string">"/TestFile.txt"</span>, <span class="
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-					<a name="createcloud" class="tsd-anchor"></a>
-					<h3>create<wbr>Cloud</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Cloud<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Convenience method to create iCloud file manager.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 					<a name="createdirectory" class="tsd-anchor"></a>
 					<h3>create<wbr>Directory</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
@@ -218,25 +225,6 @@ fmCloud.moveItem(<span class="hljs-string">"/TestFile.txt"</span>, <span class="
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-					<a name="createlocal" class="tsd-anchor"></a>
-					<h3>create<wbr>Local</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Local<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Convenience method to create local file manager.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -386,6 +374,44 @@ fmCloud.moveItem(<span class="hljs-string">"/TestFile.txt"</span>, <span class="
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-not-exported">
+					<a name="createcloud" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> create<wbr>Cloud</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Cloud<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convenience method to create iCloud file manager.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-not-exported">
+					<a name="createlocal" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> create<wbr>Local</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Local<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convenience method to create local file manager.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -404,19 +430,19 @@ fmCloud.moveItem(<span class="hljs-string">"/TestFile.txt"</span>, <span class="
 						<a href="filemanager.html" class="tsd-kind-icon">File<wbr>Manager</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
+								<a href="filemanager.html#basepath" class="tsd-kind-icon">base<wbr>Path</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
+								<a href="filemanager.html#baseurl" class="tsd-kind-icon">baseURL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
 								<a href="filemanager.html#lasterror" class="tsd-kind-icon">last<wbr>Error</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="filemanager.html#copyitem" class="tsd-kind-icon">copy<wbr>Item</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-								<a href="filemanager.html#createcloud" class="tsd-kind-icon">create<wbr>Cloud</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="filemanager.html#createdirectory" class="tsd-kind-icon">create<wbr>Directory</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-								<a href="filemanager.html#createlocal" class="tsd-kind-icon">create<wbr>Local</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="filemanager.html#listcontents" class="tsd-kind-icon">list<wbr>Contents</a>
@@ -432,6 +458,12 @@ fmCloud.moveItem(<span class="hljs-string">"/TestFile.txt"</span>, <span class="
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-not-exported">
 								<a href="filemanager.html#create" class="tsd-kind-icon">create</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-not-exported">
+								<a href="filemanager.html#createcloud" class="tsd-kind-icon">create<wbr>Cloud</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-not-exported">
+								<a href="filemanager.html#createlocal" class="tsd-kind-icon">create<wbr>Local</a>
 							</li>
 						</ul>
 					</li>

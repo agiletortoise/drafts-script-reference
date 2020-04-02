@@ -28,12 +28,22 @@ declare class FileManager {
     /**
      * Convenience method to create local file manager.
      */
-    createLocal(): FileManager
+    static createLocal(): FileManager
 
     /**
      * Convenience method to create iCloud file manager.
      */
-    createCloud(): FileManager
+    static createCloud(): FileManager
+
+    /**
+    * The base local URL (`file:///` format) to the directory used by this FileManager.
+    */
+    readonly baseURL: string
+
+    /**
+    * The base POSIX-style path to the directory used by this FileManager.
+    */
+    readonly basePath: string
 
     /**
      * Reads the contents of the file at the path. Returns `undefined` value if the file does not exist or could not be read.

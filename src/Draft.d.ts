@@ -1,3 +1,4 @@
+type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
 /**
  * # Draft 
  * 

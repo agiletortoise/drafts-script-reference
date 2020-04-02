@@ -59,6 +59,21 @@ declare class Workspace {
     archiveIncludesFlagged: boolean
 
     /**
+     * Folder tab to select when applying the workspace.
+     */
+    loadFolder?: draftFolderTab
+
+    /**
+     * Action group to load in action list when applying the workspace.
+     */
+    loadActionListGroup?: ActionGroup
+
+    /**
+     * Action group to load in Action Bar when applying the workspace.
+     */
+    loadActionBarGroup?: ActionGroup
+
+    /**
      * Save changes made to the workspace to the database. This must be called to save changes.
      */
     update(): void

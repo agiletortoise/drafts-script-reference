@@ -118,7 +118,9 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="app.html#setclipboard" class="tsd-kind-icon">set<wbr>Clipboard</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="app.html#setidledisabled" class="tsd-kind-icon">set<wbr>Idle<wbr>Disabled</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="app.html#showactionlist" class="tsd-kind-icon">show<wbr>Action<wbr>List</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="app.html#showdraftinfo" class="tsd-kind-icon">show<wbr>Draft<wbr>Info</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="app.html#showdraftlist" class="tsd-kind-icon">show<wbr>Draft<wbr>List</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="app.html#showquicksearch" class="tsd-kind-icon">show<wbr>Quick<wbr>Search</a></li>
 							</ul>
 						</section>
 					</div>
@@ -502,7 +504,7 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>opens URL passed using iOS. Returns true if URL was opened, false if the URL was invalid or no available app can open the URL on the device.</p>
+									<p>Request system opens the URL passed. Returns true if URL was opened, false if the URL was invalid or no available app can open the URL on the device.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -650,6 +652,31 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="showdraftinfo" class="tsd-anchor"></a>
+					<h3>show<wbr>Draft<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">show<wbr>Draft<wbr>Info<span class="tsd-signature-symbol">(</span>draft<span class="tsd-signature-symbol">?: </span><a href="draft.html" class="tsd-signature-type">Draft</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Open the &quot;Get Info&quot; view for a draft. If no draft is passed, the current active draft in the editor will be used.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> draft: <a href="draft.html" class="tsd-signature-type">Draft</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 					<a name="showdraftlist" class="tsd-anchor"></a>
 					<h3>show<wbr>Draft<wbr>List</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
@@ -664,6 +691,31 @@
 									<p>Open draft list side bar.</p>
 								</div>
 							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="showquicksearch" class="tsd-anchor"></a>
+					<h3>show<wbr>Quick<wbr>Search</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">show<wbr>Quick<wbr>Search<span class="tsd-signature-symbol">(</span>initialQuery<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Open quick search window, optionally providing a initial query value.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialQuery: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -758,7 +810,13 @@
 								<a href="app.html#showactionlist" class="tsd-kind-icon">show<wbr>Action<wbr>List</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="app.html#showdraftinfo" class="tsd-kind-icon">show<wbr>Draft<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="app.html#showdraftlist" class="tsd-kind-icon">show<wbr>Draft<wbr>List</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="app.html#showquicksearch" class="tsd-kind-icon">show<wbr>Quick<wbr>Search</a>
 							</li>
 						</ul>
 					</li>
