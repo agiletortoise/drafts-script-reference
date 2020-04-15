@@ -57,6 +57,17 @@ declare class FileManager {
     writeString(path: string, content: string): boolean
 
     /**
+     * Reads the contents of a JSON formatted file at the path. Returns `undefined` value if the file does not exist or could not be read and parsed as JSON. Contents could be an object, array of objects, etc., depending on the content of the JSON file.
+     * @param path should begin with a `/` and be relative to the root directory of the FileManager.
+    */
+    readJSON(path: string): object | undefined
+
+    /**
+     * Write the contents to the path in JSON format. Returns true if successful, false if the file could not be written successfully. This will override existing files!
+     */
+    writeJSON(path: string, content: object): boolean
+
+    /**
      * List files and directories at the specified path. Array of full path will be returned.
      */
     listContents(path: string): string[]
