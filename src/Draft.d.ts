@@ -22,6 +22,11 @@ type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
  */
 declare class Draft {
     /**
+     * Create new instance.
+     */
+    constructor()
+
+    /**
      * Unique identifier for the draft.
      */
     readonly uuid: string
@@ -32,9 +37,19 @@ declare class Draft {
     content: string
 
     /**
-     * The title. This is generally the first line of the draft.
+     * The title. The first line of the draft.
      */
     readonly title: string
+
+    /**
+    * The display title. This is generally the first line of the draft, but cleaned up as it would be displayed in the draft list in the user interface, removing Markdown header characters, etc.
+    */
+    readonly displayTitle: string
+
+    /**
+    * The lines of text in the draft separated into an array on `\n` line feeds. This is a convenience method an equivalent to `content.split('\n');`
+    */
+    readonly lines: [string]
 
     /**
      * The preferred language grammar (syntax) to use for the draft. Can be any valid installed language grammar.

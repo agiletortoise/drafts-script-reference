@@ -57,10 +57,16 @@ declare class HTTP {
         /** A password to encode for Basic Authentication. */
         password?: string
     }): HTTPResponse
+
     /**
      * Instantiate an `HTTP` object.
      */
     static create(): HTTP
+
+    /**
+     * Create new instance.
+     */
+    constructor()    
 }
 
 /**

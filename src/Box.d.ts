@@ -59,4 +59,9 @@ declare class Box {
      * Creates a new Box object. Identifier is a optional string value used to identify a Box.com account. Typically this can be omitted if you only work with one Box.com account in Drafts.
      */
     static create(identifier?: string): Box
+
+    /**
+    * Create new instance.
+    */
+    constructor(identifier?: string)
 }

@@ -88,5 +88,11 @@ declare class CallbackURL {
      * Creates a new CallbackURL object.
      */
     static create(): CallbackURL
+
+    /**
+     * Create new instance.
+     */
+    constructor()
+
 }
 

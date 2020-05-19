@@ -91,4 +91,9 @@ declare class MultiMarkdown {
 
     /** Create object */
     static create(): MultiMarkdown
+
+    /**
+     * Create new instance.
+     */
+    constructor()
 }

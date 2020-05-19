@@ -47,4 +47,9 @@ declare class Twitter {
      * Creates a new Twitter object. Identifier is a optional string value used to identify a Twitter account. Typically this can be omitted if you only work with one Twitter account in Drafts. Each unique identifier used for Twitter accounts will share credentials - across both action steps and scripts.
      */
     static create(identifier: string): Twitter
+
+    /**
+     * Create new instance.
+     */
+    constructor(identifier?: string)
 }

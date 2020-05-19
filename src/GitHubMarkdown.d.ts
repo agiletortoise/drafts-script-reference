@@ -51,4 +51,10 @@ declare class GitHubMarkdown {
      * create a new object.
      */
     static create(): GitHubMarkdown
+
+    /**
+     * Create new instance.
+     */
+    constructor()
+
 }

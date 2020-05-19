@@ -50,6 +50,11 @@ declare class AppleScript {
     static create(script: string): AppleScript
 
     /**
+     * Create new instance.
+     */
+    constructor(script: string)
+
+    /**
      * Compiles and executes the AppleScript code, calling the subroutine passed with the arguments.
      * @param subroutine The name of a subroutine in the AppleScript to call. [Subroutines](http://www.macosxautomation.com/applescript/sbrt/) are defined using `on subroutineName()` syntax in the AppleScript.
      * @param arguments An array of arguments to pass to the subroutine. Most basic Javascript data types, and objects and arrays of those data types, can be passed and will be translated to the proper AppleScript types.

@@ -1,7 +1,7 @@
 /**
  * # FileManager
  * 
- * FileManager objects can be used to read from or write to files in either the local Drafts app Documents directory (as visible in the `Files.app`), or iCloud Drive (inside the `Drafts` folder).
+ * FileManager objects can be used to read from or write to files in either the local Drafts app Documents directory, or iCloud Drive (inside the `Drafts` folder).Note that local files are not visible on iOS, and are only available for reading and writing via scripting.
  *
  * ### Example
  * 
@@ -26,7 +26,7 @@ declare class FileManager {
     lastError: string | undefined
 
     /**
-     * Convenience method to create local file manager.
+     * Convenience method to create local file manager. Note that local files are not visible on iOS in the Files app and are only available through the use of scripting.
      */
     static createLocal(): FileManager
 
@@ -98,5 +98,11 @@ declare class FileManager {
      * @param isLocal If `true`, the `FileManager` will be using the to the local Drafts app documents directory as its root directory, as it appears in the "On my …" area in the `Files.app`. If `false`, it will use the Drafts5 iCloud folder as its root directory.
      */
     static create(isLocal: boolean): FileManager
+
+    /**
+     * Create new instance.
+     * @param isLocal If `true`, the `FileManager` will be using the to the local Drafts app documents directory as its root directory, as it appears in the "On my …" area in the `Files.app`. If `false`, it will use the Drafts5 iCloud folder as its root directory.
+     */
+    constructor(isLocal: boolean)
 }
 

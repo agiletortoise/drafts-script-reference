@@ -70,7 +70,7 @@ declare class WordPress {
     runMethod(methodName: string, parameters: any[]): XMLRPCResponse
 
     /**
-     *
+     * Create new instance
      * @param siteURL This should be the full URL to the home page of the WordPress site. e.g. `https://mysite.com` or `https://mysite.com/blog/`.
      * @param blogId For most WordPress installations, use `1`.
      * @param username Username to login to the WordPress site. Optional if only using runMethod, as credentials will be required directly in parameters for those calls.
@@ -82,4 +82,18 @@ declare class WordPress {
         username?: string,
         password?: string
     ): WordPress
+
+    /**
+     * Create new instance
+     * @param siteURL This should be the full URL to the home page of the WordPress site. e.g. `https://mysite.com` or `https://mysite.com/blog/`.
+     * @param blogId For most WordPress installations, use `1`.
+     * @param username Username to login to the WordPress site. Optional if only using runMethod, as credentials will be required directly in parameters for those calls.
+     * @param password Password to login to the WordPress site. Optional if only using runMethod, as credentials will be required directly in parameters for those calls.
+     */
+    constructor(
+        siteURL: string,
+        blogId: string,
+        username?: string,
+        password?: string
+    )
 }

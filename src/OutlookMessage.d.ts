@@ -54,6 +54,11 @@ declare class OutlookMessage {
      * @param identifier notes which for Outlook account to use. This string is an arbitrary value, but we recommend using the email address you wish to associate with the script. Each unique identifier will be associated with its own [Credential](https://getdrafts.com/settings/credentials).
      */
     static create(identifier?: string): OutlookMessage
+
+    /**
+     * Create new instance.
+     */
+    constructor(identifier?: string)
 }
 
 

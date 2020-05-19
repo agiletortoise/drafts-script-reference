@@ -85,8 +85,14 @@ declare class Mail {
      * Send the mail message. This will open the `Mail.app` sending window. Returns `true` if the message was sent successfully or `false` if not - if, for example, the user cancelled the mail window.
      */
     send(): boolean
+
     /**
      * Create `Mail` object
      */
     static create(): Mail
+
+    /**
+     * Create new instance.
+     */
+    constructor()
 }

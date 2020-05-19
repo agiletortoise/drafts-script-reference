@@ -55,4 +55,9 @@ declare class Message {
      * Instantiate `Message` object
      */
     static create(): Message
+
+    /**
+     * Create new instance.
+     */
+    constructor()
 }

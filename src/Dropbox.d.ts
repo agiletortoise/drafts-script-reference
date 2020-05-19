@@ -108,4 +108,8 @@ declare class Dropbox {
      */
     static create(identifier?: string): Dropbox
     
+    /**
+     * Create new instance.
+     */
+    constructor(identifier?: string)
 }

@@ -3,6 +3,31 @@
  */
 type selectionRange = Array<number>
 /**
+ * An object describing a navigation location, as defined by the syntax definition in use in the editor
+ */
+type navigationMarker = {
+    /**
+     * The start location of the range of text representing the marker.
+     */
+    location: number,
+    /**
+    * The number of characters in the range.
+    */
+    length: number,
+    /** 
+     * Prefix text for the marker. Example: `H1`, `H2` in Markdown
+     */
+    prefix: string,
+    /** 
+     * Label text for the marker.
+     */
+    label: string,
+    /** 
+     * Indentation level of the marker.
+     */
+    level: number,
+}
+/**
  * # Editor 
  * 
  * A global `editor` object is available in all action scripts. This object allows manipulation of the main editing window in Drafts, altering the text, text selections, or loading a different draft into the editor, etc.
@@ -25,9 +50,19 @@ declare class Editor {
     linkModeEnabled: boolean
 
     /**
+     * Access or set current typewriter scrolling status.
+     */
+    typewriterScrollingEnabled: boolean
+
+    /**
      * Is editor current focused for editing.
      */
     isActive: boolean
+
+    /**
+     * Array of recent drafts. This is the same list as used in the navigation features of the editor, and is in reverse order, so that the first index in the array is the previous draft loaded in the editor.
+     */
+    recentDrafts: [Draft]
 
     // FUNCTIONS
     /**
@@ -138,6 +173,20 @@ declare class Editor {
     * Replace the text in the passed range with new text.
     */
     setTextInRange(location: number, length: number, text: string): void
+
+    /**
+    * Array of navigation markers in the text. Navigation markers are defined by the syntax definition in use in the editor, and are used in the [Navigation](https://docs.getdrafts.com/docs/editor/navigation) feature. 
+    */
+    navigationMarkers: [navigationMarker]
+
+    /**
+    * The next navigation marker in the editor, relative to the character location. This is a convenience method to assist in navigating by marker.
+    */
+    navigationMarkerAfter(location: number): navigationMarker
+    /**
+    * The previous navigation marker in the editor, relative to the character location. This is a convenience method to assist in navigating by marker.
+    */
+    navigationMarkerBefore(location: number): navigationMarker
 }
 /**
  * The active editor

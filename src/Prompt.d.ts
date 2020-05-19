@@ -208,5 +208,13 @@ declare class Prompt {
      */
     show(): boolean
 
+    /**
+     * Create new instance.
+     */
     static create(): Prompt
+
+    /**
+     * Create new instance.
+     */
+    constructor()
 }

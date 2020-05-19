@@ -38,11 +38,15 @@
 declare class Credential {
     /**
      * Create a credential object with the specified identifier and description. Identifiers should be unique, such that any two calls from different actions with the same identifier will return the same credentials
+     * @param identifier Unique identifier for the credentials
+     * @param description Optional description
      */
-    static create(identifier: string, description: string): Credential
+    static create(identifier: string, description?: string): Credential
 
     /**
      * Create credential already configured with username and password fields.
+     * @param identifier Unique identifier for the credentials
+     * @param description Optional description
      */
     static createWithUsernamePassword(
         identifier: string,
@@ -51,12 +55,21 @@ declare class Credential {
 
     /**
      * Create credential already configured with host url, username and password fields.
+     * @param identifier Unique identifier for the credentials
+     * @param description Optional description
      */
     static createWithHostUsernamePassword(
         identifier: string,
         description: string
     ): Credential
 
+    /**
+     * Create new instance.
+     * @param identifier Unique identifier for the credentials
+     * @param description Optional description
+    */
+    constructor(identifier: string, description?: string)
+    
     /**
      * Call this function after configuring, but before using host, username or password properties of a credential. If the credential object has not be previous authorized, the user will be prompted to enter their credentials before continuing. If the user has previously been prompt, this method will load previously provided information.
      */

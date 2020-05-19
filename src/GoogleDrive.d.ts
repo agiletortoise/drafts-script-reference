@@ -65,4 +65,9 @@ declare class GoogleDrive {
      * @param identifier used to identify a GoogleDrive account. Typically this can be omitted if you only work with one GoogleDrive account in Drafts.
      */
     static create(identifier?: string): GoogleDrive
+
+    /**
+     * Create new instance.
+     */
+    constructor(identifier?: string)
 }

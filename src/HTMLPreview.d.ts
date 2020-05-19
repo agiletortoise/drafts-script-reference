@@ -19,6 +19,14 @@ declare class HTMLPreview {
      */
     show(html: string): boolean
 
+    /**
+     * Create new instance.
+     */
     static create(): HTMLPreview
+
+    /**
+     * Create new instance.
+     */
+    constructor()
 }
 

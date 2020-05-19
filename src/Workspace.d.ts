@@ -100,7 +100,7 @@ declare class Workspace {
     /**
      * Set sort order for archive.
      */
-    setFlaggedSort(
+    setArchiveSort(
         sortBy: sortDirections,
         sortDescending: boolean,
         sortFlaggedToTop: boolean
@@ -109,7 +109,7 @@ declare class Workspace {
     /**
      * Set sort order for "all" drafts folder.
      */
-    setFlaggedSort(
+    setAllSort(
         sortBy: sortDirections,
         sortDescending: boolean,
         sortFlaggedToTop: boolean
@@ -119,6 +119,11 @@ declare class Workspace {
      * create a new workspace object. This is an in-memory object only, unless `update()` is called to save the it. The initial state of the workspace properties is based on the configuration of the user's default workspace.
      */
     static create(): Workspace
+
+    /**
+     * Create new instance.
+     */
+    constructor()
 
     /**
      * Get list of all available workspaces.

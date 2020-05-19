@@ -62,6 +62,11 @@ declare class ShellScript {
     static create(script: string): ShellScript
 
     /**
+     * Create new instance.
+     */
+    constructor(script: string)
+
+    /**
      * Executes the shell script.
      * @param arguments An array of string arguments to pass to the script. These will appear to the script as command line arguments would.
      * @returns `true` if the script was executed without error, `false` if not. 

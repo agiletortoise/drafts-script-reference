@@ -100,4 +100,9 @@ declare class Todoist {
      * @param identifier Optional string value used to identify a Todoist account. Typically this can be omitted if you only work with one Todoist account in Drafts. Each unique identifier used for Todoist accounts will share credentials - across both action steps and scripts.
      */
     static create(identifier: string): Todoist
+
+    /**
+     * Create new instance.
+     */
+    constructor(identifier?: string)
 }

@@ -76,6 +76,12 @@ declare class App {
     showDraftInfo(draft?: Draft): void
 
     /**
+    * If able, open the requested draft in a new window. This method only functions on iPad and Mac. The ability to open new windows is not available on iPhone.
+    * @returns `true` if successful. `false` if unable to open a new window (as on iPhone).
+    */
+    openInNewWindow(draft: Draft): boolean
+
+    /**
      * Open action list side bar.
      */
     showActionList(): void
