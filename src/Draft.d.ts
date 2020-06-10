@@ -180,6 +180,11 @@ declare class Draft {
         sortFlaggedToTop: boolean
     ): Draft[]
 
+    /**  
+    * Search for drafts containing the title string in the first line of their content. This mimics the logic used by the `/open?title=Title` URL scheme to locate drafts by title when triggering embedded [cross-links](https://docs.getdrafts.com/docs/drafts/cross-linking).
+    */
+    static queryByTitle(title: string): Draft[]
+
     /**
      * Return array of recently used tags. Helpful for building prompts to select tags.
      */

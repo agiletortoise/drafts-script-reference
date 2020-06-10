@@ -54,7 +54,7 @@ namespace typedoc
      * Is the user agent a mobile agent?
      */
     export var isMobile:boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    $html.addClass(isMobile ? 'is-mobile' : 'not-mobile');
+    document.documentElement.classList.add(isMobile ? 'is-mobile' : 'not-mobile');
 
 
     if (isMobile && 'ontouchstart' in document.documentElement) {
@@ -64,23 +64,29 @@ namespace typedoc
         pointerUp   = 'touchend';
     }
 
-    $document.on(pointerDown, (e) => {
+    document.addEventListener(pointerDown, (e) => {
         isPointerDown = true;
         hasPointerMoved = false;
-        var t = (pointerDown == 'touchstart' ? (e.originalEvent as TouchEvent).targetTouches[0] : e);
+        var t = (pointerDown == 'touchstart' ? (e as TouchEvent).targetTouches[0] : (e as MouseEvent));
         pointerDownPosition.y = t.pageY || 0;
         pointerDownPosition.x = t.pageX || 0;
-    }).on(pointerMove, (e) => {
+    });
+
+    document.addEventListener(pointerMove, (e) => {
         if (!isPointerDown) return;
         if (!hasPointerMoved) {
-            var t = (pointerDown == 'touchstart' ? (e.originalEvent as TouchEvent).targetTouches[0] : e);
+            var t = (pointerDown == 'touchstart' ? (e as TouchEvent).targetTouches[0] : (e as MouseEvent));
             var x = pointerDownPosition.x - (t.pageX || 0);
             var y = pointerDownPosition.y - (t.pageY || 0);
             hasPointerMoved = (Math.sqrt(x*x + y*y) > 10);
         }
-    }).on(pointerUp, (e) => {
+    });
+
+    document.addEventListener(pointerUp, () => {
         isPointerDown = false;
-    }).on('click', (e) => {
+    });
+
+    document.addEventListener('click', (e) => {
         if (preventNextClick) {
             e.preventDefault();
             e.stopImmediatePropagation();

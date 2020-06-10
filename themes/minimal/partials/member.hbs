@@ -6,9 +6,13 @@
 
     {{#if signatures}}
         {{> member.signatures}}
+    {{else}}{{#if hasGetterOrSetter}}
+        {{> member.getterSetter}}
+    {{else}}{{#if tryGetTargetReflectionDeep}}
+        {{> member.reference}}
     {{else}}
         {{> member.declaration}}
-    {{/if}}
+    {{/if}}{{/if}}{{/if}}
 
     {{#unless isContainer}}
         {{#each groups}}

@@ -11,7 +11,7 @@
 // </div>
 //
 .tsd-page-toolbar
-    position: absolute
+    position: fixed
     z-index: 1
     top: 0
     left: 0
@@ -20,6 +20,7 @@
     color: $TOOLBAR_TEXT_COLOR
     background: $TOOLBAR_COLOR
     border-bottom: 1px solid $COLOR_PANEL_DIVIDER
+    transition: transform .3s linear
 
     a
         color: $TOOLBAR_TEXT_COLOR
@@ -44,6 +45,9 @@
 
         &:first-child
             width: 100%
+
+.tsd-page-toolbar--hide
+    transform: translateY(-100%)
 
 %TSD_WIDGET_ICON
     &:before
