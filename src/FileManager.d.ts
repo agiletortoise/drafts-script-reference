@@ -94,6 +94,32 @@ declare class FileManager {
     copyItem(fromPath: string, toPath: string, overwrite?: boolean): boolean
 
     /**
+         * Get creation date of file at path.
+         * @param path
+         */
+    getCreationDate(path: string): Date
+
+    /**
+     * Get modification date of file at path.
+     * @param path
+     */
+    getModificationDate(path: string): Date
+
+    /**
+     * Set creation date of file at path. Returns true if successful, false if not.
+     * @param path
+     * @param date
+     */
+    setCreationDate(path: string, date: Date): boolean
+
+    /**
+     * Set modification date of file at path. Returns true if successful, false if not.
+    * @param path
+    * @param date
+    */
+    setModificationDate(path: string, date: Date): boolean
+
+    /**
      * Creates a new FileManager object.
      * @param isLocal If `true`, the `FileManager` will be using the to the local Drafts app documents directory as its root directory, as it appears in the "On my …" area in the `Files.app`. If `false`, it will use the Drafts5 iCloud folder as its root directory.
      */

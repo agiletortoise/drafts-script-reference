@@ -37,6 +37,16 @@ declare class Context {
     callbackResponses: { [x: string]: any }
 
     /**
+    * If AppleScripts run using the AppleScript object return values, they will be converted to JavaScript object and stored in this array. See [AppleScript docs](https://docs.getdrafts.com/docs/automation/applescript) for details.
+     */
+    appleScriptResponses: { [x: string]: any }
+
+    /**
+    * If [HTML Preview](https://docs.getdrafts.com/docs/actions/html-forms) makes calls to `Drafts.send(key, value)` those values are stored in this object by `key`.
+    */
+    previewValues: { string: any }
+
+    /**
      * Tell the context to cancel the action at the end of the script execution. If called, at the end of the script the action will be stopped. No subsequent action steps in the action will run, and the action still stop silently - no notification banners, sounds, etc. If a message is included it will be added to the action log to explain the cancellation.
      */
     cancel(message: string): void

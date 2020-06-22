@@ -141,6 +141,20 @@ declare class Draft {
     getTemplateTag(tagName: string): string
 
     /**
+     * Append text to the end of the draft's `content`. This is a convenience function.
+     * @param text The text to append
+     * @param separator An optional separator string to use between content and added text. Defaults to a single line feed.
+     */
+    append(text: string, separator?: string): void
+
+    /**
+     * Prepend text to the beginning of the draft's `content`. This is a convenience function.
+     * @param text The text to prepend
+     * @param separator An optional separator string to use between content and added text. Defaults to a single line feed.
+     */
+    prepend(text: string, separator?: string): void
+
+    /**
      * Array of versions representing the entire saved version history for this draft.
      */
     readonly versions: Version[]

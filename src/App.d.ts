@@ -5,6 +5,11 @@
  */
 declare class App {
     /**
+     * Returns true if app has an active Drafts Pro subscription.
+    */
+    readonly isPro: boolean
+
+    /**
      * Version number of current installation of Drafts.
      */
     readonly version: string
@@ -50,8 +55,9 @@ declare class App {
 
     /**
      * Open draft selection interface and wait for user to select a draft. Returns the select draft object, or `undefined` if user cancelled.
+     * @param workspace If provided, the workspace will define the default filtering, display, and sort options for the selection window.
      */
-    selectDraft(): Draft | undefined
+    selectDraft(workspace?: Workspace): Draft | undefined
 
     // UI FUNCTIONS
 
@@ -95,6 +101,11 @@ declare class App {
      * Apply the Workspace as if it was selected in draft list.
      **/
     applyWorkspace(workspace: Workspace): boolean
+
+    /**
+     * Returns a workspace object configured like the workspace currently loaded in the draft list of the active window. Useful when creating logic which reacts contextually to the workspace loaded.
+     */
+    currentWorkspace: Workspace
 
     /**
      * Load the ActionGroup in the action list side bar.

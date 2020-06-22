@@ -14,6 +14,11 @@
  */
 declare class HTMLPreview {
     /**
+     * Hides the toolbars and `Cancel` / `Continue` buttons in the  preview window. For use only when combined with JavaScript flow control in the HTML preview. See [docs]() for details.
+     */
+    hideInterface: boolean
+
+    /**
      * Open HTML Preview window displaying the HTML string passed.
      * @param html The HTML content to display. Should be complete HTML document.
      */

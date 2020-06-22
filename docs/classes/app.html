@@ -90,9 +90,11 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#currentthememode" class="tsd-kind-icon">current<wbr>Theme<wbr>Mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#currentworkspace" class="tsd-kind-icon">current<wbr>Workspace</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#isactionlistvisible" class="tsd-kind-icon">is<wbr>Action<wbr>List<wbr>Visible</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#isdraftlistvisible" class="tsd-kind-icon">is<wbr>Draft<wbr>List<wbr>Visible</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#isidledisabled" class="tsd-kind-icon">is<wbr>Idle<wbr>Disabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#ispro" class="tsd-kind-icon">is<wbr>Pro</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#thememode" class="tsd-kind-icon">theme<wbr>Mode</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#version" class="tsd-kind-icon">version</a></li>
 							</ul>
@@ -135,7 +137,7 @@
 					<div class="tsd-signature tsd-kind-icon">current<wbr>Theme<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"light"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"dark"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L20">App.d.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L25">App.d.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -145,12 +147,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="currentworkspace" class="tsd-anchor"></a>
+					<h3>current<wbr>Workspace</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Workspace<span class="tsd-signature-symbol">:</span> <a href="workspace.html" class="tsd-signature-type">Workspace</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L108">App.d.ts:108</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Returns a workspace object configured like the workspace currently loaded in the draft list of the active window. Useful when creating logic which reacts contextually to the workspace loaded.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="isactionlistvisible" class="tsd-anchor"></a>
 					<h3>is<wbr>Action<wbr>List<wbr>Visible</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Action<wbr>List<wbr>Visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L30">App.d.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L35">App.d.ts:35</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -165,7 +182,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Draft<wbr>List<wbr>Visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L25">App.d.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L30">App.d.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -180,7 +197,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Idle<wbr>Disabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L35">App.d.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L40">App.d.ts:40</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -190,12 +207,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="ispro" class="tsd-anchor"></a>
+					<h3>is<wbr>Pro</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Pro<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L10">App.d.ts:10</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Returns true if app has an active Drafts Pro subscription.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="thememode" class="tsd-anchor"></a>
 					<h3>theme<wbr>Mode</h3>
 					<div class="tsd-signature tsd-kind-icon">theme<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"light"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"dark"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"automatic"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L15">App.d.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L20">App.d.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -210,7 +242,7 @@
 					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L10">App.d.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L15">App.d.ts:15</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -232,7 +264,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L97">App.d.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L103">App.d.ts:103</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -260,7 +292,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L154">App.d.ts:154</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L165">App.d.ts:165</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -288,7 +320,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L146">App.d.ts:146</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L157">App.d.ts:157</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -316,7 +348,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L142">App.d.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L153">App.d.ts:153</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -344,7 +376,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L150">App.d.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L161">App.d.ts:161</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -372,7 +404,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L124">App.d.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L135">App.d.ts:135</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -394,7 +426,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L92">App.d.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L98">App.d.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -416,7 +448,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L66">App.d.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L72">App.d.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -438,7 +470,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L136">App.d.ts:136</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L147">App.d.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -469,7 +501,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L107">App.d.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L118">App.d.ts:118</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -499,7 +531,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L102">App.d.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L113">App.d.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -527,7 +559,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L112">App.d.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L123">App.d.ts:123</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -557,7 +589,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L82">App.d.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L88">App.d.ts:88</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -586,7 +618,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L42">App.d.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L47">App.d.ts:47</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -623,7 +655,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L49">App.d.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L54">App.d.ts:54</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -654,13 +686,13 @@
 					<a name="selectdraft" class="tsd-anchor"></a>
 					<h3>select<wbr>Draft</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">select<wbr>Draft<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="draft.html" class="tsd-signature-type">Draft</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Draft<span class="tsd-signature-symbol">(</span>workspace<span class="tsd-signature-symbol">?: </span><a href="workspace.html" class="tsd-signature-type">Workspace</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="draft.html" class="tsd-signature-type">Draft</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L54">App.d.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L60">App.d.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -668,6 +700,15 @@
 									<p>Open draft selection interface and wait for user to select a draft. Returns the select draft object, or <code>undefined</code> if user cancelled.</p>
 								</div>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> workspace: <a href="workspace.html" class="tsd-signature-type">Workspace</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If provided, the workspace will define the default filtering, display, and sort options for the selection window.</p>
+									</div>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="draft.html" class="tsd-signature-type">Draft</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
 						</li>
 					</ul>
@@ -682,7 +723,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L130">App.d.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L141">App.d.ts:141</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -710,7 +751,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L117">App.d.ts:117</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L128">App.d.ts:128</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -738,7 +779,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L87">App.d.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L93">App.d.ts:93</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -760,7 +801,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L76">App.d.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L82">App.d.ts:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -788,7 +829,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L61">App.d.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L67">App.d.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -810,7 +851,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/App.d.ts#L71">App.d.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/App.d.ts#L77">App.d.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -849,6 +890,9 @@
 								<a href="app.html#currentthememode" class="tsd-kind-icon">current<wbr>Theme<wbr>Mode</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="app.html#currentworkspace" class="tsd-kind-icon">current<wbr>Workspace</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="app.html#isactionlistvisible" class="tsd-kind-icon">is<wbr>Action<wbr>List<wbr>Visible</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -856,6 +900,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="app.html#isidledisabled" class="tsd-kind-icon">is<wbr>Idle<wbr>Disabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="app.html#ispro" class="tsd-kind-icon">is<wbr>Pro</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="app.html#thememode" class="tsd-kind-icon">theme<wbr>Mode</a>

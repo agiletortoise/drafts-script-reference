@@ -110,7 +110,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="context.html#applescriptresponses" class="tsd-kind-icon">apple<wbr>Script<wbr>Responses</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="context.html#callbackresponses" class="tsd-kind-icon">callback<wbr>Responses</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="context.html#previewvalues" class="tsd-kind-icon">preview<wbr>Values</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -126,12 +128,35 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="applescriptresponses" class="tsd-anchor"></a>
+					<h3>apple<wbr>Script<wbr>Responses</h3>
+					<div class="tsd-signature tsd-kind-icon">apple<wbr>Script<wbr>Responses<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Context.d.ts#L42">Context.d.ts:42</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If AppleScripts run using the AppleScript object return values, they will be converted to JavaScript object and stored in this array. See <a href="https://docs.getdrafts.com/docs/automation/applescript">AppleScript docs</a> for details.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>x: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="callbackresponses" class="tsd-anchor"></a>
 					<h3>callback<wbr>Responses</h3>
 					<div class="tsd-signature tsd-kind-icon">callback<wbr>Responses<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/Context.d.ts#L37">Context.d.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Context.d.ts#L37">Context.d.ts:37</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -144,6 +169,29 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-index-signature">
 								<h5><span class="tsd-signature-symbol">[</span>x: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="previewvalues" class="tsd-anchor"></a>
+					<h3>preview<wbr>Values</h3>
+					<div class="tsd-signature tsd-kind-icon">preview<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>string<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Context.d.ts#L47">Context.d.ts:47</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If <a href="https://docs.getdrafts.com/docs/actions/html-forms">HTML Preview</a> makes calls to <code>Drafts.send(key, value)</code> those values are stored in this object by <code>key</code>.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>string<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -161,7 +209,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/Context.d.ts#L42">Context.d.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Context.d.ts#L52">Context.d.ts:52</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -189,7 +237,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/a1c40a7/src/Context.d.ts#L47">Context.d.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Context.d.ts#L57">Context.d.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -225,7 +273,13 @@
 						<a href="context.html" class="tsd-kind-icon">Context</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="context.html#applescriptresponses" class="tsd-kind-icon">apple<wbr>Script<wbr>Responses</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="context.html#callbackresponses" class="tsd-kind-icon">callback<wbr>Responses</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="context.html#previewvalues" class="tsd-kind-icon">preview<wbr>Values</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="context.html#cancel" class="tsd-kind-icon">cancel</a>
