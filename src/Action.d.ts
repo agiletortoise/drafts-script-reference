@@ -22,11 +22,19 @@ declare class Action {
 
     /**
      * The display name of the action as displayed in the action list.
+     * @category Identification
      */
     readonly name: string
 
     /**
+     * URL which can be used to install this Action in another installation of Drafts. Useful for sharing and backups.
+     * @category Identification
+     */
+    readonly installURL: string
+
+    /**
     * The unique identifier of the action group.
+    * @category Identification
     */
     readonly uuid: string
 

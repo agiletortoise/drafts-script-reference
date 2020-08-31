@@ -8,8 +8,9 @@ type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
  * 
  * ```javascript
  * // create a new draft, assign content and save it
- * let d = Draft.create();
+ * let d = new Draft();
  * d.content = "My new draft";
+ * d.addTag("personal");
  * d.update();
  * ```
  * 
@@ -27,27 +28,27 @@ declare class Draft {
     constructor()
 
     /**
-     * Unique identifier for the draft.
+     * Unique identifier.
      */
     readonly uuid: string
 
     /**
-    * The full text content of the draft.
+    * The full text content.
     */
     content: string
 
     /**
-     * The title. The first line of the draft.
+     * The first line.
      */
     readonly title: string
 
     /**
-    * The display title. This is generally the first line of the draft, but cleaned up as it would be displayed in the draft list in the user interface, removing Markdown header characters, etc.
+    * Generally, the first line of the draft, but cleaned up as it would be displayed in the draft list in the user interface, removing Markdown header characters, etc.
     */
     readonly displayTitle: string
 
     /**
-    * The lines of text in the draft separated into an array on `\n` line feeds. This is a convenience method an equivalent to `content.split('\n');`
+    * The lines of content separated into an array on `\n` line feeds. This is a convenience method an equivalent to `content.split('\n');`
     */
     readonly lines: [string]
 
@@ -74,9 +75,10 @@ declare class Draft {
     readonly selectionLength: number
 
     /**
-     * Array of string tag names assigned to the draft.
+     * Array of string tag names assigned.
+     * @category Tag
      */
-    readonly tags: string[]
+    readonly Tag: string[]
 
     /**
      * Is the draft current in the archive. If `false`, the draft is in the inbox.
@@ -93,50 +95,80 @@ declare class Draft {
      */
     isFlagged: boolean
 
-    readonly createdAt: Date
-    readonly createdLongitude: number
-    readonly createdLatitude: number
-    readonly modifiedAt: Date
-    readonly modifiedLongitude: number
-    readonly modifiedLatitude: number
+    /**
+     * Date the draft was created. This property is generally maintained by Drafts automatically and is it not recommended it be set directly unless needed to maintain information from an external source when importing.
+     * @category Date
+     */
+    createdAt: Date
+    /**
+     * Numeric longitude where the draft was created. This value will be `0` if no location information was available.
+     * @category Location
+     */
+    createdLongitude: number
+    /**
+     * Numeric latitude where the draft was created. This value will be `0` if no location information was available.
+     * @category Location
+     */
+    createdLatitude: number
+    /**
+     * Date the draft was last modified. This property is generally maintained by Drafts automatically and is it not recommended it be set directly unless needed to maintain information from an external source when importing.
+     * @category Date
+     */
+    modifiedAt: Date
+    /**
+    * Numeric longitude where the draft was last modified. This value will be `0` if no location information was available.
+    * @category Location
+    */
+    modifiedLongitude: number
+    /**
+    * Numeric longitude where the draft was last modified. This value will be `0` if no location information was available.
+    * @category Location
+    */
+    modifiedLatitude: number
 
     /**
-     * URL which can be used to open the draft.
+     * URL which can be used to open the draft. URLs are cross-platform, but specific to an individual user's drafts datastore.
      */
     readonly permalink: string
 
     /**
-     * Save changes made to the draft to the database. _This must be called to save changes made during an action’s execution._
+     * Save changes made to the draft to the database. _`update()` must be called to save changes made to a draft._
      */
     update(): void
 
     /**
     * Assign a tag
+    * @category Tag
     */
     addTag(tag: string): void
 
     /**
      * Remove a tag if it is assigned to the draft.
+     * @category Tag
      */
     removeTag(tag: string): void
 
     /**
      * Check whether a tag is currently assigned to the draft.
+     * @category Tag
      */
     hasTag(tag: string): boolean
 
     /**
      * Runs the template string through the template engine to evaluate tags (like `[[title]]`, `[[body]]`).
+     * @category Template
      */
     processTemplate(template: string): string
 
     /**
      * Set a custom template tag value for use in templates. For example, calling `setTemplateTag("mytag", "mytext")` will create a tag `[[mytag]]`, which subsequent action steps in the same action can use in their templates.
+     * @category Template
      */
     setTemplateTag(tagName: string, value: string): void
 
     /**
      * Get the current value of a custom template tag.
+     * @category Template
      */
     getTemplateTag(tagName: string): string
 
@@ -171,6 +203,7 @@ declare class Draft {
 
     /**
      * Find an existing draft based on UUID.
+     * @category Querying
      */
     static find(uuid: string): Draft
 
@@ -183,6 +216,7 @@ declare class Draft {
      * @param sort
      * @param sortDescending If `true`, sort descending. Defaults to `false`.
      * @param sortFlaggedToTop If `true`, sort flagged drafts to beginning. Defaults to `false`.
+     * @category Querying
      */
     static query(
         queryString: string,
@@ -196,11 +230,13 @@ declare class Draft {
 
     /**  
     * Search for drafts containing the title string in the first line of their content. This mimics the logic used by the `/open?title=Title` URL scheme to locate drafts by title when triggering embedded [cross-links](https://docs.getdrafts.com/docs/drafts/cross-linking).
+    * @category Querying
     */
     static queryByTitle(title: string): Draft[]
 
     /**
      * Return array of recently used tags. Helpful for building prompts to select tags.
+     * @category Tag
      */
     static recentTags(): string[]
 }

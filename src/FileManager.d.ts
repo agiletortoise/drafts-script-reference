@@ -94,14 +94,16 @@ declare class FileManager {
     copyItem(fromPath: string, toPath: string, overwrite?: boolean): boolean
 
     /**
-         * Get creation date of file at path.
-         * @param path
-         */
+     * Get creation date of file at path.
+     * @param path
+     * @category Attribute
+     */
     getCreationDate(path: string): Date
 
     /**
      * Get modification date of file at path.
      * @param path
+     * @category Attribute
      */
     getModificationDate(path: string): Date
 
@@ -109,6 +111,7 @@ declare class FileManager {
      * Set creation date of file at path. Returns true if successful, false if not.
      * @param path
      * @param date
+     * @category Attribute
      */
     setCreationDate(path: string, date: Date): boolean
 
@@ -116,6 +119,7 @@ declare class FileManager {
      * Set modification date of file at path. Returns true if successful, false if not.
     * @param path
     * @param date
+    * @category Attribute
     */
     setModificationDate(path: string, date: Date): boolean
 
@@ -123,6 +127,7 @@ declare class FileManager {
      * Set tags on the file at path.
      * @param path
      * @param tags
+     * @category Attribute
      */
     setTags(path: string, tags: string[]): boolean
 
@@ -130,6 +135,7 @@ declare class FileManager {
      * Get tags on file at path.
     * @param path
     * @param date
+    * @category Attribute
     */
     getTags(path: string): string[]
 

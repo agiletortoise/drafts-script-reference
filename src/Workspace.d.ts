@@ -20,6 +20,12 @@ declare class Workspace {
     name: string
 
     /**
+     * URL which can be used to install this Workspace in another installation of Drafts. Useful for sharing and backups.
+     * @category Identification
+     */
+    readonly installURL: string
+
+    /**
      * Search string to filter results.
      * @category Filter
      */
@@ -32,13 +38,13 @@ declare class Workspace {
     tagFilter: string
 
     /**
-     * A `QueryDate` specifying a date which all drafts in the workspace must be greater than or equal to.
+     * A [[QueryDate]] specifying a date which all drafts in the workspace must be greater than or equal to.
      * @category Filter
      */
     startDate: QueryDate
 
     /**
-     * A `QueryDate` specifying a date which all drafts in the workspace must be less than or equal to.
+     * A [[QueryDate]] specifying a date which all drafts in the workspace must be less than or equal to.
      * @category Filter
      */
     endDate: QueryDate

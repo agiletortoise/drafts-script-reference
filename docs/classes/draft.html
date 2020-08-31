@@ -76,8 +76,9 @@
 						<h3>Example: Creating a draft</h3>
 					</a>
 					<pre><code class="language-javascript"><span class="hljs-comment">// create a new draft, assign content and save it</span>
-<span class="hljs-keyword">let</span> d = Draft.create();
+<span class="hljs-keyword">let</span> d = <span class="hljs-keyword">new</span> Draft();
 d.content = <span class="hljs-string">&quot;My new draft&quot;</span>;
+d.addTag(<span class="hljs-string">&quot;personal&quot;</span>);
 d.update();</code></pre>
 					<a href="#example-querying-drafts" id="example-querying-drafts" style="color: inherit; text-decoration: none;">
 						<h3>Example: Querying drafts</h3>
@@ -105,48 +106,66 @@ d.update();</code></pre>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
+							<h3>Date Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#content" class="tsd-kind-icon">content</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#createdat" class="tsd-kind-icon">created<wbr>At</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#modifiedat" class="tsd-kind-icon">modified<wbr>At</a></li>
+							</ul>
+							<h3>Location Properties</h3>
+							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#createdlatitude" class="tsd-kind-icon">created<wbr>Latitude</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#createdlongitude" class="tsd-kind-icon">created<wbr>Longitude</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#modifiedlatitude" class="tsd-kind-icon">modified<wbr>Latitude</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#modifiedlongitude" class="tsd-kind-icon">modified<wbr>Longitude</a></li>
+							</ul>
+							<h3>Other Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#content" class="tsd-kind-icon">content</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#displaytitle" class="tsd-kind-icon">display<wbr>Title</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#isarchived" class="tsd-kind-icon">is<wbr>Archived</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#isflagged" class="tsd-kind-icon">is<wbr>Flagged</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#istrashed" class="tsd-kind-icon">is<wbr>Trashed</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#languagegrammar" class="tsd-kind-icon">language<wbr>Grammar</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#lines" class="tsd-kind-icon">lines</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#modifiedat" class="tsd-kind-icon">modified<wbr>At</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#modifiedlatitude" class="tsd-kind-icon">modified<wbr>Latitude</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#modifiedlongitude" class="tsd-kind-icon">modified<wbr>Longitude</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#permalink" class="tsd-kind-icon">permalink</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#selectionlength" class="tsd-kind-icon">selection<wbr>Length</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#selectionstart" class="tsd-kind-icon">selection<wbr>Start</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#tags" class="tsd-kind-icon">tags</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#title" class="tsd-kind-icon">title</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#uuid" class="tsd-kind-icon">uuid</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#versions" class="tsd-kind-icon">versions</a></li>
 							</ul>
+							<h3>Tag Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="draft.html#tag" class="tsd-kind-icon">Tag</a></li>
+							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Other Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#addtag" class="tsd-kind-icon">add<wbr>Tag</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#append" class="tsd-kind-icon">append</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#gettemplatetag" class="tsd-kind-icon">get<wbr>Template<wbr>Tag</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#hastag" class="tsd-kind-icon">has<wbr>Tag</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#prepend" class="tsd-kind-icon">prepend</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#processtemplate" class="tsd-kind-icon">process<wbr>Template</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#removetag" class="tsd-kind-icon">remove<wbr>Tag</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#saveversion" class="tsd-kind-icon">save<wbr>Version</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#settemplatetag" class="tsd-kind-icon">set<wbr>Template<wbr>Tag</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#update" class="tsd-kind-icon">update</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="draft.html#create" class="tsd-kind-icon">create</a></li>
+							</ul>
+							<h3>Querying Methods</h3>
+							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="draft.html#find" class="tsd-kind-icon">find</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="draft.html#query" class="tsd-kind-icon">query</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="draft.html#querybytitle" class="tsd-kind-icon">query<wbr>ByTitle</a></li>
+							</ul>
+							<h3>Tag Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#addtag" class="tsd-kind-icon">add<wbr>Tag</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#hastag" class="tsd-kind-icon">has<wbr>Tag</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#removetag" class="tsd-kind-icon">remove<wbr>Tag</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="draft.html#recenttags" class="tsd-kind-icon">recent<wbr>Tags</a></li>
+							</ul>
+							<h3>Template Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#gettemplatetag" class="tsd-kind-icon">get<wbr>Template<wbr>Tag</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#processtemplate" class="tsd-kind-icon">process<wbr>Template</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="draft.html#settemplatetag" class="tsd-kind-icon">set<wbr>Template<wbr>Tag</a></li>
 							</ul>
 						</section>
 					</div>
@@ -164,7 +183,7 @@ d.update();</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L23">Draft.d.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L24">Draft.d.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -178,51 +197,117 @@ d.update();</code></pre>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
+				<h2>Date Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="createdat" class="tsd-anchor"></a>
+					<h3>created<wbr>At</h3>
+					<div class="tsd-signature tsd-kind-icon">created<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L102">Draft.d.ts:102</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Date the draft was created. This property is generally maintained by Drafts automatically and is it not recommended it be set directly unless needed to maintain information from an external source when importing.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="modifiedat" class="tsd-anchor"></a>
+					<h3>modified<wbr>At</h3>
+					<div class="tsd-signature tsd-kind-icon">modified<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L117">Draft.d.ts:117</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Date the draft was last modified. This property is generally maintained by Drafts automatically and is it not recommended it be set directly unless needed to maintain information from an external source when importing.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Location Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="createdlatitude" class="tsd-anchor"></a>
+					<h3>created<wbr>Latitude</h3>
+					<div class="tsd-signature tsd-kind-icon">created<wbr>Latitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L112">Draft.d.ts:112</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Numeric latitude where the draft was created. This value will be <code>0</code> if no location information was available.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="createdlongitude" class="tsd-anchor"></a>
+					<h3>created<wbr>Longitude</h3>
+					<div class="tsd-signature tsd-kind-icon">created<wbr>Longitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L107">Draft.d.ts:107</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Numeric longitude where the draft was created. This value will be <code>0</code> if no location information was available.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="modifiedlatitude" class="tsd-anchor"></a>
+					<h3>modified<wbr>Latitude</h3>
+					<div class="tsd-signature tsd-kind-icon">modified<wbr>Latitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L127">Draft.d.ts:127</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Numeric longitude where the draft was last modified. This value will be <code>0</code> if no location information was available.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="modifiedlongitude" class="tsd-anchor"></a>
+					<h3>modified<wbr>Longitude</h3>
+					<div class="tsd-signature tsd-kind-icon">modified<wbr>Longitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L122">Draft.d.ts:122</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Numeric longitude where the draft was last modified. This value will be <code>0</code> if no location information was available.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Other Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="content" class="tsd-anchor"></a>
 					<h3>content</h3>
 					<div class="tsd-signature tsd-kind-icon">content<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L37">Draft.d.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L38">Draft.d.ts:38</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The full text content of the draft.</p>
+							<p>The full text content.</p>
 						</div>
 					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="createdat" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> created<wbr>At</h3>
-					<div class="tsd-signature tsd-kind-icon">created<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L96">Draft.d.ts:96</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="createdlatitude" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> created<wbr>Latitude</h3>
-					<div class="tsd-signature tsd-kind-icon">created<wbr>Latitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L98">Draft.d.ts:98</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="createdlongitude" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> created<wbr>Longitude</h3>
-					<div class="tsd-signature tsd-kind-icon">created<wbr>Longitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L97">Draft.d.ts:97</a></li>
-						</ul>
-					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="displaytitle" class="tsd-anchor"></a>
@@ -230,12 +315,12 @@ d.update();</code></pre>
 					<div class="tsd-signature tsd-kind-icon">display<wbr>Title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L47">Draft.d.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L48">Draft.d.ts:48</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The display title. This is generally the first line of the draft, but cleaned up as it would be displayed in the draft list in the user interface, removing Markdown header characters, etc.</p>
+							<p>Generally, the first line of the draft, but cleaned up as it would be displayed in the draft list in the user interface, removing Markdown header characters, etc.</p>
 						</div>
 					</div>
 				</section>
@@ -245,7 +330,7 @@ d.update();</code></pre>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Archived<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L84">Draft.d.ts:84</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L86">Draft.d.ts:86</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -260,7 +345,7 @@ d.update();</code></pre>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Flagged<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L94">Draft.d.ts:94</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L96">Draft.d.ts:96</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -275,7 +360,7 @@ d.update();</code></pre>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Trashed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L89">Draft.d.ts:89</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L91">Draft.d.ts:91</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -290,7 +375,7 @@ d.update();</code></pre>
 					<div class="tsd-signature tsd-kind-icon">language<wbr>Grammar<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Plain Text"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Markdown"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Taskpaper"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"JavaScript"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Simple List"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"MultiMarkdown"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"GitHub Markdown"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L57">Draft.d.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L58">Draft.d.ts:58</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -305,44 +390,14 @@ d.update();</code></pre>
 					<div class="tsd-signature tsd-kind-icon">lines<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L52">Draft.d.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L53">Draft.d.ts:53</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The lines of text in the draft separated into an array on <code>\n</code> line feeds. This is a convenience method an equivalent to <code>content.split(&#39;\n&#39;);</code></p>
+							<p>The lines of content separated into an array on <code>\n</code> line feeds. This is a convenience method an equivalent to <code>content.split(&#39;\n&#39;);</code></p>
 						</div>
 					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="modifiedat" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> modified<wbr>At</h3>
-					<div class="tsd-signature tsd-kind-icon">modified<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L99">Draft.d.ts:99</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="modifiedlatitude" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> modified<wbr>Latitude</h3>
-					<div class="tsd-signature tsd-kind-icon">modified<wbr>Latitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L101">Draft.d.ts:101</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="modifiedlongitude" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> modified<wbr>Longitude</h3>
-					<div class="tsd-signature tsd-kind-icon">modified<wbr>Longitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L100">Draft.d.ts:100</a></li>
-						</ul>
-					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="permalink" class="tsd-anchor"></a>
@@ -350,12 +405,12 @@ d.update();</code></pre>
 					<div class="tsd-signature tsd-kind-icon">permalink<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L106">Draft.d.ts:106</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L132">Draft.d.ts:132</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>URL which can be used to open the draft.</p>
+							<p>URL which can be used to open the draft. URLs are cross-platform, but specific to an individual user&#39;s drafts datastore.</p>
 						</div>
 					</div>
 				</section>
@@ -365,7 +420,7 @@ d.update();</code></pre>
 					<div class="tsd-signature tsd-kind-icon">selection<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L74">Draft.d.ts:74</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L75">Draft.d.ts:75</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -380,7 +435,7 @@ d.update();</code></pre>
 					<div class="tsd-signature tsd-kind-icon">selection<wbr>Start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L69">Draft.d.ts:69</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L70">Draft.d.ts:70</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -390,32 +445,17 @@ d.update();</code></pre>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="tags" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> tags</h3>
-					<div class="tsd-signature tsd-kind-icon">tags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L79">Draft.d.ts:79</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Array of string tag names assigned to the draft.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="title" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> title</h3>
 					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L42">Draft.d.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L43">Draft.d.ts:43</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The title. The first line of the draft.</p>
+							<p>The first line.</p>
 						</div>
 					</div>
 				</section>
@@ -425,12 +465,12 @@ d.update();</code></pre>
 					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L32">Draft.d.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L33">Draft.d.ts:33</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Unique identifier for the draft.</p>
+							<p>Unique identifier.</p>
 						</div>
 					</div>
 				</section>
@@ -440,7 +480,7 @@ d.update();</code></pre>
 					<div class="tsd-signature tsd-kind-icon">versions<span class="tsd-signature-symbol">:</span> <a href="version.html" class="tsd-signature-type">Version</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L160">Draft.d.ts:160</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L192">Draft.d.ts:192</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -451,35 +491,25 @@ d.update();</code></pre>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="addtag" class="tsd-anchor"></a>
-					<h3>add<wbr>Tag</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Tag<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L116">Draft.d.ts:116</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Assign a tag</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>tag: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+				<h2>Tag Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="tag" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> Tag</h3>
+					<div class="tsd-signature tsd-kind-icon">Tag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L81">Draft.d.ts:81</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Array of string tag names assigned.</p>
+						</div>
+					</div>
 				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Other Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="append" class="tsd-anchor"></a>
 					<h3>append</h3>
@@ -490,7 +520,7 @@ d.update();</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L148">Draft.d.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L180">Draft.d.ts:180</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -518,62 +548,6 @@ d.update();</code></pre>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="gettemplatetag" class="tsd-anchor"></a>
-					<h3>get<wbr>Template<wbr>Tag</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Template<wbr>Tag<span class="tsd-signature-symbol">(</span>tagName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L141">Draft.d.ts:141</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get the current value of a custom template tag.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>tagName: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="hastag" class="tsd-anchor"></a>
-					<h3>has<wbr>Tag</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">has<wbr>Tag<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L126">Draft.d.ts:126</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Check whether a tag is currently assigned to the draft.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>tag: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="prepend" class="tsd-anchor"></a>
 					<h3>prepend</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -583,7 +557,7 @@ d.update();</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L155">Draft.d.ts:155</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L187">Draft.d.ts:187</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -611,62 +585,6 @@ d.update();</code></pre>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="processtemplate" class="tsd-anchor"></a>
-					<h3>process<wbr>Template</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">process<wbr>Template<span class="tsd-signature-symbol">(</span>template<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L131">Draft.d.ts:131</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Runs the template string through the template engine to evaluate tags (like <code>&lt;a href=&quot;draft.html#title&quot;&gt;title&lt;/a&gt;</code>, <code>&lt;a href=&quot;gmailmessage.html#body&quot;&gt;body&lt;/a&gt;</code>).</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>template: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="removetag" class="tsd-anchor"></a>
-					<h3>remove<wbr>Tag</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Tag<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L121">Draft.d.ts:121</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Remove a tag if it is assigned to the draft.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>tag: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="saveversion" class="tsd-anchor"></a>
 					<h3>save<wbr>Version</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -676,7 +594,7 @@ d.update();</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L165">Draft.d.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L197">Draft.d.ts:197</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -685,37 +603,6 @@ d.update();</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="settemplatetag" class="tsd-anchor"></a>
-					<h3>set<wbr>Template<wbr>Tag</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Template<wbr>Tag<span class="tsd-signature-symbol">(</span>tagName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L136">Draft.d.ts:136</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Set a custom template tag value for use in templates. For example, calling <code>setTemplateTag(&quot;mytag&quot;, &quot;mytext&quot;)</code> will create a tag <code>[[mytag]]</code>, which subsequent action steps in the same action can use in their templates.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>tagName: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>value: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -729,12 +616,12 @@ d.update();</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L111">Draft.d.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L137">Draft.d.ts:137</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Save changes made to the draft to the database. <em>This must be called to save changes made during an action’s execution.</em></p>
+									<p>Save changes made to the draft to the database. <em><code>update()</code> must be called to save changes made to a draft.</em></p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -751,7 +638,7 @@ d.update();</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L170">Draft.d.ts:170</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L202">Draft.d.ts:202</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -763,6 +650,9 @@ d.update();</code></pre>
 						</li>
 					</ul>
 				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Querying Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
 					<a name="find" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> find</h3>
@@ -773,7 +663,7 @@ d.update();</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L175">Draft.d.ts:175</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L208">Draft.d.ts:208</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -801,7 +691,7 @@ d.update();</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L187">Draft.d.ts:187</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L221">Draft.d.ts:221</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -865,7 +755,7 @@ d.update();</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L200">Draft.d.ts:200</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L235">Draft.d.ts:235</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -883,6 +773,93 @@ d.update();</code></pre>
 						</li>
 					</ul>
 				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Tag Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addtag" class="tsd-anchor"></a>
+					<h3>add<wbr>Tag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Tag<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L143">Draft.d.ts:143</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Assign a tag</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tag: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="hastag" class="tsd-anchor"></a>
+					<h3>has<wbr>Tag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Tag<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L155">Draft.d.ts:155</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check whether a tag is currently assigned to the draft.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tag: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removetag" class="tsd-anchor"></a>
+					<h3>remove<wbr>Tag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Tag<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L149">Draft.d.ts:149</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove a tag if it is assigned to the draft.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tag: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
 					<a name="recenttags" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> recent<wbr>Tags</h3>
@@ -893,7 +870,7 @@ d.update();</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Draft.d.ts#L205">Draft.d.ts:205</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L241">Draft.d.ts:241</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -902,6 +879,96 @@ d.update();</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Template Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettemplatetag" class="tsd-anchor"></a>
+					<h3>get<wbr>Template<wbr>Tag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Template<wbr>Tag<span class="tsd-signature-symbol">(</span>tagName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L173">Draft.d.ts:173</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the current value of a custom template tag.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tagName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="processtemplate" class="tsd-anchor"></a>
+					<h3>process<wbr>Template</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">process<wbr>Template<span class="tsd-signature-symbol">(</span>template<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L161">Draft.d.ts:161</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Runs the template string through the template engine to evaluate tags (like <code>&lt;a href=&quot;draft.html#title&quot;&gt;title&lt;/a&gt;</code>, <code>&lt;a href=&quot;gmailmessage.html#body&quot;&gt;body&lt;/a&gt;</code>).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>template: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="settemplatetag" class="tsd-anchor"></a>
+					<h3>set<wbr>Template<wbr>Tag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Template<wbr>Tag<span class="tsd-signature-symbol">(</span>tagName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/f5db690/src/Draft.d.ts#L167">Draft.d.ts:167</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set a custom template tag value for use in templates. For example, calling <code>setTemplateTag(&quot;mytag&quot;, &quot;mytext&quot;)</code> will create a tag <code>[[mytag]]</code>, which subsequent action steps in the same action can use in their templates.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tagName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -924,6 +991,9 @@ d.update();</code></pre>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="draft.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="draft.html#tag" class="tsd-kind-icon">Tag</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="draft.html#content" class="tsd-kind-icon">content</a>
@@ -972,9 +1042,6 @@ d.update();</code></pre>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="draft.html#selectionstart" class="tsd-kind-icon">selection<wbr>Start</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="draft.html#tags" class="tsd-kind-icon">tags</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="draft.html#title" class="tsd-kind-icon">title</a>
