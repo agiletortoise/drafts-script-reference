@@ -85,23 +85,23 @@
 					</a>
 					<pre><code class="language-javascript"><span class="hljs-comment">// create a Things Project</span>
 <span class="hljs-keyword">var</span> project = TJSProject.create();
-project.title = <span class="hljs-string">"My Project From Drafts"</span>;
-project.notes = <span class="hljs-string">"Let's do this stuff"</span>;
+project.title = <span class="hljs-string">&quot;My Project From Drafts&quot;</span>;
+project.notes = <span class="hljs-string">&quot;Let&#x27;s do this stuff&quot;</span>;
 
 <span class="hljs-comment">// create and add a heading to the project</span>
 <span class="hljs-keyword">var</span> heading = TJSHeading.create();
-heading.title = <span class="hljs-string">"First Heading"</span>;
+heading.title = <span class="hljs-string">&quot;First Heading&quot;</span>;
 project.addHeading(heading);
 
 <span class="hljs-comment">// add todos to the project</span>
 <span class="hljs-keyword">var</span> todo1 = TJSTodo.create();
-todo1.title = <span class="hljs-string">"My first todo"</span>;
-todo1.when = <span class="hljs-string">"today"</span>;
+todo1.title = <span class="hljs-string">&quot;My first todo&quot;</span>;
+todo1.when = <span class="hljs-string">&quot;today&quot;</span>;
 project.addTodo(todo1);
 
 <span class="hljs-keyword">var</span> todo2 = TJSTodo.create();
-todo2.title = <span class="hljs-string">"My second todo"</span>;
-todo2.when = <span class="hljs-string">"tomorrow"</span>;
+todo2.title = <span class="hljs-string">&quot;My second todo&quot;</span>;
+todo2.when = <span class="hljs-string">&quot;tomorrow&quot;</span>;
 project.addTodo(todo2);
 
 <span class="hljs-comment">// create a container to handle creation of Things URL</span>
@@ -112,7 +112,7 @@ project.addTodo(todo2);
 cb.baseURL = container.url;
 <span class="hljs-keyword">var</span> success = cb.open();
 <span class="hljs-keyword">if</span> (success) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Project created in Things"</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Project created in Things&quot;</span>);
 }
 <span class="hljs-keyword">else</span> {
     context.fail();
@@ -154,7 +154,7 @@ cb.baseURL = container.url;
 					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Things.d.ts#L64">Things.d.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Things.d.ts#L64">Things.d.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -176,7 +176,7 @@ cb.baseURL = container.url;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Things.d.ts#L60">Things.d.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Things.d.ts#L60">Things.d.ts:60</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

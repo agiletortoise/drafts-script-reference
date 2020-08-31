@@ -80,8 +80,8 @@
 					<pre><code class="language-javascript"><span class="hljs-comment">// DEMO of XML-RPC</span>
 <span class="hljs-comment">// Calls example method on http://xml-rpc.net/index.html</span>
 
-<span class="hljs-keyword">let</span> url = <span class="hljs-string">"http://www.cookcomputing.com/xmlrpcsamples/RPC2.ashx"</span>;
-<span class="hljs-keyword">let</span> methodName = <span class="hljs-string">"examples.getStateName"</span>;
+<span class="hljs-keyword">let</span> url = <span class="hljs-string">&quot;http://www.cookcomputing.com/xmlrpcsamples/RPC2.ashx&quot;</span>;
+<span class="hljs-keyword">let</span> methodName = <span class="hljs-string">&quot;examples.getStateName&quot;</span>;
 <span class="hljs-keyword">let</span> params = [<span class="hljs-number">20</span>];
 
 <span class="hljs-keyword">let</span> response = XMLRPC.request(url, methodName, params);
@@ -90,7 +90,7 @@
     alert(<span class="hljs-built_in">JSON</span>.stringify(response.params));
 }
 <span class="hljs-keyword">else</span> {
-    alert(<span class="hljs-string">"Fault: "</span> + response.faultCode + <span class="hljs-string">", "</span> + response.error);
+    alert(<span class="hljs-string">&quot;Fault: &quot;</span> + response.faultCode + <span class="hljs-string">&quot;, &quot;</span> + response.error);
     context.fail();
 }
 </code></pre>
@@ -129,7 +129,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/XML-RPC.d.ts#L39">XML-RPC.d.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/XML-RPC.d.ts#L39">XML-RPC.d.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

@@ -9,7 +9,12 @@
  * let html = "<html><body>My Document</body></html>"
  * 
  * let preview = HTMLPreview.create();
- * preview.show(html);
+ * if (preview.show(html)) {
+ *   // continue button was pressed
+ * }
+ * else {
+ *   // cancel button was pressed
+ * }
  * ```
  */
 declare class HTMLPreview {

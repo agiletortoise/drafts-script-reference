@@ -160,6 +160,11 @@ declare class Editor {
     getSelectedRange(): selectionRange
 
     /**
+    * Expand the range provided to the nearest beginning and end of the lines it encompasses.
+    */
+    getLineRange(location: number, length: number): selectionRange
+
+    /**
     * Update the text selection in the editor by passing the start location and the length of the new selection.
     */
     setSelectedRange(location: number, length: number): void

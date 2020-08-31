@@ -79,27 +79,27 @@
 						<h3>Example</h3>
 					</a>
 					<pre><code class="language-javascript">// setup values to use in post
-let title = draft.processTemplate("&lt;a href="calendar.html#title"&gt;title&lt;/a&gt;");
-let body = draft.processTemplate("&lt;a href="gmailmessage.html#body"&gt;body&lt;/a&gt;");
+let title = draft.processTemplate(&quot;&lt;a href=&quot;calendar.html#title&quot;&gt;title&lt;/a&gt;&quot;);
+let body = draft.processTemplate(&quot;&lt;a href=&quot;gmailmessage.html#body&quot;&gt;body&lt;/a&gt;&quot;);
 
 // create credentials for site
-let cred = Credential.createWithHostUsernamePassword("WordPress", "WordPress  * credentials. Include full URL (with http://) of the home page of your WordPress  * site in the host field.");
+let cred = Credential.createWithHostUsernamePassword(&quot;WordPress&quot;, &quot;WordPress  * credentials. Include full URL (with http://) of the home page of your WordPress  * site in the host field.&quot;);
 cred.authorize();
 
 // create WordPress object and make request
-let wp = WordPress.create(cred.getValue("host"), 1, "", "");
-let method = "wp.newPost"
+let wp = WordPress.create(cred.getValue(&quot;host&quot;), 1, &quot;&quot;, &quot;&quot;);
+let method = &quot;wp.newPost&quot;
 let params = [
     1, // blog_id, in most cases just use 1
-    cred.getValue("username"),
-    cred.getValue("password"),
+    cred.getValue(&quot;username&quot;),
+    cred.getValue(&quot;password&quot;),
     {
-        "post_title": title,
-        "post_content": body,
-        "post_status": "draft",
-        "terms_names" : { // assign categories and tags
-            "category" : ["Cat1", "BAD"],
-            "post_tag" : ["Test1", "NOT-TAG"]
+        &quot;post_title&quot;: title,
+        &quot;post_content&quot;: body,
+        &quot;post_status&quot;: &quot;draft&quot;,
+        &quot;terms_names&quot; : { // assign categories and tags
+            &quot;category&quot; : [&quot;Cat1&quot;, &quot;BAD&quot;],
+            &quot;post_tag&quot; : [&quot;Test1&quot;, &quot;NOT-TAG&quot;]
         }
     }
 ];
@@ -107,11 +107,11 @@ let params = [
 let response = wp.runMethod(method, params);
 if (response.success) {
     let params = response.params;
-    console.log("Create WordPress post id: " + params[0]);
+    console.log(&quot;Create WordPress post id: &quot; + params[0]);
 }
 else {
-    console.log("HTTP Status: " + response.statusCode);
-    console.log("Fault: " + response.error);
+    console.log(&quot;HTTP Status: &quot; + response.statusCode);
+    console.log(&quot;Fault: &quot; + response.error);
     context.fail();
 }</code></pre>
 				</div>
@@ -165,7 +165,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L84">WordPress.d.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L84">WordPress.d.ts:84</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -225,7 +225,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L62">WordPress.d.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L62">WordPress.d.ts:62</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
@@ -242,7 +242,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L55">WordPress.d.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L55">WordPress.d.ts:55</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -265,7 +265,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L58">WordPress.d.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L58">WordPress.d.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
@@ -282,7 +282,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L57">WordPress.d.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L57">WordPress.d.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -305,7 +305,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L63">WordPress.d.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L63">WordPress.d.ts:63</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
@@ -322,7 +322,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L60">WordPress.d.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L60">WordPress.d.ts:60</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
@@ -339,7 +339,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L59">WordPress.d.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L59">WordPress.d.ts:59</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -362,7 +362,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L61">WordPress.d.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L61">WordPress.d.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -388,7 +388,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L56">WordPress.d.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L56">WordPress.d.ts:56</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -411,7 +411,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L70">WordPress.d.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L70">WordPress.d.ts:70</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -448,7 +448,7 @@ else {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/WordPress.d.ts#L79">WordPress.d.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/WordPress.d.ts#L79">WordPress.d.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

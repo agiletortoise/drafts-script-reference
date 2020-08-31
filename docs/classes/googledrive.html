@@ -79,9 +79,9 @@
 <span class="hljs-keyword">var</span> drive = GoogleDrive.create();
 
 <span class="hljs-comment">// setup variables</span>
-<span class="hljs-keyword">var</span> fileName = <span class="hljs-string">"MyTestFile"</span>;
-<span class="hljs-keyword">var</span> parent = <span class="hljs-string">""</span>; <span class="hljs-comment">// root of drive</span>
-<span class="hljs-keyword">var</span> content = <span class="hljs-string">"text to place in file"</span>;
+<span class="hljs-keyword">var</span> fileName = <span class="hljs-string">&quot;MyTestFile&quot;</span>;
+<span class="hljs-keyword">var</span> parent = <span class="hljs-string">&quot;&quot;</span>; <span class="hljs-comment">// root of drive</span>
+<span class="hljs-keyword">var</span> content = <span class="hljs-string">&quot;text to place in file&quot;</span>;
 
 <span class="hljs-comment">// write to file on GoogleDrive</span>
 <span class="hljs-keyword">var</span> success = drive.write(fileName, parent, content);
@@ -90,10 +90,10 @@
   <span class="hljs-keyword">var</span> driveContent = drive.read(fileName, parent);
   <span class="hljs-keyword">if</span> (driveContent) { <span class="hljs-comment">// read worked!</span>
     <span class="hljs-keyword">if</span> (driveContent == content) {
-      alert(<span class="hljs-string">"File contents match!"</span>);
+      alert(<span class="hljs-string">&quot;File contents match!&quot;</span>);
     }
     <span class="hljs-keyword">else</span> {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"File did not match"</span>);
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;File did not match&quot;</span>);
       context.fail();
     }
   }
@@ -155,7 +155,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/GoogleDrive.d.ts#L67">GoogleDrive.d.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/GoogleDrive.d.ts#L67">GoogleDrive.d.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -182,7 +182,7 @@
 					<div class="tsd-signature tsd-kind-icon">last<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/GoogleDrive.d.ts#L46">GoogleDrive.d.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/GoogleDrive.d.ts#L46">GoogleDrive.d.ts:46</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -204,7 +204,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/GoogleDrive.d.ts#L53">GoogleDrive.d.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/GoogleDrive.d.ts#L53">GoogleDrive.d.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -238,7 +238,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/GoogleDrive.d.ts#L61">GoogleDrive.d.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/GoogleDrive.d.ts#L61">GoogleDrive.d.ts:61</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -278,7 +278,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/GoogleDrive.d.ts#L67">GoogleDrive.d.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/GoogleDrive.d.ts#L67">GoogleDrive.d.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

@@ -77,20 +77,20 @@
 						<h3>Example</h3>
 					</a>
 					<pre><code class="language-javascript"><span class="hljs-comment">// create a local file in App documents</span>
-<span class="hljs-keyword">let</span> method = <span class="hljs-string">"execute"</span>;
+<span class="hljs-keyword">let</span> method = <span class="hljs-string">&quot;execute&quot;</span>;
 <span class="hljs-keyword">let</span> script = <span class="hljs-string">`on execute(bodyHTML)
-    tell application "Safari"
+    tell application &quot;Safari&quot;
         activate
     end tell
-    return "Yeah!"
+    return &quot;Yeah!&quot;
 end execute`</span>;
 
-<span class="hljs-keyword">let</span> html = draft.processTemplate(<span class="hljs-string">"%%[[draft]]%%"</span>);
+<span class="hljs-keyword">let</span> html = draft.processTemplate(<span class="hljs-string">&quot;%%[[draft]]%%&quot;</span>);
 
 <span class="hljs-keyword">let</span> runner = AppleScript.create(script);
 <span class="hljs-keyword">if</span> (runner.execute(method, [html])) {
     <span class="hljs-comment">// the AppleScript ran without error</span>
-    <span class="hljs-comment">// if the script returned a result, it's available...</span>
+    <span class="hljs-comment">// if the script returned a result, it&#x27;s available...</span>
     alert(runner.lastResult);
 }
 <span class="hljs-keyword">else</span> {
@@ -146,7 +146,7 @@ end execute`</span>;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/AppleScript.ts#L50">AppleScript.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/AppleScript.ts#L50">AppleScript.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -173,7 +173,7 @@ end execute`</span>;
 					<div class="tsd-signature tsd-kind-icon">last<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/AppleScript.ts#L39">AppleScript.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/AppleScript.ts#L39">AppleScript.ts:39</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -188,7 +188,7 @@ end execute`</span>;
 					<div class="tsd-signature tsd-kind-icon">last<wbr>Result<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/AppleScript.ts#L44">AppleScript.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/AppleScript.ts#L44">AppleScript.ts:44</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -210,7 +210,7 @@ end execute`</span>;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/AppleScript.ts#L63">AppleScript.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/AppleScript.ts#L63">AppleScript.ts:63</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -248,7 +248,7 @@ end execute`</span>;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/AppleScript.ts#L50">AppleScript.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/AppleScript.ts#L50">AppleScript.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

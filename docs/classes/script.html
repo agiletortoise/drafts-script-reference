@@ -86,10 +86,10 @@
 <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">let</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
     sleep(<span class="hljs-number">1000</span>);
-    resolve(<span class="hljs-string">"done!"</span>)
+    resolve(<span class="hljs-string">&quot;done!&quot;</span>)
   });
   <span class="hljs-keyword">let</span> result = <span class="hljs-keyword">await</span> promise; <span class="hljs-comment">// wait until the promise resolves (*)</span>
-  alert(result); <span class="hljs-comment">// "done!"</span>
+  alert(result); <span class="hljs-comment">// &quot;done!&quot;</span>
   script.complete();
 }
 f();</code></pre>
@@ -128,7 +128,7 @@ f();</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Script.d.ts#L32">Script.d.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Script.d.ts#L32">Script.d.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

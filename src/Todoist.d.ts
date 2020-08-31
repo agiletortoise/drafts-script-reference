@@ -38,9 +38,10 @@ declare class Todoist {
      * @param text Text to use to create the task. Supports Todoist quick add notation for specifying projects, priority, labels, etc. just as if you were using the Todoist quick add window.
      * @param note Optional text to attach as a comment with the task.
      * @param reminder Optional natural language date specifying for creating a task reminder.
+     * @param options Optional dictionary of additional parameters to include in the request.
      * @returns Object containing respose data from Todoist.
      */
-    quickAdd(text: string, note?: string, reminder?: string): object
+    quickAdd(text: string, note?: string, reminder?: string, options?: object): object
 
     // TASKS
     getTasks(options?: object): object[]

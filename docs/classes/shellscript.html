@@ -78,33 +78,33 @@
 					</a>
 					<pre><code class="language-javascript"><span class="hljs-comment">// define text of bash script</span>
 <span class="hljs-keyword">let</span> script = <span class="hljs-string">`#!/bin/bash
-echo "Total arguments : $#"
-echo "1st Argument = $1"
-echo "2nd argument = $2"
+echo &quot;Total arguments : $#&quot;
+echo &quot;1st Argument = $1&quot;
+echo &quot;2nd argument = $2&quot;
 `</span>;
 <span class="hljs-keyword">let</span> runner = ShellScript.create(script);
 
-<span class="hljs-keyword">if</span> (runner.execute([<span class="hljs-string">"1"</span>, <span class="hljs-string">"2"</span>])) {
-    alert(<span class="hljs-string">"STDOUT: "</span> + runner.standardOutput);
+<span class="hljs-keyword">if</span> (runner.execute([<span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>])) {
+    alert(<span class="hljs-string">&quot;STDOUT: &quot;</span> + runner.standardOutput);
 }
 <span class="hljs-keyword">else</span> {
-    alert(<span class="hljs-string">"STDERR: "</span> + runner.standardError);
+    alert(<span class="hljs-string">&quot;STDERR: &quot;</span> + runner.standardError);
 }</code></pre>
 					<a href="#ruby-example" id="ruby-example" style="color: inherit; text-decoration: none;">
 						<h3>Ruby Example</h3>
 					</a>
 					<pre><code class="language-javascript"><span class="hljs-keyword">let</span> script = <span class="hljs-string">`#!/usr/bin/env ruby
 ARGV.each do |a|
-  puts "Argument: #{a}"
+  puts &quot;Argument: #{a}&quot;
 end
 `</span>;
 <span class="hljs-keyword">let</span> runner = ShellScript.create(script);
 
-<span class="hljs-keyword">if</span> (runner.execute([<span class="hljs-string">"1"</span>, <span class="hljs-string">"2"</span>])) {
-    alert(<span class="hljs-string">"STDOUT:\n"</span> + runner.standardOutput);
+<span class="hljs-keyword">if</span> (runner.execute([<span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>])) {
+    alert(<span class="hljs-string">&quot;STDOUT:\n&quot;</span> + runner.standardOutput);
 }
 <span class="hljs-keyword">else</span> {
-    alert(<span class="hljs-string">"STDERR:\n"</span> + runner.standardError);
+    alert(<span class="hljs-string">&quot;STDERR:\n&quot;</span> + runner.standardError);
 }</code></pre>
 					<p><strong>Note:</strong> When executed, scripts are saved to temporary files in the Drafts&#39; script directory at <code>~/Library/Application Scripts/com.agiletortoise.Drafts-OSX</code> and run. Scripts should not be written to make assumptions about their location in the file system (e.g. using relative paths). The first time a script is executed, the user will be asked to grant permissions to the script directory.</p>
 				</div>
@@ -156,7 +156,7 @@ end
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/ShellScript.ts#L62">ShellScript.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/ShellScript.ts#L62">ShellScript.ts:62</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -183,7 +183,7 @@ end
 					<div class="tsd-signature tsd-kind-icon">standard<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/ShellScript.ts#L51">ShellScript.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/ShellScript.ts#L51">ShellScript.ts:51</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -198,7 +198,7 @@ end
 					<div class="tsd-signature tsd-kind-icon">standard<wbr>Output<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/ShellScript.ts#L56">ShellScript.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/ShellScript.ts#L56">ShellScript.ts:56</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -220,7 +220,7 @@ end
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/ShellScript.ts#L74">ShellScript.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/ShellScript.ts#L74">ShellScript.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -252,7 +252,7 @@ end
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/ShellScript.ts#L62">ShellScript.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/ShellScript.ts#L62">ShellScript.ts:62</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

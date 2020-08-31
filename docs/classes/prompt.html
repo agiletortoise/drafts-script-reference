@@ -77,23 +77,23 @@
 					</a>
 					<pre><code class="language-javascript"><span class="hljs-keyword">var</span> p = Prompt.create();
 
-p.title = <span class="hljs-string">"Hello"</span>;
-p.message = <span class="hljs-string">"World!"</span>;
+p.title = <span class="hljs-string">&quot;Hello&quot;</span>;
+p.message = <span class="hljs-string">&quot;World!&quot;</span>;
 
-p.addTextField(<span class="hljs-string">"textFieldName"</span>, <span class="hljs-string">"Label"</span>, <span class="hljs-string">""</span>);
+p.addTextField(<span class="hljs-string">&quot;textFieldName&quot;</span>, <span class="hljs-string">&quot;Label&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
 
-p.addDatePicker(<span class="hljs-string">"myDate"</span>, <span class="hljs-string">"Start date"</span>, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(), {
-  <span class="hljs-string">"mode"</span>: <span class="hljs-string">"date"</span>
+p.addDatePicker(<span class="hljs-string">&quot;myDate&quot;</span>, <span class="hljs-string">&quot;Start date&quot;</span>, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(), {
+  <span class="hljs-string">&quot;mode&quot;</span>: <span class="hljs-string">&quot;date&quot;</span>
 });
-p.addButton(<span class="hljs-string">"First"</span>);
-p.addButton(<span class="hljs-string">"Second"</span>);
+p.addButton(<span class="hljs-string">&quot;First&quot;</span>);
+p.addButton(<span class="hljs-string">&quot;Second&quot;</span>);
 
 <span class="hljs-keyword">var</span> didSelect = p.show();
 
-<span class="hljs-keyword">var</span> textFieldContents = p.fieldValues[<span class="hljs-string">"textFieldName"</span>];
-<span class="hljs-keyword">var</span> startDate = p.fieldValues[<span class="hljs-string">"myDate"</span>];
+<span class="hljs-keyword">var</span> textFieldContents = p.fieldValues[<span class="hljs-string">&quot;textFieldName&quot;</span>];
+<span class="hljs-keyword">var</span> startDate = p.fieldValues[<span class="hljs-string">&quot;myDate&quot;</span>];
 
-<span class="hljs-keyword">if</span> (p.buttonPressed == <span class="hljs-string">"First"</span>) {
+<span class="hljs-keyword">if</span> (p.buttonPressed == <span class="hljs-string">&quot;First&quot;</span>) {
   <span class="hljs-comment">// do something</span>
 }</code></pre>
 				</div>
@@ -117,17 +117,20 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
+							<h3>Display Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="prompt.html#buttonpressed" class="tsd-kind-icon">button<wbr>Pressed</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="prompt.html#fieldvalues" class="tsd-kind-icon">field<wbr>Values</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="prompt.html#iscancellable" class="tsd-kind-icon">is<wbr>Cancellable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="prompt.html#message" class="tsd-kind-icon">message</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="prompt.html#title" class="tsd-kind-icon">title</a></li>
 							</ul>
+							<h3>Result Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="prompt.html#buttonpressed" class="tsd-kind-icon">button<wbr>Pressed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="prompt.html#fieldvalues" class="tsd-kind-icon">field<wbr>Values</a></li>
+							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Field Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="prompt.html#addbutton" class="tsd-kind-icon">add<wbr>Button</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="prompt.html#adddatepicker" class="tsd-kind-icon">add<wbr>Date<wbr>Picker</a></li>
@@ -138,6 +141,9 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="prompt.html#addswitch" class="tsd-kind-icon">add<wbr>Switch</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="prompt.html#addtextfield" class="tsd-kind-icon">add<wbr>Text<wbr>Field</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="prompt.html#addtextview" class="tsd-kind-icon">add<wbr>Text<wbr>View</a></li>
+							</ul>
+							<h3>Other Methods</h3>
+							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="prompt.html#show" class="tsd-kind-icon">show</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="prompt.html#create" class="tsd-kind-icon">create</a></li>
 							</ul>
@@ -157,7 +163,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L214">Prompt.d.ts:214</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L231">Prompt.d.ts:231</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -171,14 +177,62 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
+				<h2>Display Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="iscancellable" class="tsd-anchor"></a>
+					<h3>is<wbr>Cancellable</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Cancellable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L63">Prompt.d.ts:63</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If true, a &quot;Cancel&quot; button will be included in the dialog. Defaults to <code>true</code>. If the user selects the cancel button, the <code>show()</code> method will return <code>false</code>. If <code>false</code>, no cancel button will be displayed and the user must select one of the button name options.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="message" class="tsd-anchor"></a>
+					<h3>message</h3>
+					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L57">Prompt.d.ts:57</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A longer message explaining the purpose of the dialog, if needed.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="title" class="tsd-anchor"></a>
+					<h3>title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L51">Prompt.d.ts:51</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Short title.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Result Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="buttonpressed" class="tsd-anchor"></a>
 					<h3>button<wbr>Pressed</h3>
 					<div class="tsd-signature tsd-kind-icon">button<wbr>Pressed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L67">Prompt.d.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L75">Prompt.d.ts:75</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -193,7 +247,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 					<div class="tsd-signature tsd-kind-icon">field<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L62">Prompt.d.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L69">Prompt.d.ts:69</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -210,49 +264,9 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						</ul>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="iscancellable" class="tsd-anchor"></a>
-					<h3>is<wbr>Cancellable</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Cancellable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L57">Prompt.d.ts:57</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>If true, a &quot;Cancel&quot; button will be included in the dialog. Defaults to <code>true</code>. If the user selects the cancel button, the <code>show()</code> method will return <code>false</code>. If <code>false</code>, no cancel button will be displayed and the user must select one of the button name options.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="message" class="tsd-anchor"></a>
-					<h3>message</h3>
-					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L52">Prompt.d.ts:52</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A longer message explaining the purpose of the dialog, if needed.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="title" class="tsd-anchor"></a>
-					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L47">Prompt.d.ts:47</a></li>
-						</ul>
-					</aside>
-				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
+				<h2>Field Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="addbutton" class="tsd-anchor"></a>
 					<h3>add<wbr>Button</h3>
@@ -263,7 +277,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L204">Prompt.d.ts:204</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L221">Prompt.d.ts:221</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -303,7 +317,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L156">Prompt.d.ts:156</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L170">Prompt.d.ts:170</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -366,7 +380,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L75">Prompt.d.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L84">Prompt.d.ts:84</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -414,7 +428,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L139">Prompt.d.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L151">Prompt.d.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -448,7 +462,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L175">Prompt.d.ts:175</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L190">Prompt.d.ts:190</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -497,7 +511,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L190">Prompt.d.ts:190</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L206">Prompt.d.ts:206</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -552,7 +566,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L147">Prompt.d.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L160">Prompt.d.ts:160</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -595,7 +609,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L88">Prompt.d.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L98">Prompt.d.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -676,7 +690,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L117">Prompt.d.ts:117</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L128">Prompt.d.ts:128</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -742,6 +756,9 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						</li>
 					</ul>
 				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Other Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="show" class="tsd-anchor"></a>
 					<h3>show</h3>
@@ -752,7 +769,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L209">Prompt.d.ts:209</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L226">Prompt.d.ts:226</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -774,7 +791,7 @@ p.addButton(<span class="hljs-string">"Second"</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/Prompt.d.ts#L214">Prompt.d.ts:214</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/Prompt.d.ts#L231">Prompt.d.ts:231</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

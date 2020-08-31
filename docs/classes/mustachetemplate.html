@@ -84,20 +84,20 @@
 					</a>
 					<pre><code class="language-javascript"><span class="hljs-comment">// create template to loop over drafts</span>
 <span class="hljs-keyword">let</span> t = <span class="hljs-string">`Template Output:
-{{ "{{#drafts" }}}}
-Draft: {{ "{{content" }}}}
-{{ "{{#isFlagged" }}}}Flagged!{{ "{{/isFlagged" }}}}{{ "{{^isFlagged" }}}}Not  * Flagged{{ "{{/isFlagged" }}}}
-{{ "{{/drafts" }}}}`</span>;
+{{ &quot;{{#drafts&quot; }}}}
+Draft: {{ &quot;{{content&quot; }}}}
+{{ &quot;{{#isFlagged&quot; }}}}Flagged!{{ &quot;{{/isFlagged&quot; }}}}{{ &quot;{{^isFlagged&quot; }}}}Not  * Flagged{{ &quot;{{/isFlagged&quot; }}}}
+{{ &quot;{{/drafts&quot; }}}}`</span>;
 
 <span class="hljs-keyword">let</span> d1 = Draft.create();
-d1.content = <span class="hljs-string">"First draft"</span>;
+d1.content = <span class="hljs-string">&quot;First draft&quot;</span>;
 d1.isFlagged = <span class="hljs-literal">true</span>;
 <span class="hljs-keyword">let</span> d2 = Draft.create();
-d2.content = <span class="hljs-string">"Second draft"</span>;
+d2.content = <span class="hljs-string">&quot;Second draft&quot;</span>;
 <span class="hljs-keyword">let</span> drafts = [d1, d2];
 
 <span class="hljs-keyword">let</span> data = {
-  <span class="hljs-string">"drafts"</span>: drafts
+  <span class="hljs-string">&quot;drafts&quot;</span>: drafts
 };
 
 <span class="hljs-keyword">let</span> template = MustacheTemplate.createWithTemplate(t);
@@ -142,7 +142,7 @@ d2.content = <span class="hljs-string">"Second draft"</span>;
 					<div class="tsd-signature tsd-kind-icon">content<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"text"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"html"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/MustacheTemplate.d.ts#L60">MustacheTemplate.d.ts:60</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/MustacheTemplate.d.ts#L60">MustacheTemplate.d.ts:60</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -168,7 +168,7 @@ d2.content = <span class="hljs-string">"Second draft"</span>;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/MustacheTemplate.d.ts#L72">MustacheTemplate.d.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/MustacheTemplate.d.ts#L72">MustacheTemplate.d.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -199,7 +199,7 @@ d2.content = <span class="hljs-string">"Second draft"</span>;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/MustacheTemplate.d.ts#L66">MustacheTemplate.d.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/MustacheTemplate.d.ts#L66">MustacheTemplate.d.ts:66</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -230,7 +230,7 @@ d2.content = <span class="hljs-string">"Second draft"</span>;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/MustacheTemplate.d.ts#L46">MustacheTemplate.d.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/MustacheTemplate.d.ts#L46">MustacheTemplate.d.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -266,7 +266,7 @@ d2.content = <span class="hljs-string">"Second draft"</span>;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d0f9f00/src/MustacheTemplate.d.ts#L53">MustacheTemplate.d.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/ecb8031/src/MustacheTemplate.d.ts#L53">MustacheTemplate.d.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

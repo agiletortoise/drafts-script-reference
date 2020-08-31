@@ -44,25 +44,33 @@ type capitalizationTypes = 'none' | 'sentences' | 'words'
  *
  */
 declare class Prompt {
+    /**
+     * Short title.
+     * @category Display
+     */
     title: string
 
     /**
      * A longer message explaining the purpose of the dialog, if needed.
+     * @category Display
      */
     message: string
 
     /**
      * If true, a "Cancel" button will be included in the dialog. Defaults to `true`. If the user selects the cancel button, the `show()` method will return `false`. If `false`, no cancel button will be displayed and the user must select one of the button name options.
+     * @category Display
      */
     isCancellable: boolean
 
     /**
      * After the `show()` method is called, this property will contain values from any fields added to the prompt. The dictionary keys will be the names of the fields as passed in when they were created, and the value will be the current contents of that field. They type of data depends on the type of field.
+     * @category Result
      */
     fieldValues: { [x: string]: any }
 
     /**
      * After the `show()` method is called, this property will contain the name of the button selected by the user.
+     * @category Result
      */
     buttonPressed: string
 
@@ -71,6 +79,7 @@ declare class Prompt {
      * @param name Identifier for the field.
      * @param label The text of the label.
      * @param options A dictionary of options for configuring the text field.
+     * @category Field
      */
     addLabel(
         name: string,
@@ -84,6 +93,7 @@ declare class Prompt {
      * @param label User-friendly text label to place next to the field.
      * @param initialText The initial text contents for the field.
      * @param options A dictionary of options for configuring the text field. 
+     * @category Field
      */
     addTextField(
         name: string,
@@ -113,6 +123,7 @@ declare class Prompt {
      * @param label User-friendly text label to place next to the field.
      * @param initialText The initial text contents for the field.
      * @param options A dictionary of options for configuring the text field. See [the site](https://reference.getdrafts.com/objects/Prompt.html) for full descriptions of the options.
+     * @category Field
      */
     addTextView(
         name: string,
@@ -135,6 +146,7 @@ declare class Prompt {
 
     /**
      * Same as addTextField, but the input field will be password masked.
+     * @category Field
      */
     addPasswordField(name: string, label: string, initialValue: string): void
 
@@ -143,6 +155,7 @@ declare class Prompt {
      * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
      * @param label User-friendly text label to place next to the field.
      * @param initialValue indicate if the switch should be on or off when initially displayed.
+     * @category Field
      */
     addSwitch(name: string, label: string, initialValue: boolean): void
 
@@ -152,6 +165,7 @@ declare class Prompt {
      * @param label User-friendly text label to place next to the field.
      * @param initialDate The initial date to selected for the field. Minimum and maximum values should be defined in options.
      * @param options A dictionary of options for configuring the text field. See [the site](https://reference.getdrafts.com/objects/Prompt.html) for full descriptions of the options.
+     * @category Field
      */
     addDatePicker(
         name: string,
@@ -171,6 +185,7 @@ declare class Prompt {
      * @param label User-friendly text label to place next to the field.
      * @param columns The values to display in the picker. Should be an array containing arrays of string values, each sub-array representing a column in the picker. Example two column picker: `[["Item 1", "Item 2"],["Column 2 Item 1", "Column 2 Item 2"]]`
      * @param selectedRows Array of zero-based index values to set the initial selected row in each column.
+     * @category Field
      */
     addPicker(
         name: string,
@@ -186,6 +201,7 @@ declare class Prompt {
      * @param values The array of string values that will be available to select.
      * @param selectedValues Array of string values that should be initially selected when the prompt is displayed. All values in this array should match values in the `values` array.
      * @param allowMultiple If `false`, selecting a value will deselect all other values. If `true`, the user may select multiple items.
+     * @category Field
      */
     addSelect(
         name: string,
@@ -200,6 +216,7 @@ declare class Prompt {
      * @param name
      * @param value only needed to associate a different value than will be displayed in the button. For example, if you call `prompt.addButton("First Button", 1)`, after calling `prompt.show()` if that button is pressed, the `prompt.buttonPressed` will contain the number value `1`.
      * @param isDefault used to specify a single button which will be pinned to the bottom of the prompt and respond to `cmd + return` as the default button. If only one button is added to a prompt, it is assumed to be the default.
+     * @category Field
      */
     addButton(name: string, value?: string, isDefault?: boolean): void
 

@@ -120,6 +120,20 @@ declare class FileManager {
     setModificationDate(path: string, date: Date): boolean
 
     /**
+     * Set tags on the file at path.
+     * @param path
+     * @param tags
+     */
+    setTags(path: string, tags: string[]): boolean
+
+    /**
+     * Get tags on file at path.
+    * @param path
+    * @param date
+    */
+    getTags(path: string): string[]
+
+    /**
      * Creates a new FileManager object.
      * @param isLocal If `true`, the `FileManager` will be using the to the local Drafts app documents directory as its root directory, as it appears in the "On my …" area in the `Files.app`. If `false`, it will use the Drafts5 iCloud folder as its root directory.
      */

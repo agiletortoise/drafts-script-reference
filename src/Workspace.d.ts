@@ -1,4 +1,4 @@
-type sortDirections = 'created' | 'modified' | 'accessed' | 'name'
+type sortBy = 'created' | 'modified' | 'accessed' | 'name'
 /**
  * # Workspace
  * 
@@ -15,73 +15,99 @@ type sortDirections = 'created' | 'modified' | 'accessed' | 'name'
 declare class Workspace {
     /**
      * The name of the workspace.
+     * @category Identification
      */
     name: string
 
     /**
      * Search string to filter results.
+     * @category Filter
      */
     queryString: string
 
     /**
      * Comma-delimited list tag string like "blue, !green" using "!" to omit a tag.
+     * @category Filter
      */
     tagFilter: string
 
     /**
+     * A `QueryDate` specifying a date which all drafts in the workspace must be greater than or equal to.
+     * @category Filter
+     */
+    startDate: QueryDate
+
+    /**
+     * A `QueryDate` specifying a date which all drafts in the workspace must be less than or equal to.
+     * @category Filter
+     */
+    endDate: QueryDate
+
+    /**
      * If `true`, all (AND) tags in the tag filter must match, if `false` match any of the tags (OR)
+     * @category Filter
      */
     tagFilterRequireAll: boolean
 
     /**
      * Show preview of draft body in list.
+     * @category Display
      */
     showPreview: boolean
 
     /**
      * Show draft tags in list.
+     * @category Display
      */
     showTags: boolean
 
     /**
      * Show last logged action for draft in list.
+     * @category Display
      */
     showLastAction: boolean
 
     /**
      * Should flagged drafts be included in inbox.
+     * @category Display
      */
     inboxIncludesFlagged: boolean
 
     /**
      * Should flagged drafts be included in archive.
+     * @category Display
      */
     archiveIncludesFlagged: boolean
 
     /**
      * Folder tab to select when applying the workspace.
+     * @category Display
      */
     loadFolder?: draftFolderTab
 
     /**
      * Action group to load in action list when applying the workspace.
+     * @category Display
      */
     loadActionListGroup?: ActionGroup
 
     /**
      * Action group to load in Action Bar when applying the workspace.
+     * @category Display
      */
     loadActionBarGroup?: ActionGroup
 
     /**
      * Save changes made to the workspace to the database. This must be called to save changes.
+     * 
      */
     update(): void
 
     /**
      * Set sort order for inbox.
+     * @category Sort
      */
-    setInboxSort(sortBy: sortDirections, sortDescending: boolean): void
+    setInboxSort(sortBy: sortBy, sortDescending: boolean): void
 
     /**
      * Query for a list of drafts contained in the workspace.
@@ -90,27 +116,30 @@ declare class Workspace {
 
     /**
      * Set sort order for flagged.
+     * @category Sort
      */
     setFlaggedSort(
-        sortBy: sortDirections,
+        sortBy: sortBy,
         sortDescending: boolean,
         sortFlaggedToTop: boolean
     ): void
 
     /**
      * Set sort order for archive.
+     * @category Sort
      */
     setArchiveSort(
-        sortBy: sortDirections,
+        sortBy: sortBy,
         sortDescending: boolean,
         sortFlaggedToTop: boolean
     ): void
 
     /**
      * Set sort order for "all" drafts folder.
+     * @category Sort
      */
     setAllSort(
-        sortBy: sortDirections,
+        sortBy: sortBy,
         sortDescending: boolean,
         sortFlaggedToTop: boolean
     ): void
