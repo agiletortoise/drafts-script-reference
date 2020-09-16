@@ -98,9 +98,9 @@ declare class App {
     hideActionList(): void
 
     /**
-     * Apply the Workspace as if it was selected in draft list.
+     * Apply the Workspace as if it was selected in draft list. Calling this function with no arguments will clear filters and apply the default workspace.
      **/
-    applyWorkspace(workspace: Workspace): boolean
+    applyWorkspace(workspace?: Workspace): boolean
 
     /**
      * Returns a workspace object configured like the workspace currently loaded in the draft list of the active window. Useful when creating logic which reacts contextually to the workspace loaded.
