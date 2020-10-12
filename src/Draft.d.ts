@@ -78,7 +78,7 @@ declare class Draft {
      * Array of string tag names assigned.
      * @category Tag
      */
-    readonly Tag: string[]
+    readonly tags: string[]
 
     /**
      * Is the draft current in the archive. If `false`, the draft is in the inbox.

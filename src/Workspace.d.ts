@@ -113,7 +113,11 @@ declare class Workspace {
      * Set sort order for inbox.
      * @category Sort
      */
-    setInboxSort(sortBy: sortBy, sortDescending: boolean): void
+    setInboxSort(
+        sortBy: sortBy, 
+        sortDescending: boolean,
+        sortFlaggedToTop: boolean
+        ): void
 
     /**
      * Query for a list of drafts contained in the workspace.
@@ -126,8 +130,7 @@ declare class Workspace {
      */
     setFlaggedSort(
         sortBy: sortBy,
-        sortDescending: boolean,
-        sortFlaggedToTop: boolean
+        sortDescending: boolean
     ): void
 
     /**
