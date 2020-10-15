@@ -53,6 +53,11 @@ declare class Draft {
     readonly lines: [string]
 
     /**
+     * Return the a trimmed display version of the "bocy" of the draft (content after first line), similar to what is displayed as a preview in the draft list._
+     */
+    bodyPreview(maxLength: number): string
+
+    /**
      * The preferred language grammar (syntax) to use for the draft. Can be any valid installed language grammar.
      */
     languageGrammar:
