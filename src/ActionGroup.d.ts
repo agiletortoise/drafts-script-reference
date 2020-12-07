@@ -34,6 +34,12 @@ declare class ActionGroup {
     readonly uuid: string
 
     /**
+    * URL which can be used to install this Action Group in another installation of Drafts. Useful for sharing and backups.
+    * @category Identification
+    */
+    readonly installURL: string
+
+    /**
     * The actions contained in the action group.
     */
     readonly actions: Action[]
