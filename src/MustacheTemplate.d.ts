@@ -18,10 +18,10 @@
  * ```javascript
  * // create template to loop over drafts
  * let t = `Template Output:
- * {{ "{{#drafts" }}}}
- * Draft: {{ "{{content" }}}}
- * {{ "{{#isFlagged" }}}}Flagged!{{ "{{/isFlagged" }}}}{{ "{{^isFlagged" }}}}Not  * Flagged{{ "{{/isFlagged" }}}}
- * {{ "{{/drafts" }}}}`;
+ * {{#drafts}}
+ * Draft: {{content}}
+ * {{#isFlagged}}Flagged!{{/isFlagged}}{{^isFlagged}}Not Flagged{{/isFlagged}}
+ * {{/drafts}}`;
  * 
  * let d1 = Draft.create();
  * d1.content = "First draft";
