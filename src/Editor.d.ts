@@ -45,6 +45,11 @@ declare class Editor {
     focusModeEnabled: boolean
 
     /**
+     * Returns the current tab string is use. This could be 2 spaces, 4 spaces, or `\t` depending on the editor preferences for the current syntax. Useful in actions, such as indent/outdent actions, which need to insert or remove indentation and want to match the options of the current syntax.
+     */
+    preferredTabString: string
+
+    /**
      * Access or set current link mode status.
      */
     linkModeEnabled: boolean
