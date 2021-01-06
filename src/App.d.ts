@@ -113,7 +113,7 @@ declare class App {
     loadActionGroup(actionGroup: ActionGroup): boolean
 
     /**
-     * @deprecated Load the ActionGroup in the action bar below editor.
+     * Load the ActionGroup in the action bar below editor.
      */
     loadActionBarGroup(actionGroup: ActionGroup): boolean
 

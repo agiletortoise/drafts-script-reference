@@ -44,37 +44,128 @@ declare class Todoist {
     quickAdd(text: string, note?: string, reminder?: string, options?: object): object
 
     // TASKS
+    /**
+     * Get active tasks. [Todoist API documentation](https://developer.todoist.com/rest/v1/#get-active-tasks)
+     * @category Tasks
+     */
     getTasks(options?: object): object[]
+    /**
+     * Create new task. [Todoist API documentation](https://developer.todoist.com/rest/v1/#create-a-new-task)
+     * @category Tasks
+     */
     createTask(options: object): object
+    /**
+     * Get active task. [Todoist API documentation](https://developer.todoist.com/rest/v1/#get-an-active-task)
+     * @category Tasks
+     */
     getTask(taskId: string): object
+    /**
+    * Update active task. [Todoist API documentation](https://developer.todoist.com/rest/v1/#update-a-task)
+    * @category Tasks
+    */
     updateTask(taskId: string, options: object): object
-
     /**
      * Close task (mark complete)
+     * @category Tasks
      */
     closeTask(taskId: string): boolean
-
     /**
      * Reopen task (mark incomplete)
+     * @category Tasks
      */
     reopenTask(taskId: string): boolean
 
     // PROJECTS
+    /**
+    * Get all projects. [Todoist API documentation](https://developer.todoist.com/rest/v1/#get-all-projects)
+    * @category Projects
+    */
     getProjects(): object[]
+    /**
+    * Create new project. [Todoist API documentation](https://developer.todoist.com/rest/v1/#create-a-new-project)
+    * @category Projects
+    */
     createProject(options: object): object
+    /**
+    * Get project. [Todoist API documentation](https://developer.todoist.com/rest/v1/#get-a-project)
+    * @category Projects
+    */
     getProject(projectId: string): object
+    /**
+    * Update project. [Todoist API documentation](https://developer.todoist.com/rest/v1/#update-a-project)
+    * @category Projects
+    */
     updateProject(projectId: string, options: object): object
 
+    // SECTIONS
+    /**
+    * Get all sections. [Todoist API documentation](https://developer.todoist.com/rest/v1/#get-all-sections)
+    * @category Sections
+    */
+    getSections(): object[]
+    /**
+     * Get project sections. [Todoist API documentation](https://developer.todoist.com/rest/v1/#get-project-sections)
+     * @category Sections
+     */
+    getProjectSections(projectId: string): object[]
+    /**
+    * Create new section. [Todoist API documentation](https://developer.todoist.com/rest/v1/#create-a-new-section)
+    * @category Sections
+    */
+    createSection(options: object): object
+    /**
+    * Get section. [Todoist API documentation](https://developer.todoist.com/rest/v1/#get-a-single-section)
+    * @category Sections
+    */
+    getSection(sectionId: string): object
+    /**
+    * Update section. [Todoist API documentation](https://developer.todoist.com/rest/v1/#update-a-section)
+    * @category Sections
+    */
+    updateSection(sectionId: string, options: object): object
+
     // COMMENTS
+    /**
+    * Get all comments. [Todoist API documentation](https://developer.todoist.com/rest/v1/#get-all-comments)
+    * @category Comments
+    */
     getComments(options: object): object[]
+    /**
+    * Create new comment. [Todoist API documentation](https://developer.todoist.com/rest/v1/#create-a-new-comment)
+    * @category Comments
+    */
     createComment(options: object): object
+    /**
+    * Get comment. [Todoist API documentation](https://developer.todoist.com/rest/v1/#get-a-comment)
+    * @category Comments
+    */
     getComment(commentId: string): object
+    /**
+    * Update comment. [Todoist API documentation](https://developer.todoist.com/rest/v1/#update-a-comment)
+    * @category Comments
+    */
     updateComment(commentId: string, options: object): object
 
     // LABELS
+    /**
+    * Get all labels. [Todoist API documentation](https://developer.todoist.com/rest/v1/#get-all-labels)
+    * @category Labels
+    */
     getLabels(): object[]
+    /**
+    * Create new labels. [Todoist API documentation](https://developer.todoist.com/rest/v1/#create-a-new-label)
+    * @category Labels
+    */
     createLabel(options: object): object
+    /**
+    * Get label. [Todoist API documentation](https://developer.todoist.com/rest/v1/#get-a-label)
+    * @category Labels
+    */
     getLabel(labelId: string): object
+    /**
+    * Update label. [Todoist API documentation](https://developer.todoist.com/rest/v1/#update-a-label)
+    * @category Labels
+    */
     updateLabel(labelId: string, options: object): object
 
     // FUNCTIONS

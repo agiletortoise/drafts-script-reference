@@ -26,7 +26,7 @@
  * 	}
  * 	else { // something went wrong or was cancelled
  * 	  	console.log(cb.status);
- * 	  	if (cb.status == "cancel") {
+ * 	  	if (cb.status == "cancelled") {
  * 			context.cancel();
  * 		}
  * 		else {

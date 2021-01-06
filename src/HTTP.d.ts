@@ -96,6 +96,11 @@ declare class HTTPResponse {
     responseText: string
 
     /**
+     * Key-value dictionary containing any HTTP header information returned with the response. Useful for access cookie headers, etc.
+     */
+    headers: object
+
+    /**
      * Some responses return additional data that is placed in this field.
      */
     otherData: string | undefined
