@@ -53,12 +53,12 @@ declare class Draft {
     readonly lines: [string]
 
     /**
-     * Return the a trimmed display version of the "bocy" of the draft (content after first line), similar to what is displayed as a preview in the draft list._
+     * Return the a trimmed display version of the "body" of the draft (content after first line), similar to what is displayed as a preview in the draft list._
      */
     bodyPreview(maxLength: number): string
 
     /**
-     * The preferred language grammar (syntax) to use for the draft. Can be any valid installed language grammar.
+     * @deprecated use `syntax` property.
      */
     languageGrammar:
         | 'Plain Text'
@@ -68,6 +68,11 @@ declare class Draft {
         | 'Simple List'
         | 'MultiMarkdown'
         | 'GitHub Markdown'
+
+    /**
+     * The syntax definition used when displaying this draft in the editor.
+     */
+    syntax: Syntax?
 
     /**
      * The index location in the string of the beginning of the last text selection.
