@@ -22,12 +22,12 @@ declare class App {
     /**
     * The current light mode theme.
     */
-    readonly lightTheme: Theme
+    lightTheme: Theme
 
     /**
     * The current dark mode theme.
     */
-    readonly darkTheme: Theme
+    darkTheme: Theme
 
     /**
      * Returns the active theme mode, light or dark, taking into account automatic switching of themes if active. If writing scripts to branch logic based on the current mode, this is the best property to use.
