@@ -72,7 +72,7 @@ declare class Draft {
     /**
      * The syntax definition used when displaying this draft in the editor.
      */
-    syntax: Syntax?
+    syntax?: Syntax
 
     /**
      * The index location in the string of the beginning of the last text selection.

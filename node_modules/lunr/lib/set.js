@@ -34,8 +34,8 @@ lunr.Set.complete = {
     return other
   },
 
-  union: function (other) {
-    return other
+  union: function () {
+    return this
   },
 
   contains: function () {

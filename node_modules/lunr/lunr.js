@@ -1,6 +1,6 @@
 /**
- * lunr - http://lunrjs.com - A bit like Solr, but much smaller and not as bright - 2.3.6
- * Copyright (C) 2019 Oliver Nightingale
+ * lunr - http://lunrjs.com - A bit like Solr, but much smaller and not as bright - 2.3.9
+ * Copyright (C) 2020 Oliver Nightingale
  * @license MIT
  */
 
@@ -54,10 +54,10 @@ var lunr = function (config) {
   return builder.build()
 }
 
-lunr.version = "2.3.6"
+lunr.version = "2.3.9"
 /*!
  * lunr.utils
- * Copyright (C) 2019 Oliver Nightingale
+ * Copyright (C) 2020 Oliver Nightingale
  */
 
 /**
@@ -177,7 +177,7 @@ lunr.FieldRef.prototype.toString = function () {
 }
 /*!
  * lunr.Set
- * Copyright (C) 2019 Oliver Nightingale
+ * Copyright (C) 2020 Oliver Nightingale
  */
 
 /**
@@ -211,8 +211,8 @@ lunr.Set.complete = {
     return other
   },
 
-  union: function (other) {
-    return other
+  union: function () {
+    return this
   },
 
   contains: function () {
@@ -389,7 +389,7 @@ lunr.Token.prototype.clone = function (fn) {
 }
 /*!
  * lunr.tokenizer
- * Copyright (C) 2019 Oliver Nightingale
+ * Copyright (C) 2020 Oliver Nightingale
  */
 
 /**
@@ -424,7 +424,7 @@ lunr.tokenizer = function (obj, metadata) {
     })
   }
 
-  var str = obj.toString().trim().toLowerCase(),
+  var str = obj.toString().toLowerCase(),
       len = str.length,
       tokens = []
 
@@ -465,7 +465,7 @@ lunr.tokenizer = function (obj, metadata) {
 lunr.tokenizer.separator = /[\s\-]+/
 /*!
  * lunr.Pipeline
- * Copyright (C) 2019 Oliver Nightingale
+ * Copyright (C) 2020 Oliver Nightingale
  */
 
 /**
@@ -509,8 +509,8 @@ lunr.Pipeline.registeredFunctions = Object.create(null)
  * or mutate (or add) metadata for a given token.
  *
  * A pipeline function can indicate that the passed token should be discarded by returning
- * null. This token will not be passed to any downstream pipeline functions and will not be
- * added to the index.
+ * null, undefined or an empty string. This token will not be passed to any downstream pipeline
+ * functions and will not be added to the index.
  *
  * Multiple tokens can be returned by returning an array of tokens. Each token will be passed
  * to any downstream pipeline functions and all will returned tokens will be added to the index.
@@ -673,7 +673,7 @@ lunr.Pipeline.prototype.run = function (tokens) {
     for (var j = 0; j < tokens.length; j++) {
       var result = fn(tokens[j], j, tokens)
 
-      if (result === void 0 || result === '') continue
+      if (result === null || result === void 0 || result === '') continue
 
       if (Array.isArray(result)) {
         for (var k = 0; k < result.length; k++) {
@@ -732,7 +732,7 @@ lunr.Pipeline.prototype.toJSON = function () {
 }
 /*!
  * lunr.Vector
- * Copyright (C) 2019 Oliver Nightingale
+ * Copyright (C) 2020 Oliver Nightingale
  */
 
 /**
@@ -929,7 +929,7 @@ lunr.Vector.prototype.toJSON = function () {
 /* eslint-disable */
 /*!
  * lunr.stemmer
- * Copyright (C) 2019 Oliver Nightingale
+ * Copyright (C) 2020 Oliver Nightingale
  * Includes code from - http://tartarus.org/~martin/PorterStemmer/js.txt
  */
 
@@ -1151,7 +1151,7 @@ lunr.stemmer = (function(){
 lunr.Pipeline.registerFunction(lunr.stemmer, 'stemmer')
 /*!
  * lunr.stopWordFilter
- * Copyright (C) 2019 Oliver Nightingale
+ * Copyright (C) 2020 Oliver Nightingale
  */
 
 /**
@@ -1316,7 +1316,7 @@ lunr.stopWordFilter = lunr.generateStopWordFilter([
 lunr.Pipeline.registerFunction(lunr.stopWordFilter, 'stopWordFilter')
 /*!
  * lunr.trimmer
- * Copyright (C) 2019 Oliver Nightingale
+ * Copyright (C) 2020 Oliver Nightingale
  */
 
 /**
@@ -1343,7 +1343,7 @@ lunr.trimmer = function (token) {
 lunr.Pipeline.registerFunction(lunr.trimmer, 'trimmer')
 /*!
  * lunr.TokenSet
- * Copyright (C) 2019 Oliver Nightingale
+ * Copyright (C) 2020 Oliver Nightingale
  */
 
 /**
@@ -1606,6 +1606,10 @@ lunr.TokenSet.fromString = function (str) {
  * Converts this TokenSet into an array of strings
  * contained within the TokenSet.
  *
+ * This is not intended to be used on a TokenSet that
+ * contains wildcards, in these cases the results are
+ * undefined and are likely to cause an infinite loop.
+ *
  * @returns {string[]}
  */
 lunr.TokenSet.prototype.toArray = function () {
@@ -1823,7 +1827,7 @@ lunr.TokenSet.Builder.prototype.minimize = function (downTo) {
 }
 /*!
  * lunr.Index
- * Copyright (C) 2019 Oliver Nightingale
+ * Copyright (C) 2020 Oliver Nightingale
  */
 
 /**
@@ -1990,7 +1994,7 @@ lunr.Index.prototype.query = function (fn) {
      */
     var clause = query.clauses[i],
         terms = null,
-        clauseMatches = lunr.Set.complete
+        clauseMatches = lunr.Set.empty
 
     if (clause.usePipeline) {
       terms = this.pipeline.runString(clause.term, {
@@ -2315,7 +2319,7 @@ lunr.Index.load = function (serializedIndex) {
 }
 /*!
  * lunr.Builder
- * Copyright (C) 2019 Oliver Nightingale
+ * Copyright (C) 2020 Oliver Nightingale
  */
 
 /**
