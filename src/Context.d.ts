@@ -32,7 +32,7 @@
  */
 declare class Context {
     /**
-     * If [Callback URL](https://getdrafts.com/actions/steps/callbackurl) or [Run Shortcut](https://getdrafts.com/actions/steps/runshortcut) action steps using the "Wait for response" option have been run in steps before the script step in an action, and the target app returned to Drafts using an x-success callback, this object will contain an array of objects with the parsed query parameters included in those responses, in the order they were received. 
+     * If [Callback URL](https://docs.getdrafts.com/docs/actions/steps/advanced#callback-url) or [Run Shortcut](https://docs.getdrafts.com/docs/actions/steps/advanced#run-shortcut) action steps using the "Wait for response" option have been run in steps before the script step in an action, and the target app returned to Drafts using an x-success callback, this object will contain an array of objects with the parsed query parameters included in those responses, in the order they were received. 
      */
     callbackResponses: { [x: string]: any }
 

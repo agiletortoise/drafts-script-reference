@@ -122,7 +122,7 @@ declare class Prompt {
      * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
      * @param label User-friendly text label to place next to the field.
      * @param initialText The initial text contents for the field.
-     * @param options A dictionary of options for configuring the text field. See [the site](https://reference.getdrafts.com/objects/Prompt.html) for full descriptions of the options.
+     * @param options A dictionary of options for configuring the text field. 
      * @category Field
      */
     addTextView(
@@ -164,7 +164,7 @@ declare class Prompt {
      * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
      * @param label User-friendly text label to place next to the field.
      * @param initialDate The initial date to selected for the field. Minimum and maximum values should be defined in options.
-     * @param options A dictionary of options for configuring the text field. See [the site](https://reference.getdrafts.com/objects/Prompt.html) for full descriptions of the options.
+     * @param options A dictionary of options for configuring the text field. 
      * @category Field
      */
     addDatePicker(

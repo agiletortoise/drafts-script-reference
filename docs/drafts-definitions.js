@@ -673,7 +673,7 @@ declare class CallbackURL {
  */
 declare class Context {
     /**
-     * If [Callback URL](https://getdrafts.com/actions/steps/callbackurl) or [Run Shortcut](https://getdrafts.com/actions/steps/runshortcut) action steps using the "Wait for response" option have been run in steps before the script step in an action, and the target app returned to Drafts using an x-success callback, this object will contain an array of objects with the parsed query parameters included in those responses, in the order they were received. 
+     * If [Callback URL](https://docs.getdrafts.com/docs/actions/steps/advanced#callback-url) or [Run Shortcut](https://docs.getdrafts.com/docs/actions/steps/advanced#run-shortcut) action steps using the "Wait for response" option have been run in steps before the script step in an action, and the target app returned to Drafts using an x-success callback, this object will contain an array of objects with the parsed query parameters included in those responses, in the order they were received. 
      */
     callbackResponses: { [x: string]: any }
 
@@ -2746,7 +2746,7 @@ declare class Prompt {
      * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
      * @param label User-friendly text label to place next to the field.
      * @param initialText The initial text contents for the field.
-     * @param options A dictionary of options for configuring the text field. See [the site](https://reference.getdrafts.com/objects/Prompt.html) for full descriptions of the options.
+     * @param options A dictionary of options for configuring the text field. 
      * @category Field
      */
     addTextView(
@@ -2788,7 +2788,7 @@ declare class Prompt {
      * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
      * @param label User-friendly text label to place next to the field.
      * @param initialDate The initial date to selected for the field. Minimum and maximum values should be defined in options.
-     * @param options A dictionary of options for configuring the text field. See [the site](https://reference.getdrafts.com/objects/Prompt.html) for full descriptions of the options.
+     * @param options A dictionary of options for configuring the text field. 
      * @category Field
      */
     addDatePicker(
