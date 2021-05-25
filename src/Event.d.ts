@@ -10,6 +10,11 @@ declare class Event {
     calendar: Calendar
 
     /**
+     * Unique identifier for the event
+     */
+    identifier: string
+
+    /**
      * The title of the event.
      */
     title: string
@@ -53,6 +58,30 @@ declare class Event {
      * Last change to the event.
      */
     readonly lastModifiedDate: Date
+
+    /**
+     * Attendees of the event as an array of objects in the format:
+     * 
+     * ```
+     * {
+     *    "isCurrentUser": false,
+     *    "name": "John Appleseed",
+     *    "status": "accepted",
+     *    "type": "person",
+     *    "role": "required"
+     * }
+     * ```
+     */
+    readonly attendees: Object[]
+
+    /**
+     * Availability for scheduling. Not supported by all Calendar servers.
+     */
+    availability: 'busy'
+        | 'free'
+        | 'tentative'
+        | 'unavailable'
+        | 'notSupported'
 
     /**
      * Returns true if the event has any alarms.

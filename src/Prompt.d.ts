@@ -218,7 +218,7 @@ declare class Prompt {
      * @param isDefault used to specify a single button which will be pinned to the bottom of the prompt and respond to `cmd + return` as the default button. If only one button is added to a prompt, it is assumed to be the default.
      * @category Field
      */
-    addButton(name: string, value?: string, isDefault?: boolean): void
+    addButton(name: string, value?: object, isDefault?: boolean): void
 
     /**
      * Displays the prompt. Returns `true` if the user selected one of the buttons in the buttons array, `false` if the user selected the "Cancel" button. After the dialog has been shown, the `buttonPressed` property will contain the name of the button selected by the user.

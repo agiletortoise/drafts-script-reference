@@ -10,6 +10,11 @@ declare class Reminder {
     list: ReminderList
 
     /**
+     * Unique identifier for the reminder.
+     */
+    identifier: string
+
+    /**
       * The title of the event.
       */
     title: string

@@ -13,8 +13,8 @@
  * 
  * ```javascript
  * // setup values to use in post
- * let title = draft.processTemplate("[[title]]");
- * let body = draft.processTemplate("[[body]]");
+ * let title = "Title of Post"
+ * let body = "Body of Post"
  * 
  * // create credentials for site
  * let cred = Credential.createWithHostUsernamePassword("WordPress", "WordPress  * credentials. Include full URL (with http://) of the home page of your WordPress  * site in the host field.");
