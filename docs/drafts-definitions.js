@@ -2010,7 +2010,7 @@ declare class GoogleTask {
      */
     getTask(list: object, taskID: String): googleTask | undefined
     /**
-     * Create new task in the specified list. [API documentation](https://developers.google.com/tasks/reference/rest/v1/tasks/insert)
+     * Create new task in the specified list. Note that the API adds new tasks to the top of lists. [API documentation](https://developers.google.com/tasks/reference/rest/v1/tasks/insert)
      * @category Tasks
      */
     createTask(list: googleTaskList, task: googleTask): googleTask | undefined
@@ -2493,9 +2493,19 @@ type microsoftToDoLinkedResource = object
  * let todo = MicrosoftToDo.create();
  * // create task in "Test" list
  * let list = todo.findList("Test");
+ * // create task object, more properties available, see API docs
  * let task = {
- *     "title": "My Task"
- * };
+	"title": `Task Title`,
+	"importance": "high",
+    "body": {
+        "content": "Notes for the task",
+        "contentType": "text"
+    };
+	"dueDateTime": {
+		"dateTime": Date.today().addDays(1).toISOString(),
+		"timeZone": "UTC"
+	}
+};
  * let t = todo.createTask(list, task);
  */
 declare class MicrosoftToDo {
