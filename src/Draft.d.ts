@@ -254,3 +254,4 @@ declare class Draft {
  * The current draft points to the draft open in the editor when the action was run.
  */
 declare const draft: Draft
+
