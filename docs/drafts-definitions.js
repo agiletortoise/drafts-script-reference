@@ -16,7 +16,8 @@
  */
 declare class Action {
     /**
-     * Search for action matching the name passed and return it if found. Useful to lookup and action and queue it to be run using `app.queueAction(action, draft)`
+     * Search for action matching the name passed and return it if found. Useful to lookup and action and queue it to be run using `app.queueAction(action, draft)`. This method will return only the first found action with the given name, be sure to avoid duplicate names in your action list.
+     * @category Query
      * @param name Name of a valid, installed action.
      */
     static find(name: string): Action | undefined
@@ -41,6 +42,7 @@ declare class Action {
 
     /**
     * If true, the action is a separator.
+    * @category Identification
     */
     readonly isSeparator: boolean
 }
@@ -55,7 +57,7 @@ declare const action: Action/**
  * ### Examples
  *
  * ```javascript
- * var group = ActionGroup.find("Basic");
+ * let group = ActionGroup.find("Basic");
  * app.loadActionGroup(group);
  * ```
  * 
@@ -63,22 +65,26 @@ declare const action: Action/**
 declare class ActionGroup {
     /**
      * Get list of all available action groups.
+     * @category Query
      */
     static getAll(): ActionGroup[]
 
     /**
      * Search for action group matching the name passed and return it if found. Returns `undefined` if not found.
      * @param name The display name of the action group.
+     * @category Query
      */
     static find(name: string): ActionGroup | undefined
 
     /**
      * The display name of the action group.
+     * @category Identification
      */
     readonly name: string
 
     /**
     * The unique identifier of the action group.
+    * @category Identification
     */
     readonly uuid: string
 
@@ -90,10 +96,70 @@ declare class ActionGroup {
 
     /**
     * The actions contained in the action group.
+    * @category Content
     */
     readonly actions: Action[]
 }
 /**
+ * # ActionLog
+ * 
+ * ActionLog objects represent entries in the [action log](). ActionLog objects are accessed using the `actionLogs` property of the [[Draft]] object.
+ * 
+ * ```javascript
+ * // loop over log entries, deleting any more than 100 days old
+ * for(let log of draft.actionLogs) {
+ *   if (log.executedAt < Date.today.addDays(-100)) {
+ *     log.delete();
+ *   }
+ * }
+ * ```
+ */
+declare class ActionLog {
+    /**
+     * Unique identifier
+     * @category Identification
+     */
+    readonly uuid: string
+    /**
+    * The content of the log
+    * @category Content
+    */
+    readonly log: string
+    /**
+    * Timestamp for the creation of the log entry
+    * @category Content
+    */
+    readonly executedAt: Date
+    /**
+    * The [[Draft]] object related to the log. This value may be nil if the action was performed without a draft in context, or if the related draft no longer exists.
+    * @category Identification
+    */
+    readonly draft?: Draft
+    /**
+    * The [[Action]] object related to the log. This value may be nil if the action no longer exists.
+    * @category Identification
+    */
+    readonly action?: Action
+    /**
+    * The longitude portion of the location recorded when action was executed, if location services are enabled.
+    * @category Content
+    */
+    readonly executedLongitude: number
+    /**
+    * The latitude portion of the location recorded when action was executed, if location services are enabled.
+    * @category Content
+    */
+    readonly executedLatitude: number
+    /**
+    * Which device the action was performed on, typically 'iPhone', 'iPad', or 'Mac'
+    * @category Content
+    */
+    readonly executedDevice: string
+    /**
+    * Delete the action log. This is permanent and should be used with caution
+    */
+    delete()
+}/**
  * # Alarm
  * 
  * Alarms are alerts which can be attached to [[Reminder]] and [[Event]] objects.
@@ -127,50 +193,70 @@ declare class Alarm {
  * # App
  * 
  * Drafts defines a single global `app` object which provides access to application level functions.
+ * 
+ * ### Examples
+ * ```javascript
+ * // toggle dark-light mode
+ * if (app.currentThemeMode == 'dark') {
+ *   app.themeMode = 'light';
+ * }
+ * else {
+ *   app.themeMode = 'dark';
+ * }
+ * ```
  */
 declare class App {
     /**
      * Returns true if app has an active Drafts Pro subscription.
+     * @category System
     */
     readonly isPro: boolean
 
     /**
      * Version number of current installation of Drafts.
+     * @category System
      */
     readonly version: string
 
     /**
      * Get or set themeMode.
+     * @category Theme
      */
     themeMode: 'light' | 'dark' | 'automatic'
 
     /**
     * The current light mode theme.
+    * @category Theme
     */
     lightTheme: Theme
 
     /**
     * The current dark mode theme.
+    * @category Theme
     */
     darkTheme: Theme
 
     /**
      * Returns the active theme mode, light or dark, taking into account automatic switching of themes if active. If writing scripts to branch logic based on the current mode, this is the best property to use.
+     * @category Theme
      */
     readonly currentThemeMode: 'light' | 'dark'
 
     /**
      * Is the draft list side panel is visible.
+     * @category Interface
      */
     readonly isDraftListVisible: boolean
 
     /**
      * Is the action list side panel is visible.
+     * @category Interface
      */
     readonly isActionListVisible: boolean
 
     /**
      * Is system sleep timer disabled preventing screen dimming/sleep.
+     * @category System
      */
     isIdleDisabled: boolean
 
@@ -178,11 +264,19 @@ declare class App {
      * Request system opens the URL passed. Returns true if URL was opened, false if the URL was invalid or no available app can open the URL on the device.
      * @param url url to open
      * @param useSafari whether to use the Safari View Controller (true) or default browser (false).
+     * @category Utility
      */
     openURL(url: string, useSafari?: boolean): boolean
 
     /**
      * Queues an action to run on a draft after the current action is complete.
+     * ```javascript
+     * // lookup action and draft, and queue the action to run
+     * let a = Action.find("Copy");
+     * let d = Draft.find("UUID");
+     * app.queueAction(a, d);
+     * ```
+     * @category Utility
      * @param action Actions can be obtained using the `Action.find(name)` method.
      * @param draft A draft object.
      */
@@ -190,6 +284,7 @@ declare class App {
 
     /**
      * Open draft selection interface and wait for user to select a draft. Returns the select draft object, or `undefined` if user cancelled.
+     * @category Interface
      * @param workspace If provided, the workspace will define the default filtering, display, and sort options for the selection window.
      */
     selectDraft(workspace?: Workspace): Draft | undefined
@@ -198,67 +293,80 @@ declare class App {
 
     /**
      * Open draft list side bar.
+     * @category Interface
      */
     showDraftList(): void
 
     /**
      * Close draft list side bar.
+     * @category Interface
      */
     hideDraftList(): void
 
     /**
      * Open quick search window, optionally providing a initial query value.
+     * @category Interface
     */
     showQuickSearch(initialQuery?: string): void
 
     /**
     * Open the "Get Info" view for a draft. If no draft is passed, the current active draft in the editor will be used.
+    * @category Interface
     */
     showDraftInfo(draft?: Draft): void
 
     /**
     * If able, open the requested draft in a new window. This method only functions on iPad and Mac. The ability to open new windows is not available on iPhone.
     * @returns `true` if successful. `false` if unable to open a new window (as on iPhone).
+    * @category Interface
     */
     openInNewWindow(draft: Draft): boolean
 
     /**
      * Open action list side bar.
+     * @category Interface
      */
     showActionList(): void
 
     /**
      * Close action list side bar.
+     * @category Interface
      */
     hideActionList(): void
 
     /**
      * Apply the Workspace as if it was selected in draft list. Calling this function with no arguments will clear filters and apply the default workspace.
+     * @category Interface
      **/
     applyWorkspace(workspace?: Workspace): boolean
 
     /**
      * Returns a workspace object configured like the workspace currently loaded in the draft list of the active window. Useful when creating logic which reacts contextually to the workspace loaded.
+     * @category Interface
      */
     currentWorkspace: Workspace
 
     /**
      * Load the ActionGroup in the action list side bar.
+     * @category Interface
      */
     loadActionGroup(actionGroup: ActionGroup): boolean
 
     /**
      * Load the ActionGroup in the action bar below editor.
+     * @category Interface
      */
     loadActionBarGroup(actionGroup: ActionGroup): boolean
 
     /**
      * @deprecated replaced by `loadActionBarGroup`.
+     * @category Deprecated
      */
     loadKeyboardActionGroup(actionGroup: ActionGroup): boolean
 
     /**
      * Enable and disable the iOS system sleep timer to prevent screen dimming/sleep.
+     * @category Utility
      */
     setIdleDisabled(isDisabled: boolean): void
 
@@ -266,36 +374,43 @@ declare class App {
 
     /**
      * Get current contents of the system clipboard.
+     * @category Utility
      */
     getClipboard(): string
 
     /**
      * Set the contents of the system clipboard.
      * @param string the data to set
+     * @category Utility
      */
     setClipboard(contents: string): void
 
     /**
      * Takes HTML string and converts it to rich-text and places it in the system clipboard. Returns true if successful, false if an error occurred in conversion.
      * @param html a possibly-valid html string
+     * @category Utility
      */
     htmlToClipboard(html: string): boolean
 
     // MESSAGES FUNCTIONS
     /**
      * Show success banner notification with the message passed.
+     * @category Interface
      */
     displaySuccessMessage(message: string): void
     /**
      * Show info banner notification with the message passed.
+     * @category Interface
      */
     displayInfoMessage(message: string): void
     /**
      * Show warning banner notification with the message passed.
+     * @category Interface
      */
     displayWarningMessage(message: string): void
     /**
      * Show error banner notification with the message passed.
+     * @category Interface
      */
     displayErrorMessage(message: string): void
 }
@@ -376,7 +491,7 @@ declare class AppleScript {
  *  ### Examples
  * 
  * ```javascript
- *  let s = "My String";
+ * let s = "My String";
  * let encoded = Base64.encode(s);
  * let decoded = Base64.decode(encoded);
  * ```
@@ -394,6 +509,45 @@ declare class Base64 {
      */
     static decode(data: string): string
 }/**
+ * # Bookmark
+ * 
+ * Bookmark objects are used to work with folder bookmarks and the [[FileManager]] object to provide access to folders outside the Drafts App Sandbox. Bookmarks are unique by name. A user-friendly name should be used, as the first time a bookmark is required, the user is prompted to select the folder in their file system to associate with the bookmark, and a useful name can help guide them to selecting the correct folder.
+ * 
+ * _Learn more about [Bookmarks in the User Guide](https://docs.getdrafts.com/docs/settings/bookmarks)_
+ *
+ * ### Example
+ * 
+ * ```javascript
+ * // find or create a named Bookmark
+ * let bookmark = Bookmark.findOrCreate("My-Folder");
+ * let fm = FileManager.createForBookmark(bookmark);
+ * 
+ * // write to a file at the root of the bookmark folder
+ * let success = fm.writeString("/ScriptedFile.txt", "This is the file  * content");
+ * 
+ * // read from file in bookmarked folder
+ * let content = fm.readString("/Test Folder/Test.txt") 
+ * ```
+ */
+declare class Bookmark {
+    /**
+     * Get a bookmark object with the specified name. If no bookmark with the specified name exists, a new one will be created.
+     */
+    static findOrCreate(name: string): Bookmark
+
+    /**
+    * The name of the bookmark.
+    */
+    readonly name: string
+
+    /**
+     * Forget the bookmark, resetting any associated permissions. Generally, this would be a function the user performs in the user interface, but could be useful in the case of an action which wishes to request and use a one-time bookmark and revoke permissions on completion of an action.
+     */
+    forget()
+
+}
+
+/**
  * # Box
  * 
  * Box objects can be used to work with files in a Box.com account.
@@ -936,6 +1090,7 @@ declare class Draft {
     bodyPreview(maxLength: number): string
 
     /**
+     * @category Deprecated
      * @deprecated use `syntax` property.
      */
     languageGrammar:
@@ -1043,8 +1198,7 @@ declare class Draft {
     hasTag(tag: string): boolean
 
     /**
-     * Runs the template string through the template engine to evaluate tags (like `[[title]]`, `[[body]]`).
-     * @category Template
+     * Runs the template string through the template engine to evaluate tags.
      */
     processTemplate(template: string): string
 
@@ -1076,11 +1230,19 @@ declare class Draft {
 
     /**
      * Array of versions representing the entire saved version history for this draft.
+     * @category ActionLog
+     */
+    readonly actionLogs: ActionLog[]
+
+    /**
+     * Array of versions representing the entire saved version history for this draft.
+     * @category Version
      */
     readonly versions: Version[]
 
     /**
      * Create a version in the version history representing the current state of the draft.
+     * @category Version
      */
     saveVersion()
 
@@ -1383,6 +1545,12 @@ declare class Editor {
     dictate(locale?: string): string
 
     /**
+    * Open document scanning camera to scan documents and OCR, returning the result as a string. The string will be empty if user cancels, or document scanning is not available.
+    * @returns The text recognized in the OCR of the scanned document.
+    */
+    scanDocument(): string
+
+    /**
     * Get the full text currently loaded in the editor.
     */
     getText(): string
@@ -1587,6 +1755,10 @@ declare class Event {
  * // create a directory, and move a file to it
  * fmCloud.createDirectory("My Folder", "/");
  * fmCloud.moveItem("/TestFile.txt", "/My Folder/TestFile.txt", false);
+ * 
+ * // create file manager using a Bookmark
+ * let fmBookmark = FileManager.createForBookmark("My-Folder");
+ * // use as normal FileManager.
  * ```
  */
 declare class FileManager {
@@ -1597,13 +1769,21 @@ declare class FileManager {
 
     /**
      * Convenience method to create local file manager. Note that local files are not visible on iOS in the Files app and are only available through the use of scripting.
+     * @category Constructors
      */
     static createLocal(): FileManager
 
     /**
-     * Convenience method to create iCloud file manager.
+     * Convenience method to create iCloud file manager. iCloud file managers work with files in the `iCloud Drive/Drafts` folder
+     * @category Constructors
      */
     static createCloud(): FileManager
+
+    /**
+     * Convenience method to create a file manager linked to a [[Bookmark]] object.
+     * @category Constructors
+     */
+    static createForBookmark(bookmark: Bookmark): FileManager
 
     /**
     * The base local URL (`file:///` format) to the directory used by this FileManager.
@@ -1712,14 +1892,9 @@ declare class FileManager {
     /**
      * Creates a new FileManager object.
      * @param isLocal If `true`, the `FileManager` will be using the to the local Drafts app documents directory as its root directory, as it appears in the "On my …" area in the `Files.app`. If `false`, it will use the Drafts5 iCloud folder as its root directory.
+     * @category Constructors
      */
     static create(isLocal: boolean): FileManager
-
-    /**
-     * Create new instance.
-     * @param isLocal If `true`, the `FileManager` will be using the to the local Drafts app documents directory as its root directory, as it appears in the "On my …" area in the `Files.app`. If `false`, it will use the Drafts5 iCloud folder as its root directory.
-     */
-    constructor(isLocal: boolean)
 }
 
 /**
@@ -2257,6 +2432,17 @@ declare class HTTPResponse {
  * ```
  * 
  */
+
+type mailStatus =        
+    | 'created'
+    | 'sent'
+    | 'savedAsDraft'
+    | 'mailUnavailable'
+    | 'userCancelled'
+    | 'invalid'
+    | 'serviceError'
+    | 'unknownError'
+
 declare class Mail {
     /**
      * Array of email addresses to use as `To:` recipients.
@@ -2309,16 +2495,8 @@ declare class Mail {
      * * serviceError: Background mail service returned an error.
      * * unknownError: An unknown error occurred.
      */
-    status:
-        | 'created'
-        | 'sent'
-        | 'savedAsDraft'
-        | 'mailUnavailable'
-        | 'userCancelled'
-        | 'invalid'
-        | 'serviceError'
-        | 'unknownError'
-
+    status: mailStatus
+    
     /**
      * Send the mail message. This will open the `Mail.app` sending window. Returns `true` if the message was sent successfully or `false` if not - if, for example, the user cancelled the mail window.
      */
@@ -3959,21 +4137,38 @@ declare class Twitter {
 }/**
  * # Version
  * 
- * Version objects represent individual versions in a draft's version history
+ * Version objects represent individual versions in a draft's [version history](https://docs.getdrafts.com/docs/drafts/versionhistory). Versions are accessed using the `versions` property of the [[Draft]] object.
+ * 
+ * ```javascript
+ * // loop over versions of a draft, keeping only most recent 3
+ * if (draft.versions.length > 3) {
+ *   let versions = draft.versions.slice(3);
+ *   for (let version of versions) {
+ *     version.delete();
+ *   }
+ * }
  */
 declare class Version {
     /**
      * Unique identifier of this version
      */
-    uuid: string
+    readonly uuid: string
     /**
     * The content of the draft at the time this version was saved
     */
-    content: string
+    readonly content: string
     /**
     * Timestamp for the creation of the version
     */
-    createdAt: Date
+    readonly createdAt: Date
+    /**
+    * Delete the version. This is permanent and should be used with caution
+    */
+    delete()
+    /**
+    * The [[Draft]] object related to the version. Typically not needed, as versions are accessed through the `versions` property of a draft.
+    */
+    readonly draft?: Draft
 }/**
  * # WordPress
  * 
@@ -4253,7 +4448,7 @@ declare class Workspace {
  *
  * It will also return faults parsed to error messages in the response if necessary.
  *
- * This object is suitable for communication with a number of popular XML-RPC interfaces, including the [MetaWeblog API](http://xmlrpc.scripting.com/metaWeblogApi.html). WordPress also offers it’s own XML-RPC interface, which can be used via this object, or the convenience wrapper `WordPress` object.
+ * This object is suitable for communication with a number of popular XML-RPC interfaces, including the [MetaWeblog API](http://xmlrpc.scripting.com/metaWeblogApi.html). WordPress also offers its own XML-RPC interface, which can be used via this object, or the convenience wrapper `WordPress` object.
  * 
  * ### Example: XML-RPC call
 

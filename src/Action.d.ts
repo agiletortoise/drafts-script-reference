@@ -16,7 +16,8 @@
  */
 declare class Action {
     /**
-     * Search for action matching the name passed and return it if found. Useful to lookup and action and queue it to be run using `app.queueAction(action, draft)`
+     * Search for action matching the name passed and return it if found. Useful to lookup and action and queue it to be run using `app.queueAction(action, draft)`. This method will return only the first found action with the given name, be sure to avoid duplicate names in your action list.
+     * @category Query
      * @param name Name of a valid, installed action.
      */
     static find(name: string): Action | undefined
@@ -41,6 +42,7 @@ declare class Action {
 
     /**
     * If true, the action is a separator.
+    * @category Identification
     */
     readonly isSeparator: boolean
 }

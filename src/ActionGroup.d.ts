@@ -6,7 +6,7 @@
  * ### Examples
  *
  * ```javascript
- * var group = ActionGroup.find("Basic");
+ * let group = ActionGroup.find("Basic");
  * app.loadActionGroup(group);
  * ```
  * 
@@ -14,22 +14,26 @@
 declare class ActionGroup {
     /**
      * Get list of all available action groups.
+     * @category Query
      */
     static getAll(): ActionGroup[]
 
     /**
      * Search for action group matching the name passed and return it if found. Returns `undefined` if not found.
      * @param name The display name of the action group.
+     * @category Query
      */
     static find(name: string): ActionGroup | undefined
 
     /**
      * The display name of the action group.
+     * @category Identification
      */
     readonly name: string
 
     /**
     * The unique identifier of the action group.
+    * @category Identification
     */
     readonly uuid: string
 
@@ -41,6 +45,7 @@ declare class ActionGroup {
 
     /**
     * The actions contained in the action group.
+    * @category Content
     */
     readonly actions: Action[]
 }

@@ -17,6 +17,10 @@
  * // create a directory, and move a file to it
  * fmCloud.createDirectory("My Folder", "/");
  * fmCloud.moveItem("/TestFile.txt", "/My Folder/TestFile.txt", false);
+ * 
+ * // create file manager using a Bookmark
+ * let fmBookmark = FileManager.createForBookmark("My-Folder");
+ * // use as normal FileManager.
  * ```
  */
 declare class FileManager {
@@ -27,13 +31,21 @@ declare class FileManager {
 
     /**
      * Convenience method to create local file manager. Note that local files are not visible on iOS in the Files app and are only available through the use of scripting.
+     * @category Constructors
      */
     static createLocal(): FileManager
 
     /**
-     * Convenience method to create iCloud file manager.
+     * Convenience method to create iCloud file manager. iCloud file managers work with files in the `iCloud Drive/Drafts` folder
+     * @category Constructors
      */
     static createCloud(): FileManager
+
+    /**
+     * Convenience method to create a file manager linked to a [[Bookmark]] object.
+     * @category Constructors
+     */
+    static createForBookmark(bookmark: Bookmark): FileManager
 
     /**
     * The base local URL (`file:///` format) to the directory used by this FileManager.
@@ -142,13 +154,8 @@ declare class FileManager {
     /**
      * Creates a new FileManager object.
      * @param isLocal If `true`, the `FileManager` will be using the to the local Drafts app documents directory as its root directory, as it appears in the "On my …" area in the `Files.app`. If `false`, it will use the Drafts5 iCloud folder as its root directory.
+     * @category Constructors
      */
     static create(isLocal: boolean): FileManager
-
-    /**
-     * Create new instance.
-     * @param isLocal If `true`, the `FileManager` will be using the to the local Drafts app documents directory as its root directory, as it appears in the "On my …" area in the `Files.app`. If `false`, it will use the Drafts5 iCloud folder as its root directory.
-     */
-    constructor(isLocal: boolean)
 }
 

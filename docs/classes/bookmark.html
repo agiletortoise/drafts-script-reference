@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TJSChecklistItem | Drafts Script Reference</title>
+	<title>Bookmark | Drafts Script Reference</title>
 	<meta name="description" content="Documentation for Drafts Script Reference">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="tjschecklistitem.html">TJSChecklistItem</a>
+					<a href="bookmark.html">Bookmark</a>
 				</li>
 			</ul>
-			<h1>Class TJSChecklistItem</h1>
+			<h1>Class Bookmark</h1>
 		</div>
 	</div>
 </header>
@@ -67,18 +67,32 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<a href="#tjschecklistitem" id="tjschecklistitem" style="color: inherit; text-decoration: none;">
-							<h1>TJSChecklistItem</h1>
+						<a href="#bookmark" id="bookmark" style="color: inherit; text-decoration: none;">
+							<h1>Bookmark</h1>
 						</a>
 					</div>
-					<p>Represents a Things check list item, which can be added to a Todo. See <a href="tjscontainer.html">TJSContainer</a> documentation for details on making requests to Things.</p>
+					<p>Bookmark objects are used to work with folder bookmarks and the <a href="filemanager.html">FileManager</a> object to provide access to folders outside the Drafts App Sandbox. Bookmarks are unique by name. A user-friendly name should be used, as the first time a bookmark is required, the user is prompted to select the folder in their file system to associate with the bookmark, and a useful name can help guide them to selecting the correct folder.</p>
+					<p><em>Learn more about <a href="https://docs.getdrafts.com/docs/settings/bookmarks">Bookmarks in the User Guide</a></em></p>
+					<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+						<h3>Example</h3>
+					</a>
+					<pre><code class="language-javascript"><span class="hljs-comment">// find or create a named Bookmark</span>
+<span class="hljs-keyword">let</span> bookmark = Bookmark.findOrCreate(<span class="hljs-string">&quot;My-Folder&quot;</span>);
+<span class="hljs-keyword">let</span> fm = FileManager.createForBookmark(bookmark);
+
+<span class="hljs-comment">// write to a file at the root of the bookmark folder</span>
+<span class="hljs-keyword">let</span> success = fm.writeString(<span class="hljs-string">&quot;/ScriptedFile.txt&quot;</span>, <span class="hljs-string">&quot;This is the file  * content&quot;</span>);
+
+<span class="hljs-comment">// read from file in bookmarked folder</span>
+<span class="hljs-keyword">let</span> content = fm.readString(<span class="hljs-string">&quot;/Test Folder/Test.txt&quot;</span>)
+</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TJSChecklistItem</span>
+						<span class="target">Bookmark</span>
 					</li>
 				</ul>
 			</section>
@@ -89,15 +103,14 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tjschecklistitem.html#canceled" class="tsd-kind-icon">canceled</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tjschecklistitem.html#completed" class="tsd-kind-icon">completed</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tjschecklistitem.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="bookmark.html#name" class="tsd-kind-icon">name</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="tjschecklistitem.html#create" class="tsd-kind-icon">create</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="bookmark.html#forget" class="tsd-kind-icon">forget</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="bookmark.html#findorcreate" class="tsd-kind-icon">find<wbr>OrCreate</a></li>
 							</ul>
 						</section>
 					</div>
@@ -106,52 +119,70 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="canceled" class="tsd-anchor"></a>
-					<h3>canceled</h3>
-					<div class="tsd-signature tsd-kind-icon">canceled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Things.d.ts#L135">Things.d.ts:135</a></li>
+							<li>Defined in Bookmark.d.ts:31</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="completed" class="tsd-anchor"></a>
-					<h3>completed</h3>
-					<div class="tsd-signature tsd-kind-icon">completed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Things.d.ts#L134">Things.d.ts:134</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="title" class="tsd-anchor"></a>
-					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Things.d.ts#L133">Things.d.ts:133</a></li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The name of the bookmark.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="create" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> create</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="tjschecklistitem.html" class="tsd-signature-type">TJSChecklistItem</a></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="forget" class="tsd-anchor"></a>
+					<h3>forget</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">forget<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Things.d.ts#L131">Things.d.ts:131</a></li>
+									<li>Defined in Bookmark.d.ts:36</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="tjschecklistitem.html" class="tsd-signature-type">TJSChecklistItem</a></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Forget the bookmark, resetting any associated permissions. Generally, this would be a function the user performs in the user interface, but could be useful in the case of an action which wishes to request and use a one-time bookmark and revoke permissions on completion of an action.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="findorcreate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> find<wbr>OrCreate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>OrCreate<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="bookmark.html" class="tsd-signature-type">Bookmark</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in Bookmark.d.ts:26</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get a bookmark object with the specified name. If no bookmark with the specified name exists, a new one will be created.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="bookmark.html" class="tsd-signature-type">Bookmark</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -170,19 +201,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="tjschecklistitem.html" class="tsd-kind-icon">TJSChecklist<wbr>Item</a>
+						<a href="bookmark.html" class="tsd-kind-icon">Bookmark</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="tjschecklistitem.html#canceled" class="tsd-kind-icon">canceled</a>
+								<a href="bookmark.html#name" class="tsd-kind-icon">name</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="tjschecklistitem.html#completed" class="tsd-kind-icon">completed</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="tjschecklistitem.html#title" class="tsd-kind-icon">title</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="bookmark.html#forget" class="tsd-kind-icon">forget</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="tjschecklistitem.html#create" class="tsd-kind-icon">create</a>
+								<a href="bookmark.html#findorcreate" class="tsd-kind-icon">find<wbr>OrCreate</a>
 							</li>
 						</ul>
 					</li>

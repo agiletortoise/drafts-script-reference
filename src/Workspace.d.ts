@@ -62,6 +62,12 @@ declare class Workspace {
     showPreview: boolean
 
     /**
+     * Show date information in list.
+     * @category Display
+     */
+    showDate: boolean
+
+    /**
      * Show draft tags in list.
      * @category Display
      */

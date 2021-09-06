@@ -6,7 +6,7 @@
  *  ### Examples
  * 
  * ```javascript
- *  let s = "My String";
+ * let s = "My String";
  * let encoded = Base64.encode(s);
  * let decoded = Base64.decode(encoded);
  * ```

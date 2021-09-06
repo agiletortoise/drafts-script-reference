@@ -135,6 +135,12 @@ declare class Editor {
     dictate(locale?: string): string
 
     /**
+    * Open document scanning camera to scan documents and OCR, returning the result as a string. The string will be empty if user cancels, or document scanning is not available.
+    * @returns The text recognized in the OCR of the scanned document.
+    */
+    scanDocument(): string
+
+    /**
     * Get the full text currently loaded in the editor.
     */
     getText(): string

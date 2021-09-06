@@ -58,6 +58,7 @@ declare class Draft {
     bodyPreview(maxLength: number): string
 
     /**
+     * @category Deprecated
      * @deprecated use `syntax` property.
      */
     languageGrammar:
@@ -165,8 +166,7 @@ declare class Draft {
     hasTag(tag: string): boolean
 
     /**
-     * Runs the template string through the template engine to evaluate tags (like `[[title]]`, `[[body]]`).
-     * @category Template
+     * Runs the template string through the template engine to evaluate tags.
      */
     processTemplate(template: string): string
 
@@ -198,11 +198,19 @@ declare class Draft {
 
     /**
      * Array of versions representing the entire saved version history for this draft.
+     * @category ActionLog
+     */
+    readonly actionLogs: ActionLog[]
+
+    /**
+     * Array of versions representing the entire saved version history for this draft.
+     * @category Version
      */
     readonly versions: Version[]
 
     /**
      * Create a version in the version history representing the current state of the draft.
+     * @category Version
      */
     saveVersion()
 

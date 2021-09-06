@@ -19,6 +19,17 @@
  * ```
  * 
  */
+
+type mailStatus =        
+    | 'created'
+    | 'sent'
+    | 'savedAsDraft'
+    | 'mailUnavailable'
+    | 'userCancelled'
+    | 'invalid'
+    | 'serviceError'
+    | 'unknownError'
+
 declare class Mail {
     /**
      * Array of email addresses to use as `To:` recipients.
@@ -71,16 +82,8 @@ declare class Mail {
      * * serviceError: Background mail service returned an error.
      * * unknownError: An unknown error occurred.
      */
-    status:
-        | 'created'
-        | 'sent'
-        | 'savedAsDraft'
-        | 'mailUnavailable'
-        | 'userCancelled'
-        | 'invalid'
-        | 'serviceError'
-        | 'unknownError'
-
+    status: mailStatus
+    
     /**
      * Send the mail message. This will open the `Mail.app` sending window. Returns `true` if the message was sent successfully or `false` if not - if, for example, the user cancelled the mail window.
      */

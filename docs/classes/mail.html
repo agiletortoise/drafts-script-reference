@@ -64,30 +64,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<a href="#mail" id="mail" style="color: inherit; text-decoration: none;">
-							<h1>Mail</h1>
-						</a>
-					</div>
-					<p>The Mail object can be used to create and send mail messages, similar to those created by a &quot;Mail&quot; action step.</p>
-					<a href="#example" id="example" style="color: inherit; text-decoration: none;">
-						<h3>Example</h3>
-					</a>
-					<pre><code class="language-javascript"><span class="hljs-keyword">var</span> mail = Mail.create();
-mail.toRecipients = [<span class="hljs-string">&quot;joe@sample.com&quot;</span>];
-mail.subject = <span class="hljs-string">&quot;My test message&quot;</span>;
-mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
-
-<span class="hljs-keyword">var</span> success = mail.send();
-<span class="hljs-keyword">if</span> (!success) {
-  <span class="hljs-built_in">console</span>.log(mail.status);
-  context.fail();
-}
-</code></pre>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -142,7 +118,7 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L92">Mail.d.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L95">Mail.d.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -163,7 +139,7 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 					<div class="tsd-signature tsd-kind-icon">bcc<wbr>Recipients<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L36">Mail.d.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L47">Mail.d.ts:47</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -178,7 +154,7 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 					<div class="tsd-signature tsd-kind-icon">body<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L46">Mail.d.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L57">Mail.d.ts:57</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -193,7 +169,7 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 					<div class="tsd-signature tsd-kind-icon">cc<wbr>Recipients<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L31">Mail.d.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L42">Mail.d.ts:42</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -208,7 +184,7 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 					<div class="tsd-signature tsd-kind-icon">is<wbr>BodyHTML<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L51">Mail.d.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L62">Mail.d.ts:62</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -223,7 +199,7 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Sent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L61">Mail.d.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L72">Mail.d.ts:72</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -238,7 +214,7 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 					<div class="tsd-signature tsd-kind-icon">send<wbr>InBackground<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L56">Mail.d.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L67">Mail.d.ts:67</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -250,10 +226,10 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="status" class="tsd-anchor"></a>
 					<h3>status</h3>
-					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"created"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"sent"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"savedAsDraft"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mailUnavailable"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"userCancelled"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"invalid"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"serviceError"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"unknownError"</span></div>
+					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <a href="../globals.html#mailstatus" class="tsd-signature-type">mailStatus</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L74">Mail.d.ts:74</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L85">Mail.d.ts:85</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -278,7 +254,7 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 					<div class="tsd-signature tsd-kind-icon">subject<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L41">Mail.d.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L52">Mail.d.ts:52</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -293,7 +269,7 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 					<div class="tsd-signature tsd-kind-icon">to<wbr>Recipients<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L26">Mail.d.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L37">Mail.d.ts:37</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -315,7 +291,7 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L87">Mail.d.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L90">Mail.d.ts:90</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -337,7 +313,7 @@ mail.body = <span class="hljs-string">&quot;Body text&quot;</span>;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Mail.d.ts#L92">Mail.d.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Mail.d.ts#L95">Mail.d.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

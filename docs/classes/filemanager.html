@@ -86,6 +86,10 @@
 <span class="hljs-comment">// create a directory, and move a file to it</span>
 fmCloud.createDirectory(<span class="hljs-string">&quot;My Folder&quot;</span>, <span class="hljs-string">&quot;/&quot;</span>);
 fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <span class="hljs-string">&quot;/My Folder/TestFile.txt&quot;</span>, <span class="hljs-literal">false</span>);
+
+<span class="hljs-comment">// create file manager using a Bookmark</span>
+<span class="hljs-keyword">let</span> fmBookmark = FileManager.createForBookmark(<span class="hljs-string">&quot;My-Folder&quot;</span>);
+<span class="hljs-comment">// use as normal FileManager.</span>
 </code></pre>
 				</div>
 			</section>
@@ -101,12 +105,6 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="filemanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
@@ -125,6 +123,13 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="filemanager.html#setmodificationdate" class="tsd-kind-icon">set<wbr>Modification<wbr>Date</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="filemanager.html#settags" class="tsd-kind-icon">set<wbr>Tags</a></li>
 							</ul>
+							<h3>Constructors Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="filemanager.html#create" class="tsd-kind-icon">create</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="filemanager.html#createcloud" class="tsd-kind-icon">create<wbr>Cloud</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="filemanager.html#createforbookmark" class="tsd-kind-icon">create<wbr>For<wbr>Bookmark</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="filemanager.html#createlocal" class="tsd-kind-icon">create<wbr>Local</a></li>
+							</ul>
 							<h3>Other Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="filemanager.html#copyitem" class="tsd-kind-icon">copy<wbr>Item</a></li>
@@ -135,48 +140,9 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="filemanager.html#readstring" class="tsd-kind-icon">read<wbr>String</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="filemanager.html#writejson" class="tsd-kind-icon">writeJSON</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="filemanager.html#writestring" class="tsd-kind-icon">write<wbr>String</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="filemanager.html#create" class="tsd-kind-icon">create</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="filemanager.html#createcloud" class="tsd-kind-icon">create<wbr>Cloud</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="filemanager.html#createlocal" class="tsd-kind-icon">create<wbr>Local</a></li>
 							</ul>
 						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>File<wbr>Manager<span class="tsd-signature-symbol">(</span>isLocal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L146">FileManager.d.ts:146</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create new instance.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>isLocal: <span class="tsd-signature-type">boolean</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>If <code>true</code>, the <code>FileManager</code> will be using the to the local Drafts app documents directory as its root directory, as it appears in the &quot;On my …&quot; area in the <code>Files.app</code>. If <code>false</code>, it will use the Drafts5 iCloud folder as its root directory.</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -187,7 +153,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 					<div class="tsd-signature tsd-kind-icon">base<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L46">FileManager.d.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L58">FileManager.d.ts:58</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -202,7 +168,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 					<div class="tsd-signature tsd-kind-icon">baseURL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L41">FileManager.d.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L53">FileManager.d.ts:53</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -217,7 +183,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 					<div class="tsd-signature tsd-kind-icon">last<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L26">FileManager.d.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L30">FileManager.d.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -239,7 +205,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L101">FileManager.d.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L113">FileManager.d.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -267,7 +233,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L108">FileManager.d.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L120">FileManager.d.ts:120</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -295,7 +261,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L140">FileManager.d.ts:140</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L152">FileManager.d.ts:152</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -323,7 +289,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L116">FileManager.d.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L128">FileManager.d.ts:128</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -354,7 +320,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L124">FileManager.d.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L136">FileManager.d.ts:136</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -385,7 +351,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L132">FileManager.d.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L144">FileManager.d.ts:144</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -408,6 +374,112 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="create" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> create</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>isLocal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L159">FileManager.d.ts:159</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new FileManager object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>isLocal: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If <code>true</code>, the <code>FileManager</code> will be using the to the local Drafts app documents directory as its root directory, as it appears in the &quot;On my …&quot; area in the <code>Files.app</code>. If <code>false</code>, it will use the Drafts5 iCloud folder as its root directory.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="createcloud" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> create<wbr>Cloud</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Cloud<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L42">FileManager.d.ts:42</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convenience method to create iCloud file manager. iCloud file managers work with files in the <code>iCloud Drive/Drafts</code> folder</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="createforbookmark" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> create<wbr>For<wbr>Bookmark</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>For<wbr>Bookmark<span class="tsd-signature-symbol">(</span>bookmark<span class="tsd-signature-symbol">: </span><a href="bookmark.html" class="tsd-signature-type">Bookmark</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L48">FileManager.d.ts:48</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convenience method to create a file manager linked to a <a href="bookmark.html">Bookmark</a> object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>bookmark: <a href="bookmark.html" class="tsd-signature-type">Bookmark</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="createlocal" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> create<wbr>Local</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Local<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L36">FileManager.d.ts:36</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convenience method to create local file manager. Note that local files are not visible on iOS in the Files app and are only available through the use of scripting.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Other Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="copyitem" class="tsd-anchor"></a>
@@ -419,7 +491,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L94">FileManager.d.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L106">FileManager.d.ts:106</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -456,7 +528,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L78">FileManager.d.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L90">FileManager.d.ts:90</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -487,7 +559,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L73">FileManager.d.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L85">FileManager.d.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -515,7 +587,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L86">FileManager.d.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L98">FileManager.d.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -552,7 +624,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L63">FileManager.d.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L75">FileManager.d.ts:75</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -583,7 +655,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L52">FileManager.d.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L64">FileManager.d.ts:64</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -614,7 +686,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L68">FileManager.d.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L80">FileManager.d.ts:80</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -645,7 +717,7 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L57">FileManager.d.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/FileManager.d.ts#L69">FileManager.d.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -666,81 +738,6 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="create" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> create</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>isLocal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L146">FileManager.d.ts:146</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Creates a new FileManager object.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>isLocal: <span class="tsd-signature-type">boolean</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>If <code>true</code>, the <code>FileManager</code> will be using the to the local Drafts app documents directory as its root directory, as it appears in the &quot;On my …&quot; area in the <code>Files.app</code>. If <code>false</code>, it will use the Drafts5 iCloud folder as its root directory.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="createcloud" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> create<wbr>Cloud</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Cloud<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L36">FileManager.d.ts:36</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Convenience method to create iCloud file manager.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="createlocal" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> create<wbr>Local</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Local<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="filemanager.html" class="tsd-signature-type">FileManager</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/FileManager.d.ts#L31">FileManager.d.ts:31</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Convenience method to create local file manager. Note that local files are not visible on iOS in the Files app and are only available through the use of scripting.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="filemanager.html" class="tsd-signature-type">FileManager</a></h4>
-						</li>
-					</ul>
-				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -758,9 +755,6 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 					<li class="current tsd-kind-class">
 						<a href="filemanager.html" class="tsd-kind-icon">File<wbr>Manager</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="filemanager.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="filemanager.html#basepath" class="tsd-kind-icon">base<wbr>Path</a>
 							</li>
@@ -817,6 +811,9 @@ fmCloud.moveItem(<span class="hljs-string">&quot;/TestFile.txt&quot;</span>, <sp
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 								<a href="filemanager.html#createcloud" class="tsd-kind-icon">create<wbr>Cloud</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="filemanager.html#createforbookmark" class="tsd-kind-icon">create<wbr>For<wbr>Bookmark</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 								<a href="filemanager.html#createlocal" class="tsd-kind-icon">create<wbr>Local</a>

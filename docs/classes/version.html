@@ -71,7 +71,15 @@
 							<h1>Version</h1>
 						</a>
 					</div>
-					<p>Version objects represent individual versions in a draft&#39;s version history</p>
+					<p>Version objects represent individual versions in a draft&#39;s <a href="https://docs.getdrafts.com/docs/drafts/versionhistory">version history</a>. Versions are accessed using the <code>versions</code> property of the <a href="draft.html">Draft</a> object.</p>
+					<pre><code class="language-javascript"><span class="hljs-comment">// loop over versions of a draft, keeping only most recent 3</span>
+<span class="hljs-keyword">if</span> (draft.versions.length &gt; <span class="hljs-number">3</span>) {
+  <span class="hljs-keyword">let</span> versions = draft.versions.slice(<span class="hljs-number">3</span>);
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> version <span class="hljs-keyword">of</span> versions) {
+    version.delete();
+  }
+}
+</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -91,7 +99,14 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="version.html#content" class="tsd-kind-icon">content</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="version.html#createdat" class="tsd-kind-icon">created<wbr>At</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="version.html#draft" class="tsd-kind-icon">draft</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="version.html#uuid" class="tsd-kind-icon">uuid</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="version.html#delete" class="tsd-kind-icon">delete</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,11 +116,11 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="content" class="tsd-anchor"></a>
-					<h3>content</h3>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> content</h3>
 					<div class="tsd-signature tsd-kind-icon">content<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Version.d.ts#L14">Version.d.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Version.d.ts#L23">Version.d.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -116,11 +131,11 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="createdat" class="tsd-anchor"></a>
-					<h3>created<wbr>At</h3>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> created<wbr>At</h3>
 					<div class="tsd-signature tsd-kind-icon">created<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Version.d.ts#L18">Version.d.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Version.d.ts#L27">Version.d.ts:27</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -130,12 +145,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="draft" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> draft</h3>
+					<div class="tsd-signature tsd-kind-icon">draft<span class="tsd-signature-symbol">:</span> <a href="draft.html" class="tsd-signature-type">Draft</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Version.d.ts#L35">Version.d.ts:35</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="draft.html">Draft</a> object related to the version. Typically not needed, as versions are accessed through the <code>versions</code> property of a draft.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="uuid" class="tsd-anchor"></a>
-					<h3>uuid</h3>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> uuid</h3>
 					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/Version.d.ts#L10">Version.d.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Version.d.ts#L19">Version.d.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -143,6 +173,31 @@
 							<p>Unique identifier of this version</p>
 						</div>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="delete" class="tsd-anchor"></a>
+					<h3>delete</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/Version.d.ts#L31">Version.d.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Delete the version. This is permanent and should be used with caution</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -168,7 +223,13 @@
 								<a href="version.html#createdat" class="tsd-kind-icon">created<wbr>At</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="version.html#draft" class="tsd-kind-icon">draft</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="version.html#uuid" class="tsd-kind-icon">uuid</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="version.html#delete" class="tsd-kind-icon">delete</a>
 							</li>
 						</ul>
 					</li>

@@ -72,6 +72,17 @@
 						</a>
 					</div>
 					<p>Drafts defines a single global <code>app</code> object which provides access to application level functions.</p>
+					<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+						<h3>Examples</h3>
+					</a>
+					<pre><code class="language-javascript"><span class="hljs-comment">// toggle dark-light mode</span>
+<span class="hljs-keyword">if</span> (app.currentThemeMode == <span class="hljs-string">&#x27;dark&#x27;</span>) {
+  app.themeMode = <span class="hljs-string">&#x27;light&#x27;</span>;
+}
+<span class="hljs-keyword">else</span> {
+  app.themeMode = <span class="hljs-string">&#x27;dark&#x27;</span>;
+}
+</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -87,74 +98,71 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
+							<h3>Interface Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#currentthememode" class="tsd-kind-icon">current<wbr>Theme<wbr>Mode</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#currentworkspace" class="tsd-kind-icon">current<wbr>Workspace</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#darktheme" class="tsd-kind-icon">dark<wbr>Theme</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#isactionlistvisible" class="tsd-kind-icon">is<wbr>Action<wbr>List<wbr>Visible</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#isdraftlistvisible" class="tsd-kind-icon">is<wbr>Draft<wbr>List<wbr>Visible</a></li>
+							</ul>
+							<h3>System Properties</h3>
+							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#isidledisabled" class="tsd-kind-icon">is<wbr>Idle<wbr>Disabled</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#ispro" class="tsd-kind-icon">is<wbr>Pro</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#version" class="tsd-kind-icon">version</a></li>
+							</ul>
+							<h3>Theme Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#currentthememode" class="tsd-kind-icon">current<wbr>Theme<wbr>Mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#darktheme" class="tsd-kind-icon">dark<wbr>Theme</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#lighttheme" class="tsd-kind-icon">light<wbr>Theme</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#thememode" class="tsd-kind-icon">theme<wbr>Mode</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#version" class="tsd-kind-icon">version</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Deprecated Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#loadkeyboardactiongroup" class="tsd-kind-icon">load<wbr>Keyboard<wbr>Action<wbr>Group</a></li>
+							</ul>
+							<h3>Interface Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#applyworkspace" class="tsd-kind-icon">apply<wbr>Workspace</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#displayerrormessage" class="tsd-kind-icon">display<wbr>Error<wbr>Message</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#displayinfomessage" class="tsd-kind-icon">display<wbr>Info<wbr>Message</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#displaysuccessmessage" class="tsd-kind-icon">display<wbr>Success<wbr>Message</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#displaywarningmessage" class="tsd-kind-icon">display<wbr>Warning<wbr>Message</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#getclipboard" class="tsd-kind-icon">get<wbr>Clipboard</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#hideactionlist" class="tsd-kind-icon">hide<wbr>Action<wbr>List</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#hidedraftlist" class="tsd-kind-icon">hide<wbr>Draft<wbr>List</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#htmltoclipboard" class="tsd-kind-icon">html<wbr>ToClipboard</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#loadactionbargroup" class="tsd-kind-icon">load<wbr>Action<wbr>Bar<wbr>Group</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#loadactiongroup" class="tsd-kind-icon">load<wbr>Action<wbr>Group</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#loadkeyboardactiongroup" class="tsd-kind-icon">load<wbr>Keyboard<wbr>Action<wbr>Group</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#openinnewwindow" class="tsd-kind-icon">open<wbr>InNew<wbr>Window</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#openurl" class="tsd-kind-icon">openURL</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#queueaction" class="tsd-kind-icon">queue<wbr>Action</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#selectdraft" class="tsd-kind-icon">select<wbr>Draft</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#setclipboard" class="tsd-kind-icon">set<wbr>Clipboard</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#setidledisabled" class="tsd-kind-icon">set<wbr>Idle<wbr>Disabled</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#showactionlist" class="tsd-kind-icon">show<wbr>Action<wbr>List</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#showdraftinfo" class="tsd-kind-icon">show<wbr>Draft<wbr>Info</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#showdraftlist" class="tsd-kind-icon">show<wbr>Draft<wbr>List</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#showquicksearch" class="tsd-kind-icon">show<wbr>Quick<wbr>Search</a></li>
+							</ul>
+							<h3>Utility Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#getclipboard" class="tsd-kind-icon">get<wbr>Clipboard</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#htmltoclipboard" class="tsd-kind-icon">html<wbr>ToClipboard</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#openurl" class="tsd-kind-icon">openURL</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#queueaction" class="tsd-kind-icon">queue<wbr>Action</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#setclipboard" class="tsd-kind-icon">set<wbr>Clipboard</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#setidledisabled" class="tsd-kind-icon">set<wbr>Idle<wbr>Disabled</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="currentthememode" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> current<wbr>Theme<wbr>Mode</h3>
-					<div class="tsd-signature tsd-kind-icon">current<wbr>Theme<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"light"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"dark"</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L35">App.d.ts:35</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Returns the active theme mode, light or dark, taking into account automatic switching of themes if active. If writing scripts to branch logic based on the current mode, this is the best property to use.</p>
-						</div>
-					</div>
-				</section>
+				<h2>Interface Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="currentworkspace" class="tsd-anchor"></a>
 					<h3>current<wbr>Workspace</h3>
 					<div class="tsd-signature tsd-kind-icon">current<wbr>Workspace<span class="tsd-signature-symbol">:</span> <a href="workspace.html" class="tsd-signature-type">Workspace</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L118">App.d.ts:118</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L156">App.d.ts:156</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -164,27 +172,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="darktheme" class="tsd-anchor"></a>
-					<h3>dark<wbr>Theme</h3>
-					<div class="tsd-signature tsd-kind-icon">dark<wbr>Theme<span class="tsd-signature-symbol">:</span> <a href="theme.html" class="tsd-signature-type">Theme</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L30">App.d.ts:30</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The current dark mode theme.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="isactionlistvisible" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> is<wbr>Action<wbr>List<wbr>Visible</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Action<wbr>List<wbr>Visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L45">App.d.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L64">App.d.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -199,7 +192,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Draft<wbr>List<wbr>Visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L40">App.d.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L58">App.d.ts:58</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -208,13 +201,16 @@
 						</div>
 					</div>
 				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>System Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="isidledisabled" class="tsd-anchor"></a>
 					<h3>is<wbr>Idle<wbr>Disabled</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Idle<wbr>Disabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L50">App.d.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L70">App.d.ts:70</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -229,7 +225,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Pro<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L10">App.d.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L22">App.d.ts:22</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -239,12 +235,60 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="version" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> version</h3>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L28">App.d.ts:28</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Version number of current installation of Drafts.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Theme Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="currentthememode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> current<wbr>Theme<wbr>Mode</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Theme<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"light"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"dark"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L52">App.d.ts:52</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Returns the active theme mode, light or dark, taking into account automatic switching of themes if active. If writing scripts to branch logic based on the current mode, this is the best property to use.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="darktheme" class="tsd-anchor"></a>
+					<h3>dark<wbr>Theme</h3>
+					<div class="tsd-signature tsd-kind-icon">dark<wbr>Theme<span class="tsd-signature-symbol">:</span> <a href="theme.html" class="tsd-signature-type">Theme</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L46">App.d.ts:46</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The current dark mode theme.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="lighttheme" class="tsd-anchor"></a>
 					<h3>light<wbr>Theme</h3>
 					<div class="tsd-signature tsd-kind-icon">light<wbr>Theme<span class="tsd-signature-symbol">:</span> <a href="theme.html" class="tsd-signature-type">Theme</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L25">App.d.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L40">App.d.ts:40</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -259,7 +303,7 @@
 					<div class="tsd-signature tsd-kind-icon">theme<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"light"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"dark"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"automatic"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L20">App.d.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L34">App.d.ts:34</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -268,24 +312,42 @@
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="version" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> version</h3>
-					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L15">App.d.ts:15</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Version number of current installation of Drafts.</p>
-						</div>
-					</div>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Deprecated Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="loadkeyboardactiongroup" class="tsd-anchor"></a>
+					<h3>load<wbr>Keyboard<wbr>Action<wbr>Group</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Keyboard<wbr>Action<wbr>Group<span class="tsd-signature-symbol">(</span>actionGroup<span class="tsd-signature-symbol">: </span><a href="actiongroup.html" class="tsd-signature-type">ActionGroup</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L174">App.d.ts:174</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>replaced by <code>loadActionBarGroup</code>.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>actionGroup: <a href="actiongroup.html" class="tsd-signature-type">ActionGroup</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
+				<h2>Interface Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="applyworkspace" class="tsd-anchor"></a>
 					<h3>apply<wbr>Workspace</h3>
@@ -296,7 +358,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L113">App.d.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L150">App.d.ts:150</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -324,7 +386,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L175">App.d.ts:175</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L224">App.d.ts:224</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -352,7 +414,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L167">App.d.ts:167</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L214">App.d.ts:214</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -380,7 +442,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L163">App.d.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L209">App.d.ts:209</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -408,7 +470,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L171">App.d.ts:171</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L219">App.d.ts:219</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -427,28 +489,6 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getclipboard" class="tsd-anchor"></a>
-					<h3>get<wbr>Clipboard</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Clipboard<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L145">App.d.ts:145</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get current contents of the system clipboard.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="hideactionlist" class="tsd-anchor"></a>
 					<h3>hide<wbr>Action<wbr>List</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -458,7 +498,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L108">App.d.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L144">App.d.ts:144</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -480,7 +520,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L82">App.d.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L113">App.d.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -489,37 +529,6 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="htmltoclipboard" class="tsd-anchor"></a>
-					<h3>html<wbr>ToClipboard</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">html<wbr>ToClipboard<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L157">App.d.ts:157</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Takes HTML string and converts it to rich-text and places it in the system clipboard. Returns true if successful, false if an error occurred in conversion.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>html: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>a possibly-valid html string</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -533,7 +542,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L128">App.d.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L168">App.d.ts:168</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -561,43 +570,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L123">App.d.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L162">App.d.ts:162</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Load the ActionGroup in the action list side bar.</p>
 								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>actionGroup: <a href="actiongroup.html" class="tsd-signature-type">ActionGroup</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="loadkeyboardactiongroup" class="tsd-anchor"></a>
-					<h3>load<wbr>Keyboard<wbr>Action<wbr>Group</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">load<wbr>Keyboard<wbr>Action<wbr>Group<span class="tsd-signature-symbol">(</span>actionGroup<span class="tsd-signature-symbol">: </span><a href="actiongroup.html" class="tsd-signature-type">ActionGroup</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L133">App.d.ts:133</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>deprecated</dt>
-									<dd><p>replaced by <code>loadActionBarGroup</code>.</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -619,7 +598,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L98">App.d.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L132">App.d.ts:132</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -639,6 +618,193 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="selectdraft" class="tsd-anchor"></a>
+					<h3>select<wbr>Draft</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Draft<span class="tsd-signature-symbol">(</span>workspace<span class="tsd-signature-symbol">?: </span><a href="workspace.html" class="tsd-signature-type">Workspace</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="draft.html" class="tsd-signature-type">Draft</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L99">App.d.ts:99</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Open draft selection interface and wait for user to select a draft. Returns the select draft object, or <code>undefined</code> if user cancelled.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> workspace: <a href="workspace.html" class="tsd-signature-type">Workspace</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If provided, the workspace will define the default filtering, display, and sort options for the selection window.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="draft.html" class="tsd-signature-type">Draft</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="showactionlist" class="tsd-anchor"></a>
+					<h3>show<wbr>Action<wbr>List</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">show<wbr>Action<wbr>List<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L138">App.d.ts:138</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Open action list side bar.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="showdraftinfo" class="tsd-anchor"></a>
+					<h3>show<wbr>Draft<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">show<wbr>Draft<wbr>Info<span class="tsd-signature-symbol">(</span>draft<span class="tsd-signature-symbol">?: </span><a href="draft.html" class="tsd-signature-type">Draft</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L125">App.d.ts:125</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Open the &quot;Get Info&quot; view for a draft. If no draft is passed, the current active draft in the editor will be used.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> draft: <a href="draft.html" class="tsd-signature-type">Draft</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="showdraftlist" class="tsd-anchor"></a>
+					<h3>show<wbr>Draft<wbr>List</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">show<wbr>Draft<wbr>List<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L107">App.d.ts:107</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Open draft list side bar.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="showquicksearch" class="tsd-anchor"></a>
+					<h3>show<wbr>Quick<wbr>Search</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">show<wbr>Quick<wbr>Search<span class="tsd-signature-symbol">(</span>initialQuery<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L119">App.d.ts:119</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Open quick search window, optionally providing a initial query value.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialQuery: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Utility Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getclipboard" class="tsd-anchor"></a>
+					<h3>get<wbr>Clipboard</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Clipboard<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L188">App.d.ts:188</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get current contents of the system clipboard.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="htmltoclipboard" class="tsd-anchor"></a>
+					<h3>html<wbr>ToClipboard</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">html<wbr>ToClipboard<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L202">App.d.ts:202</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Takes HTML string and converts it to rich-text and places it in the system clipboard. Returns true if successful, false if an error occurred in conversion.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>a possibly-valid html string</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="openurl" class="tsd-anchor"></a>
 					<h3>openURL</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -648,7 +814,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L57">App.d.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L78">App.d.ts:78</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -685,12 +851,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L64">App.d.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L92">App.d.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Queues an action to run on a draft after the current action is complete.</p>
+									<pre><code class="language-javascript"><span class="hljs-comment">// lookup action and draft, and queue the action to run</span>
+<span class="hljs-keyword">let</span> a = Action.find(<span class="hljs-string">&quot;Copy&quot;</span>);
+<span class="hljs-keyword">let</span> d = Draft.find(<span class="hljs-string">&quot;UUID&quot;</span>);
+app.queueAction(a, d);
+</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -713,37 +884,6 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="selectdraft" class="tsd-anchor"></a>
-					<h3>select<wbr>Draft</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">select<wbr>Draft<span class="tsd-signature-symbol">(</span>workspace<span class="tsd-signature-symbol">?: </span><a href="workspace.html" class="tsd-signature-type">Workspace</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="draft.html" class="tsd-signature-type">Draft</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L70">App.d.ts:70</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Open draft selection interface and wait for user to select a draft. Returns the select draft object, or <code>undefined</code> if user cancelled.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> workspace: <a href="workspace.html" class="tsd-signature-type">Workspace</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>If provided, the workspace will define the default filtering, display, and sort options for the selection window.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="draft.html" class="tsd-signature-type">Draft</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="setclipboard" class="tsd-anchor"></a>
 					<h3>set<wbr>Clipboard</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -753,7 +893,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L151">App.d.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L195">App.d.ts:195</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -781,7 +921,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L138">App.d.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/82aac70/src/App.d.ts#L180">App.d.ts:180</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -793,106 +933,6 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>isDisabled: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="showactionlist" class="tsd-anchor"></a>
-					<h3>show<wbr>Action<wbr>List</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">show<wbr>Action<wbr>List<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L103">App.d.ts:103</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Open action list side bar.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="showdraftinfo" class="tsd-anchor"></a>
-					<h3>show<wbr>Draft<wbr>Info</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">show<wbr>Draft<wbr>Info<span class="tsd-signature-symbol">(</span>draft<span class="tsd-signature-symbol">?: </span><a href="draft.html" class="tsd-signature-type">Draft</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L92">App.d.ts:92</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Open the &quot;Get Info&quot; view for a draft. If no draft is passed, the current active draft in the editor will be used.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> draft: <a href="draft.html" class="tsd-signature-type">Draft</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="showdraftlist" class="tsd-anchor"></a>
-					<h3>show<wbr>Draft<wbr>List</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">show<wbr>Draft<wbr>List<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L77">App.d.ts:77</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Open draft list side bar.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="showquicksearch" class="tsd-anchor"></a>
-					<h3>show<wbr>Quick<wbr>Search</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">show<wbr>Quick<wbr>Search<span class="tsd-signature-symbol">(</span>initialQuery<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/093f4b5/src/App.d.ts#L87">App.d.ts:87</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Open quick search window, optionally providing a initial query value.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialQuery: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
