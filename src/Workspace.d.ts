@@ -110,6 +110,18 @@ declare class Workspace {
     loadActionBarGroup?: ActionGroup
 
     /**
+     * Preferred light theme to load when applying the workspace.
+     * @category Display
+     */
+    preferredLightTheme?: Theme
+
+    /**
+     * Preferred dark theme to load when applying the workspace.
+     * @category Display
+     */
+    preferredDarkTheme?: Theme
+
+    /**
      * Save changes made to the workspace to the database. This must be called to save changes.
      * 
      */

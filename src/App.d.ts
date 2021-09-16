@@ -209,17 +209,17 @@ declare class App {
     displaySuccessMessage(message: string): void
     /**
      * Show info banner notification with the message passed.
-     * @category Interface
+     * @category Messages
      */
     displayInfoMessage(message: string): void
     /**
      * Show warning banner notification with the message passed.
-     * @category Interface
+     * @category Messages
      */
     displayWarningMessage(message: string): void
     /**
      * Show error banner notification with the message passed.
-     * @category Interface
+     * @category Messages
      */
     displayErrorMessage(message: string): void
 }

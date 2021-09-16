@@ -400,17 +400,17 @@ declare class App {
     displaySuccessMessage(message: string): void
     /**
      * Show info banner notification with the message passed.
-     * @category Interface
+     * @category Messages
      */
     displayInfoMessage(message: string): void
     /**
      * Show warning banner notification with the message passed.
-     * @category Interface
+     * @category Messages
      */
     displayWarningMessage(message: string): void
     /**
      * Show error banner notification with the message passed.
-     * @category Interface
+     * @category Messages
      */
     displayErrorMessage(message: string): void
 }
@@ -4331,6 +4331,12 @@ declare class Workspace {
     showPreview: boolean
 
     /**
+     * Show date information in list.
+     * @category Display
+     */
+    showDate: boolean
+
+    /**
      * Show draft tags in list.
      * @category Display
      */
@@ -4371,6 +4377,18 @@ declare class Workspace {
      * @category Display
      */
     loadActionBarGroup?: ActionGroup
+
+    /**
+     * Preferred light theme to load when applying the workspace.
+     * @category Display
+     */
+    preferredLightTheme?: Theme
+
+    /**
+     * Preferred dark theme to load when applying the workspace.
+     * @category Display
+     */
+    preferredDarkTheme?: Theme
 
     /**
      * Save changes made to the workspace to the database. This must be called to save changes.
