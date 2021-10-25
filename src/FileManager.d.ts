@@ -19,8 +19,8 @@
  * fmCloud.moveItem("/TestFile.txt", "/My Folder/TestFile.txt", false);
  * 
  * // create file manager using a Bookmark
- * let fmBookmark = FileManager.createForBookmark("My-Folder");
- * // use as normal FileManager.
+ * let bookmark = Bookmark.findOrCreate("My-Folder");
+ * let fm = FileManager.createForBookmark(bookmark);
  * ```
  */
 declare class FileManager {
