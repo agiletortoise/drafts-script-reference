@@ -1293,7 +1293,9 @@ declare class Draft {
 /**
  * The current draft points to the draft open in the editor when the action was run.
  */
-declare const draft: Drafttype dropboxMode = 'add' | 'overwrite'
+declare const draft: Draft
+
+type dropboxMode = 'add' | 'overwrite'
 
 interface DropboxRequestSettings {
     /**
