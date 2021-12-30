@@ -141,6 +141,12 @@ declare class Editor {
     scanDocument(): string
 
     /**
+    * Open Opens audio transcription window. If file is selected and transcribed, returns text.
+    * @returns The text recognized in the audio transcription.
+    */
+    transcribe(): string
+
+    /**
     * Get the full text currently loaded in the editor.
     */
     getText(): string
