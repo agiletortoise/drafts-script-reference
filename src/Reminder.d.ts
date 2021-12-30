@@ -25,6 +25,11 @@ declare class Reminder {
     notes: string
 
     /**
+     * Location of the event.
+     */
+    location: string
+
+    /**
     * Due date of the reminder
     */
     dueDate?: Date
