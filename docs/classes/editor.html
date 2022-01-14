@@ -89,12 +89,16 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
+							<h3>Deprecated Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="editor.html#focusmodeenabled" class="tsd-kind-icon">focus<wbr>Mode<wbr>Enabled</a></li>
+							</ul>
+							<h3>Other Properties</h3>
+							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="editor.html#isactive" class="tsd-kind-icon">is<wbr>Active</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="editor.html#linkmodeenabled" class="tsd-kind-icon">link<wbr>Mode<wbr>Enabled</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="editor.html#navigationmarkers" class="tsd-kind-icon">navigation<wbr>Markers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="editor.html#pinningenabled" class="tsd-kind-icon">pinning<wbr>Enabled</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="editor.html#preferredtabstring" class="tsd-kind-icon">preferred<wbr>Tab<wbr>String</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="editor.html#recentdrafts" class="tsd-kind-icon">recent<wbr>Drafts</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="editor.html#typewriterscrollingenabled" class="tsd-kind-icon">typewriter<wbr>Scrolling<wbr>Enabled</a></li>
@@ -135,29 +139,34 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
+				<h2>Deprecated Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="focusmodeenabled" class="tsd-anchor"></a>
 					<h3>focus<wbr>Mode<wbr>Enabled</h3>
 					<div class="tsd-signature tsd-kind-icon">focus<wbr>Mode<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L45">Editor.d.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L46">Editor.d.ts:46</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Access or set current focus mode status.</p>
-						</div>
+						<dl class="tsd-comment-tags">
+							<dt>deprecated</dt>
+							<dd><p>replaced by <code>pinningEnabled</code>.</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Other Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="isactive" class="tsd-anchor"></a>
 					<h3>is<wbr>Active</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Active<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L65">Editor.d.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L71">Editor.d.ts:71</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -172,7 +181,7 @@
 					<div class="tsd-signature tsd-kind-icon">link<wbr>Mode<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L55">Editor.d.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L61">Editor.d.ts:61</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -187,7 +196,7 @@
 					<div class="tsd-signature tsd-kind-icon">navigation<wbr>Markers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L202">Editor.d.ts:202</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L208">Editor.d.ts:208</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -197,12 +206,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pinningenabled" class="tsd-anchor"></a>
+					<h3>pinning<wbr>Enabled</h3>
+					<div class="tsd-signature tsd-kind-icon">pinning<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L51">Editor.d.ts:51</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Access or set current pinning status for editor.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="preferredtabstring" class="tsd-anchor"></a>
 					<h3>preferred<wbr>Tab<wbr>String</h3>
 					<div class="tsd-signature tsd-kind-icon">preferred<wbr>Tab<wbr>String<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L50">Editor.d.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L56">Editor.d.ts:56</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -217,7 +241,7 @@
 					<div class="tsd-signature tsd-kind-icon">recent<wbr>Drafts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L70">Editor.d.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L76">Editor.d.ts:76</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -232,7 +256,7 @@
 					<div class="tsd-signature tsd-kind-icon">typewriter<wbr>Scrolling<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L60">Editor.d.ts:60</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L66">Editor.d.ts:66</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -254,7 +278,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L101">Editor.d.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L107">Editor.d.ts:107</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -276,7 +300,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L118">Editor.d.ts:118</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L124">Editor.d.ts:124</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -308,7 +332,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L106">Editor.d.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L112">Editor.d.ts:112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -330,7 +354,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L135">Editor.d.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L141">Editor.d.ts:141</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -362,7 +386,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L182">Editor.d.ts:182</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L188">Editor.d.ts:188</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -393,7 +417,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L172">Editor.d.ts:172</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L178">Editor.d.ts:178</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -415,7 +439,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L177">Editor.d.ts:177</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L183">Editor.d.ts:183</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -437,7 +461,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L162">Editor.d.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L168">Editor.d.ts:168</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -459,7 +483,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L152">Editor.d.ts:152</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L158">Editor.d.ts:158</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -481,7 +505,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L192">Editor.d.ts:192</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L198">Editor.d.ts:198</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -512,7 +536,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L81">Editor.d.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L87">Editor.d.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -540,7 +564,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L207">Editor.d.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L213">Editor.d.ts:213</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -568,7 +592,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L211">Editor.d.ts:211</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L217">Editor.d.ts:217</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -596,7 +620,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L76">Editor.d.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L82">Editor.d.ts:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -618,7 +642,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L96">Editor.d.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L102">Editor.d.ts:102</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -640,7 +664,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L86">Editor.d.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L92">Editor.d.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -662,7 +686,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L141">Editor.d.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L147">Editor.d.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -685,7 +709,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L187">Editor.d.ts:187</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L193">Editor.d.ts:193</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -716,7 +740,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L167">Editor.d.ts:167</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L173">Editor.d.ts:173</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -744,7 +768,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L157">Editor.d.ts:157</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L163">Editor.d.ts:163</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -772,7 +796,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L197">Editor.d.ts:197</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L203">Editor.d.ts:203</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -806,7 +830,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L111">Editor.d.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L117">Editor.d.ts:117</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -828,7 +852,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L128">Editor.d.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L134">Editor.d.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -850,7 +874,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L123">Editor.d.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L129">Editor.d.ts:129</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -872,7 +896,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L147">Editor.d.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L153">Editor.d.ts:153</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -895,7 +919,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d296308/src/Editor.d.ts#L91">Editor.d.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/aca2b56/src/Editor.d.ts#L97">Editor.d.ts:97</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -935,6 +959,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="editor.html#navigationmarkers" class="tsd-kind-icon">navigation<wbr>Markers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="editor.html#pinningenabled" class="tsd-kind-icon">pinning<wbr>Enabled</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="editor.html#preferredtabstring" class="tsd-kind-icon">preferred<wbr>Tab<wbr>String</a>

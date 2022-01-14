@@ -1452,9 +1452,15 @@ type navigationMarker = {
  */
 declare class Editor {
     /**
-     * Access or set current focus mode status.
+     * @deprecated replaced by `pinningEnabled`.
+     * @category Deprecated
      */
     focusModeEnabled: boolean
+
+    /**
+     * Access or set current pinning status for editor.
+     */
+    pinningEnabled: boolean
 
     /**
      * Returns the current tab string is use. This could be 2 spaces, 4 spaces, or `\t` depending on the editor preferences for the current syntax. Useful in actions, such as indent/outdent actions, which need to insert or remove indentation and want to match the options of the current syntax.
@@ -1824,6 +1830,11 @@ declare class FileManager {
      * Write the contents to the path in JSON format. Returns true if successful, false if the file could not be written successfully. This will override existing files!
      */
     writeJSON(path: string, content: object): boolean
+
+     /**
+     * Check if a file already exists at the given path.
+     */
+    exists(path: string): boolean
 
     /**
      * List files and directories at the specified path. Array of full path will be returned.
@@ -3419,6 +3430,11 @@ declare class Reminder {
      * Notes associated with the event.
      */
     notes: string
+
+    /**
+     * Location of the event.
+     */
+    location: string
 
     /**
     * Due date of the reminder

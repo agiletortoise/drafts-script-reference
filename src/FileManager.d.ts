@@ -79,6 +79,11 @@ declare class FileManager {
      */
     writeJSON(path: string, content: object): boolean
 
+     /**
+     * Check if a file already exists at the given path.
+     */
+    exists(path: string): boolean
+
     /**
      * List files and directories at the specified path. Array of full path will be returned.
      */

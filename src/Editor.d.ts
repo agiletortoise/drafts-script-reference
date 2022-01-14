@@ -40,9 +40,15 @@ type navigationMarker = {
  */
 declare class Editor {
     /**
-     * Access or set current focus mode status.
+     * @deprecated replaced by `pinningEnabled`.
+     * @category Deprecated
      */
     focusModeEnabled: boolean
+
+    /**
+     * Access or set current pinning status for editor.
+     */
+    pinningEnabled: boolean
 
     /**
      * Returns the current tab string is use. This could be 2 spaces, 4 spaces, or `\t` depending on the editor preferences for the current syntax. Useful in actions, such as indent/outdent actions, which need to insert or remove indentation and want to match the options of the current syntax.
