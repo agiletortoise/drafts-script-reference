@@ -24,6 +24,11 @@ declare class ActionLog {
     */
     readonly log: string
     /**
+    * Status of the log. "failed" indicates the action ended in an error, "completed" indicates successful completion of the action.
+    * @category Content
+    */
+    readonly status: "pending" | "in-progress" | "completed" | "failed" | "cancelled"
+    /**
     * Timestamp for the creation of the log entry
     * @category Content
     */

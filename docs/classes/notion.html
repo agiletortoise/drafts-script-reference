@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Twitter | Drafts Script Reference</title>
+	<title>Notion | Drafts Script Reference</title>
 	<meta name="description" content="Documentation for Drafts Script Reference">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="twitter.html">Twitter</a>
+					<a href="notion.html">Notion</a>
 				</li>
 			</ul>
-			<h1>Class Twitter</h1>
+			<h1>Class Notion</h1>
 		</div>
 	</div>
 </header>
@@ -67,25 +67,42 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<a href="#twitter" id="twitter" style="color: inherit; text-decoration: none;">
-							<h1>Twitter</h1>
+						<a href="#notion" id="notion" style="color: inherit; text-decoration: none;">
+							<h1>Notion</h1>
 						</a>
 					</div>
-					<p>Script integration with Twitter. The <code>updateStatus</code> method is a convenience method for posting a tweet, but the entire <a href="https://developer.twitter.com/en/docs/api-reference-index">Twitter API</a> can be used with the request method, which handles OAuth authentication and authorization.</p>
+					<p>Script integration with <a href="https://www.notion.so/">Notion</a>. This object handles OAuth authentication and request signing. The entire <a href="https://developers.notion.com">Notion REST API</a> can be used with the <code>request</code> method.</p>
 					<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 						<h3>Example</h3>
 					</a>
-					<pre><code class="language-javascript"><span class="hljs-comment">// create twitter object</span>
-<span class="hljs-keyword">var</span> twitter = Twitter.create();
-<span class="hljs-comment">// post tweet</span>
-<span class="hljs-keyword">var</span> success = twitter.updateStatus(<span class="hljs-string">&quot;My tweet content!&quot;</span>);
+					<pre><code><span class="hljs-regexp">//</span> list pages which have been shared with the Drafts integration
+<span class="hljs-regexp">//</span> API Docs: https:<span class="hljs-regexp">//</span>developers.notion.com<span class="hljs-regexp">/reference/</span>post-search
+let endpoint = <span class="hljs-string">&quot;https://api.notion.com/v1/search&quot;</span>
 
-<span class="hljs-keyword">if</span> success {
-  <span class="hljs-built_in">console</span>.log(twitter.lastResponse);
+let notion = Notion.create();
+let result = notion.request({
+    <span class="hljs-string">&quot;url&quot;</span>: endpoint,
+    <span class="hljs-string">&quot;method&quot;</span>: <span class="hljs-string">&quot;POST&quot;</span>,
+    <span class="hljs-string">&quot;data&quot;</span>: {
+        <span class="hljs-string">&quot;filter&quot;</span>: {
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;page&quot;</span>,
+            <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>
+        }
+    }
+});
+
+<span class="hljs-regexp">//</span> result has JSON payload
+<span class="hljs-regexp">//</span> with page properties
+<span class="hljs-keyword">if</span> (result.statusCode == <span class="hljs-number">200</span>) {
+    alert(`Notion Pages Loaded:
+
+<span class="hljs-variable">${result.responseText}</span>`)
 }
 <span class="hljs-keyword">else</span> {
-  <span class="hljs-built_in">console</span>.log(twitter.lastError);
-  context.fail();
+    alert(`Notion Error: <span class="hljs-variable">${result.statusCode}</span>
+
+<span class="hljs-variable">${notion.lastError}</span>`);
+    context.fail();
 }
 </code></pre>
 				</div>
@@ -94,7 +111,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Twitter</span>
+						<span class="target">Notion</span>
 					</li>
 				</ul>
 			</section>
@@ -105,15 +122,21 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="twitter.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="notion.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="notion.html#lasterror" class="tsd-kind-icon">last<wbr>Error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="notion.html#lastresponse" class="tsd-kind-icon">last<wbr>Response</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitter.html#request" class="tsd-kind-icon">request</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitter.html#updatestatus" class="tsd-kind-icon">update<wbr>Status</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="twitter.html#create" class="tsd-kind-icon">create</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="notion.html#request" class="tsd-kind-icon">request</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="notion.html#create" class="tsd-kind-icon">create</a></li>
 							</ul>
 						</section>
 					</div>
@@ -125,13 +148,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Twitter<span class="tsd-signature-symbol">(</span>identifier<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="twitter.html" class="tsd-signature-type">Twitter</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Notion<span class="tsd-signature-symbol">(</span>identifier<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="notion.html" class="tsd-signature-type">Notion</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Twitter.d.ts#L49">Twitter.d.ts:49</a></li>
+									<li>Defined in Notion.d.ts:74</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -145,9 +168,42 @@
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> identifier: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="twitter.html" class="tsd-signature-type">Twitter</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="notion.html" class="tsd-signature-type">Notion</a></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="lasterror" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> last<wbr>Error</h3>
+					<div class="tsd-signature tsd-kind-icon">last<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in Notion.d.ts:49</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If a function fails, this property will contain the last error as a string message, otherwise it will be <code>undefined</code>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="lastresponse" class="tsd-anchor"></a>
+					<h3>last<wbr>Response</h3>
+					<div class="tsd-signature tsd-kind-icon">last<wbr>Response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in Notion.d.ts:44</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If a function succeeds, this property will contain the last response returned by Notion. The JSON returned by Notion will be parsed to an object and placed in this property. Refer to <a href="https://developers.notion.com">Notion API documentation</a> for details on the contents of this object based on call made.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -162,12 +218,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Twitter.d.ts#L38">Twitter.d.ts:38</a></li>
+									<li>Defined in Notion.d.ts:57</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Execute a request against the Twitter API. For successful requests, the [[[HTTPResponse]] object will contain an object or array or objects decoded from the JSON returned by Twitter as appropriate to the request made. Refer to Twitter’s API documentation for details about the expected parameters and responses. Drafts will handle wrapping the request in the appropriate OAuth authentication flow.</p>
+									<p>Execute a request against the Notion API. For successful requests, the HTTPResponse object will contain an object or array or objects decoded from the JSON returned by Notion as appropriate to the request made. Refer to Notion&#39;s API documentation for details about the expected parameters and responses. Drafts will handle wrapping the request in the appropriate OAuth authentication flow.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -175,18 +231,16 @@
 								<li>
 									<h5>settings: <span class="tsd-signature-symbol">{ </span>data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">; </span>headers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">; </span>method<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>parameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">; </span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>an object with the following properties:</p>
-										<ul>
-											<li>url [string, required]: The full URL to the endpoint in the <a href="https://developer.twitter.com/en/docs/api-reference-index">Twitter API</a>.</li>
-											<li>method [string, required]: The HTTP method, like &quot;GET&quot;, &quot;POST&quot;, etc.</li>
-											<li>headers [object, optional]: An object contain key-values to be added as custom headers in the request. There is no need to provide authorization headers, Drafts will add those.</li>
-											<li>parameters [object, optional]: An object containing key-values to be added to the request as URL parameters.</li>
-											<li>data [object, optional]: An object containing data to be encoded into the HTTP body of the request.</li>
-										</ul>
+										<p>an object configuring the request.</p>
 									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
 											<h5><span class="tsd-flag ts-flagOptional">Optional</span> data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{}</span></h5>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>A JavaScript object containing data to be encoded into the HTTP body of the request. Refer to API documentation for appropriate information to include.</p>
+												</div>
+											</div>
 											<ul class="tsd-parameters">
 												<li class="tsd-parameter-index-signature">
 													<h5><span class="tsd-signature-symbol">[</span>x: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
@@ -195,6 +249,11 @@
 										</li>
 										<li class="tsd-parameter">
 											<h5><span class="tsd-flag ts-flagOptional">Optional</span> headers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{}</span></h5>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>An object contain key-values to be added as custom headers in the request. There is no need to provide authorization headers, Drafts will add those. Drafts will automatically include required authentication and versioning headers.</p>
+												</div>
+											</div>
 											<ul class="tsd-parameters">
 												<li class="tsd-parameter-index-signature">
 													<h5><span class="tsd-signature-symbol">[</span>x: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
@@ -203,9 +262,19 @@
 										</li>
 										<li class="tsd-parameter">
 											<h5>method<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>The HTTP method, like &quot;GET&quot;, &quot;POST&quot;, etc.</p>
+												</div>
+											</div>
 										</li>
 										<li class="tsd-parameter">
 											<h5><span class="tsd-flag ts-flagOptional">Optional</span> parameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{}</span></h5>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>An object containing key-values to be added to the request as URL parameters.</p>
+												</div>
+											</div>
 											<ul class="tsd-parameters">
 												<li class="tsd-parameter-index-signature">
 													<h5><span class="tsd-signature-symbol">[</span>x: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
@@ -214,6 +283,11 @@
 										</li>
 										<li class="tsd-parameter">
 											<h5>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>The full URL to the endpoint in the <a href="hhttps://developers.notion.com.">Notion REST API</a>.</p>
+												</div>
+											</div>
 										</li>
 									</ul>
 								</li>
@@ -222,59 +296,34 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="updatestatus" class="tsd-anchor"></a>
-					<h3>update<wbr>Status</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">update<wbr>Status<span class="tsd-signature-symbol">(</span>content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Twitter.d.ts#L27">Twitter.d.ts:27</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Post a status update (tweet) to Twitter. Returns <code>true</code> if successful, <code>false</code> if not. After success the <code>lastResponse</code> object can be used to inspect response and get details such as the ID of the tweet created. Refer to <a href="https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update">Twitter API POST /status/update documentation</a> for response details.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>content: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
 					<a name="create" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> create</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>identifier<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="twitter.html" class="tsd-signature-type">Twitter</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>identifier<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="notion.html" class="tsd-signature-type">Notion</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Twitter.d.ts#L49">Twitter.d.ts:49</a></li>
+									<li>Defined in Notion.d.ts:74</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates a new Twitter object. Identifier is a optional string value used to identify a Twitter account. Typically this can be omitted if you only work with one Twitter account in Drafts. Each unique identifier used for Twitter accounts will share credentials - across both action steps and scripts.</p>
+									<p>Creates a new Notion object.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>identifier: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional string value used to identify a Notion account. Typically this can be omitted if you only work with one Notion account in Drafts. Each unique identifier used for Notion accounts will share credentials - across both action steps and scripts.</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="twitter.html" class="tsd-signature-type">Twitter</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="notion.html" class="tsd-signature-type">Notion</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -293,19 +342,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="twitter.html" class="tsd-kind-icon">Twitter</a>
+						<a href="notion.html" class="tsd-kind-icon">Notion</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="twitter.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="notion.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="notion.html#lasterror" class="tsd-kind-icon">last<wbr>Error</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="notion.html#lastresponse" class="tsd-kind-icon">last<wbr>Response</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="twitter.html#request" class="tsd-kind-icon">request</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="twitter.html#updatestatus" class="tsd-kind-icon">update<wbr>Status</a>
+								<a href="notion.html#request" class="tsd-kind-icon">request</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="twitter.html#create" class="tsd-kind-icon">create</a>
+								<a href="notion.html#create" class="tsd-kind-icon">create</a>
 							</li>
 						</ul>
 					</li>
