@@ -47,7 +47,7 @@ declare class Action {
     readonly isSeparator: boolean
 }
 /**
- * The current running action.
+ * The current running action. This can be used in script to branch based on action name. 
  */
 declare const action: Action/**
  * # ActionGroup
@@ -1296,7 +1296,7 @@ declare class Draft {
     static recentTags(): string[]
 }
 /**
- * The current draft points to the draft open in the editor when the action was run.
+ * When an action is run, a single draft is always in context and accessible via the `draft` const. This usually points to the draft loaded in the editor at the time the action was run if running actions from the action list or action bar. 
  */
 declare const draft: Draft
 
@@ -3530,6 +3530,21 @@ declare class Reminder {
     * Does the dueDate property include an assigned time. If false, assignments to the `dueDate` property will ignore time components, making the reminder due on a specific date without a time assigned.
     */
      dueDateIncludesTime: Boolean
+
+    /**
+    * Start date of the reminder
+    */
+    startDate?: Date
+
+    /**
+    * Does the startDate property include an assigned time. If false, assignments to the `startDate` property will ignore time components, making the reminder start on a specific date without a time assigned.
+    */
+    startDateIncludesTime: Boolean
+
+    /**
+    * Completion date of the reminder. This value is set automatically when the `isCompleted` property is set to true. Setting this property to `nil` will set `isCompleted` to false.
+    */
+    completionDate?: Date
 
     /**
      * Integer number representing priority. Assign values matching those Apple uses as follows:

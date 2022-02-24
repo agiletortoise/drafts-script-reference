@@ -259,7 +259,7 @@ declare class Draft {
     static recentTags(): string[]
 }
 /**
- * The current draft points to the draft open in the editor when the action was run.
+ * When an action is run, a single draft is always in context and accessible via the `draft` const. This usually points to the draft loaded in the editor at the time the action was run if running actions from the action list or action bar. 
  */
 declare const draft: Draft
 

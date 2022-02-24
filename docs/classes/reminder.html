@@ -90,6 +90,7 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="reminder.html#alarms" class="tsd-kind-icon">alarms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="reminder.html#completiondate" class="tsd-kind-icon">completion<wbr>Date</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="reminder.html#duedate" class="tsd-kind-icon">due<wbr>Date</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="reminder.html#duedateincludestime" class="tsd-kind-icon">due<wbr>Date<wbr>Includes<wbr>Time</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="reminder.html#hasalarms" class="tsd-kind-icon">has<wbr>Alarms</a></li>
@@ -99,6 +100,8 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="reminder.html#location" class="tsd-kind-icon">location</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="reminder.html#notes" class="tsd-kind-icon">notes</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="reminder.html#priority" class="tsd-kind-icon">priority</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="reminder.html#startdate" class="tsd-kind-icon">start<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="reminder.html#startdateincludestime" class="tsd-kind-icon">start<wbr>Date<wbr>Includes<wbr>Time</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="reminder.html#title" class="tsd-kind-icon">title</a></li>
 							</ul>
 						</section>
@@ -121,7 +124,7 @@
 					<div class="tsd-signature tsd-kind-icon">alarms<span class="tsd-signature-symbol">:</span> <a href="alarm.html" class="tsd-signature-type">Alarm</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L64">Reminder.d.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L79">Reminder.d.ts:79</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -131,12 +134,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="completiondate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> completion<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">completion<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L55">Reminder.d.ts:55</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Completion date of the reminder. This value is set automatically when the <code>isCompleted</code> property is set to true. Setting this property to <code>nil</code> will set <code>isCompleted</code> to false.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="duedate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> due<wbr>Date</h3>
 					<div class="tsd-signature tsd-kind-icon">due<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L35">Reminder.d.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L35">Reminder.d.ts:35</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -151,7 +169,7 @@
 					<div class="tsd-signature tsd-kind-icon">due<wbr>Date<wbr>Includes<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L40">Reminder.d.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L40">Reminder.d.ts:40</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -166,7 +184,7 @@
 					<div class="tsd-signature tsd-kind-icon">has<wbr>Alarms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L59">Reminder.d.ts:59</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L74">Reminder.d.ts:74</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -181,7 +199,7 @@
 					<div class="tsd-signature tsd-kind-icon">identifier<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L15">Reminder.d.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L15">Reminder.d.ts:15</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -196,7 +214,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Completed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L54">Reminder.d.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L69">Reminder.d.ts:69</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -211,7 +229,7 @@
 					<div class="tsd-signature tsd-kind-icon">list<span class="tsd-signature-symbol">:</span> <a href="reminderlist.html" class="tsd-signature-type">ReminderList</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L10">Reminder.d.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L10">Reminder.d.ts:10</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -226,7 +244,7 @@
 					<div class="tsd-signature tsd-kind-icon">location<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L30">Reminder.d.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L30">Reminder.d.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -241,7 +259,7 @@
 					<div class="tsd-signature tsd-kind-icon">notes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L25">Reminder.d.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L25">Reminder.d.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -256,7 +274,7 @@
 					<div class="tsd-signature tsd-kind-icon">priority<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">0</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">1</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">5</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">9</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L49">Reminder.d.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L64">Reminder.d.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -272,12 +290,42 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="startdate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> start<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">start<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L45">Reminder.d.ts:45</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Start date of the reminder</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="startdateincludestime" class="tsd-anchor"></a>
+					<h3>start<wbr>Date<wbr>Includes<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">start<wbr>Date<wbr>Includes<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L50">Reminder.d.ts:50</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Does the startDate property include an assigned time. If false, assignments to the <code>startDate</code> property will ignore time components, making the reminder start on a specific date without a time assigned.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="title" class="tsd-anchor"></a>
 					<h3>title</h3>
 					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L20">Reminder.d.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L20">Reminder.d.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -299,7 +347,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L74">Reminder.d.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L89">Reminder.d.ts:89</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -327,7 +375,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L79">Reminder.d.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L94">Reminder.d.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -349,7 +397,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/d49b878/src/Reminder.d.ts#L69">Reminder.d.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/4b03c96/src/Reminder.d.ts#L84">Reminder.d.ts:84</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -382,6 +430,9 @@
 								<a href="reminder.html#alarms" class="tsd-kind-icon">alarms</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="reminder.html#completiondate" class="tsd-kind-icon">completion<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="reminder.html#duedate" class="tsd-kind-icon">due<wbr>Date</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -407,6 +458,12 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="reminder.html#priority" class="tsd-kind-icon">priority</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="reminder.html#startdate" class="tsd-kind-icon">start<wbr>Date</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="reminder.html#startdateincludestime" class="tsd-kind-icon">start<wbr>Date<wbr>Includes<wbr>Time</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="reminder.html#title" class="tsd-kind-icon">title</a>

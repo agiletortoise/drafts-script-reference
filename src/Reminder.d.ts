@@ -40,6 +40,21 @@ declare class Reminder {
      dueDateIncludesTime: Boolean
 
     /**
+    * Start date of the reminder
+    */
+    startDate?: Date
+
+    /**
+    * Does the startDate property include an assigned time. If false, assignments to the `startDate` property will ignore time components, making the reminder start on a specific date without a time assigned.
+    */
+    startDateIncludesTime: Boolean
+
+    /**
+    * Completion date of the reminder. This value is set automatically when the `isCompleted` property is set to true. Setting this property to `nil` will set `isCompleted` to false.
+    */
+    completionDate?: Date
+
+    /**
      * Integer number representing priority. Assign values matching those Apple uses as follows:
      * * `0`: No priority
      * * `1`: High

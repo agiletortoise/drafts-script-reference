@@ -47,6 +47,6 @@ declare class Action {
     readonly isSeparator: boolean
 }
 /**
- * The current running action.
+ * The current running action. This can be used in script to branch based on action name. 
  */
 declare const action: Action
