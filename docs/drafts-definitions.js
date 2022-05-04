@@ -1203,12 +1203,22 @@ declare class Draft {
     hasTag(tag: string): boolean
 
     /**
-     * Runs the template string through the template engine to evaluate tags.
+     * Runs the template string through the [Drafts Template](https://docs.getdrafts.com/docs/actions/templates/drafts-templates) engine to evaluate tags.
+     * @category Template
      */
     processTemplate(template: string): string
 
     /**
-     * Set a custom template tag value for use in templates. For example, calling `setTemplateTag("mytag", "mytext")` will create a tag `[[mytag]]`, which subsequent action steps in the same action can use in their templates.
+     * Runs the template string through the [Mustache template](https://docs.getdrafts.com/docs/actions/templates/mustache-templates) engine to evaluate tags. Allows additional values and partials to be provided to the context.
+     * @param template Template string
+     * @param additionalValues An object containing additional values you wish to make available in the Mustache context.
+     * @param partials An object containing string keys and values which will contain additional templates you which to make available for use as partials and layouts.
+     * @category Template
+     */
+    processMustacheTemplate(template: string, additionalValues: Object, partials: Object): string
+
+    /**
+     * Set a custom template tag value for use in templates. For example, calling `setTemplateTag("mytag", "mytext")` will create a tag `[[mytag]]`, which subsequent action steps in the same action can use in their templates. These values are also available in Mustache templates, but as `{{mytag}}`.
      * @category Template
      */
     setTemplateTag(tagName: string, value: string): void
@@ -1994,8 +2004,17 @@ declare function require(path: string): void
 
 /**
  * Format date using strftime format string. See [strftime format reference](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/strftime.3.html) for supported format strings.
+ * @category Date
  */
 declare function strftime(date: Date, format: string): string
+
+/**
+ * Move a date forward or backward in time based on the simple adjustment expression.
+ * @param date Valid date object
+ * @param adjustmentExpression An series of date adjustment values in the format `(+|-)(integer) (unit)`, such as `"+1 year"`, `"-1 month -12 hours"`. Supported units: year, month, day, hour, minute, second. Units may be in singular or plural form.
+ * @category Date
+ */
+declare function adjustDate(date: Date, adjustmentExpression: string): Date
 
 /**
  * # GmailMessage
@@ -2899,6 +2918,8 @@ declare class MultiMarkdown {
     constructor()
 }/**
  * # MustacheTemplate
+ * 
+ * See also: [`Draft.processMustachTemplate`](/classes/draft#processmustachetemplate) for rendering with Mustache similar to how those templates are rendered in actions. The `MustacheTemplate` object is for rendering with your own custom context.
  * 
  * The MustacheTemplate object support rendering of templates using the [Mustache](https://en.wikipedia.org/wiki/Mustache_%28template_system%29) template style.
  *

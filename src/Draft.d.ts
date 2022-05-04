@@ -166,12 +166,22 @@ declare class Draft {
     hasTag(tag: string): boolean
 
     /**
-     * Runs the template string through the template engine to evaluate tags.
+     * Runs the template string through the [Drafts Template](https://docs.getdrafts.com/docs/actions/templates/drafts-templates) engine to evaluate tags.
+     * @category Template
      */
     processTemplate(template: string): string
 
     /**
-     * Set a custom template tag value for use in templates. For example, calling `setTemplateTag("mytag", "mytext")` will create a tag `[[mytag]]`, which subsequent action steps in the same action can use in their templates.
+     * Runs the template string through the [Mustache template](https://docs.getdrafts.com/docs/actions/templates/mustache-templates) engine to evaluate tags. Allows additional values and partials to be provided to the context.
+     * @param template Template string
+     * @param additionalValues An object containing additional values you wish to make available in the Mustache context.
+     * @param partials An object containing string keys and values which will contain additional templates you which to make available for use as partials and layouts.
+     * @category Template
+     */
+    processMustacheTemplate(template: string, additionalValues: Object, partials: Object): string
+
+    /**
+     * Set a custom template tag value for use in templates. For example, calling `setTemplateTag("mytag", "mytext")` will create a tag `[[mytag]]`, which subsequent action steps in the same action can use in their templates. These values are also available in Mustache templates, but as `{{mytag}}`.
      * @category Template
      */
     setTemplateTag(tagName: string, value: string): void
