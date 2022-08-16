@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>HTMLPreview | Drafts Script Reference</title>
+	<title>Autocomplete | Drafts Script Reference</title>
 	<meta name="description" content="Documentation for Drafts Script Reference">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="htmlpreview.html">HTMLPreview</a>
+					<a href="autocomplete.html">Autocomplete</a>
 				</li>
 			</ul>
-			<h1>Class HTMLPreview</h1>
+			<h1>Class Autocomplete</h1>
 		</div>
 	</div>
 </header>
@@ -67,23 +67,20 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<a href="#htmlpreview" id="htmlpreview" style="color: inherit; text-decoration: none;">
-							<h1>HTMLPreview</h1>
+						<a href="#autocomplete" id="autocomplete" style="color: inherit; text-decoration: none;">
+							<h1>Autocomplete</h1>
 						</a>
 					</div>
-					<p>Display of HTML Preview window, the same as the HTMLPreview action step. Returns true if user closed preview with the &quot;Continue&quot; button, false if the user cancelled.</p>
-					<a href="#example" id="example" style="color: inherit; text-decoration: none;">
-						<h3>Example</h3>
+					<p>Create and update entries in the Editor&#39;s <a href="https://docs.getdrafts.com/docs/editor/autocomplete">global autocomplete system</a></p>
+					<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+						<h3>Examples</h3>
 					</a>
-					<pre><code class="language-javascript"><span class="hljs-keyword">let</span> html = <span class="hljs-string">&quot;&lt;html&gt;&lt;body&gt;My Document&lt;/body&gt;&lt;/html&gt;&quot;</span>
-
-<span class="hljs-keyword">let</span> preview = HTMLPreview.create();
-<span class="hljs-keyword">if</span> (preview.show(html)) {
-  <span class="hljs-comment">// continue button was pressed</span>
-}
-<span class="hljs-keyword">else</span> {
-  <span class="hljs-comment">// cancel button was pressed</span>
-}
+					<pre><code class="language-javascript"><span class="hljs-comment">// work with the default system autocomplete</span>
+<span class="hljs-keyword">let</span> autocomplete = Autocomplete.getDefault();
+<span class="hljs-comment">// object with all autocomplete items, using label as key</span>
+<span class="hljs-keyword">let</span> items = autocomplete.getAll();
+<span class="hljs-comment">// add new autocomplete item</span>
+autocomplete.add(<span class="hljs-string">&quot;label&quot;</span>, <span class="hljs-string">&quot;template value&quot;</span>);
 </code></pre>
 				</div>
 			</section>
@@ -91,7 +88,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">HTMLPreview</span>
+						<span class="target">Autocomplete</span>
 					</li>
 				</ul>
 			</section>
@@ -100,96 +97,105 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
+							<h3>Constructors Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="htmlpreview.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="autocomplete.html#getdefault" class="tsd-kind-icon">get<wbr>Default</a></li>
 							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
+							<h3>Query Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="htmlpreview.html#hideinterface" class="tsd-kind-icon">hide<wbr>Interface</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="autocomplete.html#getall" class="tsd-kind-icon">get<wbr>All</a></li>
 							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Update Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="htmlpreview.html#show" class="tsd-kind-icon">show</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="htmlpreview.html#create" class="tsd-kind-icon">create</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="autocomplete.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="autocomplete.html#remove" class="tsd-kind-icon">remove</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new HTMLPreview<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="htmlpreview.html" class="tsd-signature-type">HTMLPreview</a></li>
+				<h2>Constructors Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="getdefault" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Default</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Default<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="autocomplete.html" class="tsd-signature-type">Autocomplete</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/HTMLPreview.d.ts#L35">HTMLPreview.d.ts:35</a></li>
+									<li>Defined in Autocomplete.d.ts:23</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Create new instance.</p>
+									<p>Get the default system global autocomplete object</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="htmlpreview.html" class="tsd-signature-type">HTMLPreview</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="autocomplete.html" class="tsd-signature-type">Autocomplete</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="hideinterface" class="tsd-anchor"></a>
-					<h3>hide<wbr>Interface</h3>
-					<div class="tsd-signature tsd-kind-icon">hide<wbr>Interface<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/HTMLPreview.d.ts#L24">HTMLPreview.d.ts:24</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Hides the toolbars and <code>Cancel</code> / <code>Continue</code> buttons in the  preview window. For use only when combined with JavaScript flow control in the HTML preview. See <a href="">docs</a> for details.</p>
-						</div>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
+				<h2>Query Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="show" class="tsd-anchor"></a>
-					<h3>show</h3>
+					<a name="getall" class="tsd-anchor"></a>
+					<h3>get<wbr>All</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">show<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/HTMLPreview.d.ts#L30">HTMLPreview.d.ts:30</a></li>
+									<li>Defined in Autocomplete.d.ts:29</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Open HTML Preview window displaying the HTML string passed.</p>
+									<p>Get all existing autocomplete items as an object with the item lobels as keys, and templates as values.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Update Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="add" class="tsd-anchor"></a>
+					<h3>add</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, template<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in Autocomplete.d.ts:37</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a new autocomplete item</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>html: <span class="tsd-signature-type">string</span></h5>
+									<h5>label: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The HTML content to display. Should be complete HTML document.</p>
+										<p>The label used in the autocomplete drop-down</p>
+									</div>
+								</li>
+								<li>
+									<h5>template: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The template value used to insert text</p>
 									</div>
 								</li>
 							</ul>
@@ -197,25 +203,34 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="create" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> create</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="htmlpreview.html" class="tsd-signature-type">HTMLPreview</a></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="remove" class="tsd-anchor"></a>
+					<h3>remove</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/HTMLPreview.d.ts#L35">HTMLPreview.d.ts:35</a></li>
+									<li>Defined in Autocomplete.d.ts:44</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Create new instance.</p>
+									<p>Deletes aa autocomplete item. Returns true if successful, false if item with label does not exist.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="htmlpreview.html" class="tsd-signature-type">HTMLPreview</a></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>label: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The label used in the autocomplete drop-down</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -234,19 +249,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="htmlpreview.html" class="tsd-kind-icon">HTMLPreview</a>
+						<a href="autocomplete.html" class="tsd-kind-icon">Autocomplete</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="htmlpreview.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="htmlpreview.html#hideinterface" class="tsd-kind-icon">hide<wbr>Interface</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="autocomplete.html#add" class="tsd-kind-icon">add</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="htmlpreview.html#show" class="tsd-kind-icon">show</a>
+								<a href="autocomplete.html#getall" class="tsd-kind-icon">get<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="autocomplete.html#remove" class="tsd-kind-icon">remove</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="htmlpreview.html#create" class="tsd-kind-icon">create</a>
+								<a href="autocomplete.html#getdefault" class="tsd-kind-icon">get<wbr>Default</a>
 							</li>
 						</ul>
 					</li>

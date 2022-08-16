@@ -263,10 +263,15 @@ declare class Draft {
     static queryByTitle(title: string): Draft[]
 
     /**
-     * Return array of recently used tags. Helpful for building prompts to select tags.
-     * @category Tag
+     * @category Deprecated
+     * @deprecated use `Tag.recentTags()` instead.
      */
     static recentTags(): string[]
+
+    /**
+     * Provide standard object representation of draft, compatible with `JSON.stringify`.
+     */
+    toJSON(): object
 }
 /**
  * When an action is run, a single draft is always in context and accessible via the `draft` const. This usually points to the draft loaded in the editor at the time the action was run if running actions from the action list or action bar. 

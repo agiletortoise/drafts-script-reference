@@ -130,6 +130,7 @@ let result = notion.request({
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="notion.html#lasterror" class="tsd-kind-icon">last<wbr>Error</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="notion.html#lastresponse" class="tsd-kind-icon">last<wbr>Response</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="notion.html#version" class="tsd-kind-icon">version</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -154,7 +155,7 @@ let result = notion.request({
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/bb281e8/src/Notion.d.ts#L74">Notion.d.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/Notion.d.ts#L79">Notion.d.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -181,7 +182,7 @@ let result = notion.request({
 					<div class="tsd-signature tsd-kind-icon">last<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/bb281e8/src/Notion.d.ts#L49">Notion.d.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/Notion.d.ts#L54">Notion.d.ts:54</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -196,12 +197,27 @@ let result = notion.request({
 					<div class="tsd-signature tsd-kind-icon">last<wbr>Response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/bb281e8/src/Notion.d.ts#L44">Notion.d.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/Notion.d.ts#L49">Notion.d.ts:49</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>If a function succeeds, this property will contain the last response returned by Notion. The JSON returned by Notion will be parsed to an object and placed in this property. Refer to <a href="https://developers.notion.com">Notion API documentation</a> for details on the contents of this object based on call made.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="version" class="tsd-anchor"></a>
+					<h3>version</h3>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/Notion.d.ts#L44">Notion.d.ts:44</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Release version of the Notion API to target. Default is &quot;2022-02-22&quot;. If you need capabilities not available in a particular version, you can override the value. See <a href="https://developers.notion.com/reference/versioning">Notion&#39;s versioning docs</a> for details.</p>
 						</div>
 					</div>
 				</section>
@@ -218,7 +234,7 @@ let result = notion.request({
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/bb281e8/src/Notion.d.ts#L57">Notion.d.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/Notion.d.ts#L62">Notion.d.ts:62</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -306,7 +322,7 @@ let result = notion.request({
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/bb281e8/src/Notion.d.ts#L74">Notion.d.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/Notion.d.ts#L79">Notion.d.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -352,6 +368,9 @@ let result = notion.request({
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="notion.html#lastresponse" class="tsd-kind-icon">last<wbr>Response</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="notion.html#version" class="tsd-kind-icon">version</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="notion.html#request" class="tsd-kind-icon">request</a>

@@ -211,6 +211,21 @@ declare class Prompt {
         allowMultiple: boolean
     ): void
 
+        /**
+     * Add a segmented control. Best used for selection between a small number of values. Returns a string value in `fieldValues`.
+     * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
+     * @param label User-friendly text label to place next to the field.
+     * @param values The array of string values that will be available in the segmented control.
+     * @param selectedValue String values that should be initially selected when the prompt is displayed. Value should match value in the `values` array.
+     * @category Field
+     */
+    addSegmentedControl(
+        name: string,
+        label: string,
+        values: string[],
+        selectedValue: string
+    ): void
+
     /**
      * Add a button to the array of buttons to be displayed. All buttons should be created before calling `show()`.
      * @param name

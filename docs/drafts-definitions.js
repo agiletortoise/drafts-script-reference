@@ -489,6 +489,51 @@ declare class AppleScript {
 }
 
 /**
+ * # Autocomplete
+ * 
+ * Create and update entries in the Editor's [global autocomplete system](https://docs.getdrafts.com/docs/editor/autocomplete)
+ * 
+ * ### Examples
+ *
+ * ```javascript
+ * // work with the default system autocomplete
+ * let autocomplete = Autocomplete.getDefault();
+ * // object with all autocomplete items, using label as key
+ * let items = autocomplete.getAll();
+ * // add new autocomplete item
+ * autocomplete.add("label", "template value");
+ * ```
+ * 
+ */
+declare class Autocomplete {
+    /**
+     * Get the default system global autocomplete object
+     * @category Constructors
+     */
+    static getDefault(): Autocomplete
+
+    /**
+     * Get all existing autocomplete items as an object with the item lobels as keys, and templates as values.
+     * @category Query
+     */
+    getAll(): object
+
+    /**
+     * Create a new autocomplete item
+     * @param label The label used in the autocomplete drop-down
+     * @param template The template value used to insert text
+     * @category Update
+     */
+    add(label: string, template: string): boolean
+
+    /**
+     * Deletes aa autocomplete item. Returns true if successful, false if item with label does not exist.
+     * @param label The label used in the autocomplete drop-down
+     * @category Update
+     */
+    remove(label: string): boolean
+}
+/**
  * # Base64
  * 
  * Helper methods to encode and decode [Base64](https://en.wikipedia.org/wiki/Base64) strings.
@@ -1300,10 +1345,15 @@ declare class Draft {
     static queryByTitle(title: string): Draft[]
 
     /**
-     * Return array of recently used tags. Helpful for building prompts to select tags.
-     * @category Tag
+     * @category Deprecated
+     * @deprecated use `Tag.recentTags()` instead.
      */
     static recentTags(): string[]
+
+    /**
+     * Provide standard object representation of draft, compatible with `JSON.stringify`.
+     */
+    toJSON(): object
 }
 /**
  * When an action is run, a single draft is always in context and accessible via the `draft` const. This usually points to the draft loaded in the editor at the time the action was run if running actions from the action list or action bar. 
@@ -1552,8 +1602,9 @@ declare class Editor {
 
     /**
     * Open find mode in editor.
+    * @param preferAdvancedFind If true, skip native find implementation and option Drafts advanced find directly.
     */
-    showFind(): void
+    showFind(preferAdvancedFind?: boolean): void
 
     /**
     * Open dictation mode in editor. This is a non-blocking method and returns immediately. It is intended only to mimic the tapping of the dictate button. Use `editor.dictate()` to wait for a result and use it in further scripting.
@@ -3031,6 +3082,11 @@ declare class MustacheTemplate {
  */
 declare class Notion {
     /**
+     * Release version of the Notion API to target. Default is "2022-02-22". If you need capabilities not available in a particular version, you can override the value. See [Notion's versioning docs](https://developers.notion.com/reference/versioning) for details.
+     */
+    version: string
+
+    /**
      * If a function succeeds, this property will contain the last response returned by Notion. The JSON returned by Notion will be parsed to an object and placed in this property. Refer to [Notion API documentation](https://developers.notion.com) for details on the contents of this object based on call made.
      */
     lastResponse: any
@@ -3424,6 +3480,21 @@ declare class Prompt {
         values: string[],
         selectedValues: string[],
         allowMultiple: boolean
+    ): void
+
+        /**
+     * Add a segmented control. Best used for selection between a small number of values. Returns a string value in `fieldValues`.
+     * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
+     * @param label User-friendly text label to place next to the field.
+     * @param values The array of string values that will be available in the segmented control.
+     * @param selectedValue String values that should be initially selected when the prompt is displayed. Value should match value in the `values` array.
+     * @category Field
+     */
+    addSegmentedControl(
+        name: string,
+        label: string,
+        values: string[],
+        selectedValue: string
     ): void
 
     /**
@@ -3849,7 +3920,40 @@ declare class Syntax {
      * Search for a syntax definition matching the type and name passed and return it if found. Returns undefined if not found.
      */
     static find(type: syntaxType, name: string): Syntax | undefined
-}type themeType = 'builtIn' | 'custom' | 'file'
+}/**
+ * # Tag 
+ * 
+ * Tools for querying and working with tags.
+ * 
+ * ### Example: Querying tags
+ * 
+ * ```javascript
+ * // query a list of all unique tag names
+ * let tags = Tag.query("")
+ * 
+ * // get filtered list of tags matching "bl", like "blue", "black"
+ * let blueTags = Tag.query("bl")
+ * ```
+ */
+declare class Tag {
+    /**
+     * Perform a search for tags and return an array of tag names.
+     * @param queryString Search string, as you would type in the search box in the filter list. Use empty string (`""`) not to filter.
+     * @category Querying
+     */
+    static query(
+        queryString: string
+    ): string[]
+
+    /**
+     * Return array of recently used tags. Helpful for building prompts to select tags.
+     * @category Tag
+     */
+    static recentTags(): string[]
+}
+
+
+type themeType = 'builtIn' | 'custom' | 'file'
 /**
  * # Theme
  * 
@@ -4413,10 +4517,13 @@ declare class WordPress {
         password?: string
     )
 }type sortBy = 'created' | 'modified' | 'accessed' | 'name'
+type flagStatus = 'flagged' | 'unflagged' | 'any'
 /**
  * # Workspace
  * 
- * Represents a Workspace. Can be used to inquire and load workspaces and apply them using methods on the App object.
+ * Represents a Workspace. Can be used to inquire and load workspaces and apply them using methods on the [[App]] object.
+ * 
+ * Note that is can also be useful in script to create and load temporary workspaces to apply filters or query drafts. If you create a new `Workspace` object and never call `update()` that workspace will not be saved after the end of an action's execution.
  * 
  * ### Example: Find and Load Workspace
  * 
@@ -4450,6 +4557,12 @@ declare class Workspace {
      * @category Filter
      */
     tagFilter: string
+
+    /**
+     * Filter by flagged status of drafts.
+     * @category Filter
+     */
+    flaggedStatus: flagStatus
 
     /**
      * A [[QueryDate]] specifying a date which all drafts in the workspace must be greater than or equal to.

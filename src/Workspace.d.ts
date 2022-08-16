@@ -1,8 +1,11 @@
 type sortBy = 'created' | 'modified' | 'accessed' | 'name'
+type flagStatus = 'flagged' | 'unflagged' | 'any'
 /**
  * # Workspace
  * 
- * Represents a Workspace. Can be used to inquire and load workspaces and apply them using methods on the App object.
+ * Represents a Workspace. Can be used to inquire and load workspaces and apply them using methods on the [[App]] object.
+ * 
+ * Note that is can also be useful in script to create and load temporary workspaces to apply filters or query drafts. If you create a new `Workspace` object and never call `update()` that workspace will not be saved after the end of an action's execution.
  * 
  * ### Example: Find and Load Workspace
  * 
@@ -36,6 +39,12 @@ declare class Workspace {
      * @category Filter
      */
     tagFilter: string
+
+    /**
+     * Filter by flagged status of drafts.
+     * @category Filter
+     */
+    flaggedStatus: flagStatus
 
     /**
      * A [[QueryDate]] specifying a date which all drafts in the workspace must be greater than or equal to.

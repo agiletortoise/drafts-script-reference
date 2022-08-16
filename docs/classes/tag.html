@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Base64 | Drafts Script Reference</title>
+	<title>Tag | Drafts Script Reference</title>
 	<meta name="description" content="Documentation for Drafts Script Reference">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="base64.html">Base64</a>
+					<a href="tag.html">Tag</a>
 				</li>
 			</ul>
-			<h1>Class Base64</h1>
+			<h1>Class Tag</h1>
 		</div>
 	</div>
 </header>
@@ -67,17 +67,19 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<a href="#base64" id="base64" style="color: inherit; text-decoration: none;">
-							<h1>Base64</h1>
+						<a href="#tag" id="tag" style="color: inherit; text-decoration: none;">
+							<h1>Tag</h1>
 						</a>
 					</div>
-					<p>Helper methods to encode and decode <a href="https://en.wikipedia.org/wiki/Base64">Base64</a> strings.</p>
-					<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
-						<h3>Examples</h3>
+					<p>Tools for querying and working with tags.</p>
+					<a href="#example-querying-tags" id="example-querying-tags" style="color: inherit; text-decoration: none;">
+						<h3>Example: Querying tags</h3>
 					</a>
-					<pre><code class="language-javascript"><span class="hljs-keyword">let</span> s = <span class="hljs-string">&quot;My String&quot;</span>;
-<span class="hljs-keyword">let</span> encoded = Base64.encode(s);
-<span class="hljs-keyword">let</span> decoded = Base64.decode(encoded);
+					<pre><code class="language-javascript"><span class="hljs-comment">// query a list of all unique tag names</span>
+<span class="hljs-keyword">let</span> tags = Tag.query(<span class="hljs-string">&quot;&quot;</span>)
+
+<span class="hljs-comment">// get filtered list of tags matching &quot;bl&quot;, like &quot;blue&quot;, &quot;black&quot;</span>
+<span class="hljs-keyword">let</span> blueTags = Tag.query(<span class="hljs-string">&quot;bl&quot;</span>)
 </code></pre>
 				</div>
 			</section>
@@ -85,7 +87,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Base64</span>
+						<span class="target">Tag</span>
 					</li>
 				</ul>
 			</section>
@@ -94,76 +96,73 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Querying Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="base64.html#decode" class="tsd-kind-icon">decode</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="base64.html#encode" class="tsd-kind-icon">encode</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="tag.html#query" class="tsd-kind-icon">query</a></li>
+							</ul>
+							<h3>Tag Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="tag.html#recenttags" class="tsd-kind-icon">recent<wbr>Tags</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
+				<h2>Querying Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="decode" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> decode</h3>
+					<a name="query" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> query</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">query<span class="tsd-signature-symbol">(</span>queryString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/Base64.d.ts#L25">Base64.d.ts:25</a></li>
+									<li>Defined in Tag.d.ts:22</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Base64 decode a string.</p>
+									<p>Perform a search for tags and return an array of tag names.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>data: <span class="tsd-signature-type">string</span></h5>
+									<h5>queryString: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the string to decode</p>
+										<p>Search string, as you would type in the search box in the filter list. Use empty string (<code>&quot;&quot;</code>) not to filter.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Tag Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="encode" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> encode</h3>
+					<a name="recenttags" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> recent<wbr>Tags</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">encode<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">recent<wbr>Tags<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/agiletortoise/drafts-script-reference/blob/3a5e818/src/Base64.d.ts#L19">Base64.d.ts:19</a></li>
+									<li>Defined in Tag.d.ts:30</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Base64 encode a string.</p>
+									<p>Return array of recently used tags. Helpful for building prompts to select tags.</p>
 								</div>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>data: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the string to encode</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -182,13 +181,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="base64.html" class="tsd-kind-icon">Base64</a>
+						<a href="tag.html" class="tsd-kind-icon">Tag</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="base64.html#decode" class="tsd-kind-icon">decode</a>
+								<a href="tag.html#query" class="tsd-kind-icon">query</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="base64.html#encode" class="tsd-kind-icon">encode</a>
+								<a href="tag.html#recenttags" class="tsd-kind-icon">recent<wbr>Tags</a>
 							</li>
 						</ul>
 					</li>

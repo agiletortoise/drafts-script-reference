@@ -39,6 +39,11 @@
  */
 declare class Notion {
     /**
+     * Release version of the Notion API to target. Default is "2022-02-22". If you need capabilities not available in a particular version, you can override the value. See [Notion's versioning docs](https://developers.notion.com/reference/versioning) for details.
+     */
+    version: string
+
+    /**
      * If a function succeeds, this property will contain the last response returned by Notion. The JSON returned by Notion will be parsed to an object and placed in this property. Refer to [Notion API documentation](https://developers.notion.com) for details on the contents of this object based on call made.
      */
     lastResponse: any
