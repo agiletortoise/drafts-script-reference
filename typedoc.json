@@ -1,0 +1,8 @@
+{
+    "entryPoints": ["./src/"],
+    "entryPointStrategy": "Expand",
+    "out": "./docs/",
+    "name": "Drafts Script Reference",
+    "tsconfig": "./tsconfig.json",
+    "disableSources": true
+}
