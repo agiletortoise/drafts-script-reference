@@ -33,18 +33,19 @@ type microsoftToDoLinkedResource = object
  * let list = todo.findList("Test");
  * // create task object, more properties available, see API docs
  * let task = {
-    "title": `Task Title`,
-    "importance": "high",
-    "body": {
-        "content": "Notes for the task",
-        "contentType": "text"
-    };
-    "dueDateTime": {
-        "dateTime": Date.today().addDays(1).toISOString(),
-        "timeZone": "UTC"
-    }
-};
-* let t = todo.createTask(list, task);
+ *   "title": `Task Title`,
+ *   "importance": "high",
+ *   "body": {
+ *       "content": "Notes for the task",
+ *       "contentType": "text"
+ *   };
+ *   "dueDateTime": {
+ *       "dateTime": Date.today().addDays(1).toISOString(),
+ *       "timeZone": "UTC"
+ *   }
+ * };
+ * let t = todo.createTask(list, task);
+ * ```
 */
 declare class MicrosoftToDo {
     /**
