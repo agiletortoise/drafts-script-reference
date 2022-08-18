@@ -1,11 +1,9 @@
 /**
- * # ShellScript
- * 
- * _**macOS only**. Requires Drafts 19 or greater._
+ * > _**macOS only**. Requires Drafts 19 or greater._
  * 
  * ShellScript objects can be used to execute Unix shell scripts.
  *
- * ### Bash Example
+ * #### Bash Example
  * 
  * ```javascript
  * // define text of bash script
@@ -24,7 +22,7 @@
  * }
  * ```
  * 
- * ### Ruby Example
+ * #### Ruby Example
  * 
  * ```javascript
  * let script = `#!/usr/bin/env ruby

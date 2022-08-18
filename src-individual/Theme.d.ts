@@ -1,10 +1,8 @@
 type themeType = 'builtIn' | 'custom' | 'file'
 /**
- * # Theme
- * 
  * Represents a Theme definition available in the current installation of Drafts.
  * 
- * ### Example: Find and assign the active light theme
+ * #### Example: Find and assign the active light theme
  * 
  * ```javascript
  * let theme = Theme.find("builtIn", "dark");

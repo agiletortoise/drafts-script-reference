@@ -1,6 +1,4 @@
 /**
- * # MustacheTemplate
- * 
  * See also: [`Draft.processMustachTemplate`](/classes/draft#processmustachetemplate) for rendering with Mustache similar to how those templates are rendered in actions. The `MustacheTemplate` object is for rendering with your own custom context.
  * 
  * The MustacheTemplate object support rendering of templates using the [Mustache](https://en.wikipedia.org/wiki/Mustache_%28template_system%29) template style.
@@ -15,7 +13,7 @@
  *
  * When rendering Mustache templates, you pass the template itself and a data object which contains the values available to insert. The data object should be a Javascript object with keys and values. Values can be basic data types (numbers, strings, dates) and also arrays or nested objects which can be iterated using conventions of the Mustache syntax.
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // create template to loop over drafts

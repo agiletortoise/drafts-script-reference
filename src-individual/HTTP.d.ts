@@ -1,9 +1,7 @@
 /**
- * # HTTP
- * 
  * The {@link HTTP} and [[HTTPResponse objects are used to run synchronous HTTP requests to communicate with APIs, or just read pages from the web. A full set of custom settings can be passed, and all HTTP methods (GET, POST, PUT, DELETE, etc.) are supported.
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * var http = HTTP.create(); // create HTTP object

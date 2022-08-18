@@ -1,10 +1,8 @@
 type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
 /**
- * # Draft 
- * 
  * The Draft object represents a single draft. When an action is run, the current draft is available as the global variable `draft`. Scripts can also create new drafts, access and set values, and update the draft to persist changes.
  * 
- * ### Example: Creating a draft
+ * #### Example: Creating a draft
  * 
  * ```javascript
  * // create a new draft, assign content and save it
@@ -14,7 +12,7 @@ type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
  * d.update();
  * ```
  * 
- * ### Example: Querying drafts
+ * #### Example: Querying drafts
  * 
  * ```javascript
  * // query a list of drafts in the inbox with the tag "blue"
@@ -239,7 +237,7 @@ declare class Draft {
      * Perform a search for drafts and return an array of matching draft objects.
      * @param queryString Search string, as you would type in the search box in the draft list. Will find only drafts with a matching string in their contents. Use empty string (`""`) not to filter.
      * @param filter Filter by one of the allowed values
-     * @param tags Results will only include drafts with one or more of these tags assigned.
+     * @param tags Results will only include drafts with all the listed tags assigned.
      * @param omitTags Results will omit drafts with any of these tags assigned.
      * @param sort
      * @param sortDescending If `true`, sort descending. Defaults to `false`.

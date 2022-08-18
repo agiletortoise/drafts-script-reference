@@ -1,9 +1,7 @@
 /**
- * # Device
- * 
  * Drafts defines a single global `device` object which provides access to information about the current device.
  * 
- * ### Examples
+ * #### Examples
  * 
  * ```javascript
  * // get system info from device object
@@ -29,6 +27,7 @@
  * ```
  */
 declare class Device {
+    private constructor()
     /**
      * Model of current device.
      */

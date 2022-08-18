@@ -28,17 +28,15 @@ type navigationMarker = {
     level: number,
 }
 /**
- * # Editor 
- * 
  * A global `editor` object is available in all action scripts. This object allows manipulation of the main editing window in Drafts, altering the text, text selections, or loading a different draft into the editor, etc.
  * 
  * Typically scripting actions that work like custom keyboard commands and similar will utilize the editor functions to manipulate text.
  * 
- * **NOTE:** _Generally speaking, editor methods are best used for quick text manipulations of the type used in the extended keyboard. Most substantial updates to draft content are better applied using the `draft` object._
- * 
+ * > **NOTE:** _Generally speaking, editor methods are best used for quick text manipulations of the type used in the extended keyboard. Most substantial updates to draft content are better applied using the `draft` object._
  * 
  */
 declare class Editor {
+    private constructor()
     /**
      * @deprecated replaced by `pinningEnabled`.
      * @category Deprecated

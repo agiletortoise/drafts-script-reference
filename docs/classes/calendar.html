@@ -14,11 +14,7 @@
 <li><a href="Calendar.html">Calendar</a></li></ul>
 <h1>Class Calendar</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography">
-<a href="#calendar" id="calendar" style="color: inherit; text-decoration: none;">
-  <h1>Calendar</h1>
-</a>
-<p>Calendar objects are used to manipulate and create calendars in the built-in Calendars app and its associated accounts.</p>
+<div class="tsd-comment tsd-typography"><p>Calendar objects are used to manipulate and create calendars in the built-in Calendars app and its associated accounts.</p>
 
 <a href="#example-event-creation" id="example-event-creation" style="color: inherit; text-decoration: none;">
   <h4>Example: Event Creation</h4>
@@ -27,7 +23,7 @@
 </code></pre>
 
 <a href="#example-reading-calendar-events" id="example-reading-calendar-events" style="color: inherit; text-decoration: none;">
-  <h1>Example: Reading Calendar Events</h1>
+  <h4>Example: Reading Calendar Events</h4>
 </a>
 <pre><code class="language-javascript"><span class="hl-0">// load a calendar</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">cal</span><span class="hl-2"> = </span><span class="hl-3">Calendar</span><span class="hl-2">.</span><span class="hl-4">find</span><span class="hl-2">(</span><span class="hl-5">&quot;Test&quot;</span><span class="hl-2">);</span><br/><span class="hl-0">// loop over events in the last 30 days and alert the name of each.</span><br/><span class="hl-6">if</span><span class="hl-2"> (</span><span class="hl-3">cal</span><span class="hl-2">) {</span><br/><span class="hl-2">    </span><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">events</span><span class="hl-2"> = </span><span class="hl-3">cal</span><span class="hl-2">.</span><span class="hl-4">events</span><span class="hl-2">((</span><span class="hl-8">30</span><span class="hl-2">).</span><span class="hl-4">days</span><span class="hl-2">().</span><span class="hl-4">ago</span><span class="hl-2">(), </span><span class="hl-1">new</span><span class="hl-2"> </span><span class="hl-7">Date</span><span class="hl-2">());</span><br/><span class="hl-2">    </span><span class="hl-6">for</span><span class="hl-2"> (</span><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">event</span><span class="hl-2"> </span><span class="hl-1">of</span><span class="hl-2"> </span><span class="hl-3">events</span><span class="hl-2">) {</span><br/><span class="hl-2">        </span><span class="hl-4">alert</span><span class="hl-2">(</span><span class="hl-3">event</span><span class="hl-2">.</span><span class="hl-3">title</span><span class="hl-2">);</span><br/><span class="hl-2">    }</span><br/><span class="hl-2">}</span>
 </code></pre>

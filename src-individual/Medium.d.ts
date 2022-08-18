@@ -1,6 +1,4 @@
 /**
- * # Medium
- * 
  * Script integration with [Medium.com](http://medium.com/). This object handles OAuth authentication and request signing. The entire [Medium REST API](https://github.com/Medium/medium-api-docs) can be used with the `request` method, and convenience methods are provided for common API endpoints to get user information, list publications and post.
  * 
  * If an API calls fails, typically the result will be an `undefined` value, and the `lastError` property will contains error detail information for troubleshooting.

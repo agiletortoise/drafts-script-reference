@@ -1,11 +1,9 @@
 /**
- * # AppleScript
- * 
- * _**macOS only**. Requires Drafts 19 or greater._
+ * > _**macOS only**. Requires Drafts 19 or greater._
  * 
  * AppleScript objects can be used to execute AppleScripts. It is highly recommended AppleScripts be developed and tested in Apple's Script Editor or similar AppleScript editor, and loaded in Drafts when completed.
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // create a local file in App documents

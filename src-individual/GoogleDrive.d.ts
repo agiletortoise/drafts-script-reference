@@ -1,9 +1,7 @@
 /**
- * # GoogleDrive
- * 
  * GoogleDrive objects can be used to work with files in Google Drive accounts.
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // create GoogleDrive object

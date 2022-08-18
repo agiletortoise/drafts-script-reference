@@ -1,9 +1,7 @@
 /**
- * # GmailMessage
- * 
  * The GmailMessage object can be used to create and send mail messages through Gmail accounts, similar to those created by a [Gmail action step](https://getdrafts.com/actions/steps/gmail). Creating and sending these messages happens in the background, with no user interface, so messages must be complete with recipients before calling send(). Sending is done via the [Gmail API](https://developers.google.com/gmail/api/). Gmail accounts are authenticated when used for the first time using OAuth - to use more than one account, call create with different identifier parameters.
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * let message = GmailMessage.create();

@@ -1,13 +1,11 @@
 type queryDateType = 'relative' | 'absolute'
 type queryDateField = 'created' | 'modified' | 'accessed'
 /**
- * # QueryDate
- * 
  * Represents a dynamic date for use in queries. `QueryDate` is used when configuring {@link Workspace} objects `startDate` and `endDate` properties.
  * 
  * QueryDates always specify a date with time components being ignored. If used a the start of a query range, the time will be moved to the beginning of that day. If used at the end of a query range, time will be moved to the end of that day.
  * 
- * ### Example: Create Workspace with date range
+ * #### Example: Create Workspace with date range
  * 
  * ```javascript
  * // create a workspace

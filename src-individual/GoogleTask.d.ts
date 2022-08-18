@@ -9,15 +9,13 @@ type googleTask = object
 type googleTaskList = object
 
 /**
- * # GoogleTask
- * 
  * Script integration with [Google Tasks](https://support.google.com/tasks/answer/7675772?co=GENIE.Platform%3DDesktop&hl=en). This object handles OAuth authentication and request signing. The entire [Google Tasks API](https://developers.google.com/tasks) can be used with the `request` method, and convenience methods are provided for common API endpoints to manage tasks and lists.
  *
  * Working with the return values and parameters for these methods requires an understanding of the JSON objects created and returned by the API, so refer to type specifications in the [API Reference](https://developers.google.com/tasks) for details on values supported in task and lists. Specifically, review the supported properties of the [Task](https://developers.google.com/tasks/reference/rest/v1/tasks) and [TaskList](https://developers.google.com/tasks/reference/rest/v1/tasklists) objects to understand the values included in fetched objects, and to make modifications.
  *
  * If an convenince API calls fails, typically the result will be an `undefined` value, and the `lastError` property will contains error detail information for troubleshooting.
  *
- * ### Example
+ * ##@# Example
  * 
  * See [Examples-Google Task]() action group in the [Drafts Directory](https://actions.getdrafts.com/). It contains several example scripted actions.
  * 

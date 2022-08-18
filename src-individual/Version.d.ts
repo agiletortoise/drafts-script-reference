@@ -1,7 +1,7 @@
 /**
- * # Version
- * 
  * Version objects represent individual versions in a draft's [version history](https://docs.getdrafts.com/docs/drafts/versionhistory). Versions are accessed using the `versions` property of the {@link Draft} object.
+ * 
+ * #### Example
  * 
  * ```javascript
  * // loop over versions of a draft, keeping only most recent 3
@@ -13,6 +13,7 @@
  * }
  */
 declare class Version {
+    private constructor()
     /**
      * Unique identifier of this version
      */

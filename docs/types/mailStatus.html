@@ -14,14 +14,10 @@
 <li><a href="mailStatus.html">mailStatus</a></li></ul>
 <h1>Type alias mailStatus</h1></div>
 <div class="tsd-signature">mail<wbr/>Status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;created&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;sent&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;savedAsDraft&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;mailUnavailable&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;userCancelled&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;invalid&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;serviceError&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;unknownError&quot;</span></div>
-<div class="tsd-comment tsd-typography">
-<a href="#mail" id="mail" style="color: inherit; text-decoration: none;">
-  <h1>Mail</h1>
-</a>
-<p>The <a href="../classes/Mail.html">Mail</a> object can be used to create and send mail messages, similar to those created by a &quot;Mail&quot; action step.</p>
+<div class="tsd-comment tsd-typography"><p>The <a href="../classes/Mail.html">Mail</a> object can be used to create and send mail messages, similar to those created by a &quot;Mail&quot; action step.</p>
 
 <a href="#example" id="example" style="color: inherit; text-decoration: none;">
-  <h3>Example</h3>
+  <h4>Example</h4>
 </a>
 <pre><code class="language-javascript"><span class="hl-1">var</span><span class="hl-2"> </span><span class="hl-3">mail</span><span class="hl-2"> = </span><span class="hl-3">Mail</span><span class="hl-2">.</span><span class="hl-4">create</span><span class="hl-2">();</span><br/><span class="hl-3">mail</span><span class="hl-2">.</span><span class="hl-3">toRecipients</span><span class="hl-2"> = [</span><span class="hl-5">&quot;joe@sample.com&quot;</span><span class="hl-2">];</span><br/><span class="hl-3">mail</span><span class="hl-2">.</span><span class="hl-3">subject</span><span class="hl-2"> = </span><span class="hl-5">&quot;My test message&quot;</span><span class="hl-2">;</span><br/><span class="hl-3">mail</span><span class="hl-2">.</span><span class="hl-3">body</span><span class="hl-2"> = </span><span class="hl-5">&quot;Body text&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-1">var</span><span class="hl-2"> </span><span class="hl-3">success</span><span class="hl-2"> = </span><span class="hl-3">mail</span><span class="hl-2">.</span><span class="hl-4">send</span><span class="hl-2">();</span><br/><span class="hl-6">if</span><span class="hl-2"> (!</span><span class="hl-3">success</span><span class="hl-2">) {</span><br/><span class="hl-2">  </span><span class="hl-3">console</span><span class="hl-2">.</span><span class="hl-4">log</span><span class="hl-2">(</span><span class="hl-3">mail</span><span class="hl-2">.</span><span class="hl-3">status</span><span class="hl-2">);</span><br/><span class="hl-2">  </span><span class="hl-3">context</span><span class="hl-2">.</span><span class="hl-4">fail</span><span class="hl-2">();</span><br/><span class="hl-2">}</span>
 </code></pre>

@@ -1,6 +1,4 @@
 /**
- * # Credential
- * 
  * Credential objects can be used in actions which require the user to provide a username, password and optionally a host name, to connect to a service. By using credentials objects, actions can be written to connect to arbitrary web services without hard coding credentials into the action.
  *
  * When an authorize() call is made on a credential object for the first time, the user is prompted to enter their credentials, then Drafts stores those for later use. When the action is used again, there will be no prompt required and the stored credentials will be used.
@@ -9,7 +7,7 @@
  *
  * The user can delete those credentials at any time by visiting Settings > Credentials and tapping the "Forget" button on a service.
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * var credential = Credential.create("My Service", "Description of the service to  * appear in user prompt.");

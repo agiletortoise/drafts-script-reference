@@ -1,6 +1,4 @@
 /**
- * # WordPress
- * 
  * Script integration with WordPress sites via the [WordPress XML-RPC API](https://codex.wordpress.org/XML-RPC_WordPress_API). Currently this object has one runMethod function which can be used to call any method available in the XML-RPC interface.
  *
  * The WordPress API offers access to a wide variety of functions, including posting, but also retrieving information about categories and tags, or reading posts contents.
@@ -9,7 +7,7 @@
  *
  * The WordPress XML-RPC API authenticates via username and password, so it is highly recommended you interact only over HTTPS secure connections, and use `Credential` objects to store host/username/password values, rather than hard-coding them in actions.
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // setup values to use in post

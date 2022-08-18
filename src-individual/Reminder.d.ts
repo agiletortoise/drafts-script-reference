@@ -1,9 +1,8 @@
 /**
- * # Reminder
- * 
  * Reminder objects represent individual tasks in a list in the built-in Reminders app. For examples, see {@link ReminderList} documentation.
  */
 declare class Reminder {
+  private constructor()
     /**
      * The list which this task resides in.
      */

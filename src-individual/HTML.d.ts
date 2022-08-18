@@ -1,11 +1,7 @@
 /**
- * # HTML
- * 
  * Helper methods to escape and unescape HTML entities in a string.
  * 
- * _Added: R15_
- * 
- *  ### Examples
+ * #### Examples
  * 
  * ```javascript
  * let s = "<One> & Two";

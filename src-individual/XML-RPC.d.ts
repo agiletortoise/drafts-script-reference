@@ -1,13 +1,11 @@
 /**
- * # XMLRPC
- * 
  * The XMLRPC object is a convenience method to provide an easy way to [XML-RPC](http://xmlrpc.scripting.com/) web services. The request function takes care of converting native Javascript objects and values to the XML parameters required for the XML-RPC interface, and converts the XML responses returned to Javascript objects.
  *
  * It will also return faults parsed to error messages in the response if necessary.
  *
  * This object is suitable for communication with a number of popular XML-RPC interfaces, including the [MetaWeblog API](http://xmlrpc.scripting.com/metaWeblogApi.html). WordPress also offers its own XML-RPC interface, which can be used via this object, or the convenience wrapper `WordPress` object.
  * 
- * ### Example: XML-RPC call
+ * #### Example: XML-RPC call
 
 * ```javascript
 * // DEMO of XML-RPC

@@ -1,9 +1,7 @@
 /**
- * # Autocomplete
- * 
  * Create and update entries in the Editor's [global autocomplete system](https://docs.getdrafts.com/docs/editor/autocomplete)
  * 
- * ### Examples
+ * #### Examples
  *
  * ```javascript
  * // work with the default system autocomplete
@@ -15,7 +13,8 @@
  * ```
  * 
  */
-    declare class Autocomplete {
+declare class Autocomplete {
+        private constructor()
     /**
      * Get the default system global autocomplete object
      * @category Constructors

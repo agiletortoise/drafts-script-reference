@@ -14,17 +14,13 @@
 <li><a href="Todoist.html">Todoist</a></li></ul>
 <h1>Class Todoist</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography">
-<a href="#todoist" id="todoist" style="color: inherit; text-decoration: none;">
-  <h1>Todoist</h1>
-</a>
-<p>Script integration with <a href="http://todoist.com/">Todoist</a>. This object handles OAuth authentication and request signing. The entire <a href="https://developer.todoist.com/rest/v1/">Todoist REST API</a> can be used with the request method, and convenience methods are provided for common API endpoints to manage tasks, projects, comments and labels.</p>
+<div class="tsd-comment tsd-typography"><p>Script integration with <a href="http://todoist.com/">Todoist</a>. This object handles OAuth authentication and request signing. The entire <a href="https://developer.todoist.com/rest/v1/">Todoist REST API</a> can be used with the request method, and convenience methods are provided for common API endpoints to manage tasks, projects, comments and labels.</p>
 <p>The <code>quickAdd</code> method is mostly likely what you are looking for to create tasks as it supports the shorthand the task entry box in Todoist supports to parse projects, etc.</p>
 <p>Other methods are direct mappings of the REST API calls provided by Todoist. Most take an <code>options</code> parameter which is a javascript object containing the parameters to be passed to the API, and and the method decodes the JSON response from Todoist and returns it as a Javascript object (or array of objects) with the values as specified in the Todoist API docs.</p>
 <p>If an API calls fails, typically the result will be an <code>undefined</code> value, and the <code>lastError</code> property will contains error detail information for troubleshooting.</p>
 
 <a href="#example" id="example" style="color: inherit; text-decoration: none;">
-  <h3>Example</h3>
+  <h4>Example</h4>
 </a>
 <p>See <a href="https://actions.getdrafts.com/g/1L3">Examples-Todoist</a> action group in the <a href="https://actions.getdrafts.com/">Action Directory</a>.</p>
 <pre><code class="language-javascript"><span class="hl-0">// create Todoist object</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">todoist</span><span class="hl-2"> = </span><span class="hl-3">Todoist</span><span class="hl-2">.</span><span class="hl-4">create</span><span class="hl-2">();</span><br/><span class="hl-0">// create task in inbox</span><br/><span class="hl-3">todoist</span><span class="hl-2">.</span><span class="hl-4">createTask</span><span class="hl-2">({</span><br/><span class="hl-2">  </span><span class="hl-5">&quot;content&quot;</span><span class="hl-3">:</span><span class="hl-2"> </span><span class="hl-5">&quot;My Task Name&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">  </span><span class="hl-5">&quot;due_string&quot;</span><span class="hl-3">:</span><span class="hl-2"> </span><span class="hl-5">&quot;Next wednesday&quot;</span><br/><span class="hl-2">});</span>

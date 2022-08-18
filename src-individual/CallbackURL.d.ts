@@ -1,11 +1,9 @@
 /**
- * # CallbackURL
- * 
  * CallbackURL objects can be used to open x-callback-url requests and wait for a response from the target app.
  * 
- * **NOTE**: If you want to open a URL in Safari or another app and do not need a response or x-callback-url support, use the `app.openURL(url)` method on the App object.
+ * > **NOTE**: If you want to open a URL in Safari or another app and do not need a response or x-callback-url support, use the {@link App.openURL} method on the {@link App} object.
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // Open callback URL for each line in a draft

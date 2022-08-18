@@ -1,6 +1,4 @@
 /**
- * # Calendar
- * 
  * Calendar objects are used to manipulate and create calendars in the built-in Calendars app and its associated accounts.
  * 
  * #### Example: Event Creation
@@ -18,7 +16,7 @@
  * }
  * ```
  * 
- * # Example: Reading Calendar Events
+ * #### Example: Reading Calendar Events
  * 
  * ```javascript
  * // load a calendar

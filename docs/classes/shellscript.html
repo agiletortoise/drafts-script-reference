@@ -14,21 +14,19 @@
 <li><a href="ShellScript.html">ShellScript</a></li></ul>
 <h1>Class ShellScript</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography">
-<a href="#shellscript" id="shellscript" style="color: inherit; text-decoration: none;">
-  <h1>ShellScript</h1>
-</a>
+<div class="tsd-comment tsd-typography"><blockquote>
 <p><em><strong>macOS only</strong>. Requires Drafts 19 or greater.</em></p>
+</blockquote>
 <p>ShellScript objects can be used to execute Unix shell scripts.</p>
 
 <a href="#bash-example" id="bash-example" style="color: inherit; text-decoration: none;">
-  <h3>Bash Example</h3>
+  <h4>Bash Example</h4>
 </a>
 <pre><code class="language-javascript"><span class="hl-0">// define text of bash script</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">script</span><span class="hl-2"> = </span><span class="hl-5">`#!/bin/bash</span><br/><span class="hl-5">echo &quot;Total arguments : $#&quot;</span><br/><span class="hl-5">echo &quot;1st Argument = $1&quot;</span><br/><span class="hl-5">echo &quot;2nd argument = $2&quot;</span><br/><span class="hl-5">`</span><span class="hl-2">;</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">runner</span><span class="hl-2"> = </span><span class="hl-3">ShellScript</span><span class="hl-2">.</span><span class="hl-4">create</span><span class="hl-2">(</span><span class="hl-3">script</span><span class="hl-2">);</span><br/><br/><span class="hl-6">if</span><span class="hl-2"> (</span><span class="hl-3">runner</span><span class="hl-2">.</span><span class="hl-4">execute</span><span class="hl-2">([</span><span class="hl-5">&quot;1&quot;</span><span class="hl-2">, </span><span class="hl-5">&quot;2&quot;</span><span class="hl-2">])) {</span><br/><span class="hl-2">    </span><span class="hl-4">alert</span><span class="hl-2">(</span><span class="hl-5">&quot;STDOUT: &quot;</span><span class="hl-2"> + </span><span class="hl-3">runner</span><span class="hl-2">.</span><span class="hl-3">standardOutput</span><span class="hl-2">);</span><br/><span class="hl-2">}</span><br/><span class="hl-6">else</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-4">alert</span><span class="hl-2">(</span><span class="hl-5">&quot;STDERR: &quot;</span><span class="hl-2"> + </span><span class="hl-3">runner</span><span class="hl-2">.</span><span class="hl-3">standardError</span><span class="hl-2">);</span><br/><span class="hl-2">}</span>
 </code></pre>
 
 <a href="#ruby-example" id="ruby-example" style="color: inherit; text-decoration: none;">
-  <h3>Ruby Example</h3>
+  <h4>Ruby Example</h4>
 </a>
 <pre><code class="language-javascript"><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">script</span><span class="hl-2"> = </span><span class="hl-5">`#!/usr/bin/env ruby</span><br/><span class="hl-5">ARGV.each do |a|</span><br/><span class="hl-5">  puts &quot;Argument: #{a}&quot;</span><br/><span class="hl-5">end</span><br/><span class="hl-5">`</span><span class="hl-2">;</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">runner</span><span class="hl-2"> = </span><span class="hl-3">ShellScript</span><span class="hl-2">.</span><span class="hl-4">create</span><span class="hl-2">(</span><span class="hl-3">script</span><span class="hl-2">);</span><br/><br/><span class="hl-6">if</span><span class="hl-2"> (</span><span class="hl-3">runner</span><span class="hl-2">.</span><span class="hl-4">execute</span><span class="hl-2">([</span><span class="hl-5">&quot;1&quot;</span><span class="hl-2">, </span><span class="hl-5">&quot;2&quot;</span><span class="hl-2">])) {</span><br/><span class="hl-2">    </span><span class="hl-4">alert</span><span class="hl-2">(</span><span class="hl-5">&quot;STDOUT:</span><span class="hl-10">\n</span><span class="hl-5">&quot;</span><span class="hl-2"> + </span><span class="hl-3">runner</span><span class="hl-2">.</span><span class="hl-3">standardOutput</span><span class="hl-2">);</span><br/><span class="hl-2">}</span><br/><span class="hl-6">else</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-4">alert</span><span class="hl-2">(</span><span class="hl-5">&quot;STDERR:</span><span class="hl-10">\n</span><span class="hl-5">&quot;</span><span class="hl-2"> + </span><span class="hl-3">runner</span><span class="hl-2">.</span><span class="hl-3">standardError</span><span class="hl-2">);</span><br/><span class="hl-2">}</span>
 </code></pre>

@@ -1,12 +1,8 @@
 /**
- * # Things
  * 
- 
 */
 
 /**
- * # TJSContainer
- * 
  * Wraps an array of todo and/or project items and encodes them into a URL for use to send the request to Things.
  * 
  * ## Things Integration Notes
@@ -17,7 +13,7 @@
  *
  * For more information about what values Things understands in these objects, refer to [their URL scheme documenation](https://support.culturedcode.com/customer/en/portal/articles/2803573).
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // create a Things Project
@@ -65,8 +61,6 @@ declare class TJSContainer {
 }
 
 /**
- * # TJSProject 
- * 
  * Represents a Things project, with headings and todo items. See {@link TJSContainer} documentation for details on making requests to Things.
  * 
  */
@@ -89,8 +83,6 @@ declare class TJSProject {
 }
 
 /**
- * # TJSHeading
- * 
  * Represents a Things heading within a project. See {@link TJSContainer} documentation for details on making requests to Things.
  */
 declare class TJSHeading {
@@ -101,8 +93,6 @@ declare class TJSHeading {
 }
 
 /**
- * # TJSTodo
- * 
  * Represents a Things todo item. Todos can be added a project or directly to a container. See {@link TJSContainer} documentation for details on making requests to Things.
  */
 declare class TJSTodo {
@@ -124,8 +114,6 @@ declare class TJSTodo {
 }
 
 /**
- * # TJSChecklistItem
- * 
  * Represents a Things check list item, which can be added to a Todo. See {@link TJSContainer} documentation for details on making requests to Things.
  */
 declare class TJSChecklistItem {

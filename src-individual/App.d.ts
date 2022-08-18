@@ -1,9 +1,8 @@
 /**
- * # App
- * 
  * Drafts defines a single global `app` object which provides access to application level functions.
  * 
- * ### Examples
+ * #### Examples
+ * 
  * ```javascript
  * // toggle dark-light mode
  * if (app.currentThemeMode == 'dark') {
@@ -15,6 +14,7 @@
  * ```
  */
 declare class App {
+    private constructor()
     /**
      * Returns true if app has an active Drafts Pro subscription.
      * @category System

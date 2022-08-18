@@ -1,21 +1,33 @@
 /**
- * # Action
+ * 
  * 
  * In addition to being able to lookup an action using the find method, a single global `action` object is created and available in scripts to inquire about the current action and control flow.
  * 
- * ### Example
+ * #### Example: Queuing an action to run
  * 
  * ```javascript
- * // find action
- * let action = Action.find("Copy");
+ * // find action by name
+ * let otherAction = Action.find("Copy");
  * 
- * // queue to action to run after the current action
- * app.queueAction(action, draft);
-```
+ * // queue to action to run after the current action, on the same draft
+ * app.queueAction(otherAction, draft);
+ * ```
+ * 
+ * #### Example: Branching based on current action
+ * ```javascript
+ * // use global `action` to branch logic in a script reused in multiple actions
+ * if (action.name == "Copy") {
+ *     // do something
+ * }
+ * else {
+ *     // do something else
+ * }
+ * ```
 */
 declare class Action {
+    private constructor()
     /**
-     * Search for action matching the name passed and return it if found. Useful to lookup and action and queue it to be run using `app.queueAction(action, draft)`. This method will return only the first found action with the given name, be sure to avoid duplicate names in your action list.
+     * Search for action matching the name passed and return it if found. Useful to lookup and action and queue it to be run using the {@link App.queueAction} function of the {@link App} object. This method will return only the first found action with the given name, be sure to avoid duplicate names in your action list.
      * @category Query
      * @param name Name of a valid, installed action.
      */
@@ -50,11 +62,9 @@ declare class Action {
  */
 declare const  action: Action
 /**
- * # ActionGroup
- * 
  * Represents an action group. Can be used to inquire and load action groups in the action list and action bar using methods on the {@link App} object.
  * 
- * ### Examples
+ * #### Examples: Loading action group in action list
  *
  * ```javascript
  * let group = ActionGroup.find("Basic");
@@ -63,6 +73,7 @@ declare const  action: Action
  * 
  */
 declare class ActionGroup {
+    private constructor()
     /**
      * Get list of all available action groups.
      * @category Query
@@ -101,9 +112,9 @@ declare class ActionGroup {
     readonly actions: Action[]
 }
 /**
- * # ActionLog
- * 
  * ActionLog objects represent entries in the [action log](). ActionLog objects are accessed using the `actionLogs` property of the {@link Draft} object.
+ * 
+ * #### Example
  * 
  * ```javascript
  * // loop over log entries, deleting any more than 100 days old
@@ -115,6 +126,7 @@ declare class ActionGroup {
  * ```
  */
 declare class ActionLog {
+    private constructor()
     /**
      * Unique identifier
      * @category Identification
@@ -165,12 +177,10 @@ declare class ActionLog {
     */
     delete()
 }
-/**
- * # Alarm
- * 
+/** 
  * Alarms are alerts which can be attached to {@link Reminder} and [[Event objects.
  * 
- * ### Examples
+ * #### Examples
  * 
  * ```javascript
  * let list = ReminderList.findOrCreate("Errands");
@@ -197,11 +207,10 @@ declare class Alarm {
     static alarmWithOffset(seconds: Number): Alarm
 }
 /**
- * # App
- * 
  * Drafts defines a single global `app` object which provides access to application level functions.
  * 
- * ### Examples
+ * #### Examples
+ * 
  * ```javascript
  * // toggle dark-light mode
  * if (app.currentThemeMode == 'dark') {
@@ -213,6 +222,7 @@ declare class Alarm {
  * ```
  */
 declare class App {
+    private constructor()
     /**
      * Returns true if app has an active Drafts Pro subscription.
      * @category System
@@ -426,13 +436,11 @@ declare class App {
  */
 declare const  app: App
 /**
- * # AppleScript
- * 
- * _**macOS only**. Requires Drafts 19 or greater._
+ * > _**macOS only**. Requires Drafts 19 or greater._
  * 
  * AppleScript objects can be used to execute AppleScripts. It is highly recommended AppleScripts be developed and tested in Apple's Script Editor or similar AppleScript editor, and loaded in Drafts when completed.
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // create a local file in App documents
@@ -492,11 +500,9 @@ declare class AppleScript {
 }
 
 /**
- * # Autocomplete
- * 
  * Create and update entries in the Editor's [global autocomplete system](https://docs.getdrafts.com/docs/editor/autocomplete)
  * 
- * ### Examples
+ * #### Examples
  *
  * ```javascript
  * // work with the default system autocomplete
@@ -508,7 +514,8 @@ declare class AppleScript {
  * ```
  * 
  */
-    declare class Autocomplete {
+declare class Autocomplete {
+        private constructor()
     /**
      * Get the default system global autocomplete object
      * @category Constructors
@@ -537,11 +544,9 @@ declare class AppleScript {
     remove(label: string): boolean
 }
 /**
- * # Base64
- * 
  * Helper methods to encode and decode [Base64](https://en.wikipedia.org/wiki/Base64) strings.
  * 
- *  ### Examples
+ * #### Examples
  * 
  * ```javascript
  * let s = "My String";
@@ -550,6 +555,7 @@ declare class AppleScript {
  * ```
  */
 declare class Base64 {
+    private constructor()
     /**
      * Base64 encode a string.
      * @param data the string to encode
@@ -563,13 +569,11 @@ declare class Base64 {
     static decode(data: string): string
 }
 /**
- * # Bookmark
- * 
  * Bookmark objects are used to work with folder bookmarks and the {@link FileManager} object to provide access to folders outside the Drafts App Sandbox. Bookmarks are unique by name. A user-friendly name should be used, as the first time a bookmark is required, the user is prompted to select the folder in their file system to associate with the bookmark, and a useful name can help guide them to selecting the correct folder.
  * 
  * _Learn more about [Bookmarks in the User Guide](https://docs.getdrafts.com/docs/settings/bookmarks)_
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // find or create a named Bookmark
@@ -584,6 +588,7 @@ declare class Base64 {
  * ```
  */
 declare class Bookmark {
+    private constructor()
     /**
      * Get a bookmark object with the specified name. If no bookmark with the specified name exists, a new one will be created.
      */
@@ -598,15 +603,12 @@ declare class Bookmark {
      * Forget the bookmark, resetting any associated permissions. Generally, this would be a function the user performs in the user interface, but could be useful in the case of an action which wishes to request and use a one-time bookmark and revoke permissions on completion of an action.
      */
     forget()
-
 }
 
 /**
- * # Box
- * 
  * Box objects can be used to work with files in a Box.com account.
  *
- * ### Examples
+ * #### Examples
  * 
  * ```javascript
  * // create Box object
@@ -669,8 +671,6 @@ declare class Box {
     constructor(identifier?: string)
 }
 /**
- * # Calendar
- * 
  * Calendar objects are used to manipulate and create calendars in the built-in Calendars app and its associated accounts.
  * 
  * #### Example: Event Creation
@@ -688,7 +688,7 @@ declare class Box {
  * }
  * ```
  * 
- * # Example: Reading Calendar Events
+ * #### Example: Reading Calendar Events
  * 
  * ```javascript
  * // load a calendar
@@ -750,13 +750,11 @@ declare class Calendar {
 }
 
 /**
- * # CallbackURL
- * 
  * CallbackURL objects can be used to open x-callback-url requests and wait for a response from the target app.
  * 
- * **NOTE**: If you want to open a URL in Safari or another app and do not need a response or x-callback-url support, use the `app.openURL(url)` method on the App object.
+ * > **NOTE**: If you want to open a URL in Safari or another app and do not need a response or x-callback-url support, use the {@link App.openURL} method on the {@link App} object.
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // Open callback URL for each line in a draft
@@ -848,13 +846,11 @@ declare class CallbackURL {
 }
 
 /**
- * # Context
- * 
  * A single global "context" object is available to scripts to control flow of the currently running action.
  *
  * It is important to understand that `cancel()` and `fail()` will not immediately stop script, just stop any further action steps from being performed.
  *
- * ### Example: Control Flow
+ * #### Example: Control Flow
  * 
  * ```javascript
  * // test for logical condition before continuing
@@ -864,7 +860,7 @@ declare class CallbackURL {
  * // code below will still run.
  * ```
  * 
- * ### Example: Retreive values
+ * #### Example: Retreive values
  * 
  * ```javascript
  * // if a "Run Workflow" step preceded this script, lets look for a result
@@ -880,6 +876,7 @@ declare class CallbackURL {
  * 
  */
 declare class Context {
+    private constructor()
     /**
      * If [Callback URL](https://docs.getdrafts.com/docs/actions/steps/advanced#callback-url) or [Run Shortcut](https://docs.getdrafts.com/docs/actions/steps/advanced#run-shortcut) action steps using the "Wait for response" option have been run in steps before the script step in an action, and the target app returned to Drafts using an x-success callback, this object will contain an array of objects with the parsed query parameters included in those responses, in the order they were received. 
      */
@@ -923,8 +920,6 @@ declare class Context {
 declare const  context: Context
 
 /**
- * # Credential
- * 
  * Credential objects can be used in actions which require the user to provide a username, password and optionally a host name, to connect to a service. By using credentials objects, actions can be written to connect to arbitrary web services without hard coding credentials into the action.
  *
  * When an authorize() call is made on a credential object for the first time, the user is prompted to enter their credentials, then Drafts stores those for later use. When the action is used again, there will be no prompt required and the stored credentials will be used.
@@ -933,7 +928,7 @@ declare const  context: Context
  *
  * The user can delete those credentials at any time by visiting Settings > Credentials and tapping the "Forget" button on a service.
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * var credential = Credential.create("My Service", "Description of the service to  * appear in user prompt.");
@@ -1031,11 +1026,9 @@ declare class Credential {
     forget(): void
 }
 /**
- * # Device
- * 
  * Drafts defines a single global `device` object which provides access to information about the current device.
  * 
- * ### Examples
+ * #### Examples
  * 
  * ```javascript
  * // get system info from device object
@@ -1061,6 +1054,7 @@ declare class Credential {
  * ```
  */
 declare class Device {
+    private constructor()
     /**
      * Model of current device.
      */
@@ -1087,11 +1081,9 @@ declare class Device {
 declare const  device: Device
 type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
 /**
- * # Draft 
- * 
  * The Draft object represents a single draft. When an action is run, the current draft is available as the global variable `draft`. Scripts can also create new drafts, access and set values, and update the draft to persist changes.
  * 
- * ### Example: Creating a draft
+ * #### Example: Creating a draft
  * 
  * ```javascript
  * // create a new draft, assign content and save it
@@ -1101,7 +1093,7 @@ type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
  * d.update();
  * ```
  * 
- * ### Example: Querying drafts
+ * #### Example: Querying drafts
  * 
  * ```javascript
  * // query a list of drafts in the inbox with the tag "blue"
@@ -1326,7 +1318,7 @@ declare class Draft {
      * Perform a search for drafts and return an array of matching draft objects.
      * @param queryString Search string, as you would type in the search box in the draft list. Will find only drafts with a matching string in their contents. Use empty string (`""`) not to filter.
      * @param filter Filter by one of the allowed values
-     * @param tags Results will only include drafts with one or more of these tags assigned.
+     * @param tags Results will only include drafts with all the listed tags assigned.
      * @param omitTags Results will omit drafts with any of these tags assigned.
      * @param sort
      * @param sortDescending If `true`, sort descending. Defaults to `false`.
@@ -1389,13 +1381,11 @@ interface DropboxRequestSettings {
 }
 
 /**
- * # Dropbox
- * 
  * Dropbox objects can be used to work with files in a [Dropbox](http://dropbopx.com) account. The `read` and `write` methods are simple wrappers for uploading and reading content of files on Dropbox.
  * 
  * For advanced uses, the `rpcRequest`, `contentUploadRequest` and `contentDownloadRequest` methods enable direct use of any Dropbox API 2.0 endpoints. These methods are an advanced feature which return raw results from the Dropbox API and may require advanced understanding of the API to process the results. They do enable full access to the API, however, which enabled things like querying files, listing folder contents, uploading to Paper, etc. For details on availalbe methods, see [Dropbox API documentation](https://www.dropbox.com/developers/documentation/http/overview).  In the case of all of these methods Drafts takes care of the OAuth request signing and authentication process when necessary.
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // create Dropbox object
@@ -1510,17 +1500,15 @@ type navigationMarker = {
     level: number,
 }
 /**
- * # Editor 
- * 
  * A global `editor` object is available in all action scripts. This object allows manipulation of the main editing window in Drafts, altering the text, text selections, or loading a different draft into the editor, etc.
  * 
  * Typically scripting actions that work like custom keyboard commands and similar will utilize the editor functions to manipulate text.
  * 
- * **NOTE:** _Generally speaking, editor methods are best used for quick text manipulations of the type used in the extended keyboard. Most substantial updates to draft content are better applied using the `draft` object._
- * 
+ * > **NOTE:** _Generally speaking, editor methods are best used for quick text manipulations of the type used in the extended keyboard. Most substantial updates to draft content are better applied using the `draft` object._
  * 
  */
 declare class Editor {
+    private constructor()
     /**
      * @deprecated replaced by `pinningEnabled`.
      * @category Deprecated
@@ -1704,8 +1692,6 @@ declare class Editor {
  */
 declare const  editor: Editor
 /**
- * # Event
- * 
  * Event object represent individual calendar events. For usage examples, see {@link Calendar} object documentation.
  */
 declare class Event {
@@ -1824,11 +1810,9 @@ declare class Event {
     removeAllAlarms(): void
 }
 /**
- * # FileManager
- * 
  * FileManager objects can be used to read from or write to files in either the local Drafts app Documents directory, or iCloud Drive (inside the `Drafts` folder).Note that local files are not visible on iOS, and are only available for reading and writing via scripting.
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // create a local file in App documents
@@ -1990,11 +1974,9 @@ declare class FileManager {
 }
 
 /**
- * # GitHubMarkdown
- * 
  * Drafts includes Discount-based, GitHub flavored Markdown parser based on [GHMarkdownParser](https://github.com/OliverLetterer/GHMarkdownParser). For details on the meaning of the various options, refer to [Markdown documentation](https://getdrafts.com/settings/markdown).
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * var inputString = "# Header\n\nMy **markdown** text";
@@ -2075,11 +2057,9 @@ declare function strftime(date: Date, format: string): string
 declare function adjustDate(date: Date, adjustmentExpression: string): Date
 
 /**
- * # GmailMessage
- * 
  * The GmailMessage object can be used to create and send mail messages through Gmail accounts, similar to those created by a [Gmail action step](https://getdrafts.com/actions/steps/gmail). Creating and sending these messages happens in the background, with no user interface, so messages must be complete with recipients before calling send(). Sending is done via the [Gmail API](https://developers.google.com/gmail/api/). Gmail accounts are authenticated when used for the first time using OAuth - to use more than one account, call create with different identifier parameters.
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * let message = GmailMessage.create();
@@ -2138,11 +2118,9 @@ declare class GmailMessage {
 }
 
 /**
- * # GoogleDrive
- * 
  * GoogleDrive objects can be used to work with files in Google Drive accounts.
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // create GoogleDrive object
@@ -2221,15 +2199,13 @@ type googleTask = object
 type googleTaskList = object
 
 /**
- * # GoogleTask
- * 
  * Script integration with [Google Tasks](https://support.google.com/tasks/answer/7675772?co=GENIE.Platform%3DDesktop&hl=en). This object handles OAuth authentication and request signing. The entire [Google Tasks API](https://developers.google.com/tasks) can be used with the `request` method, and convenience methods are provided for common API endpoints to manage tasks and lists.
  *
  * Working with the return values and parameters for these methods requires an understanding of the JSON objects created and returned by the API, so refer to type specifications in the [API Reference](https://developers.google.com/tasks) for details on values supported in task and lists. Specifically, review the supported properties of the [Task](https://developers.google.com/tasks/reference/rest/v1/tasks) and [TaskList](https://developers.google.com/tasks/reference/rest/v1/tasklists) objects to understand the values included in fetched objects, and to make modifications.
  *
  * If an convenince API calls fails, typically the result will be an `undefined` value, and the `lastError` property will contains error detail information for troubleshooting.
  *
- * ### Example
+ * ##@# Example
  * 
  * See [Examples-Google Task]() action group in the [Drafts Directory](https://actions.getdrafts.com/). It contains several example scripted actions.
  * 
@@ -2333,13 +2309,9 @@ declare class GoogleTask {
     constructor(identifier?: string)
 }
 /**
- * # HTML
- * 
  * Helper methods to escape and unescape HTML entities in a string.
  * 
- * _Added: R15_
- * 
- *  ### Examples
+ * #### Examples
  * 
  * ```javascript
  * let s = "<One> & Two";
@@ -2361,11 +2333,9 @@ declare class HTML {
     static unescape(string: string): string
 }
 /**
- * # HTMLPreview
- * 
  * Display of HTML Preview window, the same as the HTMLPreview action step. Returns true if user closed preview with the "Continue" button, false if the user cancelled.
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * let html = "<html><body>My Document</body></html>"
@@ -2403,11 +2373,9 @@ declare class HTMLPreview {
 }
 
 /**
- * # HTTP
- * 
  * The {@link HTTP} and [[HTTPResponse objects are used to run synchronous HTTP requests to communicate with APIs, or just read pages from the web. A full set of custom settings can be passed, and all HTTP methods (GET, POST, PUT, DELETE, etc.) are supported.
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * var http = HTTP.create(); // create HTTP object
@@ -2515,11 +2483,9 @@ declare class HTTPResponse {
     error: string | undefined
 }
 /**
- * # Mail
- * 
  * The {@link Mail} object can be used to create and send mail messages, similar to those created by a "Mail" action step.
  *
- * ### Example
+ * #### Example
 
 * ```javascript
 * var mail = Mail.create();
@@ -2616,8 +2582,6 @@ declare class Mail {
     constructor()
 }
 /**
- * # Medium
- * 
  * Script integration with [Medium.com](http://medium.com/). This object handles OAuth authentication and request signing. The entire [Medium REST API](https://github.com/Medium/medium-api-docs) can be used with the `request` method, and convenience methods are provided for common API endpoints to get user information, list publications and post.
  * 
  * If an API calls fails, typically the result will be an `undefined` value, and the `lastError` property will contains error detail information for troubleshooting.
@@ -2681,10 +2645,9 @@ declare class Medium {
     constructor(identifier?: string)
 }
 /**
- * # Message
- * 
  * The Message object can be used to create and send mail iMessages, similar to those created by a "Message" action step.   
- * ### Examples
+ * 
+ * #### Examples
  * 
  * ```javascript
  * var msg = Message.create();
@@ -2759,15 +2722,13 @@ type microsoftToDoTaskList = object
 type microsoftToDoLinkedResource = object
 
 /**
- * # MicrosoftToDo
- * 
  * Script integration with [Microsoft To Do](http://todo.microsoft.com/). This object handles OAuth authentication and request signing. The entire [Microsoft To Do Graph API](https://docs.microsoft.com/en-us/graph/api/resources/todo-overview?view=graph-rest-1.0) can be used with the `request` method, and convenience methods are provided for common API endpoints to manage tasks and lists.
  *
  * Working with the return values and parameters for these methods requires an understanding of the JSON objects created and returned by the API, so refer to type specifications in the [API Reference](https://docs.microsoft.com/en-us/graph/api/resources/todo-overview?view=graph-rest-1.0) for details on values supported in task and lists. Specifically, review the supported properties of the [Task](https://docs.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) and [TaskList](https://docs.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0) objects to understand the values included in fetched objects, and to make modifications.
  *
  * If an API calls fails, typically the result will be an `undefined` value, and the `lastError` property will contains error detail information for troubleshooting.
  *
- * ### Example
+ * #### Example
  * 
  * See [Examples-Microsoft To Do](https://actions.getdrafts.com/g/1m3) action group in the [Drafts Directory](https://actions.getdrafts.com/). It contains several example scripted actions.
  * 
@@ -2882,11 +2843,9 @@ declare class MicrosoftToDo {
     constructor(identifier?: string)
 }
 /**
- * # MultiMarkdown
- * 
  * Drafts includes a full version of the MultiMarkdown 6 engine to render Markdown text to HTML and other supported formats. For details on the meaning of the various options, refer to [MultiMarkdown documentation](https://github.com/fletcher/MultiMarkdown-6).
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * var inputString = "# Header\n\nMy **markdown** text";
@@ -2981,8 +2940,6 @@ declare class MultiMarkdown {
     constructor()
 }
 /**
- * # MustacheTemplate
- * 
  * See also: [`Draft.processMustachTemplate`](/classes/draft#processmustachetemplate) for rendering with Mustache similar to how those templates are rendered in actions. The `MustacheTemplate` object is for rendering with your own custom context.
  * 
  * The MustacheTemplate object support rendering of templates using the [Mustache](https://en.wikipedia.org/wiki/Mustache_%28template_system%29) template style.
@@ -2997,7 +2954,7 @@ declare class MultiMarkdown {
  *
  * When rendering Mustache templates, you pass the template itself and a data object which contains the values available to insert. The data object should be a Javascript object with keys and values. Values can be basic data types (numbers, strings, dates) and also arrays or nested objects which can be iterated using conventions of the Mustache syntax.
  *
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // create template to loop over drafts
@@ -3056,11 +3013,9 @@ declare class MustacheTemplate {
     createWithPath(path: string): MustacheTemplate
 }
 /**
- * # Notion
- * 
  * Script integration with [Notion](https://www.notion.so/). This object handles OAuth authentication and request signing. The entire [Notion REST API](https://developers.notion.com) can be used with the `request` method.
  *
- * ### Example
+ * #### Example
  * 
  * ```
  * // list pages which have been shared with the Drafts integration
@@ -3141,11 +3096,9 @@ declare class Notion {
     constructor(identifier?: string)
 }
 /**
- * # OneDrive
- * 
  * OneDrive objects can be used to work with files in a OneDrive account.
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // create OneDrive object
@@ -3212,11 +3165,9 @@ declare class OneDrive {
 }
 
 /**
- * # OutlookMessage
- * 
  * The OutlookMessage object can be used to create and send mail messages through Outlook.com integrated accounts, similar to those created by a [Outlook action step](https://getdrafts.com/actions/steps/outlook). Creating and sending these messages happens in the background, with no user interface, so messages must be complete with recipients before calling `send()`. Sending is done via the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph). Outlooks accounts are authenticated when used for the first time using OAuth - to use more than one account, call create with different identifier parameters.
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * let message = OutlookMessage.create();
@@ -3287,11 +3238,9 @@ type keyboardTypes =
 type capitalizationTypes = 'none' | 'sentences' | 'words'
 
 /**
- * # Prompt
- * 
  * Prompts allow the creation and display of custom dialogs to request information or confirmation from the user.
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * var p = Prompt.create();
@@ -3528,13 +3477,11 @@ declare class Prompt {
 type queryDateType = 'relative' | 'absolute'
 type queryDateField = 'created' | 'modified' | 'accessed'
 /**
- * # QueryDate
- * 
  * Represents a dynamic date for use in queries. `QueryDate` is used when configuring {@link Workspace} objects `startDate` and `endDate` properties.
  * 
  * QueryDates always specify a date with time components being ignored. If used a the start of a query range, the time will be moved to the beginning of that day. If used at the end of a query range, time will be moved to the end of that day.
  * 
- * ### Example: Create Workspace with date range
+ * #### Example: Create Workspace with date range
  * 
  * ```javascript
  * // create a workspace
@@ -3589,11 +3536,10 @@ declare class QueryDate {
     constructor()
 }
 /**
- * # Reminder
- * 
  * Reminder objects represent individual tasks in a list in the built-in Reminders app. For examples, see {@link ReminderList} documentation.
  */
 declare class Reminder {
+  private constructor()
     /**
      * The list which this task resides in.
      */
@@ -3684,11 +3630,9 @@ declare class Reminder {
     removeAlarms(): void
 }
 /**
- * # ReminderList
- * 
  * ReminderList objects are used to manipulate and create lists in the built-in Reminders app.
  * 
- * ### Examples
+ * #### Examples
  * 
  * ```javascript
  * declare const  list = ReminderList.findOrCreate("Groceries");
@@ -3747,11 +3691,9 @@ declare class ReminderList {
     static default(): ReminderList
 }
 /**
- * # Script
- * 
  * When running a [Script action step](https://docs.getdrafts.com/docs/actions/steps/advanced.html#script), a single `script` object will be in context to reference the currently running script.
  * 
- * ### Example
+ * #### Example
  * ```javascript
  * function sleep(milliseconds) {
  *   var start = new Date().getTime();
@@ -3780,11 +3722,9 @@ declare class Script {
     complete()
 }
 /**
- * # Share
- * 
  * Methods to share via system share sheet.
  * 
- * ### Example
+ * #### Example
 
 ```javascript
 * let s = "My text to share"
@@ -3812,13 +3752,11 @@ declare class Share {
     static shareAsFile(filename: string, text: string): boolean
 }
 /**
- * # ShellScript
- * 
- * _**macOS only**. Requires Drafts 19 or greater._
+ * > _**macOS only**. Requires Drafts 19 or greater._
  * 
  * ShellScript objects can be used to execute Unix shell scripts.
  *
- * ### Bash Example
+ * #### Bash Example
  * 
  * ```javascript
  * // define text of bash script
@@ -3837,7 +3775,7 @@ declare class Share {
  * }
  * ```
  * 
- * ### Ruby Example
+ * #### Ruby Example
  * 
  * ```javascript
  * let script = `#!/usr/bin/env ruby
@@ -3890,11 +3828,9 @@ declare class ShellScript {
 
 type syntaxType = 'builtIn' | 'custom' | 'file'
 /**
- * # Syntax
- * 
  * Represents a Syntax definition available in the current installation of Drafts.
  * 
- * ### Example: Find and Assign a Syntax
+ * #### Example: Find and Assign a Syntax
  * 
  * ```javascript
  * let syntax = Syntax.find("builtIn", "Markdown");
@@ -3932,11 +3868,9 @@ declare class Syntax {
     static find(type: syntaxType, name: string): Syntax | undefined
 }
 /**
- * # Tag 
- * 
  * Tools for querying and working with tags.
  * 
- * ### Example: Querying tags
+ * #### Example: Querying tags
  * 
  * ```javascript
  * // query a list of all unique tag names
@@ -3964,11 +3898,9 @@ declare class Tag {
 }
 type themeType = 'builtIn' | 'custom' | 'file'
 /**
- * # Theme
- * 
  * Represents a Theme definition available in the current installation of Drafts.
  * 
- * ### Example: Find and assign the active light theme
+ * #### Example: Find and assign the active light theme
  * 
  * ```javascript
  * let theme = Theme.find("builtIn", "dark");
@@ -4005,14 +3937,10 @@ declare class Theme {
     static find(type: themeType, name: string): Theme | undefined
 }
 /**
- * # Things
  * 
- 
 */
 
 /**
- * # TJSContainer
- * 
  * Wraps an array of todo and/or project items and encodes them into a URL for use to send the request to Things.
  * 
  * ## Things Integration Notes
@@ -4023,7 +3951,7 @@ declare class Theme {
  *
  * For more information about what values Things understands in these objects, refer to [their URL scheme documenation](https://support.culturedcode.com/customer/en/portal/articles/2803573).
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // create a Things Project
@@ -4071,8 +3999,6 @@ declare class TJSContainer {
 }
 
 /**
- * # TJSProject 
- * 
  * Represents a Things project, with headings and todo items. See {@link TJSContainer} documentation for details on making requests to Things.
  * 
  */
@@ -4095,8 +4021,6 @@ declare class TJSProject {
 }
 
 /**
- * # TJSHeading
- * 
  * Represents a Things heading within a project. See {@link TJSContainer} documentation for details on making requests to Things.
  */
 declare class TJSHeading {
@@ -4107,8 +4031,6 @@ declare class TJSHeading {
 }
 
 /**
- * # TJSTodo
- * 
  * Represents a Things todo item. Todos can be added a project or directly to a container. See {@link TJSContainer} documentation for details on making requests to Things.
  */
 declare class TJSTodo {
@@ -4130,8 +4052,6 @@ declare class TJSTodo {
 }
 
 /**
- * # TJSChecklistItem
- * 
  * Represents a Things check list item, which can be added to a Todo. See {@link TJSContainer} documentation for details on making requests to Things.
  */
 declare class TJSChecklistItem {
@@ -4142,8 +4062,6 @@ declare class TJSChecklistItem {
     canceled: boolean
 }
 /**
- * # Todoist
- * 
  * Script integration with [Todoist](http://todoist.com/). This object handles OAuth authentication and request signing. The entire [Todoist REST API](https://developer.todoist.com/rest/v1/) can be used with the request method, and convenience methods are provided for common API endpoints to manage tasks, projects, comments and labels.
  *
  * The `quickAdd` method is mostly likely what you are looking for to create tasks as it supports the shorthand the task entry box in Todoist supports to parse projects, etc.
@@ -4152,7 +4070,7 @@ declare class TJSChecklistItem {
  *
  * If an API calls fails, typically the result will be an `undefined` value, and the `lastError` property will contains error detail information for troubleshooting.
  *
- * ### Example
+ * #### Example
  * 
  * See [Examples-Todoist](https://actions.getdrafts.com/g/1L3) action group in the [Action Directory](https://actions.getdrafts.com/).
  * 
@@ -4342,11 +4260,9 @@ declare class Todoist {
     constructor(identifier?: string)
 }
 /**
- * # Twitter
- * 
  * Script integration with Twitter. The `updateStatus` method is a convenience method for posting a tweet, but the entire [Twitter API](https://developer.twitter.com/en/docs/api-reference-index) can be used with the request method, which handles OAuth authentication and authorization.
  * 
- * ### Example
+ * #### Example
 
 * ```javascript
 * // create twitter object
@@ -4397,9 +4313,9 @@ declare class Twitter {
     constructor(identifier?: string)
 }
 /**
- * # Version
- * 
  * Version objects represent individual versions in a draft's [version history](https://docs.getdrafts.com/docs/drafts/versionhistory). Versions are accessed using the `versions` property of the {@link Draft} object.
+ * 
+ * #### Example
  * 
  * ```javascript
  * // loop over versions of a draft, keeping only most recent 3
@@ -4411,6 +4327,7 @@ declare class Twitter {
  * }
  */
 declare class Version {
+    private constructor()
     /**
      * Unique identifier of this version
      */
@@ -4433,8 +4350,6 @@ declare class Version {
     readonly draft?: Draft
 }
 /**
- * # WordPress
- * 
  * Script integration with WordPress sites via the [WordPress XML-RPC API](https://codex.wordpress.org/XML-RPC_WordPress_API). Currently this object has one runMethod function which can be used to call any method available in the XML-RPC interface.
  *
  * The WordPress API offers access to a wide variety of functions, including posting, but also retrieving information about categories and tags, or reading posts contents.
@@ -4443,7 +4358,7 @@ declare class Version {
  *
  * The WordPress XML-RPC API authenticates via username and password, so it is highly recommended you interact only over HTTPS secure connections, and use `Credential` objects to store host/username/password values, rather than hard-coding them in actions.
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * // setup values to use in post
@@ -4534,13 +4449,11 @@ declare class WordPress {
 type sortBy = 'created' | 'modified' | 'accessed' | 'name'
 type flagStatus = 'flagged' | 'unflagged' | 'any'
 /**
- * # Workspace
- * 
  * Represents a Workspace. Can be used to inquire and load workspaces and apply them using methods on the {@link App} object.
  * 
  * Note that is can also be useful in script to create and load temporary workspaces to apply filters or query drafts. If you create a new `Workspace` object and never call `update()` that workspace will not be saved after the end of an action's execution.
  * 
- * ### Example: Find and Load Workspace
+ * #### Example: Find and Load Workspace
  * 
  * ```javascript
  * // find workspace and load it in drafts list
@@ -4734,15 +4647,13 @@ declare class Workspace {
     static find(name: string): Workspace | undefined
 }
 /**
- * # XMLRPC
- * 
  * The XMLRPC object is a convenience method to provide an easy way to [XML-RPC](http://xmlrpc.scripting.com/) web services. The request function takes care of converting native Javascript objects and values to the XML parameters required for the XML-RPC interface, and converts the XML responses returned to Javascript objects.
  *
  * It will also return faults parsed to error messages in the response if necessary.
  *
  * This object is suitable for communication with a number of popular XML-RPC interfaces, including the [MetaWeblog API](http://xmlrpc.scripting.com/metaWeblogApi.html). WordPress also offers its own XML-RPC interface, which can be used via this object, or the convenience wrapper `WordPress` object.
  * 
- * ### Example: XML-RPC call
+ * #### Example: XML-RPC call
 
 * ```javascript
 * // DEMO of XML-RPC

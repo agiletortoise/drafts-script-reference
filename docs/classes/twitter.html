@@ -14,14 +14,10 @@
 <li><a href="Twitter.html">Twitter</a></li></ul>
 <h1>Class Twitter</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography">
-<a href="#twitter" id="twitter" style="color: inherit; text-decoration: none;">
-  <h1>Twitter</h1>
-</a>
-<p>Script integration with Twitter. The <code>updateStatus</code> method is a convenience method for posting a tweet, but the entire <a href="https://developer.twitter.com/en/docs/api-reference-index">Twitter API</a> can be used with the request method, which handles OAuth authentication and authorization.</p>
+<div class="tsd-comment tsd-typography"><p>Script integration with Twitter. The <code>updateStatus</code> method is a convenience method for posting a tweet, but the entire <a href="https://developer.twitter.com/en/docs/api-reference-index">Twitter API</a> can be used with the request method, which handles OAuth authentication and authorization.</p>
 
 <a href="#example" id="example" style="color: inherit; text-decoration: none;">
-  <h3>Example</h3>
+  <h4>Example</h4>
 </a>
 <pre><code class="language-javascript"><span class="hl-0">// create twitter object</span><br/><span class="hl-1">var</span><span class="hl-2"> </span><span class="hl-3">twitter</span><span class="hl-2"> = </span><span class="hl-3">Twitter</span><span class="hl-2">.</span><span class="hl-4">create</span><span class="hl-2">();</span><br/><span class="hl-0">// post tweet</span><br/><span class="hl-1">var</span><span class="hl-2"> </span><span class="hl-3">success</span><span class="hl-2"> = </span><span class="hl-3">twitter</span><span class="hl-2">.</span><span class="hl-4">updateStatus</span><span class="hl-2">(</span><span class="hl-5">&quot;My tweet content!&quot;</span><span class="hl-2">);</span><br/><br/><span class="hl-6">if</span><span class="hl-2"> </span><span class="hl-3">success</span><span class="hl-2"> {</span><br/><span class="hl-2">  </span><span class="hl-3">console</span><span class="hl-2">.</span><span class="hl-4">log</span><span class="hl-2">(</span><span class="hl-3">twitter</span><span class="hl-2">.</span><span class="hl-3">lastResponse</span><span class="hl-2">);</span><br/><span class="hl-2">}</span><br/><span class="hl-6">else</span><span class="hl-2"> {</span><br/><span class="hl-2">  </span><span class="hl-3">console</span><span class="hl-2">.</span><span class="hl-4">log</span><span class="hl-2">(</span><span class="hl-3">twitter</span><span class="hl-2">.</span><span class="hl-3">lastError</span><span class="hl-2">);</span><br/><span class="hl-2">  </span><span class="hl-3">context</span><span class="hl-2">.</span><span class="hl-4">fail</span><span class="hl-2">();</span><br/><span class="hl-2">}</span>
 </code></pre>

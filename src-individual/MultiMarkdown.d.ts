@@ -1,9 +1,7 @@
 /**
- * # MultiMarkdown
- * 
  * Drafts includes a full version of the MultiMarkdown 6 engine to render Markdown text to HTML and other supported formats. For details on the meaning of the various options, refer to [MultiMarkdown documentation](https://github.com/fletcher/MultiMarkdown-6).
  * 
- * ### Example
+ * #### Example
  * 
  * ```javascript
  * var inputString = "# Header\n\nMy **markdown** text";

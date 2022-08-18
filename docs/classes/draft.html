@@ -14,20 +14,16 @@
 <li><a href="Draft.html">Draft</a></li></ul>
 <h1>Class Draft</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography">
-<a href="#draft" id="draft" style="color: inherit; text-decoration: none;">
-  <h1>Draft</h1>
-</a>
-<p>The Draft object represents a single draft. When an action is run, the current draft is available as the global variable <code>draft</code>. Scripts can also create new drafts, access and set values, and update the draft to persist changes.</p>
+<div class="tsd-comment tsd-typography"><p>The Draft object represents a single draft. When an action is run, the current draft is available as the global variable <code>draft</code>. Scripts can also create new drafts, access and set values, and update the draft to persist changes.</p>
 
 <a href="#example-creating-a-draft" id="example-creating-a-draft" style="color: inherit; text-decoration: none;">
-  <h3>Example: Creating a draft</h3>
+  <h4>Example: Creating a draft</h4>
 </a>
 <pre><code class="language-javascript"><span class="hl-0">// create a new draft, assign content and save it</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">d</span><span class="hl-2"> = </span><span class="hl-1">new</span><span class="hl-2"> </span><span class="hl-4">Draft</span><span class="hl-2">();</span><br/><span class="hl-3">d</span><span class="hl-2">.</span><span class="hl-3">content</span><span class="hl-2"> = </span><span class="hl-5">&quot;My new draft&quot;</span><span class="hl-2">;</span><br/><span class="hl-3">d</span><span class="hl-2">.</span><span class="hl-4">addTag</span><span class="hl-2">(</span><span class="hl-5">&quot;personal&quot;</span><span class="hl-2">);</span><br/><span class="hl-3">d</span><span class="hl-2">.</span><span class="hl-4">update</span><span class="hl-2">();</span>
 </code></pre>
 
 <a href="#example-querying-drafts" id="example-querying-drafts" style="color: inherit; text-decoration: none;">
-  <h3>Example: Querying drafts</h3>
+  <h4>Example: Querying drafts</h4>
 </a>
 <pre><code class="language-javascript"><span class="hl-0">// query a list of drafts in the inbox with the tag &quot;blue&quot;</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">drafts</span><span class="hl-2"> = </span><span class="hl-3">Draft</span><span class="hl-2">.</span><span class="hl-4">query</span><span class="hl-2">(</span><span class="hl-5">&quot;&quot;</span><span class="hl-2">, </span><span class="hl-5">&quot;inbox&quot;</span><span class="hl-2">, [</span><span class="hl-5">&quot;blue&quot;</span><span class="hl-2">])</span>
 </code></pre>
@@ -382,7 +378,7 @@
 </div></li>
 <li>
 <h5>tags: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-<div class="tsd-comment tsd-typography"><p>Results will only include drafts with one or more of these tags assigned.</p>
+<div class="tsd-comment tsd-typography"><p>Results will only include drafts with all the listed tags assigned.</p>
 </div></li>
 <li>
 <h5>omitTags: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>

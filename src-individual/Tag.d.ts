@@ -1,9 +1,7 @@
 /**
- * # Tag 
- * 
  * Tools for querying and working with tags.
  * 
- * ### Example: Querying tags
+ * #### Example: Querying tags
  * 
  * ```javascript
  * // query a list of all unique tag names

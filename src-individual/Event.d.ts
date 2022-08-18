@@ -1,6 +1,4 @@
 /**
- * # Event
- * 
  * Event object represent individual calendar events. For usage examples, see {@link Calendar} object documentation.
  */
 declare class Event {

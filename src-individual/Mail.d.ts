@@ -1,9 +1,7 @@
 /**
- * # Mail
- * 
  * The {@link Mail} object can be used to create and send mail messages, similar to those created by a "Mail" action step.
  *
- * ### Example
+ * #### Example
 
 * ```javascript
 * var mail = Mail.create();

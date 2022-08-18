@@ -1,11 +1,9 @@
 /**
- * # Context
- * 
  * A single global "context" object is available to scripts to control flow of the currently running action.
  *
  * It is important to understand that `cancel()` and `fail()` will not immediately stop script, just stop any further action steps from being performed.
  *
- * ### Example: Control Flow
+ * #### Example: Control Flow
  * 
  * ```javascript
  * // test for logical condition before continuing
@@ -15,7 +13,7 @@
  * // code below will still run.
  * ```
  * 
- * ### Example: Retreive values
+ * #### Example: Retreive values
  * 
  * ```javascript
  * // if a "Run Workflow" step preceded this script, lets look for a result
@@ -31,6 +29,7 @@
  * 
  */
 declare class Context {
+    private constructor()
     /**
      * If [Callback URL](https://docs.getdrafts.com/docs/actions/steps/advanced#callback-url) or [Run Shortcut](https://docs.getdrafts.com/docs/actions/steps/advanced#run-shortcut) action steps using the "Wait for response" option have been run in steps before the script step in an action, and the target app returned to Drafts using an x-success callback, this object will contain an array of objects with the parsed query parameters included in those responses, in the order they were received. 
      */
