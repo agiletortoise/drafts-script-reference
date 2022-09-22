@@ -1,7 +1,7 @@
 /**
  * Represents an action group. Can be used to inquire and load action groups in the action list and action bar using methods on the {@link App} object.
  * 
- * #### Examples: Loading action group in action list
+ * ### Examples: Loading action group in action list
  *
  * ```javascript
  * let group = ActionGroup.find("Basic");

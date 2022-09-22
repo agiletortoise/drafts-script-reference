@@ -1,7 +1,7 @@
 /** 
  * Alarms are alerts which can be attached to {@link Reminder} and [[Event objects.
  * 
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * let list = ReminderList.findOrCreate("Errands");

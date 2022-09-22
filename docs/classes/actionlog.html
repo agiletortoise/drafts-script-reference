@@ -17,7 +17,7 @@
 <div class="tsd-comment tsd-typography"><p>ActionLog objects represent entries in the <a href="">action log</a>. ActionLog objects are accessed using the <code>actionLogs</code> property of the <a href="Draft.html">Draft</a> object.</p>
 
 <a href="#example" id="example" style="color: inherit; text-decoration: none;">
-  <h4>Example</h4>
+  <h3>Example</h3>
 </a>
 <pre><code class="language-javascript"><span class="hl-0">// loop over log entries, deleting any more than 100 days old</span><br/><span class="hl-6">for</span><span class="hl-2">(</span><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">log</span><span class="hl-2"> </span><span class="hl-1">of</span><span class="hl-2"> </span><span class="hl-3">draft</span><span class="hl-2">.</span><span class="hl-3">actionLogs</span><span class="hl-2">) {</span><br/><span class="hl-2">  </span><span class="hl-6">if</span><span class="hl-2"> (</span><span class="hl-3">log</span><span class="hl-2">.</span><span class="hl-3">executedAt</span><span class="hl-2"> &lt; </span><span class="hl-7">Date</span><span class="hl-2">.</span><span class="hl-3">today</span><span class="hl-2">.</span><span class="hl-4">addDays</span><span class="hl-2">(-</span><span class="hl-8">100</span><span class="hl-2">)) {</span><br/><span class="hl-2">    </span><span class="hl-3">log</span><span class="hl-2">.</span><span class="hl-4">delete</span><span class="hl-2">();</span><br/><span class="hl-2">  }</span><br/><span class="hl-2">}</span>
 </code></pre>

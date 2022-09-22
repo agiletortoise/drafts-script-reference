@@ -18,7 +18,7 @@
 <p>Note that is can also be useful in script to create and load temporary workspaces to apply filters or query drafts. If you create a new <code>Workspace</code> object and never call <code>update()</code> that workspace will not be saved after the end of an action&#39;s execution.</p>
 
 <a href="#example-find-and-load-workspace" id="example-find-and-load-workspace" style="color: inherit; text-decoration: none;">
-  <h4>Example: Find and Load Workspace</h4>
+  <h3>Example: Find and Load Workspace</h3>
 </a>
 <pre><code class="language-javascript"><span class="hl-0">// find workspace and load it in drafts list</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">workspace</span><span class="hl-2"> = </span><span class="hl-3">Workspace</span><span class="hl-2">.</span><span class="hl-4">find</span><span class="hl-2">(</span><span class="hl-5">&quot;Projects&quot;</span><span class="hl-2">);</span><br/><span class="hl-3">app</span><span class="hl-2">.</span><span class="hl-4">applyWorkspace</span><span class="hl-2">(</span><span class="hl-3">workspace</span><span class="hl-2">);</span>
 </code></pre>

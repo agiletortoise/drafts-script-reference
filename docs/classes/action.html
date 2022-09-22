@@ -17,13 +17,13 @@
 <div class="tsd-comment tsd-typography"><p>In addition to being able to lookup an action using the find method, a single global <code>action</code> object is created and available in scripts to inquire about the current action and control flow.</p>
 
 <a href="#example-queuing-an-action-to-run" id="example-queuing-an-action-to-run" style="color: inherit; text-decoration: none;">
-  <h4>Example: Queuing an action to run</h4>
+  <h3>Example: Queuing an action to run</h3>
 </a>
 <pre><code class="language-javascript"><span class="hl-0">// find action by name</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">otherAction</span><span class="hl-2"> = </span><span class="hl-3">Action</span><span class="hl-2">.</span><span class="hl-4">find</span><span class="hl-2">(</span><span class="hl-5">&quot;Copy&quot;</span><span class="hl-2">);</span><br/><br/><span class="hl-0">// queue to action to run after the current action, on the same draft</span><br/><span class="hl-3">app</span><span class="hl-2">.</span><span class="hl-4">queueAction</span><span class="hl-2">(</span><span class="hl-3">otherAction</span><span class="hl-2">, </span><span class="hl-3">draft</span><span class="hl-2">);</span>
 </code></pre>
 
 <a href="#example-branching-based-on-current-action" id="example-branching-based-on-current-action" style="color: inherit; text-decoration: none;">
-  <h4>Example: Branching based on current action</h4>
+  <h3>Example: Branching based on current action</h3>
 </a>
 <pre><code class="language-javascript"><span class="hl-0">// use global `action` to branch logic in a script reused in multiple actions</span><br/><span class="hl-6">if</span><span class="hl-2"> (</span><span class="hl-3">action</span><span class="hl-2">.</span><span class="hl-3">name</span><span class="hl-2"> == </span><span class="hl-5">&quot;Copy&quot;</span><span class="hl-2">) {</span><br/><span class="hl-2">    </span><span class="hl-0">// do something</span><br/><span class="hl-2">}</span><br/><span class="hl-6">else</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-0">// do something else</span><br/><span class="hl-2">}</span>
 </code></pre>

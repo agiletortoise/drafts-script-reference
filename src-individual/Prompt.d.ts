@@ -14,7 +14,7 @@ type capitalizationTypes = 'none' | 'sentences' | 'words'
 /**
  * Prompts allow the creation and display of custom dialogs to request information or confirmation from the user.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * var p = Prompt.create();

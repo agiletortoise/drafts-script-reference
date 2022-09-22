@@ -1,7 +1,7 @@
 /**
  * ActionLog objects represent entries in the [action log](). ActionLog objects are accessed using the `actionLogs` property of the {@link Draft} object.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // loop over log entries, deleting any more than 100 days old

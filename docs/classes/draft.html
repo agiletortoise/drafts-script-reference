@@ -17,13 +17,13 @@
 <div class="tsd-comment tsd-typography"><p>The Draft object represents a single draft. When an action is run, the current draft is available as the global variable <code>draft</code>. Scripts can also create new drafts, access and set values, and update the draft to persist changes.</p>
 
 <a href="#example-creating-a-draft" id="example-creating-a-draft" style="color: inherit; text-decoration: none;">
-  <h4>Example: Creating a draft</h4>
+  <h3>Example: Creating a draft</h3>
 </a>
 <pre><code class="language-javascript"><span class="hl-0">// create a new draft, assign content and save it</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">d</span><span class="hl-2"> = </span><span class="hl-1">new</span><span class="hl-2"> </span><span class="hl-4">Draft</span><span class="hl-2">();</span><br/><span class="hl-3">d</span><span class="hl-2">.</span><span class="hl-3">content</span><span class="hl-2"> = </span><span class="hl-5">&quot;My new draft&quot;</span><span class="hl-2">;</span><br/><span class="hl-3">d</span><span class="hl-2">.</span><span class="hl-4">addTag</span><span class="hl-2">(</span><span class="hl-5">&quot;personal&quot;</span><span class="hl-2">);</span><br/><span class="hl-3">d</span><span class="hl-2">.</span><span class="hl-4">update</span><span class="hl-2">();</span>
 </code></pre>
 
 <a href="#example-querying-drafts" id="example-querying-drafts" style="color: inherit; text-decoration: none;">
-  <h4>Example: Querying drafts</h4>
+  <h3>Example: Querying drafts</h3>
 </a>
 <pre><code class="language-javascript"><span class="hl-0">// query a list of drafts in the inbox with the tag &quot;blue&quot;</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">drafts</span><span class="hl-2"> = </span><span class="hl-3">Draft</span><span class="hl-2">.</span><span class="hl-4">query</span><span class="hl-2">(</span><span class="hl-5">&quot;&quot;</span><span class="hl-2">, </span><span class="hl-5">&quot;inbox&quot;</span><span class="hl-2">, [</span><span class="hl-5">&quot;blue&quot;</span><span class="hl-2">])</span>
 </code></pre>
@@ -92,6 +92,7 @@
 <h3 class="tsd-index-heading">Methods - Other</h3>
 <div class="tsd-index-list"><a href="Draft.html#append" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>append</span></a>
 <a href="Draft.html#bodyPreview" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>body<wbr/>Preview</span></a>
+<a href="Draft.html#insert" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>insert</span></a>
 <a href="Draft.html#prepend" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>prepend</span></a>
 <a href="Draft.html#toJSON" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>toJSON</span></a>
 <a href="Draft.html#update" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>update</span></a>
@@ -300,6 +301,25 @@
 <li>
 <h5>maxLength: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="insert" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>insert</span><a href="#insert" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="insert.insert-1">insert<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, line<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#insert.insert-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Insert text into the draft&#39;s <code>content</code> at the line indicated. This is a convenience function.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>text: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The text to in</p>
+</div></li>
+<li>
+<h5>line: <span class="tsd-signature-type">number</span></h5>
+<div class="tsd-comment tsd-typography"><p>The index of the line number at which to insert the text. Line numbers are zero-based, so <code>0</code> is the first line. Drafts will range-check the line.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="prepend" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>prepend</span><a href="#prepend" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -578,6 +598,7 @@
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="Draft.html#bodyPreview" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>body<wbr/>Preview</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="Draft.html#getTemplateTag" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Template<wbr/>Tag</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="Draft.html#hasTag" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>has<wbr/>Tag</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Draft.html#insert" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>insert</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="Draft.html#prepend" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>prepend</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="Draft.html#processMustacheTemplate" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>process<wbr/>Mustache<wbr/>Template</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="Draft.html#processTemplate" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>process<wbr/>Template</a></li>

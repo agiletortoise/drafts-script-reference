@@ -1,7 +1,7 @@
 /**
  * The Message object can be used to create and send mail iMessages, similar to those created by a "Message" action step.   
  * 
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * var msg = Message.create();

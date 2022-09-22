@@ -1,7 +1,7 @@
 /**
  * Methods to share via system share sheet.
  * 
- * #### Example
+ * ### Example
 
 ```javascript
 * let s = "My text to share"

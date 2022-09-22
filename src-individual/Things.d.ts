@@ -13,7 +13,7 @@
  *
  * For more information about what values Things understands in these objects, refer to [their URL scheme documenation](https://support.culturedcode.com/customer/en/portal/articles/2803573).
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // create a Things Project

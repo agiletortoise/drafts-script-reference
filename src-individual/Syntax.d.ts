@@ -2,7 +2,7 @@ type syntaxType = 'builtIn' | 'custom' | 'file'
 /**
  * Represents a Syntax definition available in the current installation of Drafts.
  * 
- * #### Example: Find and Assign a Syntax
+ * ### Example: Find and Assign a Syntax
  * 
  * ```javascript
  * let syntax = Syntax.find("builtIn", "Markdown");

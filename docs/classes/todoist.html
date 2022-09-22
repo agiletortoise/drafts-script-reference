@@ -20,7 +20,7 @@
 <p>If an API calls fails, typically the result will be an <code>undefined</code> value, and the <code>lastError</code> property will contains error detail information for troubleshooting.</p>
 
 <a href="#example" id="example" style="color: inherit; text-decoration: none;">
-  <h4>Example</h4>
+  <h3>Example</h3>
 </a>
 <p>See <a href="https://actions.getdrafts.com/g/1L3">Examples-Todoist</a> action group in the <a href="https://actions.getdrafts.com/">Action Directory</a>.</p>
 <pre><code class="language-javascript"><span class="hl-0">// create Todoist object</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">todoist</span><span class="hl-2"> = </span><span class="hl-3">Todoist</span><span class="hl-2">.</span><span class="hl-4">create</span><span class="hl-2">();</span><br/><span class="hl-0">// create task in inbox</span><br/><span class="hl-3">todoist</span><span class="hl-2">.</span><span class="hl-4">createTask</span><span class="hl-2">({</span><br/><span class="hl-2">  </span><span class="hl-5">&quot;content&quot;</span><span class="hl-3">:</span><span class="hl-2"> </span><span class="hl-5">&quot;My Task Name&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">  </span><span class="hl-5">&quot;due_string&quot;</span><span class="hl-3">:</span><span class="hl-2"> </span><span class="hl-5">&quot;Next wednesday&quot;</span><br/><span class="hl-2">});</span>

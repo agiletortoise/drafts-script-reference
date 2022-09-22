@@ -7,7 +7,7 @@
  *
  * The user can delete those credentials at any time by visiting Settings > Credentials and tapping the "Forget" button on a service.
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * var credential = Credential.create("My Service", "Description of the service to  * appear in user prompt.");

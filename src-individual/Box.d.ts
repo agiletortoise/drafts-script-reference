@@ -1,7 +1,7 @@
 /**
  * Box objects can be used to work with files in a Box.com account.
  *
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * // create Box object

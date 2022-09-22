@@ -3,7 +3,7 @@
  * 
  * > **NOTE**: If you want to open a URL in Safari or another app and do not need a response or x-callback-url support, use the {@link App.openURL} method on the {@link App} object.
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // Open callback URL for each line in a draft

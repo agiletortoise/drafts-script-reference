@@ -5,7 +5,7 @@
  *
  * This object is suitable for communication with a number of popular XML-RPC interfaces, including the [MetaWeblog API](http://xmlrpc.scripting.com/metaWeblogApi.html). WordPress also offers its own XML-RPC interface, which can be used via this object, or the convenience wrapper `WordPress` object.
  * 
- * #### Example: XML-RPC call
+ * ### Example: XML-RPC call
 
 * ```javascript
 * // DEMO of XML-RPC

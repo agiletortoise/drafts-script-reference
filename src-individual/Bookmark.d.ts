@@ -3,7 +3,7 @@
  * 
  * _Learn more about [Bookmarks in the User Guide](https://docs.getdrafts.com/docs/settings/bookmarks)_
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // find or create a named Bookmark

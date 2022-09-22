@@ -7,7 +7,7 @@
  *
  * The WordPress XML-RPC API authenticates via username and password, so it is highly recommended you interact only over HTTPS secure connections, and use `Credential` objects to store host/username/password values, rather than hard-coding them in actions.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // setup values to use in post

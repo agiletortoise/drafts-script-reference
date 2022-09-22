@@ -1,7 +1,7 @@
 /**
  * FileManager objects can be used to read from or write to files in either the local Drafts app Documents directory, or iCloud Drive (inside the `Drafts` folder).Note that local files are not visible on iOS, and are only available for reading and writing via scripting.
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // create a local file in App documents

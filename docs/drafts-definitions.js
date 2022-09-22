@@ -3,7 +3,7 @@
  * 
  * In addition to being able to lookup an action using the find method, a single global `action` object is created and available in scripts to inquire about the current action and control flow.
  * 
- * #### Example: Queuing an action to run
+ * ### Example: Queuing an action to run
  * 
  * ```javascript
  * // find action by name
@@ -13,7 +13,7 @@
  * app.queueAction(otherAction, draft);
  * ```
  * 
- * #### Example: Branching based on current action
+ * ### Example: Branching based on current action
  * ```javascript
  * // use global `action` to branch logic in a script reused in multiple actions
  * if (action.name == "Copy") {
@@ -64,7 +64,7 @@ declare const  action: Action
 /**
  * Represents an action group. Can be used to inquire and load action groups in the action list and action bar using methods on the {@link App} object.
  * 
- * #### Examples: Loading action group in action list
+ * ### Examples: Loading action group in action list
  *
  * ```javascript
  * let group = ActionGroup.find("Basic");
@@ -114,7 +114,7 @@ declare class ActionGroup {
 /**
  * ActionLog objects represent entries in the [action log](). ActionLog objects are accessed using the `actionLogs` property of the {@link Draft} object.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // loop over log entries, deleting any more than 100 days old
@@ -180,7 +180,7 @@ declare class ActionLog {
 /** 
  * Alarms are alerts which can be attached to {@link Reminder} and [[Event objects.
  * 
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * let list = ReminderList.findOrCreate("Errands");
@@ -209,7 +209,7 @@ declare class Alarm {
 /**
  * Drafts defines a single global `app` object which provides access to application level functions.
  * 
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * // toggle dark-light mode
@@ -440,7 +440,7 @@ declare const  app: App
  * 
  * AppleScript objects can be used to execute AppleScripts. It is highly recommended AppleScripts be developed and tested in Apple's Script Editor or similar AppleScript editor, and loaded in Drafts when completed.
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // create a local file in App documents
@@ -502,7 +502,7 @@ declare class AppleScript {
 /**
  * Create and update entries in the Editor's [global autocomplete system](https://docs.getdrafts.com/docs/editor/autocomplete)
  * 
- * #### Examples
+ * ### Examples
  *
  * ```javascript
  * // work with the default system autocomplete
@@ -546,7 +546,7 @@ declare class Autocomplete {
 /**
  * Helper methods to encode and decode [Base64](https://en.wikipedia.org/wiki/Base64) strings.
  * 
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * let s = "My String";
@@ -573,7 +573,7 @@ declare class Base64 {
  * 
  * _Learn more about [Bookmarks in the User Guide](https://docs.getdrafts.com/docs/settings/bookmarks)_
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // find or create a named Bookmark
@@ -608,7 +608,7 @@ declare class Bookmark {
 /**
  * Box objects can be used to work with files in a Box.com account.
  *
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * // create Box object
@@ -673,7 +673,7 @@ declare class Box {
 /**
  * Calendar objects are used to manipulate and create calendars in the built-in Calendars app and its associated accounts.
  * 
- * #### Example: Event Creation
+ * ### Example: Event Creation
  * 
  * ```javascript
  * var calendar = Calendar.findOrCreate("Activities");
@@ -688,7 +688,7 @@ declare class Box {
  * }
  * ```
  * 
- * #### Example: Reading Calendar Events
+ * ### Example: Reading Calendar Events
  * 
  * ```javascript
  * // load a calendar
@@ -754,7 +754,7 @@ declare class Calendar {
  * 
  * > **NOTE**: If you want to open a URL in Safari or another app and do not need a response or x-callback-url support, use the {@link App.openURL} method on the {@link App} object.
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // Open callback URL for each line in a draft
@@ -850,7 +850,7 @@ declare class CallbackURL {
  *
  * It is important to understand that `cancel()` and `fail()` will not immediately stop script, just stop any further action steps from being performed.
  *
- * #### Example: Control Flow
+ * ### Example: Control Flow
  * 
  * ```javascript
  * // test for logical condition before continuing
@@ -860,7 +860,7 @@ declare class CallbackURL {
  * // code below will still run.
  * ```
  * 
- * #### Example: Retreive values
+ * ### Example: Retreive values
  * 
  * ```javascript
  * // if a "Run Workflow" step preceded this script, lets look for a result
@@ -928,7 +928,7 @@ declare const  context: Context
  *
  * The user can delete those credentials at any time by visiting Settings > Credentials and tapping the "Forget" button on a service.
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * var credential = Credential.create("My Service", "Description of the service to  * appear in user prompt.");
@@ -1028,7 +1028,7 @@ declare class Credential {
 /**
  * Drafts defines a single global `device` object which provides access to information about the current device.
  * 
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * // get system info from device object
@@ -1083,7 +1083,7 @@ type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
 /**
  * The Draft object represents a single draft. When an action is run, the current draft is available as the global variable `draft`. Scripts can also create new drafts, access and set values, and update the draft to persist changes.
  * 
- * #### Example: Creating a draft
+ * ### Example: Creating a draft
  * 
  * ```javascript
  * // create a new draft, assign content and save it
@@ -1093,7 +1093,7 @@ type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
  * d.update();
  * ```
  * 
- * #### Example: Querying drafts
+ * ### Example: Querying drafts
  * 
  * ```javascript
  * // query a list of drafts in the inbox with the tag "blue"
@@ -1286,6 +1286,13 @@ declare class Draft {
     prepend(text: string, separator?: string): void
 
     /**
+     * Insert text into the draft's `content` at the line indicated. This is a convenience function.
+     * @param text The text to in
+     * @param line The index of the line number at which to insert the text. Line numbers are zero-based, so `0` is the first line. Drafts will range-check the line.
+     */
+    insert(text: string, line: number): void
+
+    /**
      * Array of versions representing the entire saved version history for this draft.
      * @category ActionLog
      */
@@ -1385,7 +1392,7 @@ interface DropboxRequestSettings {
  * 
  * For advanced uses, the `rpcRequest`, `contentUploadRequest` and `contentDownloadRequest` methods enable direct use of any Dropbox API 2.0 endpoints. These methods are an advanced feature which return raw results from the Dropbox API and may require advanced understanding of the API to process the results. They do enable full access to the API, however, which enabled things like querying files, listing folder contents, uploading to Paper, etc. For details on availalbe methods, see [Dropbox API documentation](https://www.dropbox.com/developers/documentation/http/overview).  In the case of all of these methods Drafts takes care of the OAuth request signing and authentication process when necessary.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // create Dropbox object
@@ -1812,7 +1819,7 @@ declare class Event {
 /**
  * FileManager objects can be used to read from or write to files in either the local Drafts app Documents directory, or iCloud Drive (inside the `Drafts` folder).Note that local files are not visible on iOS, and are only available for reading and writing via scripting.
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // create a local file in App documents
@@ -1976,7 +1983,7 @@ declare class FileManager {
 /**
  * Drafts includes Discount-based, GitHub flavored Markdown parser based on [GHMarkdownParser](https://github.com/OliverLetterer/GHMarkdownParser). For details on the meaning of the various options, refer to [Markdown documentation](https://getdrafts.com/settings/markdown).
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * var inputString = "# Header\n\nMy **markdown** text";
@@ -2059,7 +2066,7 @@ declare function adjustDate(date: Date, adjustmentExpression: string): Date
 /**
  * The GmailMessage object can be used to create and send mail messages through Gmail accounts, similar to those created by a [Gmail action step](https://getdrafts.com/actions/steps/gmail). Creating and sending these messages happens in the background, with no user interface, so messages must be complete with recipients before calling send(). Sending is done via the [Gmail API](https://developers.google.com/gmail/api/). Gmail accounts are authenticated when used for the first time using OAuth - to use more than one account, call create with different identifier parameters.
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * let message = GmailMessage.create();
@@ -2120,7 +2127,7 @@ declare class GmailMessage {
 /**
  * GoogleDrive objects can be used to work with files in Google Drive accounts.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // create GoogleDrive object
@@ -2311,7 +2318,7 @@ declare class GoogleTask {
 /**
  * Helper methods to escape and unescape HTML entities in a string.
  * 
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * let s = "<One> & Two";
@@ -2335,7 +2342,7 @@ declare class HTML {
 /**
  * Display of HTML Preview window, the same as the HTMLPreview action step. Returns true if user closed preview with the "Continue" button, false if the user cancelled.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * let html = "<html><body>My Document</body></html>"
@@ -2375,7 +2382,7 @@ declare class HTMLPreview {
 /**
  * The {@link HTTP} and [[HTTPResponse objects are used to run synchronous HTTP requests to communicate with APIs, or just read pages from the web. A full set of custom settings can be passed, and all HTTP methods (GET, POST, PUT, DELETE, etc.) are supported.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * var http = HTTP.create(); // create HTTP object
@@ -2485,7 +2492,7 @@ declare class HTTPResponse {
 /**
  * The {@link Mail} object can be used to create and send mail messages, similar to those created by a "Mail" action step.
  *
- * #### Example
+ * ### Example
 
 * ```javascript
 * var mail = Mail.create();
@@ -2647,7 +2654,7 @@ declare class Medium {
 /**
  * The Message object can be used to create and send mail iMessages, similar to those created by a "Message" action step.   
  * 
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * var msg = Message.create();
@@ -2728,7 +2735,7 @@ type microsoftToDoLinkedResource = object
  *
  * If an API calls fails, typically the result will be an `undefined` value, and the `lastError` property will contains error detail information for troubleshooting.
  *
- * #### Example
+ * ### Example
  * 
  * See [Examples-Microsoft To Do](https://actions.getdrafts.com/g/1m3) action group in the [Drafts Directory](https://actions.getdrafts.com/). It contains several example scripted actions.
  * 
@@ -2845,7 +2852,7 @@ declare class MicrosoftToDo {
 /**
  * Drafts includes a full version of the MultiMarkdown 6 engine to render Markdown text to HTML and other supported formats. For details on the meaning of the various options, refer to [MultiMarkdown documentation](https://github.com/fletcher/MultiMarkdown-6).
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * var inputString = "# Header\n\nMy **markdown** text";
@@ -2954,7 +2961,7 @@ declare class MultiMarkdown {
  *
  * When rendering Mustache templates, you pass the template itself and a data object which contains the values available to insert. The data object should be a Javascript object with keys and values. Values can be basic data types (numbers, strings, dates) and also arrays or nested objects which can be iterated using conventions of the Mustache syntax.
  *
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // create template to loop over drafts
@@ -3015,7 +3022,7 @@ declare class MustacheTemplate {
 /**
  * Script integration with [Notion](https://www.notion.so/). This object handles OAuth authentication and request signing. The entire [Notion REST API](https://developers.notion.com) can be used with the `request` method.
  *
- * #### Example
+ * ### Example
  * 
  * ```
  * // list pages which have been shared with the Drafts integration
@@ -3098,7 +3105,7 @@ declare class Notion {
 /**
  * OneDrive objects can be used to work with files in a OneDrive account.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // create OneDrive object
@@ -3167,7 +3174,7 @@ declare class OneDrive {
 /**
  * The OutlookMessage object can be used to create and send mail messages through Outlook.com integrated accounts, similar to those created by a [Outlook action step](https://getdrafts.com/actions/steps/outlook). Creating and sending these messages happens in the background, with no user interface, so messages must be complete with recipients before calling `send()`. Sending is done via the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph). Outlooks accounts are authenticated when used for the first time using OAuth - to use more than one account, call create with different identifier parameters.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * let message = OutlookMessage.create();
@@ -3240,7 +3247,7 @@ type capitalizationTypes = 'none' | 'sentences' | 'words'
 /**
  * Prompts allow the creation and display of custom dialogs to request information or confirmation from the user.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * var p = Prompt.create();
@@ -3481,7 +3488,7 @@ type queryDateField = 'created' | 'modified' | 'accessed'
  * 
  * QueryDates always specify a date with time components being ignored. If used a the start of a query range, the time will be moved to the beginning of that day. If used at the end of a query range, time will be moved to the end of that day.
  * 
- * #### Example: Create Workspace with date range
+ * ### Example: Create Workspace with date range
  * 
  * ```javascript
  * // create a workspace
@@ -3632,7 +3639,7 @@ declare class Reminder {
 /**
  * ReminderList objects are used to manipulate and create lists in the built-in Reminders app.
  * 
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * declare const  list = ReminderList.findOrCreate("Groceries");
@@ -3693,7 +3700,7 @@ declare class ReminderList {
 /**
  * When running a [Script action step](https://docs.getdrafts.com/docs/actions/steps/advanced.html#script), a single `script` object will be in context to reference the currently running script.
  * 
- * #### Example
+ * ### Example
  * ```javascript
  * function sleep(milliseconds) {
  *   var start = new Date().getTime();
@@ -3724,7 +3731,7 @@ declare class Script {
 /**
  * Methods to share via system share sheet.
  * 
- * #### Example
+ * ### Example
 
 ```javascript
 * let s = "My text to share"
@@ -3830,7 +3837,7 @@ type syntaxType = 'builtIn' | 'custom' | 'file'
 /**
  * Represents a Syntax definition available in the current installation of Drafts.
  * 
- * #### Example: Find and Assign a Syntax
+ * ### Example: Find and Assign a Syntax
  * 
  * ```javascript
  * let syntax = Syntax.find("builtIn", "Markdown");
@@ -3870,7 +3877,7 @@ declare class Syntax {
 /**
  * Tools for querying and working with tags.
  * 
- * #### Example: Querying tags
+ * ### Example: Querying tags
  * 
  * ```javascript
  * // query a list of all unique tag names
@@ -3900,7 +3907,7 @@ type themeType = 'builtIn' | 'custom' | 'file'
 /**
  * Represents a Theme definition available in the current installation of Drafts.
  * 
- * #### Example: Find and assign the active light theme
+ * ### Example: Find and assign the active light theme
  * 
  * ```javascript
  * let theme = Theme.find("builtIn", "dark");
@@ -3951,7 +3958,7 @@ declare class Theme {
  *
  * For more information about what values Things understands in these objects, refer to [their URL scheme documenation](https://support.culturedcode.com/customer/en/portal/articles/2803573).
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // create a Things Project
@@ -4070,7 +4077,7 @@ declare class TJSChecklistItem {
  *
  * If an API calls fails, typically the result will be an `undefined` value, and the `lastError` property will contains error detail information for troubleshooting.
  *
- * #### Example
+ * ### Example
  * 
  * See [Examples-Todoist](https://actions.getdrafts.com/g/1L3) action group in the [Action Directory](https://actions.getdrafts.com/).
  * 
@@ -4262,7 +4269,7 @@ declare class Todoist {
 /**
  * Script integration with Twitter. The `updateStatus` method is a convenience method for posting a tweet, but the entire [Twitter API](https://developer.twitter.com/en/docs/api-reference-index) can be used with the request method, which handles OAuth authentication and authorization.
  * 
- * #### Example
+ * ### Example
 
 * ```javascript
 * // create twitter object
@@ -4315,7 +4322,7 @@ declare class Twitter {
 /**
  * Version objects represent individual versions in a draft's [version history](https://docs.getdrafts.com/docs/drafts/versionhistory). Versions are accessed using the `versions` property of the {@link Draft} object.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // loop over versions of a draft, keeping only most recent 3
@@ -4358,7 +4365,7 @@ declare class Version {
  *
  * The WordPress XML-RPC API authenticates via username and password, so it is highly recommended you interact only over HTTPS secure connections, and use `Credential` objects to store host/username/password values, rather than hard-coding them in actions.
  * 
- * #### Example
+ * ### Example
  * 
  * ```javascript
  * // setup values to use in post
@@ -4453,7 +4460,7 @@ type flagStatus = 'flagged' | 'unflagged' | 'any'
  * 
  * Note that is can also be useful in script to create and load temporary workspaces to apply filters or query drafts. If you create a new `Workspace` object and never call `update()` that workspace will not be saved after the end of an action's execution.
  * 
- * #### Example: Find and Load Workspace
+ * ### Example: Find and Load Workspace
  * 
  * ```javascript
  * // find workspace and load it in drafts list
@@ -4653,7 +4660,7 @@ declare class Workspace {
  *
  * This object is suitable for communication with a number of popular XML-RPC interfaces, including the [MetaWeblog API](http://xmlrpc.scripting.com/metaWeblogApi.html). WordPress also offers its own XML-RPC interface, which can be used via this object, or the convenience wrapper `WordPress` object.
  * 
- * #### Example: XML-RPC call
+ * ### Example: XML-RPC call
 
 * ```javascript
 * // DEMO of XML-RPC

@@ -1,7 +1,7 @@
 /**
  * Drafts defines a single global `app` object which provides access to application level functions.
  * 
- * #### Examples
+ * ### Examples
  * 
  * ```javascript
  * // toggle dark-light mode

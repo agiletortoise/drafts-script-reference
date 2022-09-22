@@ -2,7 +2,7 @@ type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
 /**
  * The Draft object represents a single draft. When an action is run, the current draft is available as the global variable `draft`. Scripts can also create new drafts, access and set values, and update the draft to persist changes.
  * 
- * #### Example: Creating a draft
+ * ### Example: Creating a draft
  * 
  * ```javascript
  * // create a new draft, assign content and save it
@@ -12,7 +12,7 @@ type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
  * d.update();
  * ```
  * 
- * #### Example: Querying drafts
+ * ### Example: Querying drafts
  * 
  * ```javascript
  * // query a list of drafts in the inbox with the tag "blue"
@@ -203,6 +203,13 @@ declare class Draft {
      * @param separator An optional separator string to use between content and added text. Defaults to a single line feed.
      */
     prepend(text: string, separator?: string): void
+
+    /**
+     * Insert text into the draft's `content` at the line indicated. This is a convenience function.
+     * @param text The text to in
+     * @param line The index of the line number at which to insert the text. Line numbers are zero-based, so `0` is the first line. Drafts will range-check the line.
+     */
+    insert(text: string, line: number): void
 
     /**
      * Array of versions representing the entire saved version history for this draft.

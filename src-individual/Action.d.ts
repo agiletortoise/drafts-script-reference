@@ -3,7 +3,7 @@
  * 
  * In addition to being able to lookup an action using the find method, a single global `action` object is created and available in scripts to inquire about the current action and control flow.
  * 
- * #### Example: Queuing an action to run
+ * ### Example: Queuing an action to run
  * 
  * ```javascript
  * // find action by name
@@ -13,7 +13,7 @@
  * app.queueAction(otherAction, draft);
  * ```
  * 
- * #### Example: Branching based on current action
+ * ### Example: Branching based on current action
  * ```javascript
  * // use global `action` to branch logic in a script reused in multiple actions
  * if (action.name == "Copy") {
