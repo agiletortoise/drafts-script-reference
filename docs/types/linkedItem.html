@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>navigationMarker | Drafts Script Reference</title><meta name="description" content="Documentation for Drafts Script Reference"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script async src="../assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>linkedItem | Drafts Script Reference</title><meta name="description" content="Documentation for Drafts Script Reference"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script async src="../assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -11,25 +11,25 @@
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
 <li><a href="../modules.html">Drafts Script Reference</a></li>
-<li><a href="navigationMarker.html">navigationMarker</a></li></ul>
-<h1>Type alias navigationMarker</h1></div>
-<div class="tsd-signature">navigation<wbr/>Marker<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>prefix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
-<div class="tsd-comment tsd-typography"><p>An object describing a navigation location, as defined by the syntax definition. <code>navigationMarkers</code> and related properties are available on both <a href="../classes/Editor.html">Editor</a> and <a href="../classes/Draft.html">Draft</a> objects.</p>
+<li><a href="linkedItem.html">linkedItem</a></li></ul>
+<h1>Type alias linkedItem</h1></div>
+<div class="tsd-signature">linked<wbr/>Item<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>link<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>prefix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>suffix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+<div class="tsd-comment tsd-typography"><p>An object describing a linked item, as defined by the syntax definition in use in the editor. In Markdown syntaxes this translates to the <code>[[wiki-style]]</code> cross-linked items, but might vary by syntax. In Markdown examples, <code>[[key:value]]</code>. <code>linkedItems</code> properties are available on both <a href="../classes/Editor.html">Editor</a> and <a href="../classes/Draft.html">Draft</a> objects.</p>
 </div>
 <div class="tsd-type-declaration">
 <h4>Type declaration</h4>
 <ul class="tsd-parameters">
 <li class="tsd-parameter">
-<h5>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-<div class="tsd-comment tsd-typography"><p>Label text for the marker.</p>
+<h5>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Optional key value provided by link definition. For example, in default Markdown syntaxes <code>[[url:...]]</code> the <code>url</code> string would be the key.</p>
 </div></li>
 <li class="tsd-parameter">
 <h5>length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 <div class="tsd-comment tsd-typography"><p>The number of characters in the range.</p>
 </div></li>
 <li class="tsd-parameter">
-<h5>level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-<div class="tsd-comment tsd-typography"><p>Indentation level of the marker.</p>
+<h5>link<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The linked text identified in in the link.</p>
 </div></li>
 <li class="tsd-parameter">
 <h5>location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
@@ -37,7 +37,15 @@
 </div></li>
 <li class="tsd-parameter">
 <h5>prefix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-<div class="tsd-comment tsd-typography"><p>Prefix text for the marker. Example: <code>H1</code>, <code>H2</code> in Markdown</p>
+<div class="tsd-comment tsd-typography"><p>Prefix text for the linked item. Example: <code>[[</code> in Markdown</p>
+</div></li>
+<li class="tsd-parameter">
+<h5>suffix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Suffix text for the linked item. Example: <code>]]</code> in Markdown</p>
+</div></li>
+<li class="tsd-parameter">
+<h5>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Value capture from the link definition.</p>
 </div></li></ul></div></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
@@ -129,12 +137,12 @@
 <li class="tsd-kind-type-alias"><a href="googleTask-1.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>google<wbr/>Task</a></li>
 <li class="tsd-kind-type-alias"><a href="googleTaskList.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>google<wbr/>Task<wbr/>List</a></li>
 <li class="tsd-kind-type-alias"><a href="keyboardTypes.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>keyboard<wbr/>Types</a></li>
-<li class="tsd-kind-type-alias"><a href="linkedItem.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>linked<wbr/>Item</a></li>
+<li class="current tsd-kind-type-alias"><a href="linkedItem.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>linked<wbr/>Item</a></li>
 <li class="tsd-kind-type-alias"><a href="mailStatus.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>mail<wbr/>Status</a></li>
 <li class="tsd-kind-type-alias"><a href="microsoftToDoLinkedResource.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>microsoft<wbr/>To<wbr/>Do<wbr/>Linked<wbr/>Resource</a></li>
 <li class="tsd-kind-type-alias"><a href="microsoftToDoTask.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>microsoft<wbr/>To<wbr/>Do<wbr/>Task</a></li>
 <li class="tsd-kind-type-alias"><a href="microsoftToDoTaskList.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>microsoft<wbr/>To<wbr/>Do<wbr/>Task<wbr/>List</a></li>
-<li class="current tsd-kind-type-alias"><a href="navigationMarker.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>navigation<wbr/>Marker</a></li>
+<li class="tsd-kind-type-alias"><a href="navigationMarker.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>navigation<wbr/>Marker</a></li>
 <li class="tsd-kind-type-alias"><a href="queryDateField.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>query<wbr/>Date<wbr/>Field</a></li>
 <li class="tsd-kind-type-alias"><a href="queryDateType.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>query<wbr/>Date<wbr/>Type</a></li>
 <li class="tsd-kind-type-alias"><a href="selectionRange.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>selection<wbr/>Range</a></li>

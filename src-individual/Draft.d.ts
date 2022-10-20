@@ -51,6 +51,11 @@ declare class Draft {
     readonly lines: [string]
 
     /**
+    * Convenience method to scan the draft content for valid URLs, and return all found URLs as an array. This will return valid full URL strings - both for `http(s)` and custom URLs found in the text.
+    */
+    readonly urls: [string]
+
+    /**
      * Return the a trimmed display version of the "body" of the draft (content after first line), similar to what is displayed as a preview in the draft list._
      */
     bodyPreview(maxLength: number): string
@@ -277,6 +282,24 @@ declare class Draft {
      * Provide standard object representation of draft, compatible with `JSON.stringify`.
      */
     toJSON(): object
+
+    /**
+    * Array of navigation markers in the content. Navigation markers are defined by the syntax definition assigned to the draft, and are used in the [Navigation](https://docs.getdrafts.com/docs/editor/navigation) feature. 
+    */
+    navigationMarkers: [navigationMarker]
+
+    /**
+    * The next navigation marker in the content, relative to the character location. This is a convenience method to assist in navigating by marker.
+    */
+    navigationMarkerAfter(location: number): navigationMarker
+    /**
+    * The previous navigation marker in the content, relative to the character location. This is a convenience method to assist in navigating by marker.
+    */
+    navigationMarkerBefore(location: number): navigationMarker
+    /**
+    * Convenience method to return the linked items in the content, as located by the syntax definitions' `linkDefinitions`. In Markdown syntaxes, these map to `[[wiki-style]]` cross-links.
+    */
+    readonly linkedItems: [linkedItem]
 }
 /**
  * When an action is run, a single draft is always in context and accessible via the `draft` const. This usually points to the draft loaded in the editor at the time the action was run if running actions from the action list or action bar. 
