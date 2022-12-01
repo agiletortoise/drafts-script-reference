@@ -12,6 +12,7 @@
  * var success = msg.send();
  * ```
  */
+
 declare class Message {
     /**
      * Array of phone numbers and email addresses to use as `To:` recipients.

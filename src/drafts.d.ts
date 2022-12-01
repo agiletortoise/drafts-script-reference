@@ -2581,26 +2581,6 @@ declare class HTTPResponse {
      */
     error: string | undefined
 }
-/**
- * The {@link Mail} object can be used to create and send mail messages, similar to those created by a "Mail" action step.
- *
- * ### Example
-
-* ```javascript
-* var mail = Mail.create();
-* mail.toRecipients = ["joe@sample.com"];
-* mail.subject = "My test message";
-* mail.body = "Body text";
-* 
-* var success = mail.send();
-* if (!success) {
-*   console.log(mail.status);
-*   context.fail();
-* }
-* ```
-* 
-*/
-
 type mailStatus =        
     | 'created'
     | 'sent'
@@ -2611,6 +2591,24 @@ type mailStatus =
     | 'serviceError'
     | 'unknownError'
 
+/**
+ * The Mail object can be used to create and send mail messages, similar to those created by a "Mail" action step.
+ *
+ * ### Example
+ * 
+ * ```javascript
+ * var mail = Mail.create();
+ * mail.toRecipients = ["joe@sample.com"];
+ * mail.subject = "My test message";
+ * mail.body = "Body text";
+ * 
+ * var success = mail.send();
+ * if (!success) {
+ *   console.log(mail.status);
+ *   context.fail();
+ * }
+ * ```
+ */
 declare class Mail {
     /**
      * Array of email addresses to use as `To:` recipients.
@@ -2757,6 +2755,7 @@ declare class Medium {
  * var success = msg.send();
  * ```
  */
+
 declare class Message {
     /**
      * Array of phone numbers and email addresses to use as `To:` recipients.
