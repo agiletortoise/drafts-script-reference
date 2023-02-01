@@ -364,6 +364,12 @@ declare class App {
     currentWorkspace: Workspace
 
     /**
+     * Returns a window object configured representing the active window.
+     * @category Interface
+     */
+    currentWindow: Window
+
+    /**
      * Load the ActionGroup in the action list side bar.
      * @category Interface
      */
@@ -2735,7 +2741,7 @@ type mastodonVisibility =
 */
 declare class Mastodon {
     /**
-     * Post a status update to a Mastodon account. Returns `true` if successful, `false` if not. After success the `lastResponse` object can be used to inspect response and get details such as the ID of the tweet created. Refer to [Mastodon API POST /statuses documentation](https://docs.joinmastodon.org/methods/statuses/#create) for response details.
+     * Post a status update to a Mastodon account. Returns `true` if successful, `false` if not. After success the `lastResponse` object can be used to inspect response and get details such as the ID of the post created. Refer to [Mastodon API POST /statuses documentation](https://docs.joinmastodon.org/methods/statuses/#create) for response details.
      * @param content Content for the status update
      * @param contentWarning: Optional short string to use as the content warning (aka "spoiler text") for the post.
      * @param visibility The visibility status of the post, default "public"
@@ -3656,7 +3662,7 @@ declare class Prompt {
      * @param name
      * @param value only needed to associate a different value than will be displayed in the button. For example, if you call `prompt.addButton("First Button", 1)`, after calling `prompt.show()` if that button is pressed, the `prompt.buttonPressed` will contain the number value `1`.
      * @param isDefault used to specify a single button which will be pinned to the bottom of the prompt and respond to `cmd + return` as the default button. If only one button is added to a prompt, it is assumed to be the default.
-     * @param isDestructive if true, present the button as a destructive action, typicall a red button, in the intereface.
+     * @param isDestructive if true, present the button as a destructive action, typically a red button, in the intereface.
      * @category Field
      */
     addButton(name: string, value?: object, isDefault?: boolean, isDestructive?: boolean): void
@@ -4550,6 +4556,16 @@ declare class Version {
     * The {@link Draft} object related to the version. Typically not needed, as versions are accessed through the `versions` property of a draft.
     */
     readonly draft?: Draft
+}
+/**
+ * Access `Window` properties and functions through the `currentWindow` property of the global `app` object.
+ */
+declare class Window {
+    private constructor()
+    /**
+     * Array of the drafts currently selected by the user in the draft list.
+     */
+    selectedDrafts: Draft[]
 }
 /**
  * Script integration with WordPress sites via the [WordPress XML-RPC API](https://codex.wordpress.org/XML-RPC_WordPress_API). Currently this object has one runMethod function which can be used to call any method available in the XML-RPC interface.

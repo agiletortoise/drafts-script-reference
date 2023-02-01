@@ -156,6 +156,12 @@ declare class App {
     currentWorkspace: Workspace
 
     /**
+     * Returns a window object configured representing the active window.
+     * @category Interface
+     */
+    currentWindow: Window
+
+    /**
      * Load the ActionGroup in the action list side bar.
      * @category Interface
      */
