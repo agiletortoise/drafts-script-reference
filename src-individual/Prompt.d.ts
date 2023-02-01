@@ -229,7 +229,7 @@ declare class Prompt {
      * @param name
      * @param value only needed to associate a different value than will be displayed in the button. For example, if you call `prompt.addButton("First Button", 1)`, after calling `prompt.show()` if that button is pressed, the `prompt.buttonPressed` will contain the number value `1`.
      * @param isDefault used to specify a single button which will be pinned to the bottom of the prompt and respond to `cmd + return` as the default button. If only one button is added to a prompt, it is assumed to be the default.
-     * @param isDestructive if true, present the button as a destructive action, typicall a red button, in the intereface.
+     * @param isDestructive if true, present the button as a destructive action, typically a red button, in the intereface.
      * @category Field
      */
     addButton(name: string, value?: object, isDefault?: boolean, isDestructive?: boolean): void
