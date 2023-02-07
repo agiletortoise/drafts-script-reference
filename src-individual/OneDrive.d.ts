@@ -5,14 +5,14 @@
  * 
  * ```javascript
  * // create OneDrive object
- * var drive = OneDrive.create();
+ * let drive = OneDrive.create();
  * 
  * // setup variables
- * var path = "/test/file.txt";
- * var content = "text to place in file";
+ * let path = "/test/file.txt";
+ * let content = "text to place in file";
  * 
  * // write to file on OneDrive
- * var success = drive.write(path, content, false);
+ * let success = drive.write(path, content, false);
  * 
  * if (success) { // write worked!
  *   var driveContent = drive.read(path);

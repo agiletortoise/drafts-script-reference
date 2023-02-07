@@ -9,7 +9,7 @@
  * message.subject = "My test message";
  * message.body = "Body text";
  * 
- * var success = message.send();
+ * let success = message.send();
  * if (!success) {
  *   console.log("Sending outlook message failed");
  *   context.fail();

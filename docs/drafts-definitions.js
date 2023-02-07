@@ -618,14 +618,14 @@ declare class Bookmark {
  * 
  * ```javascript
  * // create Box object
- * var drive = Box.create();
+ * let drive = Box.create();
  * 
  * // setup variables
- * var path = "/test/file.txt";
- * var content = "text to place in file";
+ * let path = "/test/file.txt";
+ * let content = "text to place in file";
  * 
  * // write to file on Box
- * var success = drive.write(path, content, false);
+ * let success = drive.write(path, content, false);
  * 
  * if (success) { // write worked!
  *   var driveContent = drive.read(path);
@@ -682,8 +682,8 @@ declare class Box {
  * ### Example: Event Creation
  * 
  * ```javascript
- * var calendar = Calendar.findOrCreate("Activities");
- * var event = calendar.createEvent();
+ * let calendar = Calendar.findOrCreate("Activities");
+ * let event = calendar.createEvent();
  * event.title = "Dinner Party";
  * event.notes = "Bring side dish.";
  * event.startDate = Date.parse("7pm next friday");
@@ -768,7 +768,7 @@ declare class Calendar {
  * declare const  baseURL = "fantastical2://x-callback-url/parse/";
  * 
  * // split draft and loop over lines
- * var lines = draft.content.split("\n");
+ * let lines = draft.content.split("\n");
  * for (var line of lines) {
  * 	// create and configure callback object
  * 	var cb = CallbackURL.create();
@@ -870,7 +870,7 @@ declare class CallbackURL {
  * 
  * ```javascript
  * // if a "Run Workflow" step preceded this script, lets look for a result
- * var response = context.callbackResponses[0];
+ * let response = context.callbackResponses[0];
  * if (response) {
  *   // Workflow returns one "result" parameter, other apps may use other values.
  *   var result = response["result"];
@@ -937,15 +937,15 @@ declare const  context: Context
  * ### Example
  * 
  * ```javascript
- * var credential = Credential.create("My Service", "Description of the service to  * appear in user prompt.");
+ * let credential = Credential.create("My Service", "Description of the service to  * appear in user prompt.");
  * 
  * credential.addTextField("username", "Username");
  * credential.addPasswordField("password", "Password");
  * 
  * credential.authorize();
  * 
- * var http = HTTP.create();
- * var response = http.request({
+ * let http = HTTP.create();
+ * let response = http.request({
  *   "url": "http://myurl.com/api",
  *   "username": credential.getValue("username"),
  *   "password": credential.getValue("password"),
@@ -1038,13 +1038,13 @@ declare class Credential {
  * 
  * ```javascript
  * // get system info from device object
- * var model = device.model;
- * var system = device.systemName;
- * var osVersion = device.systemVersion;
- * var batteryLevel = device.batteryLevel;
+ * let model = device.model;
+ * let system = device.systemName;
+ * let osVersion = device.systemVersion;
+ * let batteryLevel = device.batteryLevel;
  * 
  * // create and display it in an alert
- * var s = "Model: " + model + "\n";
+ * let s = "Model: " + model + "\n";
  * s = s + "System: " + system + "\n";
  * s = s + "OS: " + osVersion + "\n";
  * s = s + "Battery: " + batteryLevel;
@@ -1425,14 +1425,14 @@ interface DropboxRequestSettings {
  * 
  * ```javascript
  * // create Dropbox object
- * var db = Dropbox.create();
+ * let db = Dropbox.create();
  *
  * // setup variables
- * var path = "/test/file.txt";
- * var content = "text to place in file";
+ * let path = "/test/file.txt";
+ * let content = "text to place in file";
  *
  * // write to file on Dropbox
- * var success = db.write(path, content, "add", true);
+ * let success = db.write(path, content, "add", true);
  *
  * if (success) { // write worked!
  *   var dbContent = db.read(path);
@@ -2079,15 +2079,15 @@ declare class FileManager {
 }
 
 /**
- * Drafts includes Discount-based, GitHub flavored Markdown parser based on [GHMarkdownParser](https://github.com/OliverLetterer/GHMarkdownParser). For details on the meaning of the various options, refer to [Markdown documentation](https://getdrafts.com/settings/markdown).
+ * Parse Markdown to HTML using [cmark-gfm](), GitHub's implementation of Markdown with extensions for tables, strikethrough, etc. For details on the meaning of the various options, refer to [GitHub's Markdown documentation](https://github.github.com/gfm/).
  *
  * ### Example
  * 
  * ```javascript
- * var inputString = "# Header\n\nMy **markdown** text";
- * var md = GitHubMarkdown.create();
+ * let inputString = "# Header\n\nMy **markdown** text";
+ * let md = new GitHubMarkdown();
  * 
- * var outputString = md.render(inputString);
+ * let outputString = md.render(inputString);
  * ```
  */
 declare class GitHubMarkdown {
@@ -2097,31 +2097,106 @@ declare class GitHubMarkdown {
     render(markdownStr: string): string
 
     /**
-     * defaults to true
+     * Parse Markdown tables. Defaults: true
+     * @category Extensions
+     */
+    tables: boolean
+
+    /**
+     * Enables expansion of certain partial URLs. Defaults: true
+     * @category Extensions
+     */
+    autoLinks: boolean
+
+    /**
+     * Support `~~strikethrough~~` markup. Defaults: true
+     * @category Extensions
+     */
+    strikethrough: boolean
+
+    /**
+     * Disallows certain HTML tags. Defaults: false
+     * @category Extensions
+     */
+    tagFilters: boolean
+
+    /**
+     * Support `[ ]` task lists. Default: true
+     * @category Extensions
+     */
+    taskLists: boolean
+
+    /**
+     * Convert straight quotes to curly, --- to em dashes, -- to en dashes. Default: true
+     * @category Options
+     */
+    smartQuotes: boolean
+
+    /**
+     * Include a `data-sourcepos` attribute on all block elements. Default: false
+     * @category Options
+     */
+    sourcePOS: boolean
+
+    /**
+     * Render `softbreak` elements as hard line breaks. Default: false
+     * @category Options
+     */
+    hardBreaks: boolean
+
+    /**
+     * Suppress raw HTML and unsafe links. Default: true
+     * @category Options
+     */
+    safe: boolean
+
+    /**
+     * Render "dangerous" HTML and unsafe links. Default: false
+     * @category Options
+     */
+    unsafe: boolean
+
+    /**
+     * Validate UTF-8 before parsing, replacing illegal sequences. Default: false
+     * @category Options
+     */
+    validateUTF8: boolean
+
+    /**
+     * Support Markdown Footnotes. Default: true
+     * @category Options
+     */
+    footnotes: boolean
+    
+    
+    /**
+     * @deprecated No longer valid with CMark implementation
+     * @category Deprecated
      */
     smartQuotesEnabled: boolean
     /**
-     * defaults to true
+     * @deprecated No longer valid with CMark implementation.
+     * @category Deprecated
      */
     noImages: boolean
     /**
-     * defaults to true
+     * @deprecated No longer valid with CMark implementation.
+     * @category Deprecated
      */
     noLinks: boolean
     /**
-     * defaults to true
+     * @deprecated No longer valid with CMark implementation.
+     * @category Deprecated
      */
     safeLinks: boolean
     /**
-     * defaults to false
-     */
-    autoLinks: boolean
-    /**
-     * defaults to false
+     * @deprecated No longer valid with CMark implementation.
+     * @category Deprecated
      */
     strict: boolean
     /**
-     * defaults to false
+     * @deprecated No longer valid with CMark implementation.
+     * @category Deprecated
      */
     removeHTMLTags: boolean
 
@@ -2172,7 +2247,7 @@ declare function adjustDate(date: Date, adjustmentExpression: string): Date
  * message.subject = "My test message";
  * message.body = "Body text";
  * 
- * var success = message.send();
+ * let success = message.send();
  * if (!success) {
  *   console.log("Sending gmail failed");
  *   context.fail();
@@ -2229,15 +2304,15 @@ declare class GmailMessage {
  * 
  * ```javascript
  * // create GoogleDrive object
- * var drive = GoogleDrive.create();
+ * let drive = GoogleDrive.create();
  * 
  * // setup variables
- * var fileName = "MyTestFile";
- * var parent = ""; // root of drive
- * var content = "text to place in file";
+ * let fileName = "MyTestFile";
+ * let parent = ""; // root of drive
+ * let content = "text to place in file";
  * 
  * // write to file on GoogleDrive
- * var success = drive.write(fileName, parent, content);
+ * let success = drive.write(fileName, parent, content);
  * 
  * if (success) { // write worked!
  *   var driveContent = drive.read(fileName, parent);
@@ -2483,9 +2558,9 @@ declare class HTMLPreview {
  * ### Example
  * 
  * ```javascript
- * var http = HTTP.create(); // create HTTP object
+ * let http = HTTP.create(); // create HTTP object
  * 
- * var response = http.request({
+ * let response = http.request({
  *   "url": "http://myurl.com/api",
  *   "method": "POST",
  *   "data": {
@@ -2603,12 +2678,12 @@ type mailStatus =
  * ### Example
  * 
  * ```javascript
- * var mail = Mail.create();
+ * let mail = Mail.create();
  * mail.toRecipients = ["joe@sample.com"];
  * mail.subject = "My test message";
  * mail.body = "Body text";
  * 
- * var success = mail.send();
+ * let success = mail.send();
  * if (!success) {
  *   console.log(mail.status);
  *   context.fail();
@@ -2856,12 +2931,12 @@ declare class Medium {
  * ### Examples
  * 
  * ```javascript
- * var msg = Message.create();
+ * let msg = Message.create();
  * msg.toRecipients = ["joe@sample.com"];
  * msg.subject = "My test message";
  * msg.body = "Body text";
  * 
- * var success = msg.send();
+ * let success = msg.send();
  * ```
  */
 
@@ -3055,12 +3130,12 @@ declare class MicrosoftToDo {
  * ### Example
  * 
  * ```javascript
- * var inputString = "# Header\n\nMy **markdown** text";
- * var mmd = MultiMarkdown.create();
+ * let inputString = "# Header\n\nMy **markdown** text";
+ * let mmd = MultiMarkdown.create();
  * 
  * mmd.format = "html";
  * mmd.criticMarkup = true;
- * var outputString = mmd.render(inputString);
+ * let outputString = mmd.render(inputString);
  * ```
  */
 declare class MultiMarkdown {
@@ -3309,14 +3384,14 @@ declare class Notion {
  * 
  * ```javascript
  * // create OneDrive object
- * var drive = OneDrive.create();
+ * let drive = OneDrive.create();
  * 
  * // setup variables
- * var path = "/test/file.txt";
- * var content = "text to place in file";
+ * let path = "/test/file.txt";
+ * let content = "text to place in file";
  * 
  * // write to file on OneDrive
- * var success = drive.write(path, content, false);
+ * let success = drive.write(path, content, false);
  * 
  * if (success) { // write worked!
  *   var driveContent = drive.read(path);
@@ -3382,7 +3457,7 @@ declare class OneDrive {
  * message.subject = "My test message";
  * message.body = "Body text";
  * 
- * var success = message.send();
+ * let success = message.send();
  * if (!success) {
  *   console.log("Sending outlook message failed");
  *   context.fail();
@@ -3450,7 +3525,7 @@ type capitalizationTypes = 'none' | 'sentences' | 'words'
  * ### Example
  * 
  * ```javascript
- * var p = Prompt.create();
+ * let p = Prompt.create();
  * 
  * p.title = "Hello";
  * p.message = "World!";
@@ -3463,10 +3538,10 @@ type capitalizationTypes = 'none' | 'sentences' | 'words'
  * p.addButton("First");
  * p.addButton("Second");
  * 
- * var didSelect = p.show();
+ * let didSelect = p.show();
  * 
- * var textFieldContents = p.fieldValues["textFieldName"];
- * var startDate = p.fieldValues["myDate"];
+ * let textFieldContents = p.fieldValues["textFieldName"];
+ * let startDate = p.fieldValues["myDate"];
  * 
  * if (p.buttonPressed == "First") {
  *   // do something
@@ -4163,33 +4238,33 @@ declare class Theme {
  * 
  * ```javascript
  * // create a Things Project
- * var project = TJSProject.create();
+ * let project = TJSProject.create();
  * project.title = "My Project From Drafts";
  * project.notes = "Let's do this stuff";
  * 
  * // create and add a heading to the project
- * var heading = TJSHeading.create();
+ * let heading = TJSHeading.create();
  * heading.title = "First Heading";
  * project.addHeading(heading);
  * 
  * // add todos to the project
- * var todo1 = TJSTodo.create();
+ * let todo1 = TJSTodo.create();
  * todo1.title = "My first todo";
  * todo1.when = "today";
  * project.addTodo(todo1);
  * 
- * var todo2 = TJSTodo.create();
+ * let todo2 = TJSTodo.create();
  * todo2.title = "My second todo";
  * todo2.when = "tomorrow";
  * project.addTodo(todo2);
  * 
  * // create a container to handle creation of Things URL
- * var container = TJSContainer.create([project]);
+ * let container = TJSContainer.create([project]);
  * 
  * // Use CallbackURL object to open URL in Things.
- * var cb = CallbackURL.create();
+ * let cb = CallbackURL.create();
  * cb.baseURL = container.url;
- * var success = cb.open();
+ * let success = cb.open();
  * if (success) {
  * 	console.log("Project created in Things");
  * }
@@ -4474,9 +4549,9 @@ declare class Todoist {
 
 * ```javascript
 * // create twitter object
-* var twitter = Twitter.create();
+* let twitter = Twitter.create();
 * // post tweet
-* var success = twitter.updateStatus("My tweet content!");
+* let success = twitter.updateStatus("My tweet content!");
 * 
 * if success {
 *   console.log(twitter.lastResponse);
@@ -4563,7 +4638,7 @@ declare class Version {
 declare class Window {
     private constructor()
     /**
-     * Array of the drafts currently selected by the user in the draft list.
+     * Array of the drafts currently selected by the user in the draft list. Can be iterated to create custom actions which operate on the selection.
      */
     selectedDrafts: Draft[]
 }

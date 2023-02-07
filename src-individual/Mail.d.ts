@@ -14,12 +14,12 @@ type mailStatus =
  * ### Example
  * 
  * ```javascript
- * var mail = Mail.create();
+ * let mail = Mail.create();
  * mail.toRecipients = ["joe@sample.com"];
  * mail.subject = "My test message";
  * mail.body = "Body text";
  * 
- * var success = mail.send();
+ * let success = mail.send();
  * if (!success) {
  *   console.log(mail.status);
  *   context.fail();

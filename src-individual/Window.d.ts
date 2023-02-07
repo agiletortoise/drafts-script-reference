@@ -4,7 +4,7 @@
 declare class Window {
     private constructor()
     /**
-     * Array of the drafts currently selected by the user in the draft list.
+     * Array of the drafts currently selected by the user in the draft list. Can be iterated to create custom actions which operate on the selection.
      */
     selectedDrafts: Draft[]
 }

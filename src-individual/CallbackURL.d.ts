@@ -11,7 +11,7 @@
  * declare const  baseURL = "fantastical2://x-callback-url/parse/";
  * 
  * // split draft and loop over lines
- * var lines = draft.content.split("\n");
+ * let lines = draft.content.split("\n");
  * for (var line of lines) {
  * 	// create and configure callback object
  * 	var cb = CallbackURL.create();

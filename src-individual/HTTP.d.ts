@@ -4,9 +4,9 @@
  * ### Example
  * 
  * ```javascript
- * var http = HTTP.create(); // create HTTP object
+ * let http = HTTP.create(); // create HTTP object
  * 
- * var response = http.request({
+ * let response = http.request({
  *   "url": "http://myurl.com/api",
  *   "method": "POST",
  *   "data": {

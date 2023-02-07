@@ -17,7 +17,7 @@ type capitalizationTypes = 'none' | 'sentences' | 'words'
  * ### Example
  * 
  * ```javascript
- * var p = Prompt.create();
+ * let p = Prompt.create();
  * 
  * p.title = "Hello";
  * p.message = "World!";
@@ -30,10 +30,10 @@ type capitalizationTypes = 'none' | 'sentences' | 'words'
  * p.addButton("First");
  * p.addButton("Second");
  * 
- * var didSelect = p.show();
+ * let didSelect = p.show();
  * 
- * var textFieldContents = p.fieldValues["textFieldName"];
- * var startDate = p.fieldValues["myDate"];
+ * let textFieldContents = p.fieldValues["textFieldName"];
+ * let startDate = p.fieldValues["myDate"];
  * 
  * if (p.buttonPressed == "First") {
  *   // do something

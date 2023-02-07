@@ -4,8 +4,8 @@
  * ### Example: Event Creation
  * 
  * ```javascript
- * var calendar = Calendar.findOrCreate("Activities");
- * var event = calendar.createEvent();
+ * let calendar = Calendar.findOrCreate("Activities");
+ * let event = calendar.createEvent();
  * event.title = "Dinner Party";
  * event.notes = "Bring side dish.";
  * event.startDate = Date.parse("7pm next friday");

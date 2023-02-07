@@ -5,13 +5,13 @@
  * 
  * ```javascript
  * // get system info from device object
- * var model = device.model;
- * var system = device.systemName;
- * var osVersion = device.systemVersion;
- * var batteryLevel = device.batteryLevel;
+ * let model = device.model;
+ * let system = device.systemName;
+ * let osVersion = device.systemVersion;
+ * let batteryLevel = device.batteryLevel;
  * 
  * // create and display it in an alert
- * var s = "Model: " + model + "\n";
+ * let s = "Model: " + model + "\n";
  * s = s + "System: " + system + "\n";
  * s = s + "OS: " + osVersion + "\n";
  * s = s + "Battery: " + batteryLevel;

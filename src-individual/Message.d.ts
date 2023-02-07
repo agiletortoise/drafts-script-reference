@@ -4,12 +4,12 @@
  * ### Examples
  * 
  * ```javascript
- * var msg = Message.create();
+ * let msg = Message.create();
  * msg.toRecipients = ["joe@sample.com"];
  * msg.subject = "My test message";
  * msg.body = "Body text";
  * 
- * var success = msg.send();
+ * let success = msg.send();
  * ```
  */
 

@@ -4,12 +4,12 @@
  * ### Example
  * 
  * ```javascript
- * var inputString = "# Header\n\nMy **markdown** text";
- * var mmd = MultiMarkdown.create();
+ * let inputString = "# Header\n\nMy **markdown** text";
+ * let mmd = MultiMarkdown.create();
  * 
  * mmd.format = "html";
  * mmd.criticMarkup = true;
- * var outputString = mmd.render(inputString);
+ * let outputString = mmd.render(inputString);
  * ```
  */
 declare class MultiMarkdown {

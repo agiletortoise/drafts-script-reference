@@ -5,15 +5,15 @@
  * 
  * ```javascript
  * // create GoogleDrive object
- * var drive = GoogleDrive.create();
+ * let drive = GoogleDrive.create();
  * 
  * // setup variables
- * var fileName = "MyTestFile";
- * var parent = ""; // root of drive
- * var content = "text to place in file";
+ * let fileName = "MyTestFile";
+ * let parent = ""; // root of drive
+ * let content = "text to place in file";
  * 
  * // write to file on GoogleDrive
- * var success = drive.write(fileName, parent, content);
+ * let success = drive.write(fileName, parent, content);
  * 
  * if (success) { // write worked!
  *   var driveContent = drive.read(fileName, parent);

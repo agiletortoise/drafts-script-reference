@@ -10,15 +10,15 @@
  * ### Example
  * 
  * ```javascript
- * var credential = Credential.create("My Service", "Description of the service to  * appear in user prompt.");
+ * let credential = Credential.create("My Service", "Description of the service to  * appear in user prompt.");
  * 
  * credential.addTextField("username", "Username");
  * credential.addPasswordField("password", "Password");
  * 
  * credential.authorize();
  * 
- * var http = HTTP.create();
- * var response = http.request({
+ * let http = HTTP.create();
+ * let response = http.request({
  *   "url": "http://myurl.com/api",
  *   "username": credential.getValue("username"),
  *   "password": credential.getValue("password"),

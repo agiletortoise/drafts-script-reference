@@ -17,33 +17,33 @@
  * 
  * ```javascript
  * // create a Things Project
- * var project = TJSProject.create();
+ * let project = TJSProject.create();
  * project.title = "My Project From Drafts";
  * project.notes = "Let's do this stuff";
  * 
  * // create and add a heading to the project
- * var heading = TJSHeading.create();
+ * let heading = TJSHeading.create();
  * heading.title = "First Heading";
  * project.addHeading(heading);
  * 
  * // add todos to the project
- * var todo1 = TJSTodo.create();
+ * let todo1 = TJSTodo.create();
  * todo1.title = "My first todo";
  * todo1.when = "today";
  * project.addTodo(todo1);
  * 
- * var todo2 = TJSTodo.create();
+ * let todo2 = TJSTodo.create();
  * todo2.title = "My second todo";
  * todo2.when = "tomorrow";
  * project.addTodo(todo2);
  * 
  * // create a container to handle creation of Things URL
- * var container = TJSContainer.create([project]);
+ * let container = TJSContainer.create([project]);
  * 
  * // Use CallbackURL object to open URL in Things.
- * var cb = CallbackURL.create();
+ * let cb = CallbackURL.create();
  * cb.baseURL = container.url;
- * var success = cb.open();
+ * let success = cb.open();
  * if (success) {
  * 	console.log("Project created in Things");
  * }

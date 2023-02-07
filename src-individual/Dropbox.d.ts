@@ -30,14 +30,14 @@ interface DropboxRequestSettings {
  * 
  * ```javascript
  * // create Dropbox object
- * var db = Dropbox.create();
+ * let db = Dropbox.create();
  *
  * // setup variables
- * var path = "/test/file.txt";
- * var content = "text to place in file";
+ * let path = "/test/file.txt";
+ * let content = "text to place in file";
  *
  * // write to file on Dropbox
- * var success = db.write(path, content, "add", true);
+ * let success = db.write(path, content, "add", true);
  *
  * if (success) { // write worked!
  *   var dbContent = db.read(path);

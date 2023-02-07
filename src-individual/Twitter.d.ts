@@ -5,9 +5,9 @@
 
 * ```javascript
 * // create twitter object
-* var twitter = Twitter.create();
+* let twitter = Twitter.create();
 * // post tweet
-* var success = twitter.updateStatus("My tweet content!");
+* let success = twitter.updateStatus("My tweet content!");
 * 
 * if success {
 *   console.log(twitter.lastResponse);

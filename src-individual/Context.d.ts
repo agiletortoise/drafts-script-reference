@@ -17,7 +17,7 @@
  * 
  * ```javascript
  * // if a "Run Workflow" step preceded this script, lets look for a result
- * var response = context.callbackResponses[0];
+ * let response = context.callbackResponses[0];
  * if (response) {
  *   // Workflow returns one "result" parameter, other apps may use other values.
  *   var result = response["result"];
