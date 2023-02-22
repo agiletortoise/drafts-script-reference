@@ -57,6 +57,12 @@ declare class HTTP {
     }): HTTPResponse
 
     /**
+     * If true, requests will automatically resolve 301/302 redirect responses. Defaults: true
+     * @category Options
+     */
+    followRedirects: boolean
+
+    /**
      * Instantiate an `HTTP` object.
      */
     static create(): HTTP
