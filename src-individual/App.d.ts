@@ -1,3 +1,4 @@
+type clipboardType = 'string' | 'html' | 'url'
 /**
  * Drafts defines a single global `app` object which provides access to application level functions.
  * 
@@ -185,20 +186,41 @@ declare class App {
      */
     setIdleDisabled(isDisabled: boolean): void
 
+    // LIVE ACTIVITIES
+
+    /**
+     * Check if Live Activities are supported on the current device/platform.
+     * @category Live Activities
+     */
+    readonly areLiveActivitiesSupported: boolean
+    /**
+     * Start a Live Activity for the selected Draft. Returns true if Live Activity started successfully. Returns false if Live Activity could not be started, or Live Activities are not supported on the device.
+     * @category Live Activities
+     * @param draft The draft to use in the Live Activity
+     */
+    startLiveActivity(draft: Draft): boolean
+    /**
+     * Stop a Live Activity for the selected Draft. Returns true if Live Activity stopped successfully. 
+     * @category Live Activities
+     * @param draft The draft to use in the Live Activity
+     */
+    stopLiveActivity(draft: Draft): boolean
+
     // CLIPBOARD FUNCTIONS
 
     /**
      * Get current contents of the system clipboard.
-     * @category Utility
+     * @category Clipboard
+     * @param clipboardType Optionally specify a data type to fetch from the clipboard. Default: "string"
      */
-    getClipboard(): string
+    getClipboard(clipboardType?: clipboardType): string
 
     /**
      * Set the contents of the system clipboard.
-     * @param string the data to set
-     * @category Utility
+     * @param contents the data to set in the clipboard. If a `string` is passed it is set in the clipboard. Optionally an object with {@link clipboardType} keys and string values can be passed to set multiple data types in the clipboard.
+     * @category Clipboard
      */
-    setClipboard(contents: string): void
+    setClipboard(contents: string | object): void
 
     /**
      * Takes HTML string and converts it to rich-text and places it in the system clipboard. Returns true if successful, false if an error occurred in conversion.
