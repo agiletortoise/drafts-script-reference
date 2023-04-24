@@ -4830,6 +4830,7 @@ declare class Twitter {
  *     version.delete();
  *   }
  * }
+ * ```
  */
 declare class Version {
     private constructor()

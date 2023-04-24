@@ -11,6 +11,7 @@
  *     version.delete();
  *   }
  * }
+ * ```
  */
 declare class Version {
     private constructor()
