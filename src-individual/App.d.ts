@@ -53,13 +53,13 @@ declare class App {
     readonly currentThemeMode: 'light' | 'dark'
 
     /**
-     * Is the draft list side panel is visible.
+     * @deprecated Use `app.currentWindow.isDraftListVisible`
      * @category Interface
      */
     readonly isDraftListVisible: boolean
 
     /**
-     * Is the action list side panel is visible.
+     * @deprecated Use `app.currentWindow.isActionListVisible`
      * @category Interface
      */
     readonly isActionListVisible: boolean
@@ -99,48 +99,42 @@ declare class App {
      */
     selectDraft(workspace?: Workspace): Draft | undefined
 
+    
     // UI FUNCTIONS
 
     /**
-     * Open draft list side bar.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.showDraftList`
+     * @category Deprecated
      */
     showDraftList(): void
 
     /**
-     * Close draft list side bar.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.hideDraftList`
+     * @category Deprecated
      */
     hideDraftList(): void
 
     /**
-     * Open quick search window, optionally providing a initial query value.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.showQuickSearch`
+     * @category Deprecated
     */
     showQuickSearch(initialQuery?: string): void
 
     /**
-    * Open the "Get Info" view for a draft. If no draft is passed, the current active draft in the editor will be used.
-    * @category Interface
+    * @deprecated Use `app.currentWindow.showDraftInfo`
+    * @category Deprecated
     */
     showDraftInfo(draft?: Draft): void
 
     /**
-    * If able, open the requested draft in a new window. This method only functions on iPad and Mac. The ability to open new windows is not available on iPhone.
-    * @returns `true` if successful. `false` if unable to open a new window (as on iPhone).
-    * @category Interface
-    */
-    openInNewWindow(draft: Draft): boolean
-
-    /**
-     * Open action list side bar.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.showActionList`
+     * @category Deprecated
      */
     showActionList(): void
 
     /**
-     * Close action list side bar.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.hideActionList`
+     * @category Deprecated
      */
     hideActionList(): void
 

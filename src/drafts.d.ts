@@ -383,13 +383,13 @@ declare class App {
     readonly currentThemeMode: 'light' | 'dark'
 
     /**
-     * Is the draft list side panel is visible.
+     * @deprecated Use `app.currentWindow.isDraftListVisible`
      * @category Interface
      */
     readonly isDraftListVisible: boolean
 
     /**
-     * Is the action list side panel is visible.
+     * @deprecated Use `app.currentWindow.isActionListVisible`
      * @category Interface
      */
     readonly isActionListVisible: boolean
@@ -429,48 +429,42 @@ declare class App {
      */
     selectDraft(workspace?: Workspace): Draft | undefined
 
+    
     // UI FUNCTIONS
 
     /**
-     * Open draft list side bar.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.showDraftList`
+     * @category Deprecated
      */
     showDraftList(): void
 
     /**
-     * Close draft list side bar.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.hideDraftList`
+     * @category Deprecated
      */
     hideDraftList(): void
 
     /**
-     * Open quick search window, optionally providing a initial query value.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.showQuickSearch`
+     * @category Deprecated
     */
     showQuickSearch(initialQuery?: string): void
 
     /**
-    * Open the "Get Info" view for a draft. If no draft is passed, the current active draft in the editor will be used.
-    * @category Interface
+    * @deprecated Use `app.currentWindow.showDraftInfo`
+    * @category Deprecated
     */
     showDraftInfo(draft?: Draft): void
 
     /**
-    * If able, open the requested draft in a new window. This method only functions on iPad and Mac. The ability to open new windows is not available on iPhone.
-    * @returns `true` if successful. `false` if unable to open a new window (as on iPhone).
-    * @category Interface
-    */
-    openInNewWindow(draft: Draft): boolean
-
-    /**
-     * Open action list side bar.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.showActionList`
+     * @category Deprecated
      */
     showActionList(): void
 
     /**
-     * Close action list side bar.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.hideActionList`
+     * @category Deprecated
      */
     hideActionList(): void
 
@@ -3669,6 +3663,80 @@ declare class OneDrive {
 }
 
 /**
+ * Script integration with [OpenAI API](https://platform.openai.com/docs/introduction). This object offers convenience over direct HTTP requests by:
+ * 
+ * * Integrating with Drafts [Credentials system](https://docs.getdrafts.com/docs/settings/credentials) to store your API key.
+ * * Handling request authorization headers for requests
+ * * Parsing results to JSON
+ * * Providing several convenience functions that wrap more complex API calls into simple requests.
+ * 
+ * > **NOTE:** Drafts does not provide an API Key for use with OpenAI. To use OpenAI features, you will have to setup your own OpenAI account and generate an API Key for use with Drafts in the [developer portal](https://platform.openai.com/account/api-keys).
+*/
+declare class OpenAI {
+    /**
+     * Submit a single text prompt to ChatGPT conversations endpoint, and return only the message generated. Convenience method for single request prompts.
+     * @param prompt Text prompt to submit to ChatGPT
+     * @param options: Optional key-value object specifying other options to include with the request, see [Completion docs](https://platform.openai.com/docs/api-reference/completions) for supported options. Default `model` value is `gpt-3.5-turbo`
+     * @category Convenience
+     */
+    quickChatResponse(prompt: string, options?: object): string
+
+    /**
+     * Submit a single text input and instructions to the [Edits endpoint](https://platform.openai.com/docs/api-reference/edits), using the `text-davinci-edit-001` model, and return only the message generated. Convenience method for single request input.
+     * @param input Text input to submit
+     * @param instructions Instructions to model
+     * @param options: Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
+     * @category Convenience
+     */
+    quickTextEdit(input: string, instructions: string, options?: object): string
+
+    /**
+     * Submit a single text input and instructions to the [Edits endpoint](https://platform.openai.com/docs/api-reference/edits), using the `code-davinci-edit-001` model to generate code or refactor, and return only the message generated.
+     * @param input Text input to submit, generally used only if you are instruction the model to refactor existing code.
+     * @param instructions Instructions to model
+     * @param options: Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
+     * @category Convenience
+     */
+    quickCodeEdit(input: string, instructions: string, options?: object): string
+
+    /**
+     * Execute a request against the OpenAI API. For successful requests, the {@link HTTPResponse} object will contain an object or array or objects decoded from the JSON returned by OpenAI as appropriate to the request made. Refer to OpenAI API documentation for details about the expected parameters and responses.
+     */
+    request(settings: {
+        /**
+         * The path to the API endpoint in the [OpenAI API](https://platform.openai.com/docs/introduction). This should include the path after the API version. For example `/chat/completion`
+         */
+        path: string
+        /**
+         * The HTTP method, like "GET", "POST", etc.
+         */
+        method: string
+        /**
+         * An object contain key-values to be added as custom headers in the request. There is no need to provide authorization headers, Drafts will add those.
+         */
+        headers?: { [x: string]: string }
+        /**
+         * An object containing key-values to be added to the request as URL parameters. Drafts will take care of encoding these.
+         */
+        parameters?: { [x: string]: string }
+        /**
+         * An object containing data to be encoded into the HTTP body of the request. Drafts will take care of the JSON conversion.
+         */
+        data?: { [x: string]: string }
+    }): HTTPResponse
+
+    /**
+     * Creates a new OpenAI object. 
+     * @param apiKey A valid OpenAI API Key. This value is optional, and if not provided, the default OpenAPI API key stored in Credentials will be used, or the user prompted to provide an API Key to store. Only provide a specific API Key if you desire to override the default.
+     */
+    static create(apiKey?: string): Mastodon
+
+    /**
+     * Create new instance.
+     */
+    constructor(apiKey?: string)
+}
+/**
  * The OutlookMessage object can be used to create and send mail messages through Outlook.com integrated accounts, similar to those created by a [Outlook action step](https://getdrafts.com/actions/steps/outlook). Creating and sending these messages happens in the background, with no user interface, so messages must be complete with recipients before calling `send()`. Sending is done via the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph). Outlooks accounts are authenticated when used for the first time using OAuth - to use more than one account, call create with different identifier parameters.
  * 
  * ### Example
@@ -4864,6 +4932,63 @@ declare class Window {
      * Array of the drafts currently selected by the user in the draft list. Can be iterated to create custom actions which operate on the selection.
      */
     selectedDrafts: Draft[]
+
+    /**
+     * Is the draft list side panel is visible.
+     * @category Interface
+     */
+    readonly isDraftListVisible: boolean
+
+    /**
+     * Is the action list side panel is visible.
+     * @category Interface
+     */
+    readonly isActionListVisible: boolean
+
+    // UI FUNCTIONS
+
+    /**
+     * Open draft list side bar.
+     * @category Interface
+     */
+    showDraftList(): void
+
+    /**
+     * Close draft list side bar.
+     * @category Interface
+     */
+    hideDraftList(): void
+
+    /**
+     * Open quick search window, optionally providing a initial query value.
+     * @category Interface
+    */
+    showQuickSearch(initialQuery?: string): void
+
+    /**
+    * Open the "Get Info" view for a draft. If no draft is passed, the current active draft in the editor will be used.
+    * @category Interface
+    */
+    showDraftInfo(draft?: Draft): void
+
+    /**
+    * If able, open the requested draft in a new window. This method only functions on iPad and Mac. The ability to open new windows is not available on iPhone.
+    * @returns `true` if successful. `false` if unable to open a new window (as on iPhone).
+    * @category Interface
+    */
+    openInNewWindow(draft: Draft): boolean
+
+    /**
+     * Open action list side bar.
+     * @category Interface
+     */
+    showActionList(): void
+
+    /**
+     * Close action list side bar.
+     * @category Interface
+     */
+    hideActionList(): void
 }
 /**
  * Script integration with WordPress sites via the [WordPress XML-RPC API](https://codex.wordpress.org/XML-RPC_WordPress_API). Currently this object has one runMethod function which can be used to call any method available in the XML-RPC interface.
