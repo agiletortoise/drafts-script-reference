@@ -383,18 +383,6 @@ declare class App {
     readonly currentThemeMode: 'light' | 'dark'
 
     /**
-     * @deprecated Use `app.currentWindow.isDraftListVisible`
-     * @category Interface
-     */
-    readonly isDraftListVisible: boolean
-
-    /**
-     * @deprecated Use `app.currentWindow.isActionListVisible`
-     * @category Interface
-     */
-    readonly isActionListVisible: boolean
-
-    /**
      * Is system sleep timer disabled preventing screen dimming/sleep.
      * @category System
      */
@@ -428,45 +416,6 @@ declare class App {
      * @param workspace If provided, the workspace will define the default filtering, display, and sort options for the selection window.
      */
     selectDraft(workspace?: Workspace): Draft | undefined
-
-    
-    // UI FUNCTIONS
-
-    /**
-     * @deprecated Use `app.currentWindow.showDraftList`
-     * @category Deprecated
-     */
-    showDraftList(): void
-
-    /**
-     * @deprecated Use `app.currentWindow.hideDraftList`
-     * @category Deprecated
-     */
-    hideDraftList(): void
-
-    /**
-     * @deprecated Use `app.currentWindow.showQuickSearch`
-     * @category Deprecated
-    */
-    showQuickSearch(initialQuery?: string): void
-
-    /**
-    * @deprecated Use `app.currentWindow.showDraftInfo`
-    * @category Deprecated
-    */
-    showDraftInfo(draft?: Draft): void
-
-    /**
-     * @deprecated Use `app.currentWindow.showActionList`
-     * @category Deprecated
-     */
-    showActionList(): void
-
-    /**
-     * @deprecated Use `app.currentWindow.hideActionList`
-     * @category Deprecated
-     */
-    hideActionList(): void
 
     /**
      * Apply the Workspace as if it was selected in draft list. Calling this function with no arguments will clear filters and apply the default workspace.
@@ -574,6 +523,58 @@ declare class App {
      * @category Messages
      */
     displayErrorMessage(message: string): void
+
+    // DEPRECATED
+
+    /**
+     * @deprecated Use `app.currentWindow.isDraftListVisible`
+     * @category Deprecated
+     */
+    readonly isDraftListVisible: boolean
+
+    /**
+     * @deprecated Use `app.currentWindow.isActionListVisible`
+     * @category Deprecated
+     */
+    readonly isActionListVisible: boolean
+
+    // UI FUNCTIONS
+
+    /**
+     * @deprecated Use `app.currentWindow.showDraftList`
+     * @category Deprecated
+     */
+    showDraftList(): void
+
+    /**
+     * @deprecated Use `app.currentWindow.hideDraftList`
+     * @category Deprecated
+     */
+    hideDraftList(): void
+
+    /**
+     * @deprecated Use `app.currentWindow.showQuickSearch`
+     * @category Deprecated
+    */
+    showQuickSearch(initialQuery?: string): void
+
+    /**
+    * @deprecated Use `app.currentWindow.showDraftInfo`
+    * @category Deprecated
+    */
+    showDraftInfo(draft?: Draft): void
+
+    /**
+     * @deprecated Use `app.currentWindow.showActionList`
+     * @category Deprecated
+     */
+    showActionList(): void
+
+    /**
+     * @deprecated Use `app.currentWindow.hideActionList`
+     * @category Deprecated
+     */
+    hideActionList(): void
 }
 /**
  * Reference to current app object.
@@ -3671,6 +3672,50 @@ declare class OneDrive {
  * * Providing several convenience functions that wrap more complex API calls into simple requests.
  * 
  * > **NOTE:** Drafts does not provide an API Key for use with OpenAI. To use OpenAI features, you will have to setup your own OpenAI account and generate an API Key for use with Drafts in the [developer portal](https://platform.openai.com/account/api-keys).
+ * 
+ * ### Example - Translation
+ * ```javascript
+ * // build prompt
+ * const targetLanguage = "Spanish"
+ * const text = "Where is the library?"
+ * const chatPrompt = `Translate the following text into ${targetLanguage}: "${text}"`
+ * 
+ * // create OpenAI API object and use single response
+ * // convenience function to send prompt
+ * let ai = new OpenAI()
+ * let answer = ai.quickChatResponse(chatPrompt)
+ * 
+ * // answer == "¿Dónde está la biblioteca?"
+ * ```
+ * 
+ * ### Example - Direct API Request
+ * ```javascript
+ * // create OpenAI object
+ * let ai = new OpenAI()
+ * 
+ * // make API request
+ * let response = ai.request({
+ * 	"path": "/chat/completions",
+ * 	"method": "POST",
+ * 	"data": {
+ * 		"model": "gpt-3.5-turbo",
+ * 		"messages": [
+ * 			{
+ * 				"role": "user",
+ * 				"content": "What is your name?"
+ * 			}
+ * 		]
+ * 	}
+ * })
+ * 
+ * // report status
+ * console.log(`CODE: ${response.statusCode}
+ * 
+ * ERR: ${response.error}
+ * 
+ * ${response.responseText}
+ * `)
+ * ```
 */
 declare class OpenAI {
     /**

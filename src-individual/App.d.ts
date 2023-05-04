@@ -53,18 +53,6 @@ declare class App {
     readonly currentThemeMode: 'light' | 'dark'
 
     /**
-     * @deprecated Use `app.currentWindow.isDraftListVisible`
-     * @category Interface
-     */
-    readonly isDraftListVisible: boolean
-
-    /**
-     * @deprecated Use `app.currentWindow.isActionListVisible`
-     * @category Interface
-     */
-    readonly isActionListVisible: boolean
-
-    /**
      * Is system sleep timer disabled preventing screen dimming/sleep.
      * @category System
      */
@@ -98,45 +86,6 @@ declare class App {
      * @param workspace If provided, the workspace will define the default filtering, display, and sort options for the selection window.
      */
     selectDraft(workspace?: Workspace): Draft | undefined
-
-    
-    // UI FUNCTIONS
-
-    /**
-     * @deprecated Use `app.currentWindow.showDraftList`
-     * @category Deprecated
-     */
-    showDraftList(): void
-
-    /**
-     * @deprecated Use `app.currentWindow.hideDraftList`
-     * @category Deprecated
-     */
-    hideDraftList(): void
-
-    /**
-     * @deprecated Use `app.currentWindow.showQuickSearch`
-     * @category Deprecated
-    */
-    showQuickSearch(initialQuery?: string): void
-
-    /**
-    * @deprecated Use `app.currentWindow.showDraftInfo`
-    * @category Deprecated
-    */
-    showDraftInfo(draft?: Draft): void
-
-    /**
-     * @deprecated Use `app.currentWindow.showActionList`
-     * @category Deprecated
-     */
-    showActionList(): void
-
-    /**
-     * @deprecated Use `app.currentWindow.hideActionList`
-     * @category Deprecated
-     */
-    hideActionList(): void
 
     /**
      * Apply the Workspace as if it was selected in draft list. Calling this function with no arguments will clear filters and apply the default workspace.
@@ -244,6 +193,58 @@ declare class App {
      * @category Messages
      */
     displayErrorMessage(message: string): void
+
+    // DEPRECATED
+
+    /**
+     * @deprecated Use `app.currentWindow.isDraftListVisible`
+     * @category Deprecated
+     */
+    readonly isDraftListVisible: boolean
+
+    /**
+     * @deprecated Use `app.currentWindow.isActionListVisible`
+     * @category Deprecated
+     */
+    readonly isActionListVisible: boolean
+
+    // UI FUNCTIONS
+
+    /**
+     * @deprecated Use `app.currentWindow.showDraftList`
+     * @category Deprecated
+     */
+    showDraftList(): void
+
+    /**
+     * @deprecated Use `app.currentWindow.hideDraftList`
+     * @category Deprecated
+     */
+    hideDraftList(): void
+
+    /**
+     * @deprecated Use `app.currentWindow.showQuickSearch`
+     * @category Deprecated
+    */
+    showQuickSearch(initialQuery?: string): void
+
+    /**
+    * @deprecated Use `app.currentWindow.showDraftInfo`
+    * @category Deprecated
+    */
+    showDraftInfo(draft?: Draft): void
+
+    /**
+     * @deprecated Use `app.currentWindow.showActionList`
+     * @category Deprecated
+     */
+    showActionList(): void
+
+    /**
+     * @deprecated Use `app.currentWindow.hideActionList`
+     * @category Deprecated
+     */
+    hideActionList(): void
 }
 /**
  * Reference to current app object.

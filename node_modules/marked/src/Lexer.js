@@ -316,8 +316,9 @@ export class Lexer {
     return tokens;
   }
 
-  inline(src, tokens) {
+  inline(src, tokens = []) {
     this.inlineQueue.push({ src, tokens });
+    return tokens;
   }
 
   /**
@@ -349,7 +350,8 @@ export class Lexer {
 
     // Mask out escaped em & strong delimiters
     while ((match = this.tokenizer.rules.inline.escapedEmSt.exec(maskedSrc)) != null) {
-      maskedSrc = maskedSrc.slice(0, match.index) + '++' + maskedSrc.slice(this.tokenizer.rules.inline.escapedEmSt.lastIndex);
+      maskedSrc = maskedSrc.slice(0, match.index + match[0].length - 2) + '++' + maskedSrc.slice(this.tokenizer.rules.inline.escapedEmSt.lastIndex);
+      this.tokenizer.rules.inline.escapedEmSt.lastIndex--;
     }
 
     while (src) {

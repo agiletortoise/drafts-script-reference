@@ -1,6 +1,8 @@
 {
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "prisma",
   "scopeName": "source.prisma",
+  "fileTypes": ["prisma"],
   "patterns": [
     {
       "include": "#triple_comment"
@@ -23,7 +25,7 @@
   ],
   "repository": {
     "model_block_definition": {
-      "begin": "^\\s*(model|type)\\s+([A-Za-z][\\w]*)\\s*({)",
+      "begin": "^\\s*(model|type|view)\\s+([A-Za-z][\\w]*)\\s*({)",
       "name": "source.prisma.embedded.source",
       "beginCaptures": {
         "1": {

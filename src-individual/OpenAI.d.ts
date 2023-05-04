@@ -7,6 +7,50 @@
  * * Providing several convenience functions that wrap more complex API calls into simple requests.
  * 
  * > **NOTE:** Drafts does not provide an API Key for use with OpenAI. To use OpenAI features, you will have to setup your own OpenAI account and generate an API Key for use with Drafts in the [developer portal](https://platform.openai.com/account/api-keys).
+ * 
+ * ### Example - Translation
+ * ```javascript
+ * // build prompt
+ * const targetLanguage = "Spanish"
+ * const text = "Where is the library?"
+ * const chatPrompt = `Translate the following text into ${targetLanguage}: "${text}"`
+ * 
+ * // create OpenAI API object and use single response
+ * // convenience function to send prompt
+ * let ai = new OpenAI()
+ * let answer = ai.quickChatResponse(chatPrompt)
+ * 
+ * // answer == "¿Dónde está la biblioteca?"
+ * ```
+ * 
+ * ### Example - Direct API Request
+ * ```javascript
+ * // create OpenAI object
+ * let ai = new OpenAI()
+ * 
+ * // make API request
+ * let response = ai.request({
+ * 	"path": "/chat/completions",
+ * 	"method": "POST",
+ * 	"data": {
+ * 		"model": "gpt-3.5-turbo",
+ * 		"messages": [
+ * 			{
+ * 				"role": "user",
+ * 				"content": "What is your name?"
+ * 			}
+ * 		]
+ * 	}
+ * })
+ * 
+ * // report status
+ * console.log(`CODE: ${response.statusCode}
+ * 
+ * ERR: ${response.error}
+ * 
+ * ${response.responseText}
+ * `)
+ * ```
 */
 declare class OpenAI {
     /**
