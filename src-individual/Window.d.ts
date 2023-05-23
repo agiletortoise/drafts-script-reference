@@ -54,6 +54,19 @@ declare class Window {
     openInNewWindow(draft: Draft): boolean
 
     /**
+     * Returns true if tabbed windows are available (Mac only)
+     * @category Interface
+     */
+    readonly canOpenTab: boolean
+
+    /**
+    * If able, open the requested draft in a new tab in the current window. This method only functions on Mac. The ability to open new tabs is not available on iPhone or iPad.
+    * @returns `true` if successful. `false` if unable to open a new tab.
+    * @category Interface
+    */
+    openInNewTab(draft: Draft): boolean
+
+    /**
      * Open action list side bar.
      * @category Interface
      */

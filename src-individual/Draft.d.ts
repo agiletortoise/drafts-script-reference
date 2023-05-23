@@ -51,6 +51,11 @@ declare class Draft {
     readonly lines: [string]
 
     /**
+     * Convenience method to filter lines of a draft, returning only the lines that begin with a certain string. 
+     */
+    linesWithPrefex(prefix: string): [string]
+
+    /**
     * Convenience method to scan the draft content for valid URLs, and return all found URLs as an array. This will return valid full URL strings - both for `http(s)` and custom URLs found in the text.
     */
     readonly urls: [string]
@@ -76,7 +81,7 @@ declare class Draft {
     /**
      * The syntax definition used when displaying this draft in the editor.
      */
-    syntax?: Syntax
+    syntax: Syntax
 
     /**
      * The index location in the string of the beginning of the last text selection.

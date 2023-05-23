@@ -1277,6 +1277,11 @@ declare class Draft {
     readonly lines: [string]
 
     /**
+     * Convenience method to filter lines of a draft, returning only the lines that begin with a certain string. 
+     */
+    linesWithPrefex(prefix: string): [string]
+
+    /**
     * Convenience method to scan the draft content for valid URLs, and return all found URLs as an array. This will return valid full URL strings - both for `http(s)` and custom URLs found in the text.
     */
     readonly urls: [string]
@@ -1302,7 +1307,7 @@ declare class Draft {
     /**
      * The syntax definition used when displaying this draft in the editor.
      */
-    syntax?: Syntax
+    syntax: Syntax
 
     /**
      * The index location in the string of the beginning of the last text selection.
@@ -2828,6 +2833,11 @@ declare class HTTP {
     followRedirects: boolean
 
     /**
+     * Time in seconds to wait for a request to receive a response from the server. Default: 60 seconds.
+     */
+    timeout: number
+
+    /**
      * Instantiate an `HTTP` object.
      */
     static create(): HTTP
@@ -2922,6 +2932,11 @@ declare class Mail {
      * Array of email addresses to use as `BCC:` recipients.
      */
     bccRecipients: string[]
+
+    /**
+     * Array of email addresses to use in `Reply-To:` header. Used only when `sendInBackground` is `true`.
+     */
+    replyToRecipients: string[]
 
     /**
      * Subject line
@@ -3774,7 +3789,7 @@ declare class OpenAI {
      * Creates a new OpenAI object. 
      * @param apiKey A valid OpenAI API Key. This value is optional, and if not provided, the default OpenAPI API key stored in Credentials will be used, or the user prompted to provide an API Key to store. Only provide a specific API Key if you desire to override the default.
      */
-    static create(apiKey?: string): Mastodon
+    static create(apiKey?: string): OpenAI
 
     /**
      * Create new instance.
@@ -5022,6 +5037,19 @@ declare class Window {
     * @category Interface
     */
     openInNewWindow(draft: Draft): boolean
+
+    /**
+     * Returns true if tabbed windows are available (Mac only)
+     * @category Interface
+     */
+    readonly canOpenTab: boolean
+
+    /**
+    * If able, open the requested draft in a new tab in the current window. This method only functions on Mac. The ability to open new tabs is not available on iPhone or iPad.
+    * @returns `true` if successful. `false` if unable to open a new tab.
+    * @category Interface
+    */
+    openInNewTab(draft: Draft): boolean
 
     /**
      * Open action list side bar.

@@ -43,6 +43,11 @@ declare class Mail {
     bccRecipients: string[]
 
     /**
+     * Array of email addresses to use in `Reply-To:` header. Used only when `sendInBackground` is `true`.
+     */
+    replyToRecipients: string[]
+
+    /**
      * Subject line
      */
     subject: string

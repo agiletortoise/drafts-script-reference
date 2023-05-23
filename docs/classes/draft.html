@@ -68,7 +68,7 @@
 <a href="Draft.html#permalink" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>permalink</span></a>
 <a href="Draft.html#selectionLength" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>selection<wbr/>Length</span></a>
 <a href="Draft.html#selectionStart" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>selection<wbr/>Start</span></a>
-<a href="Draft.html#syntax" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>syntax?</span></a>
+<a href="Draft.html#syntax" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>syntax</span></a>
 <a href="Draft.html#title" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>title</span></a>
 <a href="Draft.html#urls" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>urls</span></a>
 <a href="Draft.html#uuid" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>uuid</span></a>
@@ -90,6 +90,7 @@
 <div class="tsd-index-list"><a href="Draft.html#append" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>append</span></a>
 <a href="Draft.html#bodyPreview" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>body<wbr/>Preview</span></a>
 <a href="Draft.html#insert" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>insert</span></a>
+<a href="Draft.html#linesWithPrefex" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>lines<wbr/>With<wbr/>Prefex</span></a>
 <a href="Draft.html#navigationMarkerAfter" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>navigation<wbr/>Marker<wbr/>After</span></a>
 <a href="Draft.html#navigationMarkerBefore" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>navigation<wbr/>Marker<wbr/>Before</span></a>
 <a href="Draft.html#prepend" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>prepend</span></a>
@@ -237,8 +238,8 @@
 <div class="tsd-comment tsd-typography"><p>The index location in the string of the beginning of the last text selection.</p>
 </div></section>
 <section class="tsd-panel tsd-member"><a id="syntax" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>syntax</span><a href="#syntax" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">syntax</span><span class="tsd-signature-symbol">?:</span> <a href="Syntax.html" class="tsd-signature-type tsd-kind-class">Syntax</a></div>
+<h3 class="tsd-anchor-link"><span>syntax</span><a href="#syntax" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">syntax</span><span class="tsd-signature-symbol">:</span> <a href="Syntax.html" class="tsd-signature-type tsd-kind-class">Syntax</a></div>
 <div class="tsd-comment tsd-typography"><p>The syntax definition used when displaying this draft in the editor.</p>
 </div></section>
 <section class="tsd-panel tsd-member"><a id="title" class="tsd-anchor"></a>
@@ -334,6 +335,19 @@
 <div class="tsd-comment tsd-typography"><p>The index of the line number at which to insert the text. Line numbers are zero-based, so <code>0</code> is the first line. Drafts will range-check the line.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="linesWithPrefex" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>lines<wbr/>With<wbr/>Prefex</span><a href="#linesWithPrefex" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="linesWithPrefex.linesWithPrefex-1"><span class="tsd-kind-call-signature">lines<wbr/>With<wbr/>Prefex</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">prefix</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span><a href="#linesWithPrefex.linesWithPrefex-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Convenience method to filter lines of a draft, returning only the lines that begin with a certain string.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">prefix</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="navigationMarkerAfter" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>navigation<wbr/>Marker<wbr/>After</span><a href="#navigationMarkerAfter" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -640,6 +654,7 @@
 <li><a href="#append" class=""><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>append</span></a></li>
 <li><a href="#bodyPreview" class=""><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>body<wbr/>Preview</span></a></li>
 <li><a href="#insert" class=""><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>insert</span></a></li>
+<li><a href="#linesWithPrefex" class=""><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>lines<wbr/>With<wbr/>Prefex</span></a></li>
 <li><a href="#navigationMarkerAfter" class=""><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>navigation<wbr/>Marker<wbr/>After</span></a></li>
 <li><a href="#navigationMarkerBefore" class=""><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>navigation<wbr/>Marker<wbr/>Before</span></a></li>
 <li><a href="#prepend" class=""><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>prepend</span></a></li>

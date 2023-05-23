@@ -63,6 +63,11 @@ declare class HTTP {
     followRedirects: boolean
 
     /**
+     * Time in seconds to wait for a request to receive a response from the server. Default: 60 seconds.
+     */
+    timeout: number
+
+    /**
      * Instantiate an `HTTP` object.
      */
     static create(): HTTP

@@ -109,7 +109,7 @@ declare class OpenAI {
      * Creates a new OpenAI object. 
      * @param apiKey A valid OpenAI API Key. This value is optional, and if not provided, the default OpenAPI API key stored in Credentials will be used, or the user prompted to provide an API Key to store. Only provide a specific API Key if you desire to override the default.
      */
-    static create(apiKey?: string): Mastodon
+    static create(apiKey?: string): OpenAI
 
     /**
      * Create new instance.
