@@ -1,7 +1,7 @@
 /**
  * When running a [Script action step](https://docs.getdrafts.com/docs/actions/steps/advanced.html#script), a single `script` object will be in context to reference the currently running script.
  * 
- * ### Example
+ * @example
  * ```javascript
  * function sleep(milliseconds) {
  *   var start = new Date().getTime();

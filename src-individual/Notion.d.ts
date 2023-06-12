@@ -1,7 +1,7 @@
 /**
  * Script integration with [Notion](https://www.notion.so/). This object handles OAuth authentication and request signing. The entire [Notion REST API](https://developers.notion.com) can be used with the `request` method.
  *
- * ### Example
+ * @example
  * 
  * ```
  * // list pages which have been shared with the Drafts integration

@@ -3,7 +3,7 @@
  * 
  * AppleScript objects can be used to execute AppleScripts. It is highly recommended AppleScripts be developed and tested in Apple's Script Editor or similar AppleScript editor, and loaded in Drafts when completed.
  *
- * ### Example
+ * @example
  * 
  * ```javascript
  * // create a local file in App documents

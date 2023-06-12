@@ -3,7 +3,7 @@
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
 <div class="field">
-<div id="tsd-toolbar-links"></div></div>
+<div id="tsd-toolbar-links"><a href="https://docs.getdrafts.com">Drafts User Guide</a></div></div>
 <ul class="results">
 <li class="state loading">Preparing search index...</li>
 <li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">Drafts Script Reference</a></div>
@@ -17,7 +17,9 @@
 <h1>Class Tag</h1></div>
 <section class="tsd-panel tsd-comment">
 <div class="tsd-comment tsd-typography"><p>Tools for querying and working with tags.</p>
-<a id="md:example-querying-tags" class="tsd-anchor"></a><h3><a href="#md:example-querying-tags">Example: Querying tags</a></h3><pre><code class="language-javascript"><span class="hl-0">// query a list of all unique tag names</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">tags</span><span class="hl-2"> = </span><span class="hl-3">Tag</span><span class="hl-2">.</span><span class="hl-4">query</span><span class="hl-2">(</span><span class="hl-5">&quot;&quot;</span><span class="hl-2">)</span><br/><br/><span class="hl-0">// get filtered list of tags matching &quot;bl&quot;, like &quot;blue&quot;, &quot;black&quot;</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">blueTags</span><span class="hl-2"> = </span><span class="hl-3">Tag</span><span class="hl-2">.</span><span class="hl-4">query</span><span class="hl-2">(</span><span class="hl-5">&quot;bl&quot;</span><span class="hl-2">)</span>
+
+<h3>Example</h3><p><strong>Querying tags</strong></p>
+<pre><code class="language-javascript"><span class="hl-0">// query a list of all unique tag names</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">tags</span><span class="hl-2"> = </span><span class="hl-3">Tag</span><span class="hl-2">.</span><span class="hl-4">query</span><span class="hl-2">(</span><span class="hl-5">&quot;&quot;</span><span class="hl-2">)</span><br/><br/><span class="hl-0">// get filtered list of tags matching &quot;bl&quot;, like &quot;blue&quot;, &quot;black&quot;</span><br/><span class="hl-1">let</span><span class="hl-2"> </span><span class="hl-3">blueTags</span><span class="hl-2"> = </span><span class="hl-3">Tag</span><span class="hl-2">.</span><span class="hl-4">query</span><span class="hl-2">(</span><span class="hl-5">&quot;bl&quot;</span><span class="hl-2">)</span>
 </code><button>Copy</button></pre>
 </div></section>
 <section class="tsd-panel tsd-hierarchy">
@@ -95,9 +97,6 @@
 <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg>On This Page</h3></summary>
 <div class="tsd-accordion-details">
 <ul>
-<li>
-<ul>
-<li><a href="#md:example-querying-tags"><span>Example: <wbr/>Querying tags</span></a></li></ul></li>
 <li><a href="#constructor" class=""><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-512-path"></use><use href="#icon-512-text"></use></svg><span>constructor</span></a></li>
 <li><a href="#query" class=""><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>query</span></a></li>
 <li><a href="#recentTags" class=""><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>recent<wbr/>Tags</span></a></li></ul></div></details></div>

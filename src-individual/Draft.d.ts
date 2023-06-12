@@ -2,7 +2,9 @@ type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
 /**
  * The Draft object represents a single draft. When an action is run, the current draft is available as the global variable `draft`. Scripts can also create new drafts, access and set values, and update the draft to persist changes.
  * 
- * ### Example: Creating a draft
+ * @example
+ * 
+ * **Creating a draft**
  * 
  * ```javascript
  * // create a new draft, assign content and save it
@@ -12,7 +14,7 @@ type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
  * d.update();
  * ```
  * 
- * ### Example: Querying drafts
+ * **Querying drafts**
  * 
  * ```javascript
  * // query a list of drafts in the inbox with the tag "blue"
@@ -266,7 +268,7 @@ declare class Draft {
         filter: 'inbox' | 'archive' | 'flagged' | 'trash' | 'all',
         tags: string[],
         omitTags: string[],
-        sort: 'created' | 'modified' | 'accessed',
+        sort: sortBy,
         sortDescending: boolean,
         sortFlaggedToTop: boolean
     ): Draft[]

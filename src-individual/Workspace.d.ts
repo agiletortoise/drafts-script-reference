@@ -1,3 +1,6 @@
+/**
+ * The `name` option sorts by full text of the draft, otherwise the sort is based on the specified date value. 
+ */
 type sortBy = 'created' | 'modified' | 'accessed' | 'name'
 type flagStatus = 'flagged' | 'unflagged' | 'any'
 /**
@@ -5,7 +8,9 @@ type flagStatus = 'flagged' | 'unflagged' | 'any'
  * 
  * Note that is can also be useful in script to create and load temporary workspaces to apply filters or query drafts. If you create a new `Workspace` object and never call `update()` that workspace will not be saved after the end of an action's execution.
  * 
- * ### Example: Find and Load Workspace
+ * @example
+ * 
+ * **Find and Load Workspace**
  * 
  * ```javascript
  * // find workspace and load it in drafts list

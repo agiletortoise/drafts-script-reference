@@ -3,7 +3,9 @@
  *
  * It is important to understand that `cancel()` and `fail()` will not immediately stop script, just stop any further action steps from being performed.
  *
- * ### Example: Control Flow
+ * @example
+ * 
+ * **Control Flow**
  * 
  * ```javascript
  * // test for logical condition before continuing
@@ -13,7 +15,7 @@
  * // code below will still run.
  * ```
  * 
- * ### Example: Retreive values
+ * **Retreive values**
  * 
  * ```javascript
  * // if a "Run Workflow" step preceded this script, lets look for a result

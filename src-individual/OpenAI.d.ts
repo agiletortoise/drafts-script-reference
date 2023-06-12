@@ -8,7 +8,10 @@
  * 
  * > **NOTE:** Drafts does not provide an API Key for use with OpenAI. To use OpenAI features, you will have to setup your own OpenAI account and generate an API Key for use with Drafts in the [developer portal](https://platform.openai.com/account/api-keys).
  * 
- * ### Example - Translation
+ * @example
+ * 
+ * **Translation**
+ * 
  * ```javascript
  * // build prompt
  * const targetLanguage = "Spanish"
@@ -23,7 +26,8 @@
  * // answer == "¿Dónde está la biblioteca?"
  * ```
  * 
- * ### Example - Direct API Request
+ * **Direct API Request**
+ * 
  * ```javascript
  * // create OpenAI object
  * let ai = new OpenAI()
@@ -104,6 +108,11 @@ declare class OpenAI {
          */
         data?: { [x: string]: string }
     }): HTTPResponse
+
+    /**
+     * Time in seconds to wait for a request to receive a response from the server. Default: 120 seconds.
+     */
+    timeout: number
 
     /**
      * Creates a new OpenAI object. 

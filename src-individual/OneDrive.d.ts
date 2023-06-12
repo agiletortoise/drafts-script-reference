@@ -1,7 +1,7 @@
 /**
  * OneDrive objects can be used to work with files in a OneDrive account.
  * 
- * ### Example
+ * @example
  * 
  * ```javascript
  * // create OneDrive object

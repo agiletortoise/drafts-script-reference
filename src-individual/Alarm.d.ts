@@ -1,9 +1,10 @@
 /** 
  * Alarms are alerts which can be attached to {@link Reminder} and [[Event objects.
  * 
- * ### Examples
+ * @example
  * 
  * ```javascript
+ * // create reminder with alarm
  * let list = ReminderList.findOrCreate("Errands");
  * let reminder = list.createReminder();
  * reminder.title = "Get more paper towels";

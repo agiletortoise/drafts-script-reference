@@ -4,5 +4,8 @@
     "out": "./docs/",
     "name": "Drafts Script Reference",
     "tsconfig": "./tsconfig.json",
-    "disableSources": true
+    "disableSources": true,
+    "navigationLinks": {
+        "Drafts User Guide": "https://docs.getdrafts.com"
+    }
 }

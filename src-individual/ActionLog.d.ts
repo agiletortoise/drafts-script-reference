@@ -1,7 +1,7 @@
 /**
- * ActionLog objects represent entries in the [action log](). ActionLog objects are accessed using the `actionLogs` property of the {@link Draft} object.
+ * ActionLog objects represent entries in the [action log](https://docs.getdrafts.com/docs/actions/action-log.html). ActionLog objects are accessed using the `actionLogs` property of the {@link Draft} object.
  * 
- * ### Example
+ * @example
  * 
  * ```javascript
  * // loop over log entries, deleting any more than 100 days old
@@ -35,12 +35,12 @@ declare class ActionLog {
     */
     readonly executedAt: Date
     /**
-    * The {@link Draft} object related to the log. This value may be nil if the action was performed without a draft in context, or if the related draft no longer exists.
+    * The {@link Draft} object related to the log. This value may be `undefined` if the action was performed without a draft in context, or if the related draft no longer exists.
     * @category Identification
     */
     readonly draft?: Draft
     /**
-    * The {@link Action} object related to the log. This value may be nil if the action no longer exists.
+    * The {@link Action} object related to the log. This value may be `undefined` if the action no longer exists.
     * @category Identification
     */
     readonly action?: Action

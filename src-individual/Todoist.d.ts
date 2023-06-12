@@ -7,7 +7,7 @@
  *
  * If an API calls fails, typically the result will be an `undefined` value, and the `lastError` property will contains error detail information for troubleshooting.
  *
- * ### Example
+ * @example
  * 
  * See [Examples-Todoist](https://actions.getdrafts.com/g/1L3) action group in the [Action Directory](https://actions.getdrafts.com/).
  * 

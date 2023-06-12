@@ -1,7 +1,7 @@
 /**
  * Helper methods to encode and decode [Base64](https://en.wikipedia.org/wiki/Base64) strings.
  * 
- * ### Examples
+ * @example
  * 
  * ```javascript
  * let s = "My String";

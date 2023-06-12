@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "typedoc": "^0.24.6"
+    "typedoc": "^0.24.7"
   },
   "dependencies": {
     "sass": "^1.32.8"

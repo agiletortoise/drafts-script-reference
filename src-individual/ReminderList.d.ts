@@ -1,7 +1,7 @@
 /**
  * ReminderList objects are used to manipulate and create lists in the built-in Reminders app.
  * 
- * ### Examples
+ * @example
  * 
  * ```javascript
  * declare const  list = ReminderList.findOrCreate("Groceries");

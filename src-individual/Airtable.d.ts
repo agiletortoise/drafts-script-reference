@@ -1,9 +1,7 @@
 /**
  * Airtable objects can be used to work bases and tables in an [Airtable](http://airtable.com) account. Integration works via the [Airtable API](https://airtable.com/developers/web/api/introduction) so plan to reference their documentation for details on parameters and return value objects. Drafts will take care of the OAuth authentication, and conversion to and from JSON for passing parameters and receiving return values.
  * 
- * 
- * 
- * ### Example
+ * @example
  * 
  * ```javascript
  * // set values from your account

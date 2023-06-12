@@ -67,7 +67,7 @@ type linkedItem = {
  * 
  * > **NOTE:** _Generally speaking, editor methods are best used for quick text manipulations of the type used in the extended keyboard. Most substantial updates to draft content are better applied using the `draft` object._
  * 
- * ### Example
+ * @example
  * 
  * ```javascript
  * // get the currently selected text

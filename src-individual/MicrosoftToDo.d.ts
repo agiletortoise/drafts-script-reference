@@ -20,7 +20,7 @@ type microsoftToDoLinkedResource = object
  *
  * If an API calls fails, typically the result will be an `undefined` value, and the `lastError` property will contains error detail information for troubleshooting.
  *
- * ### Example
+ * @example
  * 
  * See [Examples-Microsoft To Do](https://actions.getdrafts.com/g/1m3) action group in the [Drafts Directory](https://actions.getdrafts.com/). It contains several example scripted actions.
  * 

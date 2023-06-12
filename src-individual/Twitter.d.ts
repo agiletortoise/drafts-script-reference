@@ -1,7 +1,7 @@
 /**
  * Script integration with Twitter. The `updateStatus` method is a convenience method for posting a tweet, but the entire [Twitter API](https://developer.twitter.com/en/docs/api-reference-index) can be used with the request method, which handles OAuth authentication and authorization.
  * 
- * ### Example
+ * @example
 
 * ```javascript
 * // create twitter object

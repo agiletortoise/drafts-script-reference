@@ -1,7 +1,7 @@
 /**
  * Parse Markdown to HTML using [cmark-gfm](), GitHub's implementation of Markdown with extensions for tables, strikethrough, etc. For details on the meaning of the various options, refer to [GitHub's Markdown documentation](https://github.github.com/gfm/).
  *
- * ### Example
+ * @example
  * 
  * ```javascript
  * let inputString = "# Header\n\nMy **markdown** text";

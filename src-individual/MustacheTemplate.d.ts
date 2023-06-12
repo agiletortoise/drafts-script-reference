@@ -13,7 +13,7 @@
  *
  * When rendering Mustache templates, you pass the template itself and a data object which contains the values available to insert. The data object should be a Javascript object with keys and values. Values can be basic data types (numbers, strings, dates) and also arrays or nested objects which can be iterated using conventions of the Mustache syntax.
  *
- * ### Example
+ * @example
  * 
  * ```javascript
  * // create template to loop over drafts

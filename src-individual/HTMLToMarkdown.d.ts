@@ -3,7 +3,7 @@
  * 
  * When initialized, the options of the `HTMLToMarkdown` object will default to those configured in Drafts settings.
  *
- * ### Example
+ * @example
  * 
  * ```javascript
  * let html = "A <strong>Markdown</strong> string"

@@ -57,7 +57,7 @@ declare class Window {
      * Returns true if tabbed windows are available (Mac only)
      * @category Interface
      */
-    readonly canOpenTab: boolean
+    readonly canCreateTab: boolean
 
     /**
     * If able, open the requested draft in a new tab in the current window. This method only functions on Mac. The ability to open new tabs is not available on iPhone or iPad.

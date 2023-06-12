@@ -1,7 +1,9 @@
 /**
  * Calendar objects are used to manipulate and create calendars in the built-in Calendars app and its associated accounts.
  * 
- * ### Example: Event Creation
+ * @example
+ * 
+ * **Event Creation**
  * 
  * ```javascript
  * let calendar = Calendar.findOrCreate("Activities");
@@ -16,7 +18,7 @@
  * }
  * ```
  * 
- * ### Example: Reading Calendar Events
+ * **Reading Calendar Events**
  * 
  * ```javascript
  * // load a calendar

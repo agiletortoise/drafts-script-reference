@@ -4,7 +4,7 @@ Typescript declarations for Drafts custom JavaScript types for use in [Drafts](h
 
 This reference covers only Drafts-specific additions to the scripting runtime. Standard JavaScript functions are also available.
 
-### Related links:
+## Related Links
 
 - [Published Drafts Scripting Reference](https://scripting.getdrafts.com/)
 - [Scripting Reference GitHub Repository](https://github.com/agiletortoise/drafts-script-reference)

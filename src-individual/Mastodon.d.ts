@@ -7,7 +7,9 @@ type mastodonVisibility =
     /**
  * Script integration with [Mastodon](https://joinmastodon.org). The `updateStatus` method is a convenience method for posting a status update, but the entire [Mastodon API](https://docs.joinmastodon.org/api/guidelines/) can be used with the request method, which handles OAuth authentication and authorization to Mastodon hosts.
  * 
- * ### Example: Post Status
+ * @example
+ * 
+ * **Post Status**
  * 
  * ```javascript
  * // create Mastodon object
@@ -24,7 +26,7 @@ type mastodonVisibility =
  * }
  * ```
  * 
- * ### Example: Retreive Bookmarks
+ * **Retreive Bookmarks**
  * 
  * ```javascript
  * // Setup credentials to use

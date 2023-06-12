@@ -2,7 +2,7 @@ type clipboardType = 'string' | 'html' | 'url'
 /**
  * Drafts defines a single global `app` object which provides access to application level functions.
  * 
- * ### Examples
+ * @example
  * 
  * ```javascript
  * // toggle dark-light mode

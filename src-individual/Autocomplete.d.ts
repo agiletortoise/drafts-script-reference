@@ -1,7 +1,7 @@
 /**
  * Create and update entries in the Editor's [global autocomplete system](https://docs.getdrafts.com/docs/editor/autocomplete)
  * 
- * ### Examples
+ * @example
  *
  * ```javascript
  * // work with the default system autocomplete

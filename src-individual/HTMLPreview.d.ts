@@ -1,7 +1,7 @@
 /**
  * Display of HTML Preview window, the same as the HTMLPreview action step. Returns true if user closed preview with the "Continue" button, false if the user cancelled.
  * 
- * ### Example
+ * @example
  * 
  * ```javascript
  * let html = "<html><body>My Document</body></html>"
