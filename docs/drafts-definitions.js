@@ -436,6 +436,13 @@ declare class App {
     currentWindow: Window
 
     /**
+    * If able, open the requested draft in a new window. This method only functions on iPad and Mac. The ability to open new windows is not available on iPhone.
+    * @returns `true` if successful. `false` if unable to open a new window (as on iPhone).
+    * @category Interface
+    */
+    openInNewWindow(draft: Draft): boolean
+
+    /**
      * Load the ActionGroup in the action list side bar.
      * @category Interface
      */
@@ -3798,6 +3805,11 @@ declare class OpenAI {
     }): HTTPResponse
 
     /**
+     * Time in seconds to wait for a request to receive a response from the server. Default: 120 seconds.
+     */
+    timeout: number
+
+    /**
      * Creates a new OpenAI object. 
      * @param apiKey A valid OpenAI API Key. This value is optional, and if not provided, the default OpenAPI API key stored in Credentials will be used, or the user prompted to provide an API Key to store. Only provide a specific API Key if you desire to override the default.
      */
@@ -5050,13 +5062,6 @@ declare class Window {
     * @category Interface
     */
     showDraftInfo(draft?: Draft): void
-
-    /**
-    * If able, open the requested draft in a new window. This method only functions on iPad and Mac. The ability to open new windows is not available on iPhone.
-    * @returns `true` if successful. `false` if unable to open a new window (as on iPhone).
-    * @category Interface
-    */
-    openInNewWindow(draft: Draft): boolean
 
     /**
      * Returns true if tabbed windows are available (Mac only)
