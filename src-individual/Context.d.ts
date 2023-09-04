@@ -55,7 +55,7 @@ declare class Context {
     /**
      * Tell the context to fail the current action. In effect this is the same as `cancel()` but an error notification will be shown. If a message is included it will be added to the action log to explain the cancellation.
      */
-    fail(message: string): void
+    fail(message?: string): void
 
     /**
      * Used only when calling a Drafts action from another app via x-callback-url with a `/runAction` URL. Any parameters set via this method will be included as query args when calling the provided `x-success` parameter. As an example, the below:
