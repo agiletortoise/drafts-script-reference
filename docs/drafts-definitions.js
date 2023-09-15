@@ -4558,6 +4558,13 @@ declare class Tag {
      * @category Tag
      */
     static recentTags(): string[]
+
+    /**
+     * Rename all instances of a tag in your draft library.
+     * @returns Number of drafts affected by the reassignment.
+     * @category Tag
+    */
+    renameTag(oldTag: string, newTag: string): number
 }
 type themeType = 'builtIn' | 'custom' | 'file'
 /**
@@ -5056,6 +5063,12 @@ declare class Window {
      * @category Interface
     */
     showQuickSearch(initialQuery?: string): void
+
+    /**
+     * Open command palette window, optionally providing a initial query value.
+     * @category Interface
+    */
+    showCommandPalette(initialQuery?: string): void
 
     /**
     * Open the "Get Info" view for a draft. If no draft is passed, the current active draft in the editor will be used.

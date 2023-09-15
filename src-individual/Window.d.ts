@@ -41,6 +41,12 @@ declare class Window {
     showQuickSearch(initialQuery?: string): void
 
     /**
+     * Open command palette window, optionally providing a initial query value.
+     * @category Interface
+    */
+    showCommandPalette(initialQuery?: string): void
+
+    /**
     * Open the "Get Info" view for a draft. If no draft is passed, the current active draft in the editor will be used.
     * @category Interface
     */

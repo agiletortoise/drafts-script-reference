@@ -28,4 +28,11 @@ declare class Tag {
      * @category Tag
      */
     static recentTags(): string[]
+
+    /**
+     * Rename all instances of a tag in your draft library.
+     * @returns Number of drafts affected by the reassignment.
+     * @category Tag
+    */
+    renameTag(oldTag: string, newTag: string): number
 }
