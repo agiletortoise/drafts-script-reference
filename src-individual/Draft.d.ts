@@ -254,7 +254,7 @@ declare class Draft {
 
     /**
      * Perform a search for drafts and return an array of matching draft objects.
-     * @param queryString Search string, as you would type in the search box in the draft list. Will find only drafts with a matching string in their contents. Use empty string (`""`) not to filter.
+     * @param queryString Search string, as you would type in the search box in the draft list. Will find only drafts with a matching string in their contents. Use empty string (`""`) not to filter. Support query string structured details available in [User Guide](https://docs.getdrafts.com/docs/drafts/filtering#searching-drafts).
      * @param filter Filter by one of the allowed values
      * @param tags Results will only include drafts with all the listed tags assigned.
      * @param omitTags Results will omit drafts with any of these tags assigned.
