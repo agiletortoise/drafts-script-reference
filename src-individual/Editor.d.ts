@@ -1,7 +1,7 @@
 /**
  * An array of numbers containing the location (index in string), and length (number of characters) of a text selection.
  */
-type selectionRange = Array<number>
+type textRange = Array<number>
 /**
  * An object describing a navigation location, as defined by the syntax definition. `navigationMarkers` and related properties are available on both {@link Editor} and {@link Draft} objects.
  */
@@ -115,6 +115,10 @@ declare class Editor {
      */
     isActive: boolean
 
+    /**
+     * The {@link Draft} object currently loaded in the editor.
+     */
+    draft: Draft
     /**
      * Array of recent drafts. This is the same list as used in the navigation features of the editor, and is in reverse order, so that the first index in the array is the previous draft loaded in the editor.
      */
@@ -235,17 +239,17 @@ declare class Editor {
     /**
     * Get the current selected text range extended to the beginning and end of the lines it encompasses.
     */
-    getSelectedLineRange(): selectionRange
+    getSelectedLineRange(): textRange
 
     /**
     * Get text range that was last selected.
     */
-    getSelectedRange(): selectionRange
+    getSelectedRange(): textRange
 
     /**
     * Expand the range provided to the nearest beginning and end of the lines it encompasses.
     */
-    getLineRange(location: number, length: number): selectionRange
+    getLineRange(location: number, length: number): textRange
 
     /**
     * Update the text selection in the editor by passing the start location and the length of the new selection.
@@ -283,6 +287,42 @@ declare class Editor {
     * Convenience method to scan the text for valid URLs, and return all found URLs as an array. This will return valid full URL strings - both for `http(s)` and custom URLs found in the text.
     */
     readonly urls: [string]
+
+       /**
+     * Array of task lines found in the content, based on active syntax definition for the draft. See {@link Task} documentation for usage details. Includes all found tasks, regardless of status.
+     * @category Tasks
+     */
+    readonly tasks: [Task]
+
+    /**
+     * Array of incomplete task lines found in the content, based on active syntax definition for the draft. See {@link Task} documentation for usage details.
+     * @category Tasks
+     */
+    readonly incompleteTasks: [Task]
+
+    /**
+     * Array of completed task lines found in the content, based on active syntax definition for the draft. See {@link Task} documentation for usage details.
+     * @category Tasks
+     */
+    readonly completedTasks: [Task]
+    /**
+    * Update the text representing the task to a completed state as defined by syntax. _Note that the task object is not updated to reflect changes made._
+    * @category Tasks
+    * @returns boolean If `true`, completion was successful
+    */
+    completeTask(task: Task): boolean
+    /**
+    * Update the text representing the task to a next valid state as defined by syntax. If this task has only two states, this is effectively a toggle, if more than two states exist, the next state will be set, including cycling around to the initial state. _Note that the task object is not updated to reflect changes made._
+    * @category Tasks
+    * @returns boolean If `true`, advance was successful
+    */
+    advanceTask(task: Task): boolean
+    /**
+    * Update the text representing the task to a initial state as defined by syntax. _Note that the task object is not updated to reflect changes made._
+    * @category Tasks
+    * @returns boolean If `true`, reset was successful
+    */
+    resetTask(task: Task): boolean
 }
 /**
  * The active editor

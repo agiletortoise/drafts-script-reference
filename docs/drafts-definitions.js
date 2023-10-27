@@ -1529,21 +1529,61 @@ declare class Draft {
 
     /**
     * Array of navigation markers in the content. Navigation markers are defined by the syntax definition assigned to the draft, and are used in the [Navigation](https://docs.getdrafts.com/docs/editor/navigation) feature. 
+    * @category Navigation Markers
     */
     navigationMarkers: [navigationMarker]
 
     /**
     * The next navigation marker in the content, relative to the character location. This is a convenience method to assist in navigating by marker.
+    * @category Navigation Markers
     */
     navigationMarkerAfter(location: number): navigationMarker
     /**
     * The previous navigation marker in the content, relative to the character location. This is a convenience method to assist in navigating by marker.
+    * @category Navigation Markers
     */
     navigationMarkerBefore(location: number): navigationMarker
     /**
     * Convenience method to return the linked items in the content, as located by the syntax definitions' `linkDefinitions`. In Markdown syntaxes, these map to `[[wiki-style]]` cross-links.
+    * @category Linked Items
     */
     readonly linkedItems: [linkedItem]
+
+    /**
+     * Array of task lines found in the content of the draft, based on active syntax definition for the draft. See {@link Task} documentation for usage details. Includes all found tasks, regardless of status.
+     * @category Tasks
+     */
+    readonly tasks: [Task]
+
+    /**
+     * Array of incomplete task lines found in the content of the draft, based on active syntax definition for the draft. See {@link Task} documentation for usage details.
+     * @category Tasks
+     */
+    readonly incompleteTasks: [Task]
+
+    /**
+     * Array of completed task lines found in the content of the draft, based on active syntax definition for the draft. See {@link Task} documentation for usage details.
+     * @category Tasks
+     */
+    readonly completedTasks: [Task]
+    /**
+    * Update the text representing the task to a completed state as defined by syntax. _Note that the task object is not updated to reflect changes made._
+    * @category Tasks
+    * @returns boolean If `true`, completion was successful
+    */
+    completeTask(task: Task): boolean
+    /**
+    * Update the text representing the task to a next valid state as defined by syntax. If this task has only two states, this is effectively a toggle, if more than two states exist, the next state will be set, including cycling around to the initial state. _Note that the task object is not updated to reflect changes made._
+    * @category Tasks
+    * @returns boolean If `true`, advance was successful
+    */
+    advanceTask(task: Task): boolean
+    /**
+    * Update the text representing the task to a initial state as defined by syntax. _Note that the task object is not updated to reflect changes made._
+    * @category Tasks
+    * @returns boolean If `true`, reset was successful
+    */
+    resetTask(task: Task): boolean
 }
 /**
  * When an action is run, a single draft is always in context and accessible via the `draft` const. This usually points to the draft loaded in the editor at the time the action was run if running actions from the action list or action bar. 
@@ -1666,7 +1706,7 @@ declare class Dropbox {
 /**
  * An array of numbers containing the location (index in string), and length (number of characters) of a text selection.
  */
-type selectionRange = Array<number>
+type textRange = Array<number>
 /**
  * An object describing a navigation location, as defined by the syntax definition. `navigationMarkers` and related properties are available on both {@link Editor} and {@link Draft} objects.
  */
@@ -1780,6 +1820,10 @@ declare class Editor {
      */
     isActive: boolean
 
+    /**
+     * The {@link Draft} object currently loaded in the editor.
+     */
+    draft: Draft
     /**
      * Array of recent drafts. This is the same list as used in the navigation features of the editor, and is in reverse order, so that the first index in the array is the previous draft loaded in the editor.
      */
@@ -1900,17 +1944,17 @@ declare class Editor {
     /**
     * Get the current selected text range extended to the beginning and end of the lines it encompasses.
     */
-    getSelectedLineRange(): selectionRange
+    getSelectedLineRange(): textRange
 
     /**
     * Get text range that was last selected.
     */
-    getSelectedRange(): selectionRange
+    getSelectedRange(): textRange
 
     /**
     * Expand the range provided to the nearest beginning and end of the lines it encompasses.
     */
-    getLineRange(location: number, length: number): selectionRange
+    getLineRange(location: number, length: number): textRange
 
     /**
     * Update the text selection in the editor by passing the start location and the length of the new selection.
@@ -1948,6 +1992,42 @@ declare class Editor {
     * Convenience method to scan the text for valid URLs, and return all found URLs as an array. This will return valid full URL strings - both for `http(s)` and custom URLs found in the text.
     */
     readonly urls: [string]
+
+       /**
+     * Array of task lines found in the content, based on active syntax definition for the draft. See {@link Task} documentation for usage details. Includes all found tasks, regardless of status.
+     * @category Tasks
+     */
+    readonly tasks: [Task]
+
+    /**
+     * Array of incomplete task lines found in the content, based on active syntax definition for the draft. See {@link Task} documentation for usage details.
+     * @category Tasks
+     */
+    readonly incompleteTasks: [Task]
+
+    /**
+     * Array of completed task lines found in the content, based on active syntax definition for the draft. See {@link Task} documentation for usage details.
+     * @category Tasks
+     */
+    readonly completedTasks: [Task]
+    /**
+    * Update the text representing the task to a completed state as defined by syntax. _Note that the task object is not updated to reflect changes made._
+    * @category Tasks
+    * @returns boolean If `true`, completion was successful
+    */
+    completeTask(task: Task): boolean
+    /**
+    * Update the text representing the task to a next valid state as defined by syntax. If this task has only two states, this is effectively a toggle, if more than two states exist, the next state will be set, including cycling around to the initial state. _Note that the task object is not updated to reflect changes made._
+    * @category Tasks
+    * @returns boolean If `true`, advance was successful
+    */
+    advanceTask(task: Task): boolean
+    /**
+    * Update the text representing the task to a initial state as defined by syntax. _Note that the task object is not updated to reflect changes made._
+    * @category Tasks
+    * @returns boolean If `true`, reset was successful
+    */
+    resetTask(task: Task): boolean
 }
 /**
  * The active editor
@@ -4566,7 +4646,71 @@ declare class Tag {
     */
     renameTag(oldTag: string, newTag: string): number
 }
-type themeType = 'builtIn' | 'custom' | 'file'
+/**
+ * The Task object provides information about a tasks found in the text of a draft, based on the task definitions of the syntax definition assigned to the draft. [Task Definitions](https://docs.getdrafts.com/docs/extending/development/syntax-format#task-mark-definitions) in Drafts syntaxes are used to create tappable/clickable tasks with the text. Task objects allow you to easily identify and manipulate task lines found in a draft.
+ * 
+ * Ultimately, tasks are just ranges of text in a draft, so can be manipulated directly by altering the text of a draft. 
+ * 
+ * Tasks are readonly and are accessed via `tasks`, `incompleteTasks` and `completedTasks` properties of a {@link Draft} object or the {@link Editor}. Similarly, these task references can be used to change the task states using functions on the {@link Draft} or {@link Editor} object.
+ * 
+ * When working with tasks, it is important to remember that they are snapshots of the task ranges in a draft at a point in time. If changes are made to the content of a draft, these task objects will be invalid. This can include changes to the tasks themselves. For example, some task types might be defined in ways that change the range of task when changing state - so marking it complete will invalidate the task object. Because of this, if you wish to loop over tasks in a draft, you should work in reverse from last to first task by location in the draft to avoid invalidating other task object ranges.
+ * 
+ * Deciding whether to access and work with tasks via the Draft or Editor methods depends on the intent of your action. Only use the Editor methods if you are planning to manipulate text while editing a draft, as these method have the advantage of participating in the Editor's undo stack.
+ * 
+ * For more examples of task scripting, install the [task examples action group](https://directory.getdrafts.com/g/2NA).
+ * 
+ * @example
+ * 
+ * **Resetting tasks to default state**
+ * 
+ * ```javascript
+ * const tasks = draft.incompleteTasks
+ * for (const task of tasks.reverse()) {
+ *     draft.resetTask(task)
+ * }
+ * draft.update()
+ * ```
+ */
+declare class Task {
+    private constructor()
+
+    /**
+     * Text of the task line.
+     */
+    readonly line: string
+    /**
+     * Range of the task line as an array with location and length values.
+     */
+    readonly lineRange: textRange
+    /**
+     * Text of the portion of the task line representing state.
+     */
+    readonly state: string
+    /**
+     * Range of the text representing the state of the task line as an array with location and length values.
+     */
+    readonly stateRange: textRange
+    /**
+     * Text of the interactive (tappable) portion of the task line.
+     */
+    readonly interactive: string
+    /**
+     * Range of the interactive (tappable) portion of the task line as an array with location and length values.
+     */
+    readonly interactiveRange: textRange
+    /**
+     * Text of the task label.
+    */
+   readonly label: string
+    /**
+     * Range of the task label as an array with location and length values.
+     */
+   readonly labelRange: textRange
+    /**
+     * True if the task is in one of the completed states defined by the syntax.
+     */
+   readonly isCompleted: boolean
+}type themeType = 'builtIn' | 'custom' | 'file'
 /**
  * Represents a Theme definition available in the current installation of Drafts.
  * 
