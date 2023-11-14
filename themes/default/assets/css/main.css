@@ -1750,8 +1750,8 @@ pre code {
     animation: fade-in 0.4s;
   }
   html.default.to-has-menu header,
-html.default.to-has-menu footer,
-html.default.to-has-menu .col-content {
+  html.default.to-has-menu footer,
+  html.default.to-has-menu .col-content {
     animation: shift-to-left 0.4s;
   }
   html.default.to-has-menu .col-menu {
@@ -1761,8 +1761,8 @@ html.default.to-has-menu .col-content {
     animation: fade-out 0.4s;
   }
   html.default.from-has-menu header,
-html.default.from-has-menu footer,
-html.default.from-has-menu .col-content {
+  html.default.from-has-menu footer,
+  html.default.from-has-menu .col-content {
     animation: unshift-to-left 0.4s;
   }
   html.default.from-has-menu .col-menu {
@@ -1775,8 +1775,8 @@ html.default.from-has-menu .col-content {
     visibility: visible;
   }
   html.default.has-menu header,
-html.default.has-menu footer,
-html.default.has-menu .col-content {
+  html.default.has-menu footer,
+  html.default.has-menu .col-content {
     transform: translate(-25%, 0);
   }
   html.default.has-menu .col-menu {
@@ -1964,7 +1964,7 @@ dl.tsd-comment-tags p {
     animation: fade-out 0.2s;
   }
   #tsd-filter label,
-#tsd-filter .tsd-select {
+  #tsd-filter .tsd-select {
     display: block;
     padding-right: 20px;
   }
@@ -2182,7 +2182,7 @@ footer .tsd-legend {
   overflow: auto;
   position: -webkit-sticky;
   position: sticky;
-  top: calc(.5rem + 40px);
+  top: calc(0.5rem + 40px);
   transition: 0.3s;
 }
 .tsd-navigation.secondary.tsd-navigation--toolbar-hide {

@@ -397,6 +397,13 @@ declare class App {
     openURL(url: string, useSafari?: boolean): boolean
 
     /**
+     * 
+     * @param term term to open
+     * @category Utility
+     */
+    lookup(term: string): boolean
+
+    /**
      * Queues an action to run on a draft after the current action is complete.
      * ```javascript
      * // lookup action and draft, and queue the action to run
