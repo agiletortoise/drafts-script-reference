@@ -299,7 +299,7 @@ declare class Airtable {
     constructor(identifier?: string)
 }
 /** 
- * Alarms are alerts which can be attached to {@link Reminder} and [[Event objects.
+ * Alarms are alerts which can be attached to {@link Reminder} and {@link Event} objects.
  * 
  * @example
  * 
@@ -327,6 +327,16 @@ declare class Alarm {
      * @param seconds: Number seconds from now
      */
     static alarmWithOffset(seconds: Number): Alarm
+
+    /**
+     * The date the alarm is schedule for, if it is a date-based alarm.
+     */
+    readonly absoluteDate?: Date
+
+    /**
+     * The relative offset in seconds for alarms scheduled relative to the event time.
+     */
+    readonly relativeOffset: Number
 }
 type clipboardType = 'string' | 'html' | 'url'
 /**
@@ -1833,8 +1843,21 @@ declare class Editor {
     draft: Draft
     /**
      * Array of recent drafts. This is the same list as used in the navigation features of the editor, and is in reverse order, so that the first index in the array is the previous draft loaded in the editor.
+     * @category Behavior and Interface
      */
     recentDrafts: [Draft]
+
+    /**
+    * Load next draft in draft list in editor.
+    * @category Behavior and Interface
+    */
+    nextDraft(): void
+
+    /**
+    * Load previous draft in draft list in editor.
+    * @category Behavior and Interface
+    */
+    previousDraft(): void
 
     // FUNCTIONS
     /**

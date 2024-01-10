@@ -1,5 +1,5 @@
 /** 
- * Alarms are alerts which can be attached to {@link Reminder} and [[Event objects.
+ * Alarms are alerts which can be attached to {@link Reminder} and {@link Event} objects.
  * 
  * @example
  * 
@@ -27,4 +27,14 @@ declare class Alarm {
      * @param seconds: Number seconds from now
      */
     static alarmWithOffset(seconds: Number): Alarm
+
+    /**
+     * The date the alarm is schedule for, if it is a date-based alarm.
+     */
+    readonly absoluteDate?: Date
+
+    /**
+     * The relative offset in seconds for alarms scheduled relative to the event time.
+     */
+    readonly relativeOffset: Number
 }

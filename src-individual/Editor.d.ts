@@ -121,8 +121,21 @@ declare class Editor {
     draft: Draft
     /**
      * Array of recent drafts. This is the same list as used in the navigation features of the editor, and is in reverse order, so that the first index in the array is the previous draft loaded in the editor.
+     * @category Behavior and Interface
      */
     recentDrafts: [Draft]
+
+    /**
+    * Load next draft in draft list in editor.
+    * @category Behavior and Interface
+    */
+    nextDraft(): void
+
+    /**
+    * Load previous draft in draft list in editor.
+    * @category Behavior and Interface
+    */
+    previousDraft(): void
 
     // FUNCTIONS
     /**
