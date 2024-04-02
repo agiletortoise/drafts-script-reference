@@ -71,6 +71,7 @@ declare class OpenAI {
      * @param instructions Instructions to model
      * @param options: Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
      * @category Convenience
+     * @deprecated The `edits` endpoint was removed by OpenAI
      */
     quickTextEdit(input: string, instructions: string, options?: object): string
 
@@ -80,6 +81,7 @@ declare class OpenAI {
      * @param instructions Instructions to model
      * @param options: Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
      * @category Convenience
+     * @deprecated The `edits` endpoint was removed by OpenAI
      */
     quickCodeEdit(input: string, instructions: string, options?: object): string
 
@@ -110,6 +112,18 @@ declare class OpenAI {
     }): HTTPResponse
 
     /**
+     * Name of the model to use. Model can also be passed as a parameter in requests, but settings this to a supported model will make it the default model for requests using this instance. Default: `gpt-3.5-turbo`
+     * @category Options
+     */
+    model: string
+
+    /**
+     * Optional identifier for API Key credentials. If an API Key is not provided as a parameter when instantiating the object, the user will be prompted to enter one of the first time they run an action requiring it. By default, these will be stored as `OpenAI` credentials. If you have the need to store multiple API Keys, or use the action with alternate compatible host services (like [Perplexity.ai](https://www.perplexity.ai)), you can set an alternate identifier for use with the Credential system. Default: `OpenAI`
+     * @category Options
+     */
+    credentialIdentifier?: string
+
+    /**
      * Time in seconds to wait for a request to receive a response from the server. Default: 120 seconds.
      */
     timeout: number
@@ -117,11 +131,12 @@ declare class OpenAI {
     /**
      * Creates a new OpenAI object. 
      * @param apiKey A valid OpenAI API Key. This value is optional, and if not provided, the default OpenAPI API key stored in Credentials will be used, or the user prompted to provide an API Key to store. Only provide a specific API Key if you desire to override the default.
+     * @param host Optionally provide the API endpoint URL for any OpenAI API compatible endpoint, such as a custom Azure AI instance, or Perplexity.ai API. Defaults to `https://api.openai.com`
      */
-    static create(apiKey?: string): OpenAI
+    static create(apiKey?: string, host?: string): OpenAI
 
     /**
      * Create new instance.
      */
-    constructor(apiKey?: string)
+    constructor(apiKey?: string, host?: string)
 }

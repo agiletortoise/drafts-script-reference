@@ -7,7 +7,7 @@
  *
  * The object can be used in one of two ways, by passing a specific template as a string and rendering it, or by passing a path to a subdirectory of the `iCloud Drive/Drafts/Library/Templates` folder which can contain more than one Mustache style templates (with file extension `.mustache`), and then rendering them. The late method has the advantage of supporting the use of partial templates in the same folder.
  *
- * For details on using Mustache templates, we recommend reviewing [tutorials](https://www.bersling.com/2017/09/22/the-ultimate-mustache-tutorial/).
+ * For details on using Mustache templates, we recommend reviewing [tutorials](https://www.tsmean.com/articles/mustache/the-ultimate-mustache-tutorial/).
  *
  * ### About Passing Data to Templates
  *

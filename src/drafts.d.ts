@@ -2179,7 +2179,7 @@ declare class Event {
     /**
      * Remove any assigned alarms from the event.
      */
-    removeAllAlarms(): void
+    removeAlarms(): void
 }
 /**
  * FileManager objects can be used to read from or write to files in either the local Drafts app Documents directory, or iCloud Drive (inside the `Drafts` folder).Note that local files are not visible on iOS, and are only available for reading and writing via scripting.
@@ -3448,7 +3448,7 @@ type microsoftToDoTaskList = object
 type microsoftToDoLinkedResource = object
 
 /**
- * Script integration with [Microsoft To Do](http://todo.microsoft.com/). This object handles OAuth authentication and request signing. The entire [Microsoft To Do Graph API](https://docs.microsoft.com/en-us/graph/api/resources/todo-overview?view=graph-rest-1.0) can be used with the `request` method, and convenience methods are provided for common API endpoints to manage tasks and lists.
+ * Script integration with [Microsoft To Do](https://to-do.office.com/tasks). This object handles OAuth authentication and request signing. The entire [Microsoft To Do Graph API](https://docs.microsoft.com/en-us/graph/api/resources/todo-overview?view=graph-rest-1.0) can be used with the `request` method, and convenience methods are provided for common API endpoints to manage tasks and lists.
  *
  * Working with the return values and parameters for these methods requires an understanding of the JSON objects created and returned by the API, so refer to type specifications in the [API Reference](https://docs.microsoft.com/en-us/graph/api/resources/todo-overview?view=graph-rest-1.0) for details on values supported in task and lists. Specifically, review the supported properties of the [Task](https://docs.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) and [TaskList](https://docs.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0) objects to understand the values included in fetched objects, and to make modifications.
  *
@@ -3674,7 +3674,7 @@ declare class MultiMarkdown {
  *
  * The object can be used in one of two ways, by passing a specific template as a string and rendering it, or by passing a path to a subdirectory of the `iCloud Drive/Drafts/Library/Templates` folder which can contain more than one Mustache style templates (with file extension `.mustache`), and then rendering them. The late method has the advantage of supporting the use of partial templates in the same folder.
  *
- * For details on using Mustache templates, we recommend reviewing [tutorials](https://www.bersling.com/2017/09/22/the-ultimate-mustache-tutorial/).
+ * For details on using Mustache templates, we recommend reviewing [tutorials](https://www.tsmean.com/articles/mustache/the-ultimate-mustache-tutorial/).
  *
  * ### About Passing Data to Templates
  *
@@ -3798,7 +3798,7 @@ declare class Notion {
      * @param settings an object configuring the request.
      */
     request(settings: {
-        /** The full URL to the endpoint in the [Notion REST API](hhttps://developers.notion.com.). */
+        /** The full URL to the endpoint in the [Notion REST API](https://developers.notion.com.). */
         url: string
         /** The HTTP method, like "GET", "POST", etc. */
         method: string
@@ -3963,6 +3963,7 @@ declare class OpenAI {
      * @param instructions Instructions to model
      * @param options: Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
      * @category Convenience
+     * @deprecated The `edits` endpoint was removed by OpenAI
      */
     quickTextEdit(input: string, instructions: string, options?: object): string
 
@@ -3972,6 +3973,7 @@ declare class OpenAI {
      * @param instructions Instructions to model
      * @param options: Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
      * @category Convenience
+     * @deprecated The `edits` endpoint was removed by OpenAI
      */
     quickCodeEdit(input: string, instructions: string, options?: object): string
 
@@ -4002,6 +4004,18 @@ declare class OpenAI {
     }): HTTPResponse
 
     /**
+     * Name of the model to use. Model can also be passed as a parameter in requests, but settings this to a supported model will make it the default model for requests using this instance. Default: `gpt-3.5-turbo`
+     * @category Options
+     */
+    model: string
+
+    /**
+     * Optional identifier for API Key credentials. If an API Key is not provided as a parameter when instantiating the object, the user will be prompted to enter one of the first time they run an action requiring it. By default, these will be stored as `OpenAI` credentials. If you have the need to store multiple API Keys, or use the action with alternate compatible host services (like [Perplexity.ai](https://www.perplexity.ai)), you can set an alternate identifier for use with the Credential system. Default: `OpenAI`
+     * @category Options
+     */
+    credentialIdentifier?: string
+
+    /**
      * Time in seconds to wait for a request to receive a response from the server. Default: 120 seconds.
      */
     timeout: number
@@ -4009,13 +4023,14 @@ declare class OpenAI {
     /**
      * Creates a new OpenAI object. 
      * @param apiKey A valid OpenAI API Key. This value is optional, and if not provided, the default OpenAPI API key stored in Credentials will be used, or the user prompted to provide an API Key to store. Only provide a specific API Key if you desire to override the default.
+     * @param host Optionally provide the API endpoint URL for any OpenAI API compatible endpoint, such as a custom Azure AI instance, or Perplexity.ai API. Defaults to `https://api.openai.com`
      */
-    static create(apiKey?: string): OpenAI
+    static create(apiKey?: string, host?: string): OpenAI
 
     /**
      * Create new instance.
      */
-    constructor(apiKey?: string)
+    constructor(apiKey?: string, host?: string)
 }
 /**
  * The OutlookMessage object can be used to create and send mail messages through Outlook.com integrated accounts, similar to those created by a [Outlook action step](https://getdrafts.com/actions/steps/outlook). Creating and sending these messages happens in the background, with no user interface, so messages must be complete with recipients before calling `send()`. Sending is done via the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph). Outlooks accounts are authenticated when used for the first time using OAuth - to use more than one account, call create with different identifier parameters.

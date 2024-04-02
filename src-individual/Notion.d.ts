@@ -58,7 +58,7 @@ declare class Notion {
      * @param settings an object configuring the request.
      */
     request(settings: {
-        /** The full URL to the endpoint in the [Notion REST API](hhttps://developers.notion.com.). */
+        /** The full URL to the endpoint in the [Notion REST API](https://developers.notion.com.). */
         url: string
         /** The HTTP method, like "GET", "POST", etc. */
         method: string

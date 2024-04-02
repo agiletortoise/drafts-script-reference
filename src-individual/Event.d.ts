@@ -114,5 +114,5 @@ declare class Event {
     /**
      * Remove any assigned alarms from the event.
      */
-    removeAllAlarms(): void
+    removeAlarms(): void
 }
