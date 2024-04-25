@@ -55,6 +55,12 @@ declare class Prompt {
     message: string
 
     /**
+     * If set to a valid URL string, a help button which links to the URL will be visible in the prompt directing the user to web-based information about the action. Useful if prompting for options or configuration information that might require addition information to complete.
+     * @category Display
+     */
+    helpURL?: string
+
+    /**
      * If true, a "Cancel" button will be included in the dialog. Defaults to `true`. If the user selects the cancel button, the `show()` method will return `false`. If `false`, no cancel button will be displayed and the user must select one of the button name options.
      * @category Display
      */

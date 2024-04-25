@@ -37,6 +37,12 @@ declare class GoogleAI {
     quickPrompt(prompt: string, model?: string): string
 
     /**
+     * Request a list of available model names from Google. Returns an array of known models which can be used in subsequent requests to the API.
+     * @category Convenience
+     */
+    getModels(): [string]
+
+    /**
      * Execute a request against the Google Gemini API. For successful requests, the {@link HTTPResponse} object will contain an object or array or objects decoded from the JSON returned by Google Gemini as appropriate to the request made. Refer to Google Gemini API documentation for details about the expected parameters and responses.
      */
     request(settings: {
@@ -87,4 +93,14 @@ declare class GoogleAI {
      * Create new instance.
      */
     constructor(apiKey?: string)
+
+    /**
+     * If a function succeeds, this property will contain the last response returned.
+     */
+    lastResponse: any
+
+    /**
+     * If a function fails, this property will contain the last error as a string message, otherwise it will be `undefined`.
+     */
+    lastError?: string
 }

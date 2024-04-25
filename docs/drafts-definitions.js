@@ -377,11 +377,11 @@ declare class AnthropicAI {
     quickPrompt(prompt: string, options?: object): string
 
     /**
-     * Execute a request against the Anthropic AI API. For successful requests, the {@link HTTPResponse} object will contain an object or array or objects decoded from the JSON returned by the API as appropriate to the request made. Refer to [Anthropic API documentation](https://docs.anthropic.com/claude/reference/getting-started-with-the-api) for details about the expected parameters and responses.
+     * Execute a request against the Anthropic AI API. For successful requests, the {@link HTTPResponse} object will contain an object or array or objects decoded from the JSON returned by the API as appropriate to the request made in the `responseData` property. Refer to [Anthropic API documentation](https://docs.anthropic.com/claude/reference/getting-started-with-the-api) for details about the expected parameters and responses.
      */
     request(settings: {
         /**
-         * The path to the API endpoint in the [Anthropic API](https://docs.anthropic.com/claude/reference/getting-started-with-the-api). 
+         * The path to the API endpoint in the [Anthropic API](https://docs.anthropic.com/claude/reference/getting-started-with-the-api). Include only the path portion of the URL, the default host will be appended.
          */
         path: string
         /**
@@ -403,7 +403,7 @@ declare class AnthropicAI {
     }): HTTPResponse
 
     /**
-     * Optional identifier for API Key credentials. If an API Key is not provided as a parameter when instantiating the object, the user will be prompted to enter one of the first time they run an action requiring it. By default, these will be stored as `Anthropic AI` credentials. If you have the need to store multiple API Keys, you can set an alternate identifier for use with the Credential system. Default: `Anthropic AI`
+     * Optional identifier for API Key credentials. If an API Key is not provided as a parameter when instantiating the object, the user will be prompted to enter one of the first time they run an action requiring it. By default, these will be stored as `Anthropic AI` credentials.
      * @category Options
      */
     credentialIdentifier?: string
@@ -412,6 +412,11 @@ declare class AnthropicAI {
      * Time in seconds to wait for a request to receive a response from the server. Default: 120 seconds.
      */
     timeout: number
+
+    /**
+     * Returns a list of current known model versions. Anthropic does not provide an API endpoint to request available models, so this list will be updated periodically with known models for the API. The list currently returns the current Clause Haiku, Sonnet, and Open model versions. If you are using these values to pass a model name to other functions, in general, the first model in this array will be the fastest, the last the most sophisticated. The only purpose of this function over statically defining model names in your actions is that it may be updated overtime if Anthropic releases updated model versions.
+     */
+    static knownModels(): [string]
 
     /**
      * Creates a new AnthropicAI object. 
@@ -423,6 +428,16 @@ declare class AnthropicAI {
      * Create new instance.
      */
     constructor(apiKey?: string)
+
+    /**
+     * If a function succeeds, this property will contain the last response returned.
+     */
+    lastResponse: any
+
+    /**
+     * If a function fails, this property will contain the last error as a string message, otherwise it will be `undefined`.
+     */
+    lastError?: string
 }
 type clipboardType = 'string' | 'html' | 'url'
 /**
@@ -2776,6 +2791,12 @@ declare class GoogleAI {
     quickPrompt(prompt: string, model?: string): string
 
     /**
+     * Request a list of available model names from Google. Returns an array of known models which can be used in subsequent requests to the API.
+     * @category Convenience
+     */
+    getModels(): [string]
+
+    /**
      * Execute a request against the Google Gemini API. For successful requests, the {@link HTTPResponse} object will contain an object or array or objects decoded from the JSON returned by Google Gemini as appropriate to the request made. Refer to Google Gemini API documentation for details about the expected parameters and responses.
      */
     request(settings: {
@@ -2826,6 +2847,16 @@ declare class GoogleAI {
      * Create new instance.
      */
     constructor(apiKey?: string)
+
+    /**
+     * If a function succeeds, this property will contain the last response returned.
+     */
+    lastResponse: any
+
+    /**
+     * If a function fails, this property will contain the last error as a string message, otherwise it will be `undefined`.
+     */
+    lastError?: string
 }
 /**
  * GoogleDrive objects can be used to work with files in Google Drive accounts.
@@ -4323,6 +4354,12 @@ declare class Prompt {
      * @category Display
      */
     message: string
+
+    /**
+     * If set to a valid URL string, a help button which links to the URL will be visible in the prompt directing the user to web-based information about the action. Useful if prompting for options or configuration information that might require addition information to complete.
+     * @category Display
+     */
+    helpURL?: string
 
     /**
      * If true, a "Cancel" button will be included in the dialog. Defaults to `true`. If the user selects the cancel button, the `show()` method will return `false`. If `false`, no cancel button will be displayed and the user must select one of the button name options.
