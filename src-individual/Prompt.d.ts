@@ -11,6 +11,8 @@ type keyboardTypes =
 
 type capitalizationTypes = 'none' | 'sentences' | 'words'
 
+type tintColor = 'gray' | 'red' | 'pink' | 'orange' | 'yellow' | 'green' |'blue' | 'indigo' | 'violet'
+
 /**
  * Prompts allow the creation and display of custom dialogs to request information or confirmation from the user.
  * 
@@ -236,9 +238,10 @@ declare class Prompt {
      * @param value only needed to associate a different value than will be displayed in the button. For example, if you call `prompt.addButton("First Button", 1)`, after calling `prompt.show()` if that button is pressed, the `prompt.buttonPressed` will contain the number value `1`.
      * @param isDefault used to specify a single button which will be pinned to the bottom of the prompt and respond to `cmd + return` as the default button. If only one button is added to a prompt, it is assumed to be the default.
      * @param isDestructive if true, present the button as a destructive action, typically a red button, in the intereface.
+     * @param tintColor Optionally override the default tint color of the button for the purpose of providing visual groupings. Tint colors are drawn from the current theme in use.
      * @category Field
      */
-    addButton(name: string, value?: object, isDefault?: boolean, isDestructive?: boolean): void
+    addButton(name: string, value?: object, isDefault?: boolean, isDestructive?: boolean, tintColor?: tintColor): void
 
     /**
      * Displays the prompt. Returns `true` if the user selected one of the buttons in the buttons array, `false` if the user selected the "Cancel" button. After the dialog has been shown, the `buttonPressed` property will contain the name of the button selected by the user.
