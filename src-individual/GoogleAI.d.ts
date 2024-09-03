@@ -31,7 +31,7 @@ declare class GoogleAI {
     /**
      * Submit a single text prompt to Google Gemini, and return only the message generated. Convenience method for single request prompts.
      * @param prompt Text prompt to submit
-     * @param model: Default: "models/gemini-pro". If you wish to target other models available to your API key, you can override this value.
+     * @param model Default: "models/gemini-pro". If you wish to target other models available to your API key, you can override this value.
      * @category Convenience
      */
     quickPrompt(prompt: string, model?: string): string

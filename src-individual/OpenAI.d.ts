@@ -60,7 +60,7 @@ declare class OpenAI {
     /**
      * Submit a single text prompt to ChatGPT conversations endpoint, and return only the message generated. Convenience method for single request prompts.
      * @param prompt Text prompt to submit to ChatGPT
-     * @param options: Optional key-value object specifying other options to include with the request, see [Completion docs](https://platform.openai.com/docs/api-reference/completions) for supported options. Default `model` value is `gpt-3.5-turbo`
+     * @param options Optional key-value object specifying other options to include with the request, see [Completion docs](https://platform.openai.com/docs/api-reference/completions) for supported options. Default `model` value is `gpt-3.5-turbo`
      * @category Convenience
      */
     quickChatResponse(prompt: string, options?: object): string
@@ -69,7 +69,7 @@ declare class OpenAI {
      * Submit a single text input and instructions to the [Edits endpoint](https://platform.openai.com/docs/api-reference/edits), using the `text-davinci-edit-001` model, and return only the message generated. Convenience method for single request input.
      * @param input Text input to submit
      * @param instructions Instructions to model
-     * @param options: Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
+     * @param options Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
      * @category Convenience
      * @deprecated The `edits` endpoint was removed by OpenAI
      */
@@ -79,7 +79,7 @@ declare class OpenAI {
      * Submit a single text input and instructions to the [Edits endpoint](https://platform.openai.com/docs/api-reference/edits), using the `code-davinci-edit-001` model to generate code or refactor, and return only the message generated.
      * @param input Text input to submit, generally used only if you are instruction the model to refactor existing code.
      * @param instructions Instructions to model
-     * @param options: Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
+     * @param options Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
      * @category Convenience
      * @deprecated The `edits` endpoint was removed by OpenAI
      */

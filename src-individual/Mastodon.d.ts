@@ -59,7 +59,7 @@ declare class Mastodon {
     /**
      * Post a status update to a Mastodon account. Returns `true` if successful, `false` if not. After success the `lastResponse` object can be used to inspect response and get details such as the ID of the post created. Refer to [Mastodon API POST /statuses documentation](https://docs.joinmastodon.org/methods/statuses/#create) for response details.
      * @param content Content for the status update
-     * @param contentWarning: Optional short string to use as the content warning (aka "spoiler text") for the post.
+     * @param contentWarning Optional short string to use as the content warning (aka "spoiler text") for the post.
      * @param visibility The visibility status of the post, default "public"
      * @param isSensitive If true, the post will be marked as containing sensitive content.
      */

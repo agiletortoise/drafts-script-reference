@@ -18,13 +18,13 @@
 declare class Alarm {
     /**
      * Alarm set to remind at a specific date/time.
-     * @param date: Date
+     * @param date Specific date time to assign trigger the alarm.
      */
     static alarmWithDate(date: Date): Alarm
 
     /**
      * Alarm set to remind at a specific number of seconds relative to the start date of the event. Note that alarms created with this methods are only supported on {@link Event} objects, not [[Reminder objects.
-     * @param seconds: Number seconds from now
+     * @param seconds Number seconds from now
      */
     static alarmWithOffset(seconds: Number): Alarm
 

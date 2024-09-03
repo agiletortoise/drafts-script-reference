@@ -31,7 +31,7 @@ declare class AnthropicAI {
     /**
      * Submit a single text prompt to Anthropic AI, and return only the message generated. Convenience method for single request prompts to the [`messages` endpoint](https://docs.anthropic.com/claude/reference/messages_post).
      * @param prompt Text prompt to submit
-     * @param options: An optional object containing parameters to pass with the body of the request. If not included, a default version with the required `model` (claude-3-haiku-20240307) and `max_tokens` (1024) values will be used.
+     * @param options An optional object containing parameters to pass with the body of the request. If not included, a default version with the required `model` (claude-3-haiku-20240307) and `max_tokens` (1024) values will be used.
      * @category Convenience
      */
     quickPrompt(prompt: string, options?: object): string

@@ -149,7 +149,6 @@ declare class FileManager {
     /**
      * Get tags on file at path.
     * @param path
-    * @param date
     * @category Attribute
     */
     getTags(path: string): string[]

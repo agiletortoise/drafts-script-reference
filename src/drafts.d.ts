@@ -318,13 +318,13 @@ declare class Airtable {
 declare class Alarm {
     /**
      * Alarm set to remind at a specific date/time.
-     * @param date: Date
+     * @param date Specific date time to assign trigger the alarm.
      */
     static alarmWithDate(date: Date): Alarm
 
     /**
      * Alarm set to remind at a specific number of seconds relative to the start date of the event. Note that alarms created with this methods are only supported on {@link Event} objects, not [[Reminder objects.
-     * @param seconds: Number seconds from now
+     * @param seconds Number seconds from now
      */
     static alarmWithOffset(seconds: Number): Alarm
 
@@ -371,7 +371,7 @@ declare class AnthropicAI {
     /**
      * Submit a single text prompt to Anthropic AI, and return only the message generated. Convenience method for single request prompts to the [`messages` endpoint](https://docs.anthropic.com/claude/reference/messages_post).
      * @param prompt Text prompt to submit
-     * @param options: An optional object containing parameters to pass with the body of the request. If not included, a default version with the required `model` (claude-3-haiku-20240307) and `max_tokens` (1024) values will be used.
+     * @param options An optional object containing parameters to pass with the body of the request. If not included, a default version with the required `model` (claude-3-haiku-20240307) and `max_tokens` (1024) values will be used.
      * @category Convenience
      */
     quickPrompt(prompt: string, options?: object): string
@@ -2434,7 +2434,6 @@ declare class FileManager {
     /**
      * Get tags on file at path.
     * @param path
-    * @param date
     * @category Attribute
     */
     getTags(path: string): string[]
@@ -2786,7 +2785,7 @@ declare class GoogleAI {
     /**
      * Submit a single text prompt to Google Gemini, and return only the message generated. Convenience method for single request prompts.
      * @param prompt Text prompt to submit
-     * @param model: Default: "models/gemini-pro". If you wish to target other models available to your API key, you can override this value.
+     * @param model Default: "models/gemini-pro". If you wish to target other models available to your API key, you can override this value.
      * @category Convenience
      */
     quickPrompt(prompt: string, model?: string): string
@@ -3470,7 +3469,7 @@ declare class Mastodon {
     /**
      * Post a status update to a Mastodon account. Returns `true` if successful, `false` if not. After success the `lastResponse` object can be used to inspect response and get details such as the ID of the post created. Refer to [Mastodon API POST /statuses documentation](https://docs.joinmastodon.org/methods/statuses/#create) for response details.
      * @param content Content for the status update
-     * @param contentWarning: Optional short string to use as the content warning (aka "spoiler text") for the post.
+     * @param contentWarning Optional short string to use as the content warning (aka "spoiler text") for the post.
      * @param visibility The visibility status of the post, default "public"
      * @param isSensitive If true, the post will be marked as containing sensitive content.
      */
@@ -4160,7 +4159,7 @@ declare class OpenAI {
     /**
      * Submit a single text prompt to ChatGPT conversations endpoint, and return only the message generated. Convenience method for single request prompts.
      * @param prompt Text prompt to submit to ChatGPT
-     * @param options: Optional key-value object specifying other options to include with the request, see [Completion docs](https://platform.openai.com/docs/api-reference/completions) for supported options. Default `model` value is `gpt-3.5-turbo`
+     * @param options Optional key-value object specifying other options to include with the request, see [Completion docs](https://platform.openai.com/docs/api-reference/completions) for supported options. Default `model` value is `gpt-3.5-turbo`
      * @category Convenience
      */
     quickChatResponse(prompt: string, options?: object): string
@@ -4169,7 +4168,7 @@ declare class OpenAI {
      * Submit a single text input and instructions to the [Edits endpoint](https://platform.openai.com/docs/api-reference/edits), using the `text-davinci-edit-001` model, and return only the message generated. Convenience method for single request input.
      * @param input Text input to submit
      * @param instructions Instructions to model
-     * @param options: Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
+     * @param options Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
      * @category Convenience
      * @deprecated The `edits` endpoint was removed by OpenAI
      */
@@ -4179,7 +4178,7 @@ declare class OpenAI {
      * Submit a single text input and instructions to the [Edits endpoint](https://platform.openai.com/docs/api-reference/edits), using the `code-davinci-edit-001` model to generate code or refactor, and return only the message generated.
      * @param input Text input to submit, generally used only if you are instruction the model to refactor existing code.
      * @param instructions Instructions to model
-     * @param options: Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
+     * @param options Optional key-value object specifying other options to include with the request, see [Edit docs](https://platform.openai.com/docs/api-reference/edits) for supported options. Default `model` value is `text-davinci-edit-001`
      * @category Convenience
      * @deprecated The `edits` endpoint was removed by OpenAI
      */
@@ -5425,39 +5424,17 @@ declare class Todoist {
     constructor(identifier?: string)
 }
 /**
- * Script integration with Twitter. The `updateStatus` method is a convenience method for posting a tweet, but the entire [Twitter API](https://developer.twitter.com/en/docs/api-reference-index) can be used with the request method, which handles OAuth authentication and authorization.
- * 
- * @example
-
-* ```javascript
-* // create twitter object
-* let twitter = Twitter.create();
-* // post tweet
-* let success = twitter.updateStatus("My tweet content!");
-* 
-* if success {
-*   console.log(twitter.lastResponse);
-* }
-* else {
-*   console.log(twitter.lastError);
-*   context.fail();
-* }
-* ```
+ * *Twitter integration no longer supported due to policy changes at Twitter. This class has been deprecated.*
 */
 declare class Twitter {
     /**
-     * Post a status update (tweet) to Twitter. Returns `true` if successful, `false` if not. After success the `lastResponse` object can be used to inspect response and get details such as the ID of the tweet created. Refer to [Twitter API POST /status/update documentation](https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update) for response details.
+     * @deprecated No longer supported
      */
     updateStatus(content: string): boolean
 
     /**
-     * Execute a request against the Twitter API. For successful requests, the {@link HTTPResponse} object will contain an object or array or objects decoded from the JSON returned by Twitter as appropriate to the request made. Refer to Twitter’s API documentation for details about the expected parameters and responses. Drafts will handle wrapping the request in the appropriate OAuth authentication flow.
-     * @param settings an object with the following properties:
-     * * url [string, required]: The full URL to the endpoint in the [Twitter API](https://developer.twitter.com/en/docs/api-reference-index).
-     * * method [string, required]: The HTTP method, like "GET", "POST", etc.
-     * * headers [object, optional]: An object contain key-values to be added as custom headers in the request. There is no need to provide authorization headers, Drafts will add those.
-     * * parameters [object, optional]: An object containing key-values to be added to the request as URL parameters.
-     * * data [object, optional]: An object containing data to be encoded into the HTTP body of the request.
+     * @deprecated No longer supported
+     * @param settings 
      */
     request(settings: {
         url: string
@@ -5468,7 +5445,7 @@ declare class Twitter {
     }): HTTPResponse
 
     /**
-     * Creates a new Twitter object. Identifier is a optional string value used to identify a Twitter account. Typically this can be omitted if you only work with one Twitter account in Drafts. Each unique identifier used for Twitter accounts will share credentials - across both action steps and scripts.
+     * @deprecated No longer supported
      */
     static create(identifier: string): Twitter
 
