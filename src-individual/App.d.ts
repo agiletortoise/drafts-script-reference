@@ -4,6 +4,7 @@ type clipboardType = 'string' | 'html' | 'url'
  * 
  * @example
  * 
+ * **Toggle light-dark mode**
  * ```javascript
  * // toggle dark-light mode
  * if (app.currentThemeMode == 'dark') {
@@ -182,7 +183,7 @@ declare class App {
     /**
      * Takes HTML string and converts it to rich-text and places it in the system clipboard. Returns true if successful, false if an error occurred in conversion.
      * @param html a possibly-valid html string
-     * @category Utility
+     * @category Clipboard
      */
     htmlToClipboard(html: string): boolean
 

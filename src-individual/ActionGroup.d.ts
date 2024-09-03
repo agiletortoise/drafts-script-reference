@@ -6,8 +6,8 @@
  * **Loading action group in action list**
  *
  * ```javascript
- * let group = ActionGroup.find("Basic");
- * app.loadActionGroup(group);
+ * let group = ActionGroup.find("Basic")
+ * app.currentWindow.loadActionGroup(group)
  * ```
  * 
  */

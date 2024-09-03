@@ -19,33 +19,33 @@ type tintColor = 'gray' | 'red' | 'pink' | 'orange' | 'yellow' | 'green' |'blue'
  * @example
  * 
  * ```javascript
- * let p = Prompt.create();
+ * let p = new Prompt()
+ * p.title = "Hello"
+ * p.message = "World!"
  * 
- * p.title = "Hello";
- * p.message = "World!";
- * 
- * p.addTextField("textFieldName", "Label", "");
- * 
+ * p.addTextField("textFieldName", "Label", "")
  * p.addDatePicker("myDate", "Start date", new Date(), {
  *   "mode": "date"
- * });
- * p.addButton("First");
- * p.addButton("Second");
+ * })
+ * p.addButton("First")
+ * p.addButton("Second")
  * 
- * let didSelect = p.show();
- * 
- * let textFieldContents = p.fieldValues["textFieldName"];
- * let startDate = p.fieldValues["myDate"];
- * 
- * if (p.buttonPressed == "First") {
- *   // do something
+ * // if `show` returns false, user hit
+ * // cancel button
+ * if (p.show()) {
+ *   let textFieldContents = p.fieldValues["textFieldName"]
+ *   let startDate = p.fieldValues["myDate"]
+ *   
+ *   if (p.buttonPressed == "First") {
+ *     // do something
+ *   }
  * }
  * ```
  *
  */
 declare class Prompt {
     /**
-     * Short title.
+     * Short title which appears as a heading in the prompt window.
      * @category Display
      */
     title: string

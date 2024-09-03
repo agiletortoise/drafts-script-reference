@@ -7,7 +7,7 @@
  * // loop over log entries, deleting any more than 100 days old
  * for(let log of draft.actionLogs) {
  *   if (log.executedAt < Date.today.addDays(-100)) {
- *     log.delete();
+ *     log.delete()
  *   }
  * }
  * ```

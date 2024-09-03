@@ -68,8 +68,8 @@ declare const  action: Action
  * **Loading action group in action list**
  *
  * ```javascript
- * let group = ActionGroup.find("Basic");
- * app.loadActionGroup(group);
+ * let group = ActionGroup.find("Basic")
+ * app.currentWindow.loadActionGroup(group)
  * ```
  * 
  */
@@ -121,7 +121,7 @@ declare class ActionGroup {
  * // loop over log entries, deleting any more than 100 days old
  * for(let log of draft.actionLogs) {
  *   if (log.executedAt < Date.today.addDays(-100)) {
- *     log.delete();
+ *     log.delete()
  *   }
  * }
  * ```
@@ -305,13 +305,13 @@ declare class Airtable {
  * 
  * ```javascript
  * // create reminder with alarm
- * let list = ReminderList.findOrCreate("Errands");
- * let reminder = list.createReminder();
- * reminder.title = "Get more paper towels";
+ * let list = ReminderList.findOrCreate("Errands")
+ * let reminder = list.createReminder()
+ * reminder.title = "Get more paper towels"
  *
- * let alarm = Alarm.alarmWithDate((3).days().fromNow());
- * reminder.addAlarm(alarm);
- * reminder.update();
+ * let alarm = Alarm.alarmWithDate((3).days().fromNow())
+ * reminder.addAlarm(alarm)
+ * reminder.update()
  * ```
  */
 
@@ -445,6 +445,7 @@ type clipboardType = 'string' | 'html' | 'url'
  * 
  * @example
  * 
+ * **Toggle light-dark mode**
  * ```javascript
  * // toggle dark-light mode
  * if (app.currentThemeMode == 'dark') {
@@ -623,7 +624,7 @@ declare class App {
     /**
      * Takes HTML string and converts it to rich-text and places it in the system clipboard. Returns true if successful, false if an error occurred in conversion.
      * @param html a possibly-valid html string
-     * @category Utility
+     * @category Clipboard
      */
     htmlToClipboard(html: string): boolean
 
@@ -4320,33 +4321,33 @@ type tintColor = 'gray' | 'red' | 'pink' | 'orange' | 'yellow' | 'green' |'blue'
  * @example
  * 
  * ```javascript
- * let p = Prompt.create();
+ * let p = new Prompt()
+ * p.title = "Hello"
+ * p.message = "World!"
  * 
- * p.title = "Hello";
- * p.message = "World!";
- * 
- * p.addTextField("textFieldName", "Label", "");
- * 
+ * p.addTextField("textFieldName", "Label", "")
  * p.addDatePicker("myDate", "Start date", new Date(), {
  *   "mode": "date"
- * });
- * p.addButton("First");
- * p.addButton("Second");
+ * })
+ * p.addButton("First")
+ * p.addButton("Second")
  * 
- * let didSelect = p.show();
- * 
- * let textFieldContents = p.fieldValues["textFieldName"];
- * let startDate = p.fieldValues["myDate"];
- * 
- * if (p.buttonPressed == "First") {
- *   // do something
+ * // if `show` returns false, user hit
+ * // cancel button
+ * if (p.show()) {
+ *   let textFieldContents = p.fieldValues["textFieldName"]
+ *   let startDate = p.fieldValues["myDate"]
+ *   
+ *   if (p.buttonPressed == "First") {
+ *     // do something
+ *   }
  * }
  * ```
  *
  */
 declare class Prompt {
     /**
-     * Short title.
+     * Short title which appears as a heading in the prompt window.
      * @category Display
      */
     title: string
