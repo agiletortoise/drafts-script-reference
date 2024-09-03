@@ -55,7 +55,7 @@ declare class Draft {
     /**
      * Convenience method to filter lines of a draft, returning only the lines that begin with a certain string. 
      */
-    linesWithPrefex(prefix: string): [string]
+    linesWithPrefix(prefix: string): [string]
 
     /**
     * Convenience method to scan the draft content for valid URLs, and return all found URLs as an array. This will return valid full URL strings - both for `http(s)` and custom URLs found in the text.

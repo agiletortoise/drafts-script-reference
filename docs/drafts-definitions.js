@@ -561,19 +561,19 @@ declare class App {
     openInNewWindow(draft: Draft): boolean
 
     /**
-     * Load the ActionGroup in the action list side bar.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.loadActionGroup`
+     * @category Deprecated
      */
     loadActionGroup(actionGroup: ActionGroup): boolean
 
     /**
-     * Load the ActionGroup in the action bar below editor.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.loadActionBarGroup`
+     * @category Deprecated
      */
     loadActionBarGroup(actionGroup: ActionGroup): boolean
 
     /**
-     * @deprecated replaced by `loadActionBarGroup`.
+     * @deprecated Use `app.currentWindow.loadActionBarGroup`
      * @category Deprecated
      */
     loadKeyboardActionGroup(actionGroup: ActionGroup): boolean
@@ -1410,7 +1410,7 @@ declare class Draft {
     /**
      * Convenience method to filter lines of a draft, returning only the lines that begin with a certain string. 
      */
-    linesWithPrefex(prefix: string): [string]
+    linesWithPrefix(prefix: string): [string]
 
     /**
     * Convenience method to scan the draft content for valid URLs, and return all found URLs as an array. This will return valid full URL strings - both for `http(s)` and custom URLs found in the text.
@@ -5589,6 +5589,24 @@ declare class Window {
      * @category Interface
      */
     hideActionList(): void
+
+    /**
+     * Load the ActionGroup in the action list side bar.
+     * @category Interface
+     */
+    loadActionGroup(actionGroup: ActionGroup): boolean
+
+    /**
+     * Load the ActionGroup in the action bar below editor.
+     * @category Interface
+     */
+    loadActionBarGroup(actionGroup: ActionGroup): boolean
+
+    /**
+     * @deprecated replaced by `loadActionBarGroup`.
+     * @category Deprecated
+     */
+    loadKeyboardActionGroup(actionGroup: ActionGroup): boolean
 }
 /**
  * Script integration with WordPress sites via the [WordPress XML-RPC API](https://codex.wordpress.org/XML-RPC_WordPress_API). Currently this object has one runMethod function which can be used to call any method available in the XML-RPC interface.

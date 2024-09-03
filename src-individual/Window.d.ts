@@ -76,4 +76,16 @@ declare class Window {
      * @category Interface
      */
     hideActionList(): void
+
+    /**
+     * Load the ActionGroup in the action list side bar.
+     * @category Interface
+     */
+    loadActionGroup(actionGroup: ActionGroup): boolean
+
+    /**
+     * Load the ActionGroup in the action bar below editor.
+     * @category Interface
+     */
+    loadActionBarGroup(actionGroup: ActionGroup): boolean
 }
