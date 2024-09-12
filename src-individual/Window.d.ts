@@ -15,6 +15,12 @@ declare class Window {
     readonly isDraftListVisible: boolean
 
     /**
+     * Is the tag filters side panel is visible.
+     * @category Interface
+     */
+    readonly areFiltersVisible: boolean
+
+    /**
      * Is the action list side panel is visible.
      * @category Interface
      */
@@ -76,6 +82,18 @@ declare class Window {
      * @category Interface
      */
     hideActionList(): void
+
+    /**
+     * Open tag filters side bar.
+     * @category Interface
+     */
+    showFilters(): void
+
+    /**
+     * Close tag filters side bar.
+     * @category Interface
+     */
+    hideFilters(): void
 
     /**
      * Load the ActionGroup in the action list side bar.
