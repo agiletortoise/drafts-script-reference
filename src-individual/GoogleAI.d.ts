@@ -37,10 +37,10 @@ declare class GoogleAI {
     quickPrompt(prompt: string, model?: string): string
 
     /**
-     * Request a list of available model names from Google. Returns an array of known models which can be used in subsequent requests to the API.
+     * Request a list of available model names from Google. See [endpoint reference](https://ai.google.dev/api/models) for response details.
      * @category Convenience
      */
-    getModels(): [string]
+    getModels(): HTTPResponse
 
     /**
      * Execute a request against the Google Gemini API. For successful requests, the {@link HTTPResponse} object will contain an object or array or objects decoded from the JSON returned by Google Gemini as appropriate to the request made. Refer to Google Gemini API documentation for details about the expected parameters and responses.
@@ -82,6 +82,12 @@ declare class GoogleAI {
      * Time in seconds to wait for a request to receive a response from the server. Default: 120 seconds.
      */
     timeout: number
+
+    /**
+     * API Version to target. Defaults to `v1`, but `v1beta` also supported and provides access to beta features and models. See [Google's reference for details](https://ai.google.dev/gemini-api/docs/api-versions).
+     * Default: `v1`
+     */
+    apiVersion: string
 
     /**
      * Creates a new GoogleAI object. 
