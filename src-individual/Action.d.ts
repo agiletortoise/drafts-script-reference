@@ -55,6 +55,12 @@ declare class Action {
     * @category Identification
     */
     readonly isSeparator: boolean
+
+    /**
+    * If this action has "Configured Value" action steps and the user has configured values for the action, this object will contain those values. Primarily of use to load configuration values from a different action than is currently running.
+    * @category Configuration
+    */
+    readonly configuredValues: [string: any]
 }
 /**
  * The current running action. This can be used in script to branch based on action name. 

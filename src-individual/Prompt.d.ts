@@ -94,6 +94,12 @@ declare class Prompt {
     ): void
 
     /**
+     * Add an dividing line between fields. Dividers are not functional, but offer visual separation in prompts with many fields.
+     * @category Field
+     */
+    addDivider(): void
+
+    /**
      * Add a text input field to the prompt
      * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
      * @param label User-friendly text label to place next to the field.
@@ -105,6 +111,38 @@ declare class Prompt {
         name: string,
         label: string,
         initialText: string, // FIXME: is this optional?
+        options?: {
+            /**
+            * Placeholder text to use when field is empty
+            */
+            placeholder?: string
+            /**
+            * Should system autocorrect be enabled in field, Default: true
+            */
+            autocorrect?: boolean
+            autocapitalization?: capitalizationTypes
+            keyboard?: keyboardTypes
+            /**
+            * If true, focus this field when prompt is displayed
+            */
+            wantsFocus?: boolean
+        }
+    ): void
+
+     /**
+     * Add a text input field setup to accept numberic values to the prompt
+     * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
+     * @param label User-friendly text label to place next to the field.
+     * @param initialValue The initial value contents for the field.
+     * @param allowDecimals If true, the field will accept decimal number values. If false, only whole numbers will be allowed.
+     * @param options A dictionary of options for configuring the text field. 
+     * @category Field
+     */
+    addNumberField(
+        name: string,
+        label: string,
+        initialValue: number, 
+        allowDecimals: boolean,
         options?: {
             /**
             * Placeholder text to use when field is empty

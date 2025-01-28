@@ -48,6 +48,11 @@ declare class Context {
     previewValues: { string: any }
 
     /**
+    * If your action contains configurable values defined [Configured Value action steps](https://docs.getdrafts.com/docs/actions/configuration) the user's selected values will be available in this object, with keys matching the `key` property of the Configured Value step.
+    */
+    configuredValues: { string: any }
+
+    /**
      * Tell the context to cancel the action at the end of the script execution. If called, at the end of the script the action will be stopped. No subsequent action steps in the action will run, and the action still stop silently - no notification banners, sounds, etc. If a message is included it will be added to the action log to explain the cancellation.
      */
     cancel(message: string): void

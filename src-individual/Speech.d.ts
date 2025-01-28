@@ -33,7 +33,7 @@ declare class Speech {
 
     /**
      * Executes the shell script.
-     * @param arguments An array of string arguments to pass to the script. These will appear to the script as command line arguments would.
+     * @param settings An object containing optional configuration values.
      * @returns `true` if the script was executed without error, `false` if not. 
      */
     speak(text: string, settings: {

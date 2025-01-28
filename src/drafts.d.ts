@@ -55,6 +55,12 @@ declare class Action {
     * @category Identification
     */
     readonly isSeparator: boolean
+
+    /**
+    * If this action has "Configured Value" action steps and the user has configured values for the action, this object will contain those values. Primarily of use to load configuration values from a different action than is currently running.
+    * @category Configuration
+    */
+    readonly configuredValues: [string: any]
 }
 /**
  * The current running action. This can be used in script to branch based on action name. 
@@ -1166,6 +1172,11 @@ declare class Context {
     * If [HTML Preview](https://docs.getdrafts.com/docs/actions/html-forms) makes calls to `Drafts.send(key, value)` those values are stored in this object by `key`.
     */
     previewValues: { string: any }
+
+    /**
+    * If your action contains configurable values defined [Configured Value action steps](https://docs.getdrafts.com/docs/actions/configuration) the user's selected values will be available in this object, with keys matching the `key` property of the Configured Value step.
+    */
+    configuredValues: { string: any }
 
     /**
      * Tell the context to cancel the action at the end of the script execution. If called, at the end of the script the action will be stopped. No subsequent action steps in the action will run, and the action still stop silently - no notification banners, sounds, etc. If a message is included it will be added to the action log to explain the cancellation.
@@ -4401,6 +4412,12 @@ declare class Prompt {
     ): void
 
     /**
+     * Add an dividing line between fields. Dividers are not functional, but offer visual separation in prompts with many fields.
+     * @category Field
+     */
+    addDivider(): void
+
+    /**
      * Add a text input field to the prompt
      * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
      * @param label User-friendly text label to place next to the field.
@@ -4412,6 +4429,38 @@ declare class Prompt {
         name: string,
         label: string,
         initialText: string, // FIXME: is this optional?
+        options?: {
+            /**
+            * Placeholder text to use when field is empty
+            */
+            placeholder?: string
+            /**
+            * Should system autocorrect be enabled in field, Default: true
+            */
+            autocorrect?: boolean
+            autocapitalization?: capitalizationTypes
+            keyboard?: keyboardTypes
+            /**
+            * If true, focus this field when prompt is displayed
+            */
+            wantsFocus?: boolean
+        }
+    ): void
+
+     /**
+     * Add a text input field setup to accept numberic values to the prompt
+     * @param name Identifier for the field. This will be used as the key in the `fieldValues` dictionary to access the contents of the field after calling `show()`.
+     * @param label User-friendly text label to place next to the field.
+     * @param initialValue The initial value contents for the field.
+     * @param allowDecimals If true, the field will accept decimal number values. If false, only whole numbers will be allowed.
+     * @param options A dictionary of options for configuring the text field. 
+     * @category Field
+     */
+    addNumberField(
+        name: string,
+        label: string,
+        initialValue: number, 
+        allowDecimals: boolean,
         options?: {
             /**
             * Placeholder text to use when field is empty
@@ -4920,6 +4969,78 @@ declare class ShellScript {
 }
 
 /**
+ * Shortcut objects are used as a convenience to run a shortcut in Apple's Shortcut app, and optionally obtain a result. This is a wrapper for making x-callback-url requests and waiting for a response from the Shortcuts app.
+ *
+ * An example, with associated shortcut, can be [installed from the Directory](https://directory.getdrafts.com/a/2XD).
+ * 
+ * @example
+ * 
+ * ```javascript
+ * let shortcut = Shortcut.create("MY-SHORTCUT-NAME", draft.content)
+ * if (shortcut.run()) {
+ *     // if here, the shortcut ran successfully
+ *     // show an alert with the result text
+ *     alert(shortcut.result)
+ *     // if the shortcut returned a dictionary, it will be in the `response` property
+ *     alert(JSON.stringify(shortcut.response))
+ * }
+ * ```
+ */
+declare class Shortcut {
+    /**
+     * The name of the Shortcut to call from your Shortcuts library.
+     */
+    name: string
+
+    /**
+     * The string value to pass as the Shortcut Input value.
+     */
+    text: string
+
+    /**
+     * If true, the script will pause and wait for the shortcut to complete and return a result. If false, execution of the script/action will continue immediately and no response/results will be available.
+     */
+    waitForResponse: boolean
+
+    /**
+     * The current status. Used to check outcome after `run` is called. Possible values:
+     * * created: `run` has not yet been called.
+     * * success: Shortcut has been run successfully.
+     * * cancelled: Cancel callback was received.
+     * * error: Error was returned from Shortcuts.
+     * * timeout: Waiting for the response timed out without receiving response from Shortcuts.
+     * * invalid: The URL was invalid and could not be opened.
+     */
+    status: 'created' | 'success' | 'cancelled' | 'error' | 'timeout' | 'invalid'
+
+    /**
+     * An object contain and URL query parameters returned by the Shortcuts app. For example, if the the shortcut ends returning a value, it will be in the `result` key of this dictionary. If it returned a Dictionary, this would have each of the keys of the dictionary as a string value.
+     */
+    response: { [x: string]: any }
+
+    /**
+     * Convenience method to retrieve the `result` key from the `reponse` object. This is equivalent to `shortcut.response["result"]`. The type of value in this key depends on the value returned from the shortcut. 
+     */
+    result?: any
+
+    /**
+     * Run the shortcut, and waits for a response (if `waitForResponse` = true). Returns true if an success response was received from the Shortcuts, otherwise false. If false, use the "status" property to determine the type of failure.
+     */
+    run(): boolean
+
+    /**
+     * Creates a new Shortcut object with the name and text properties already assigned.
+     */
+    static create(name: string, text: string): Shortcut
+
+    /**
+     * Create new instance.
+     */
+    constructor()
+
+}
+
+/**
  * Supports text-to-speech operations to read aloud text content using system speech synthesis APIs. Speech objects cannot be instantiated, but are accessed via a single global `speech` object.
  *
  * #### Example
@@ -4954,7 +5075,7 @@ declare class Speech {
 
     /**
      * Executes the shell script.
-     * @param arguments An array of string arguments to pass to the script. These will appear to the script as command line arguments would.
+     * @param settings An object containing optional configuration values.
      * @returns `true` if the script was executed without error, `false` if not. 
      */
     speak(text: string, settings: {
