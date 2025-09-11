@@ -57,6 +57,12 @@ declare class Prompt {
     message: string
 
     /**
+     * The name of a valid SF Symbol available on the platform. It will be displayed as a small icon next to the prompt title, if provided. Valid symbol names can be found using Apple's [SF Symbols app](https://developer.apple.com/sf-symbols/) or other third party tools and [online references](https://github.com/andrewtavis/sf-symbols-online).
+     * @category Display
+     */
+    symbolName?: string
+
+    /**
      * If set to a valid URL string, a help button which links to the URL will be visible in the prompt directing the user to web-based information about the action. Useful if prompting for options or configuration information that might require addition information to complete.
      * @category Display
      */

@@ -362,9 +362,6 @@ button[disabled], html input[disabled] {
  * * 2. Remove excess padding in IE 8/9.
  * * 3. Remove excess padding in IE 7.
  * *    Known issue: excess padding remains in IE 6. */
-input {
-  /* 3 */
-}
 input[type=checkbox], input[type=radio] {
   box-sizing: border-box;
   /* 1 */
@@ -373,6 +370,9 @@ input[type=checkbox], input[type=radio] {
   *height: 13px;
   /* 3 */
   *width: 13px;
+}
+input {
+  /* 3 */
 }
 input[type=search] {
   -webkit-appearance: textfield;
@@ -562,17 +562,17 @@ ul.tsd-descriptions > li > :last-child > :last-child > :last-child,
   padding-bottom: 200px;
 }
 
-.row {
-  display: flex;
-  position: relative;
-  margin: 0 -10px;
-}
 .row:after {
   visibility: hidden;
   display: block;
   content: "";
   clear: both;
   height: 0;
+}
+.row {
+  display: flex;
+  position: relative;
+  margin: 0 -10px;
 }
 
 .col, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
@@ -2189,9 +2189,6 @@ footer .tsd-legend {
   max-height: calc(100vh - 1rem);
   top: 0.5rem;
 }
-.tsd-navigation.secondary ul {
-  transition: opacity 0.2s;
-}
 .tsd-navigation.secondary ul li a {
   padding-left: 25px;
 }
@@ -2209,6 +2206,9 @@ footer .tsd-legend {
 }
 .tsd-navigation.secondary ul li li li li li li a {
   padding-left: 125px;
+}
+.tsd-navigation.secondary ul {
+  transition: opacity 0.2s;
 }
 .tsd-navigation.secondary ul.current a {
   border-left-color: #eee;

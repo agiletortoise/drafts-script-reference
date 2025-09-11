@@ -29,6 +29,18 @@ declare class Window {
     // UI FUNCTIONS
 
     /**
+     * Apply the Workspace as if it was selected in draft list. Calling this function with no arguments will clear filters and apply the default workspace.
+     * @category Workspace
+     **/
+        applyWorkspace(workspace?: Workspace): boolean
+
+    /**
+     * Returns a workspace object configured like the workspace currently loaded in the draft list of the window. Useful when creating logic which reacts contextually to the workspace loaded.
+     * @category Workspace
+     */
+    currentWorkspace: Workspace
+
+    /**
      * Open draft list side bar.
      * @category Interface
      */

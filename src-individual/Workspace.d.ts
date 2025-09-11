@@ -74,6 +74,12 @@ declare class Workspace {
     showPreview: boolean
 
     /**
+     * When a `queryString` value is set for the workspace, replace the preview text content with a summary of matches in the text.
+     * @category Display
+     */
+    showSearchPreview: boolean
+
+    /**
      * Show date information in list.
      * @category Display
      */

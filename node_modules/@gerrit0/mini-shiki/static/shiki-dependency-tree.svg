@@ -1,0 +1,831 @@
+<svg width="1307.12" height="908.16" viewBox="0.00 0.00 1307.12 908.16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" id="graph-diagram"><defs><defs><style type="text/css">@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');</style></defs></defs>
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 904.16)">
+
+<text text-anchor="middle" x="649.56" y="-881.76" font-family="Roboto Condensed, sans-serif" font-size="16.00">shiki</text>
+<!-- shiki@3.2.1 -->
+<g id="node1" class="node" data-module="shiki@3.2.1">
+<title>shiki@3.2.1</title>
+<g id="a_node1"><a xlink:href="https://npmgraph.js.org/?q=shiki%403.2.1" xlink:title="shiki@3.2.1">
+<path fill="none" stroke="black" d="M52.96,-629.96C52.96,-629.96 6.32,-629.96 6.32,-629.96 3.16,-629.96 0,-626.8 0,-623.64 0,-623.64 0,-617.32 0,-617.32 0,-614.16 3.16,-611 6.32,-611 6.32,-611 52.96,-611 52.96,-611 56.12,-611 59.28,-614.16 59.28,-617.32 59.28,-617.32 59.28,-623.64 59.28,-623.64 59.28,-626.8 56.12,-629.96 52.96,-629.96"></path>
+<text text-anchor="middle" x="29.64" y="-617.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">shiki@3.2.1</text>
+</a>
+</g>
+</g>
+<!-- @shikijs/core@3.2.1 -->
+<g id="node2" class="node" data-module="@shikijs/core@3.2.1">
+<title>@shikijs/core@3.2.1</title>
+<g id="a_node2"><a xlink:href="https://npmgraph.js.org/?q=%40shikijs%2Fcore%403.2.1" xlink:title="@shikijs/core@3.2.1">
+<path fill="none" stroke="black" d="M218.55,-537.96C218.55,-537.96 132.46,-537.96 132.46,-537.96 129.3,-537.96 126.14,-534.8 126.14,-531.64 126.14,-531.64 126.14,-525.32 126.14,-525.32 126.14,-522.16 129.3,-519 132.46,-519 132.46,-519 218.55,-519 218.55,-519 221.71,-519 224.87,-522.16 224.87,-525.32 224.87,-525.32 224.87,-531.64 224.87,-531.64 224.87,-534.8 221.71,-537.96 218.55,-537.96"></path>
+<text text-anchor="middle" x="175.51" y="-525.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">@shikijs/core@3.2.1</text>
+</a>
+</g>
+</g>
+<!-- shiki@3.2.1&#45;&gt;@shikijs/core@3.2.1 -->
+<g id="edge8" class="edge">
+<title>shiki@3.2.1-&gt;@shikijs/core@3.2.1</title>
+<path fill="none" stroke="black" d="M36.44,-610.73C46.4,-594.88 68.29,-563.69 95.28,-547.48 101.33,-543.85 108.03,-540.91 114.9,-538.53"></path>
+<polygon fill="black" stroke="black" points="115.75,-541.93 124.3,-535.68 113.72,-535.23 115.75,-541.93"></polygon>
+</g>
+<!-- @shikijs/engine&#45;javascript@3.2.1 -->
+<g id="node3" class="node" data-module="@shikijs/engine-javascript@3.2.1">
+<title>@shikijs/engine-javascript@3.2.1</title>
+<g id="a_node3"><a xlink:href="https://npmgraph.js.org/?q=%40shikijs%2Fengine-javascript%403.2.1" xlink:title="@shikijs/engine-javascript@3.2.1">
+<path fill="none" stroke="black" d="M246.96,-723.96C246.96,-723.96 104.05,-723.96 104.05,-723.96 100.89,-723.96 97.73,-720.8 97.73,-717.64 97.73,-717.64 97.73,-711.32 97.73,-711.32 97.73,-708.16 100.89,-705 104.05,-705 104.05,-705 246.96,-705 246.96,-705 250.12,-705 253.28,-708.16 253.28,-711.32 253.28,-711.32 253.28,-717.64 253.28,-717.64 253.28,-720.8 250.12,-723.96 246.96,-723.96"></path>
+<text text-anchor="middle" x="175.51" y="-711.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">@shikijs/engine-javascript@3.2.1</text>
+</a>
+</g>
+</g>
+<!-- shiki@3.2.1&#45;&gt;@shikijs/engine&#45;javascript@3.2.1 -->
+<g id="edge7" class="edge">
+<title>shiki@3.2.1-&gt;@shikijs/engine-javascript@3.2.1</title>
+<path fill="none" stroke="black" d="M36.43,-630.33C46.37,-646.35 68.23,-677.89 95.28,-694.48 98.88,-696.69 102.71,-698.65 106.67,-700.4"></path>
+<polygon fill="black" stroke="black" points="105.4,-703.65 115.99,-703.99 107.92,-697.12 105.4,-703.65"></polygon>
+</g>
+<!-- @shikijs/engine&#45;oniguruma@3.2.1 -->
+<g id="node4" class="node" data-module="@shikijs/engine-oniguruma@3.2.1">
+<title>@shikijs/engine-oniguruma@3.2.1</title>
+<g id="a_node4"><a xlink:href="https://npmgraph.js.org/?q=%40shikijs%2Fengine-oniguruma%403.2.1" xlink:title="@shikijs/engine-oniguruma@3.2.1">
+<path fill="none" stroke="black" d="M249.41,-685.96C249.41,-685.96 101.6,-685.96 101.6,-685.96 98.44,-685.96 95.28,-682.8 95.28,-679.64 95.28,-679.64 95.28,-673.32 95.28,-673.32 95.28,-670.16 98.44,-667 101.6,-667 101.6,-667 249.41,-667 249.41,-667 252.57,-667 255.73,-670.16 255.73,-673.32 255.73,-673.32 255.73,-679.64 255.73,-679.64 255.73,-682.8 252.57,-685.96 249.41,-685.96"></path>
+<text text-anchor="middle" x="175.51" y="-673.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">@shikijs/engine-oniguruma@3.2.1</text>
+</a>
+</g>
+</g>
+<!-- shiki@3.2.1&#45;&gt;@shikijs/engine&#45;oniguruma@3.2.1 -->
+<g id="edge2" class="edge">
+<title>shiki@3.2.1-&gt;@shikijs/engine-oniguruma@3.2.1</title>
+<path fill="none" stroke="black" d="M45.18,-630.41C57.9,-638.7 77.13,-650.28 95.28,-657.48 100.87,-659.7 106.79,-661.7 112.77,-663.5"></path>
+<polygon fill="black" stroke="black" points="111.52,-666.79 122.09,-666.12 113.41,-660.05 111.52,-666.79"></polygon>
+</g>
+<!-- @shikijs/langs@3.2.1 -->
+<g id="node5" class="node" data-module="@shikijs/langs@3.2.1">
+<title>@shikijs/langs@3.2.1</title>
+<g id="a_node5"><a xlink:href="https://npmgraph.js.org/?q=%40shikijs%2Flangs%403.2.1" xlink:title="@shikijs/langs@3.2.1">
+<path fill="none" stroke="black" d="M220.7,-574.96C220.7,-574.96 130.31,-574.96 130.31,-574.96 127.15,-574.96 123.99,-571.8 123.99,-568.64 123.99,-568.64 123.99,-562.32 123.99,-562.32 123.99,-559.16 127.15,-556 130.31,-556 130.31,-556 220.7,-556 220.7,-556 223.86,-556 227.02,-559.16 227.02,-562.32 227.02,-562.32 227.02,-568.64 227.02,-568.64 227.02,-571.8 223.86,-574.96 220.7,-574.96"></path>
+<text text-anchor="middle" x="175.51" y="-562.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">@shikijs/langs@3.2.1</text>
+</a>
+</g>
+</g>
+<!-- shiki@3.2.1&#45;&gt;@shikijs/langs@3.2.1 -->
+<g id="edge4" class="edge">
+<title>shiki@3.2.1-&gt;@shikijs/langs@3.2.1</title>
+<path fill="none" stroke="black" d="M48.37,-610.64C61.14,-603.81 78.95,-594.84 95.28,-588.48 104.59,-584.86 114.71,-581.5 124.5,-578.54"></path>
+<polygon fill="black" stroke="black" points="125.3,-581.95 133.91,-575.78 123.33,-575.23 125.3,-581.95"></polygon>
+</g>
+<!-- @shikijs/themes@3.2.1 -->
+<g id="node6" class="node" data-module="@shikijs/themes@3.2.1">
+<title>@shikijs/themes@3.2.1</title>
+<g id="a_node6"><a xlink:href="https://npmgraph.js.org/?q=%40shikijs%2Fthemes%403.2.1" xlink:title="@shikijs/themes@3.2.1">
+<path fill="none" stroke="black" d="M224.67,-648.96C224.67,-648.96 126.34,-648.96 126.34,-648.96 123.18,-648.96 120.02,-645.8 120.02,-642.64 120.02,-642.64 120.02,-636.32 120.02,-636.32 120.02,-633.16 123.18,-630 126.34,-630 126.34,-630 224.67,-630 224.67,-630 227.83,-630 230.99,-633.16 230.99,-636.32 230.99,-636.32 230.99,-642.64 230.99,-642.64 230.99,-645.8 227.83,-648.96 224.67,-648.96"></path>
+<text text-anchor="middle" x="175.51" y="-636.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">@shikijs/themes@3.2.1</text>
+</a>
+</g>
+</g>
+<!-- shiki@3.2.1&#45;&gt;@shikijs/themes@3.2.1 -->
+<g id="edge3" class="edge">
+<title>shiki@3.2.1-&gt;@shikijs/themes@3.2.1</title>
+<path fill="none" stroke="black" d="M59.75,-624.32C73.83,-626.18 91.35,-628.5 108.42,-630.75"></path>
+<polygon fill="black" stroke="black" points="107.66,-634.18 118.04,-632.02 108.58,-627.24 107.66,-634.18"></polygon>
+</g>
+<!-- @shikijs/types@3.2.1 -->
+<g id="node7" class="node" data-module="@shikijs/types@3.2.1">
+<title>@shikijs/types@3.2.1</title>
+<g id="a_node7"><a xlink:href="https://npmgraph.js.org/?q=%40shikijs%2Ftypes%403.2.1" xlink:title="@shikijs/types@3.2.1">
+<path fill="none" stroke="black" d="M392.22,-648.96C392.22,-648.96 301.83,-648.96 301.83,-648.96 298.67,-648.96 295.51,-645.8 295.51,-642.64 295.51,-642.64 295.51,-636.32 295.51,-636.32 295.51,-633.16 298.67,-630 301.83,-630 301.83,-630 392.22,-630 392.22,-630 395.38,-630 398.54,-633.16 398.54,-636.32 398.54,-636.32 398.54,-642.64 398.54,-642.64 398.54,-645.8 395.38,-648.96 392.22,-648.96"></path>
+<text text-anchor="middle" x="347.03" y="-636.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">@shikijs/types@3.2.1</text>
+</a>
+</g>
+</g>
+<!-- shiki@3.2.1&#45;&gt;@shikijs/types@3.2.1 -->
+<g id="edge5" class="edge">
+<title>shiki@3.2.1-&gt;@shikijs/types@3.2.1</title>
+<path fill="none" stroke="black" d="M59.52,-618.84C102.44,-616.8 185.55,-614.4 255.73,-621.48 268.15,-622.73 281.4,-624.9 293.81,-627.3"></path>
+<polygon fill="black" stroke="black" points="292.94,-630.7 303.44,-629.25 294.33,-623.84 292.94,-630.7"></polygon>
+</g>
+<!-- @shikijs/vscode&#45;textmate@10.0.2 -->
+<g id="node8" class="node" data-module="@shikijs/vscode-textmate@10.0.2">
+<title>@shikijs/vscode-textmate@10.0.2</title>
+<g id="a_node8"><a xlink:href="https://npmgraph.js.org/?q=%40shikijs%2Fvscode-textmate%4010.0.2" xlink:title="@shikijs/vscode-textmate@10.0.2">
+<path fill="none" stroke="black" d="M589.39,-723.96C589.39,-723.96 444.64,-723.96 444.64,-723.96 441.48,-723.96 438.32,-720.8 438.32,-717.64 438.32,-717.64 438.32,-711.32 438.32,-711.32 438.32,-708.16 441.48,-705 444.64,-705 444.64,-705 589.39,-705 589.39,-705 592.55,-705 595.71,-708.16 595.71,-711.32 595.71,-711.32 595.71,-717.64 595.71,-717.64 595.71,-720.8 592.55,-723.96 589.39,-723.96"></path>
+<text text-anchor="middle" x="517.02" y="-711.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">@shikijs/vscode-textmate@10.0.2</text>
+</a>
+</g>
+</g>
+<!-- shiki@3.2.1&#45;&gt;@shikijs/vscode&#45;textmate@10.0.2 -->
+<g id="edge1" class="edge">
+<title>shiki@3.2.1-&gt;@shikijs/vscode-textmate@10.0.2</title>
+<path fill="none" stroke="black" d="M32.81,-630.3C38.47,-653.18 56.01,-709.8 95.28,-732.48 153.18,-765.91 343.1,-742.39 446.84,-726.22"></path>
+<polygon fill="black" stroke="black" points="447.31,-729.69 456.64,-724.68 446.22,-722.78 447.31,-729.69"></polygon>
+</g>
+<!-- @types/hast@3.0.4 -->
+<g id="node9" class="node" data-module="@types/hast@3.0.4">
+<title>@types/hast@3.0.4</title>
+<g id="a_node9"><a xlink:href="https://npmgraph.js.org/?q=%40types%2Fhast%403.0.4" xlink:title="@types/hast@3.0.4">
+<path fill="none" stroke="black" d="M750.21,-426.96C750.21,-426.96 670.83,-426.96 670.83,-426.96 667.67,-426.96 664.51,-423.8 664.51,-420.64 664.51,-420.64 664.51,-414.32 664.51,-414.32 664.51,-411.16 667.67,-408 670.83,-408 670.83,-408 750.21,-408 750.21,-408 753.37,-408 756.53,-411.16 756.53,-414.32 756.53,-414.32 756.53,-420.64 756.53,-420.64 756.53,-423.8 753.37,-426.96 750.21,-426.96"></path>
+<text text-anchor="middle" x="710.52" y="-414.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">@types/hast@3.0.4</text>
+</a>
+</g>
+</g>
+<!-- shiki@3.2.1&#45;&gt;@types/hast@3.0.4 -->
+<g id="edge6" class="edge">
+<title>shiki@3.2.1-&gt;@types/hast@3.0.4</title>
+<path fill="none" stroke="black" d="M35.06,-610.69C44.39,-590.62 67.55,-543.88 95.28,-510.48 169.22,-421.42 189.67,-394.09 291.73,-339.48 411.88,-275.19 484.1,-221.3 595.71,-299.48 634.06,-326.34 596.84,-367.23 631.71,-398.48 637.9,-404.03 645.45,-408.03 653.38,-410.89"></path>
+<polygon fill="black" stroke="black" points="652.31,-414.22 662.89,-413.7 654.29,-407.51 652.31,-414.22"></polygon>
+</g>
+<!-- @shikijs/core@3.2.1&#45;&gt;@shikijs/types@3.2.1 -->
+<g id="edge11" class="edge">
+<title>@shikijs/core@3.2.1-&gt;@shikijs/types@3.2.1</title>
+<path fill="none" stroke="black" d="M225.05,-535.6C235.59,-538.36 246.38,-542.18 255.73,-547.48 264.49,-552.44 305.53,-595.86 329.16,-621.24"></path>
+<polygon fill="black" stroke="black" points="326.58,-623.61 335.95,-628.56 331.71,-618.85 326.58,-623.61"></polygon>
+</g>
+<!-- @shikijs/core@3.2.1&#45;&gt;@shikijs/vscode&#45;textmate@10.0.2 -->
+<g id="edge9" class="edge">
+<title>@shikijs/core@3.2.1-&gt;@shikijs/vscode-textmate@10.0.2</title>
+<path fill="none" stroke="black" d="M225.22,-538.28C235.43,-540.85 246.04,-543.93 255.73,-547.48 324.25,-572.6 350.52,-570.07 402.32,-621.48 427.15,-646.12 411.38,-669.16 438.32,-691.48 442.27,-694.75 446.66,-697.55 451.3,-699.96"></path>
+<polygon fill="black" stroke="black" points="449.82,-703.13 460.38,-704 452.67,-696.73 449.82,-703.13"></polygon>
+</g>
+<!-- @shikijs/core@3.2.1&#45;&gt;@types/hast@3.0.4 -->
+<g id="edge10" class="edge">
+<title>@shikijs/core@3.2.1-&gt;@types/hast@3.0.4</title>
+<path fill="none" stroke="black" d="M184.66,-518.6C214.22,-483.65 320.24,-365.9 438.32,-325.48 504.5,-302.83 536.31,-288.54 595.71,-325.48 626.43,-344.58 603.49,-375.84 631.71,-398.48 637.98,-403.51 645.38,-407.23 653.08,-409.99"></path>
+<polygon fill="black" stroke="black" points="652.06,-413.33 662.64,-412.84 654.06,-406.63 652.06,-413.33"></polygon>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5 -->
+<g id="node11" class="node" data-module="hast-util-to-html@9.0.5">
+<title>hast-util-to-html@9.0.5</title>
+<g id="a_node11"><a xlink:href="https://npmgraph.js.org/?q=hast-util-to-html%409.0.5" xlink:title="hast-util-to-html@9.0.5">
+<path fill="none" stroke="black" d="M395.7,-481.96C395.7,-481.96 298.35,-481.96 298.35,-481.96 295.19,-481.96 292.03,-478.8 292.03,-475.64 292.03,-475.64 292.03,-469.32 292.03,-469.32 292.03,-466.16 295.19,-463 298.35,-463 298.35,-463 395.7,-463 395.7,-463 398.86,-463 402.02,-466.16 402.02,-469.32 402.02,-469.32 402.02,-475.64 402.02,-475.64 402.02,-478.8 398.86,-481.96 395.7,-481.96"></path>
+<text text-anchor="middle" x="347.03" y="-469.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">hast-util-to-html@9.0.5</text>
+</a>
+</g>
+</g>
+<!-- @shikijs/core@3.2.1&#45;&gt;hast&#45;util&#45;to&#45;html@9.0.5 -->
+<g id="edge12" class="edge">
+<title>@shikijs/core@3.2.1-&gt;hast-util-to-html@9.0.5</title>
+<path fill="none" stroke="black" d="M206.42,-518.6C233.85,-509.54 274.71,-496.04 305.14,-485.99"></path>
+<polygon fill="black" stroke="black" points="306,-489.39 314.4,-482.93 303.81,-482.74 306,-489.39"></polygon>
+</g>
+<!-- @shikijs/engine&#45;javascript@3.2.1&#45;&gt;@shikijs/types@3.2.1 -->
+<g id="edge14" class="edge">
+<title>@shikijs/engine-javascript@3.2.1-&gt;@shikijs/types@3.2.1</title>
+<path fill="none" stroke="black" d="M225.44,-704.57C235.64,-701.83 246.18,-698.49 255.73,-694.48 280.3,-684.18 306.03,-667.88 323.71,-655.7"></path>
+<polygon fill="black" stroke="black" points="325.24,-658.9 331.41,-650.28 321.21,-653.17 325.24,-658.9"></polygon>
+</g>
+<!-- @shikijs/engine&#45;javascript@3.2.1&#45;&gt;@shikijs/vscode&#45;textmate@10.0.2 -->
+<g id="edge13" class="edge">
+<title>@shikijs/engine-javascript@3.2.1-&gt;@shikijs/vscode-textmate@10.0.2</title>
+<path fill="none" stroke="black" d="M253.55,-714.48C305.05,-714.48 372.99,-714.48 426.84,-714.48"></path>
+<polygon fill="black" stroke="black" points="426.59,-717.98 436.59,-714.48 426.59,-710.98 426.59,-717.98"></polygon>
+</g>
+<!-- oniguruma&#45;to&#45;es@4.1.0 -->
+<g id="node12" class="node" data-module="oniguruma-to-es@4.1.0">
+<title>oniguruma-to-es@4.1.0</title>
+<g id="a_node12"><a xlink:href="https://npmgraph.js.org/?q=oniguruma-to-es%404.1.0" xlink:title="oniguruma-to-es@4.1.0">
+<path fill="none" stroke="black" d="M396,-798.96C396,-798.96 298.05,-798.96 298.05,-798.96 294.89,-798.96 291.73,-795.8 291.73,-792.64 291.73,-792.64 291.73,-786.32 291.73,-786.32 291.73,-783.16 294.89,-780 298.05,-780 298.05,-780 396,-780 396,-780 399.16,-780 402.32,-783.16 402.32,-786.32 402.32,-786.32 402.32,-792.64 402.32,-792.64 402.32,-795.8 399.16,-798.96 396,-798.96"></path>
+<text text-anchor="middle" x="347.03" y="-786.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">oniguruma-to-es@4.1.0</text>
+</a>
+</g>
+</g>
+<!-- @shikijs/engine&#45;javascript@3.2.1&#45;&gt;oniguruma&#45;to&#45;es@4.1.0 -->
+<g id="edge15" class="edge">
+<title>@shikijs/engine-javascript@3.2.1-&gt;oniguruma-to-es@4.1.0</title>
+<path fill="none" stroke="black" d="M199.02,-724.44C228.36,-737.42 279.87,-760.21 313.47,-775.07"></path>
+<polygon fill="black" stroke="black" points="311.75,-778.14 322.31,-778.99 314.58,-771.74 311.75,-778.14"></polygon>
+</g>
+<!-- @shikijs/engine&#45;oniguruma@3.2.1&#45;&gt;@shikijs/types@3.2.1 -->
+<g id="edge17" class="edge">
+<title>@shikijs/engine-oniguruma@3.2.1-&gt;@shikijs/types@3.2.1</title>
+<path fill="none" stroke="black" d="M221.94,-666.56C242.65,-662.04 267.39,-656.64 289.3,-651.86"></path>
+<polygon fill="black" stroke="black" points="289.97,-655.3 298.99,-649.75 288.48,-648.46 289.97,-655.3"></polygon>
+</g>
+<!-- @shikijs/engine&#45;oniguruma@3.2.1&#45;&gt;@shikijs/vscode&#45;textmate@10.0.2 -->
+<g id="edge16" class="edge">
+<title>@shikijs/engine-oniguruma@3.2.1-&gt;@shikijs/vscode-textmate@10.0.2</title>
+<path fill="none" stroke="black" d="M256.11,-685.39C307.23,-691.11 373.73,-698.55 426.66,-704.48"></path>
+<polygon fill="black" stroke="black" points="426.25,-707.96 436.58,-705.59 427.03,-701 426.25,-707.96"></polygon>
+</g>
+<!-- @shikijs/langs@3.2.1&#45;&gt;@shikijs/types@3.2.1 -->
+<g id="edge18" class="edge">
+<title>@shikijs/langs@3.2.1-&gt;@shikijs/types@3.2.1</title>
+<path fill="none" stroke="black" d="M217.44,-575.41C229.94,-578.96 243.59,-583.37 255.73,-588.48 278.9,-598.23 303.65,-612.51 321.37,-623.48"></path>
+<polygon fill="black" stroke="black" points="319.32,-626.33 329.64,-628.7 323.05,-620.4 319.32,-626.33"></polygon>
+</g>
+<!-- @shikijs/themes@3.2.1&#45;&gt;@shikijs/types@3.2.1 -->
+<g id="edge19" class="edge">
+<title>@shikijs/themes@3.2.1-&gt;@shikijs/types@3.2.1</title>
+<path fill="none" stroke="black" d="M231.08,-639.48C247.91,-639.48 266.57,-639.48 283.87,-639.48"></path>
+<polygon fill="black" stroke="black" points="283.5,-642.98 293.5,-639.48 283.5,-635.98 283.5,-642.98"></polygon>
+</g>
+<!-- @shikijs/types@3.2.1&#45;&gt;@shikijs/vscode&#45;textmate@10.0.2 -->
+<g id="edge20" class="edge">
+<title>@shikijs/types@3.2.1-&gt;@shikijs/vscode-textmate@10.0.2</title>
+<path fill="none" stroke="black" d="M375.54,-649.4C384.35,-653.03 393.98,-657.48 402.32,-662.48 419.95,-673.03 420.13,-681.94 438.32,-691.48 445.35,-695.17 453.06,-698.34 460.79,-701.06"></path>
+<polygon fill="black" stroke="black" points="459.66,-704.37 470.26,-704.13 461.82,-697.71 459.66,-704.37"></polygon>
+</g>
+<!-- @shikijs/types@3.2.1&#45;&gt;@types/hast@3.0.4 -->
+<g id="edge21" class="edge">
+<title>@shikijs/types@3.2.1-&gt;@types/hast@3.0.4</title>
+<path fill="none" stroke="black" d="M398.88,-648.76C452.25,-655.67 536.46,-658.31 595.71,-620.48 662.66,-577.74 693.9,-480.93 704.79,-438.3"></path>
+<polygon fill="black" stroke="black" points="708.14,-439.37 707.08,-428.83 701.33,-437.73 708.14,-439.37"></polygon>
+</g>
+<!-- @types/unist@3.0.3 -->
+<g id="node10" class="node" data-module="@types/unist@3.0.3">
+<title>@types/unist@3.0.3</title>
+<g id="a_node10"><a xlink:href="https://npmgraph.js.org/?q=%40types%2Funist%403.0.3" xlink:title="@types/unist@3.0.3">
+<path fill="none" stroke="black" d="M1292.8,-296.96C1292.8,-296.96 1209.75,-296.96 1209.75,-296.96 1206.59,-296.96 1203.43,-293.8 1203.43,-290.64 1203.43,-290.64 1203.43,-284.32 1203.43,-284.32 1203.43,-281.16 1206.59,-278 1209.75,-278 1209.75,-278 1292.8,-278 1292.8,-278 1295.96,-278 1299.12,-281.16 1299.12,-284.32 1299.12,-284.32 1299.12,-290.64 1299.12,-290.64 1299.12,-293.8 1295.96,-296.96 1292.8,-296.96"></path>
+<text text-anchor="middle" x="1251.28" y="-284.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">@types/unist@3.0.3</text>
+</a>
+</g>
+</g>
+<!-- @types/hast@3.0.4&#45;&gt;@types/unist@3.0.3 -->
+<g id="edge22" class="edge">
+<title>@types/hast@3.0.4-&gt;@types/unist@3.0.3</title>
+<path fill="none" stroke="black" d="M726.17,-427.26C747.11,-440.58 787.25,-463.76 825.33,-472.48 973.54,-506.41 1039.83,-555.15 1167.43,-472.48 1224.73,-435.36 1242.76,-348.25 1248.14,-308.24"></path>
+<polygon fill="black" stroke="black" points="1251.59,-308.88 1249.29,-298.53 1244.64,-308.05 1251.59,-308.88"></polygon>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5&#45;&gt;@types/hast@3.0.4 -->
+<g id="edge23" class="edge">
+<title>hast-util-to-html@9.0.5-&gt;@types/hast@3.0.4</title>
+<path fill="none" stroke="black" d="M367.54,-462.65C385.46,-454.12 412.99,-442.27 438.32,-436.48 511.13,-419.84 597.55,-416.51 652.94,-416.4"></path>
+<polygon fill="black" stroke="black" points="652.75,-419.9 662.76,-416.41 652.76,-412.9 652.75,-419.9"></polygon>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5&#45;&gt;@types/unist@3.0.3 -->
+<g id="edge24" class="edge">
+<title>hast-util-to-html@9.0.5-&gt;@types/unist@3.0.3</title>
+<path fill="none" stroke="black" d="M354.79,-482.3C365.3,-497.68 386.05,-528.49 402.32,-555.48 419.37,-583.76 411.76,-600.86 438.32,-620.48 537.4,-693.65 586.36,-677.48 709.52,-677.48 709.52,-677.48 709.52,-677.48 900.55,-677.48 1040.71,-677.48 1078.97,-618.19 1167.43,-509.48 1218.26,-447.02 1239.8,-350.28 1247.12,-308.2"></path>
+<polygon fill="black" stroke="black" points="1250.55,-308.93 1248.71,-298.49 1243.64,-307.8 1250.55,-308.93"></polygon>
+</g>
+<!-- ccount@2.0.1 -->
+<g id="node13" class="node" data-module="ccount@2.0.1">
+<title>ccount@2.0.1</title>
+<g id="a_node13"><a xlink:href="https://npmgraph.js.org/?q=ccount%402.0.1" xlink:title="ccount@2.0.1">
+<path fill="none" stroke="black" d="M544.3,-352.96C544.3,-352.96 489.73,-352.96 489.73,-352.96 486.57,-352.96 483.41,-349.8 483.41,-346.64 483.41,-346.64 483.41,-340.32 483.41,-340.32 483.41,-337.16 486.57,-334 489.73,-334 489.73,-334 544.3,-334 544.3,-334 547.46,-334 550.62,-337.16 550.62,-340.32 550.62,-340.32 550.62,-346.64 550.62,-346.64 550.62,-349.8 547.46,-352.96 544.3,-352.96"></path>
+<text text-anchor="middle" x="517.02" y="-340.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">ccount@2.0.1</text>
+</a>
+</g>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5&#45;&gt;ccount@2.0.1 -->
+<g id="edge27" class="edge">
+<title>hast-util-to-html@9.0.5-&gt;ccount@2.0.1</title>
+<path fill="none" stroke="black" d="M353.1,-462.77C364.91,-441.13 396.5,-388.8 438.32,-362.48 448.48,-356.09 460.62,-351.85 472.27,-349.04"></path>
+<polygon fill="black" stroke="black" points="472.64,-352.53 481.71,-347.06 471.2,-345.68 472.64,-352.53"></polygon>
+</g>
+<!-- comma&#45;separated&#45;tokens@2.0.3 -->
+<g id="node14" class="node" data-module="comma-separated-tokens@2.0.3">
+<title>comma-separated-tokens@2.0.3</title>
+<g id="a_node14"><a xlink:href="https://npmgraph.js.org/?q=comma-separated-tokens%402.0.3" xlink:title="comma-separated-tokens@2.0.3">
+<path fill="none" stroke="black" d="M584.62,-611.96C584.62,-611.96 449.42,-611.96 449.42,-611.96 446.26,-611.96 443.1,-608.8 443.1,-605.64 443.1,-605.64 443.1,-599.32 443.1,-599.32 443.1,-596.16 446.26,-593 449.42,-593 449.42,-593 584.62,-593 584.62,-593 587.78,-593 590.94,-596.16 590.94,-599.32 590.94,-599.32 590.94,-605.64 590.94,-605.64 590.94,-608.8 587.78,-611.96 584.62,-611.96"></path>
+<text text-anchor="middle" x="517.02" y="-599.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">comma-separated-tokens@2.0.3</text>
+</a>
+</g>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5&#45;&gt;comma&#45;separated&#45;tokens@2.0.3 -->
+<g id="edge25" class="edge">
+<title>hast-util-to-html@9.0.5-&gt;comma-separated-tokens@2.0.3</title>
+<path fill="none" stroke="black" d="M354.79,-482.32C371.85,-506.88 416.8,-569.87 438.32,-583.48 441.07,-585.22 443.97,-586.8 446.97,-588.24"></path>
+<polygon fill="black" stroke="black" points="445.48,-591.41 456.06,-592 448.16,-584.94 445.48,-591.41"></polygon>
+</g>
+<!-- hast&#45;util&#45;whitespace@3.0.0 -->
+<g id="node16" class="node" data-module="hast-util-whitespace@3.0.0">
+<title>hast-util-whitespace@3.0.0</title>
+<g id="a_node16"><a xlink:href="https://npmgraph.js.org/?q=hast-util-whitespace%403.0.0" xlink:title="hast-util-whitespace@3.0.0">
+<path fill="none" stroke="black" d="M573.93,-389.96C573.93,-389.96 460.1,-389.96 460.1,-389.96 456.94,-389.96 453.78,-386.8 453.78,-383.64 453.78,-383.64 453.78,-377.32 453.78,-377.32 453.78,-374.16 456.94,-371 460.1,-371 460.1,-371 573.93,-371 573.93,-371 577.09,-371 580.25,-374.16 580.25,-377.32 580.25,-377.32 580.25,-383.64 580.25,-383.64 580.25,-386.8 577.09,-389.96 573.93,-389.96"></path>
+<text text-anchor="middle" x="517.02" y="-377.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">hast-util-whitespace@3.0.0</text>
+</a>
+</g>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5&#45;&gt;hast&#45;util&#45;whitespace@3.0.0 -->
+<g id="edge28" class="edge">
+<title>hast-util-to-html@9.0.5-&gt;hast-util-whitespace@3.0.0</title>
+<path fill="none" stroke="black" d="M358.28,-462.59C374.18,-447.76 406.31,-419.75 438.32,-403.48 445.57,-399.8 453.49,-396.61 461.43,-393.88"></path>
+<polygon fill="black" stroke="black" points="462.3,-397.27 470.75,-390.89 460.16,-390.61 462.3,-397.27"></polygon>
+</g>
+<!-- html&#45;void&#45;elements@3.0.0 -->
+<g id="node17" class="node" data-module="html-void-elements@3.0.0">
+<title>html-void-elements@3.0.0</title>
+<g id="a_node17"><a xlink:href="https://npmgraph.js.org/?q=html-void-elements%403.0.0" xlink:title="html-void-elements@3.0.0">
+<path fill="none" stroke="black" d="M572.71,-574.96C572.71,-574.96 461.32,-574.96 461.32,-574.96 458.16,-574.96 455,-571.8 455,-568.64 455,-568.64 455,-562.32 455,-562.32 455,-559.16 458.16,-556 461.32,-556 461.32,-556 572.71,-556 572.71,-556 575.87,-556 579.03,-559.16 579.03,-562.32 579.03,-562.32 579.03,-568.64 579.03,-568.64 579.03,-571.8 575.87,-574.96 572.71,-574.96"></path>
+<text text-anchor="middle" x="517.02" y="-562.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">html-void-elements@3.0.0</text>
+</a>
+</g>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5&#45;&gt;html&#45;void&#45;elements@3.0.0 -->
+<g id="edge29" class="edge">
+<title>hast-util-to-html@9.0.5-&gt;html-void-elements@3.0.0</title>
+<path fill="none" stroke="black" d="M357.02,-482.27C372.21,-498.2 404.6,-529.64 438.32,-546.48 442.45,-548.54 446.81,-550.38 451.27,-552.03"></path>
+<polygon fill="black" stroke="black" points="449.79,-555.23 460.39,-555.07 452,-548.59 449.79,-555.23"></polygon>
+</g>
+<!-- mdast&#45;util&#45;to&#45;hast@13.2.0 -->
+<g id="node18" class="node" data-module="mdast-util-to-hast@13.2.0">
+<title>mdast-util-to-hast@13.2.0</title>
+<g id="a_node18"><a xlink:href="https://npmgraph.js.org/?q=mdast-util-to-hast%4013.2.0" xlink:title="mdast-util-to-hast@13.2.0">
+<path fill="none" stroke="black" d="M571.5,-240.96C571.5,-240.96 462.54,-240.96 462.54,-240.96 459.38,-240.96 456.22,-237.8 456.22,-234.64 456.22,-234.64 456.22,-228.32 456.22,-228.32 456.22,-225.16 459.38,-222 462.54,-222 462.54,-222 571.5,-222 571.5,-222 574.66,-222 577.82,-225.16 577.82,-228.32 577.82,-228.32 577.82,-234.64 577.82,-234.64 577.82,-237.8 574.66,-240.96 571.5,-240.96"></path>
+<text text-anchor="middle" x="517.02" y="-228.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">mdast-util-to-hast@13.2.0</text>
+</a>
+</g>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5&#45;&gt;mdast&#45;util&#45;to&#45;hast@13.2.0 -->
+<g id="edge33" class="edge">
+<title>hast-util-to-html@9.0.5-&gt;mdast-util-to-hast@13.2.0</title>
+<path fill="none" stroke="black" d="M353.49,-462.55C366.9,-438.39 402.96,-374.94 438.32,-325.48 457.93,-298.06 483.21,-268.38 499.51,-249.86"></path>
+<polygon fill="black" stroke="black" points="502.12,-252.2 506.14,-242.4 496.88,-247.55 502.12,-252.2"></polygon>
+</g>
+<!-- property&#45;information@7.0.0 -->
+<g id="node20" class="node" data-module="property-information@7.0.0">
+<title>property-information@7.0.0</title>
+<g id="a_node20"><a xlink:href="https://npmgraph.js.org/?q=property-information%407.0.0" xlink:title="property-information@7.0.0">
+<path fill="none" stroke="black" d="M576.07,-537.96C576.07,-537.96 457.96,-537.96 457.96,-537.96 454.8,-537.96 451.64,-534.8 451.64,-531.64 451.64,-531.64 451.64,-525.32 451.64,-525.32 451.64,-522.16 454.8,-519 457.96,-519 457.96,-519 576.07,-519 576.07,-519 579.23,-519 582.39,-522.16 582.39,-525.32 582.39,-525.32 582.39,-531.64 582.39,-531.64 582.39,-534.8 579.23,-537.96 576.07,-537.96"></path>
+<text text-anchor="middle" x="517.02" y="-525.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">property-information@7.0.0</text>
+</a>
+</g>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5&#45;&gt;property&#45;information@7.0.0 -->
+<g id="edge30" class="edge">
+<title>hast-util-to-html@9.0.5-&gt;property-information@7.0.0</title>
+<path fill="none" stroke="black" d="M369.58,-482.38C387.67,-490.42 414.32,-501.67 438.32,-509.48 445.08,-511.68 452.25,-513.76 459.38,-515.68"></path>
+<polygon fill="black" stroke="black" points="458.48,-519.06 469.04,-518.18 460.24,-512.28 458.48,-519.06"></polygon>
+</g>
+<!-- space&#45;separated&#45;tokens@2.0.2 -->
+<g id="node23" class="node" data-module="space-separated-tokens@2.0.2">
+<title>space-separated-tokens@2.0.2</title>
+<g id="a_node23"><a xlink:href="https://npmgraph.js.org/?q=space-separated-tokens%402.0.2" xlink:title="space-separated-tokens@2.0.2">
+<path fill="none" stroke="black" d="M580.64,-500.96C580.64,-500.96 453.39,-500.96 453.39,-500.96 450.23,-500.96 447.07,-497.8 447.07,-494.64 447.07,-494.64 447.07,-488.32 447.07,-488.32 447.07,-485.16 450.23,-482 453.39,-482 453.39,-482 580.64,-482 580.64,-482 583.8,-482 586.96,-485.16 586.96,-488.32 586.96,-488.32 586.96,-494.64 586.96,-494.64 586.96,-497.8 583.8,-500.96 580.64,-500.96"></path>
+<text text-anchor="middle" x="517.02" y="-488.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">space-separated-tokens@2.0.2</text>
+</a>
+</g>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5&#45;&gt;space&#45;separated&#45;tokens@2.0.2 -->
+<g id="edge31" class="edge">
+<title>hast-util-to-html@9.0.5-&gt;space-separated-tokens@2.0.2</title>
+<path fill="none" stroke="black" d="M402.1,-478.6C412.75,-479.8 424.14,-481.09 435.44,-482.37"></path>
+<polygon fill="black" stroke="black" points="434.85,-485.82 445.18,-483.47 435.63,-478.87 434.85,-485.82"></polygon>
+</g>
+<!-- stringify&#45;entities@4.0.4 -->
+<g id="node24" class="node" data-module="stringify-entities@4.0.4">
+<title>stringify-entities@4.0.4</title>
+<g id="a_node24"><a xlink:href="https://npmgraph.js.org/?q=stringify-entities%404.0.4" xlink:title="stringify-entities@4.0.4">
+<path fill="none" stroke="black" d="M566,-55.96C566,-55.96 468.04,-55.96 468.04,-55.96 464.88,-55.96 461.72,-52.8 461.72,-49.64 461.72,-49.64 461.72,-43.32 461.72,-43.32 461.72,-40.16 464.88,-37 468.04,-37 468.04,-37 566,-37 566,-37 569.16,-37 572.32,-40.16 572.32,-43.32 572.32,-43.32 572.32,-49.64 572.32,-49.64 572.32,-52.8 569.16,-55.96 566,-55.96"></path>
+<text text-anchor="middle" x="517.02" y="-43.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">stringify-entities@4.0.4</text>
+</a>
+</g>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5&#45;&gt;stringify&#45;entities@4.0.4 -->
+<g id="edge32" class="edge">
+<title>hast-util-to-html@9.0.5-&gt;stringify-entities@4.0.4</title>
+<path fill="none" stroke="black" d="M350.97,-462.95C361.61,-428.75 399.47,-309.23 438.32,-213.48 460.38,-159.12 490.73,-96.9 506.15,-66.01"></path>
+<polygon fill="black" stroke="black" points="509.08,-67.98 510.44,-57.47 502.82,-64.84 509.08,-67.98"></polygon>
+</g>
+<!-- zwitch@2.0.4 -->
+<g id="node25" class="node" data-module="zwitch@2.0.4">
+<title>zwitch@2.0.4</title>
+<g id="a_node25"><a xlink:href="https://npmgraph.js.org/?q=zwitch%402.0.4" xlink:title="zwitch@2.0.4">
+<path fill="none" stroke="black" d="M544.3,-463.96C544.3,-463.96 489.73,-463.96 489.73,-463.96 486.57,-463.96 483.41,-460.8 483.41,-457.64 483.41,-457.64 483.41,-451.32 483.41,-451.32 483.41,-448.16 486.57,-445 489.73,-445 489.73,-445 544.3,-445 544.3,-445 547.46,-445 550.62,-448.16 550.62,-451.32 550.62,-451.32 550.62,-457.64 550.62,-457.64 550.62,-460.8 547.46,-463.96 544.3,-463.96"></path>
+<text text-anchor="middle" x="517.02" y="-451.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">zwitch@2.0.4</text>
+</a>
+</g>
+</g>
+<!-- hast&#45;util&#45;to&#45;html@9.0.5&#45;&gt;zwitch@2.0.4 -->
+<g id="edge26" class="edge">
+<title>hast-util-to-html@9.0.5-&gt;zwitch@2.0.4</title>
+<path fill="none" stroke="black" d="M402.1,-466.69C424.6,-464.27 450.39,-461.51 471.74,-459.22"></path>
+<polygon fill="black" stroke="black" points="472.02,-462.71 481.59,-458.17 471.27,-455.75 472.02,-462.71"></polygon>
+</g>
+<!-- emoji&#45;regex&#45;xs@1.0.0 -->
+<g id="node15" class="node" data-module="emoji-regex-xs@1.0.0">
+<title>emoji-regex-xs@1.0.0</title>
+<g id="a_node15"><a xlink:href="https://npmgraph.js.org/?q=emoji-regex-xs%401.0.0" xlink:title="emoji-regex-xs@1.0.0">
+<path fill="none" stroke="black" d="M562.93,-798.96C562.93,-798.96 471.1,-798.96 471.1,-798.96 467.94,-798.96 464.78,-795.8 464.78,-792.64 464.78,-792.64 464.78,-786.32 464.78,-786.32 464.78,-783.16 467.94,-780 471.1,-780 471.1,-780 562.93,-780 562.93,-780 566.09,-780 569.25,-783.16 569.25,-786.32 569.25,-786.32 569.25,-792.64 569.25,-792.64 569.25,-795.8 566.09,-798.96 562.93,-798.96"></path>
+<text text-anchor="middle" x="517.02" y="-786.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">emoji-regex-xs@1.0.0</text>
+</a>
+</g>
+</g>
+<!-- oniguruma&#45;to&#45;es@4.1.0&#45;&gt;emoji&#45;regex&#45;xs@1.0.0 -->
+<g id="edge34" class="edge">
+<title>oniguruma-to-es@4.1.0-&gt;emoji-regex-xs@1.0.0</title>
+<path fill="none" stroke="black" d="M402.57,-789.48C418.68,-789.48 436.45,-789.48 453.05,-789.48"></path>
+<polygon fill="black" stroke="black" points="452.8,-792.98 462.8,-789.48 452.8,-785.98 452.8,-792.98"></polygon>
+</g>
+<!-- oniguruma&#45;parser@0.5.4 -->
+<g id="node19" class="node" data-module="oniguruma-parser@0.5.4">
+<title>oniguruma-parser@0.5.4</title>
+<g id="a_node19"><a xlink:href="https://npmgraph.js.org/?q=oniguruma-parser%400.5.4" xlink:title="oniguruma-parser@0.5.4">
+<path fill="none" stroke="black" d="M568.74,-761.96C568.74,-761.96 465.3,-761.96 465.3,-761.96 462.14,-761.96 458.98,-758.8 458.98,-755.64 458.98,-755.64 458.98,-749.32 458.98,-749.32 458.98,-746.16 462.14,-743 465.3,-743 465.3,-743 568.74,-743 568.74,-743 571.9,-743 575.06,-746.16 575.06,-749.32 575.06,-749.32 575.06,-755.64 575.06,-755.64 575.06,-758.8 571.9,-761.96 568.74,-761.96"></path>
+<text text-anchor="middle" x="517.02" y="-749.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">oniguruma-parser@0.5.4</text>
+</a>
+</g>
+</g>
+<!-- oniguruma&#45;to&#45;es@4.1.0&#45;&gt;oniguruma&#45;parser@0.5.4 -->
+<g id="edge35" class="edge">
+<title>oniguruma-to-es@4.1.0-&gt;oniguruma-parser@0.5.4</title>
+<path fill="none" stroke="black" d="M393.05,-779.56C413.57,-775.04 438.08,-769.64 459.81,-764.86"></path>
+<polygon fill="black" stroke="black" points="460.38,-768.32 469.4,-762.75 458.88,-761.48 460.38,-768.32"></polygon>
+</g>
+<!-- regex&#45;recursion@6.0.2 -->
+<g id="node21" class="node" data-module="regex-recursion@6.0.2">
+<title>regex-recursion@6.0.2</title>
+<g id="a_node21"><a xlink:href="https://npmgraph.js.org/?q=regex-recursion%406.0.2" xlink:title="regex-recursion@6.0.2">
+<path fill="none" stroke="black" d="M564.15,-872.96C564.15,-872.96 469.88,-872.96 469.88,-872.96 466.72,-872.96 463.56,-869.8 463.56,-866.64 463.56,-866.64 463.56,-860.32 463.56,-860.32 463.56,-857.16 466.72,-854 469.88,-854 469.88,-854 564.15,-854 564.15,-854 567.31,-854 570.47,-857.16 570.47,-860.32 570.47,-860.32 570.47,-866.64 570.47,-866.64 570.47,-869.8 567.31,-872.96 564.15,-872.96"></path>
+<text text-anchor="middle" x="517.02" y="-860.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">regex-recursion@6.0.2</text>
+</a>
+</g>
+</g>
+<!-- oniguruma&#45;to&#45;es@4.1.0&#45;&gt;regex&#45;recursion@6.0.2 -->
+<g id="edge37" class="edge">
+<title>oniguruma-to-es@4.1.0-&gt;regex-recursion@6.0.2</title>
+<path fill="none" stroke="black" d="M361.39,-799.45C378.43,-811.71 409.16,-832.38 438.32,-844.48 443.56,-846.65 449.1,-848.62 454.72,-850.38"></path>
+<polygon fill="black" stroke="black" points="453.52,-853.68 464.1,-853.11 455.48,-846.96 453.52,-853.68"></polygon>
+</g>
+<!-- regex@6.0.1 -->
+<g id="node22" class="node" data-module="regex@6.0.1">
+<title>regex@6.0.1</title>
+<g id="a_node22"><a xlink:href="https://npmgraph.js.org/?q=regex%406.0.1" xlink:title="regex@6.0.1">
+<path fill="none" stroke="black" d="M541.86,-835.96C541.86,-835.96 492.18,-835.96 492.18,-835.96 489.02,-835.96 485.86,-832.8 485.86,-829.64 485.86,-829.64 485.86,-823.32 485.86,-823.32 485.86,-820.16 489.02,-817 492.18,-817 492.18,-817 541.86,-817 541.86,-817 545.02,-817 548.18,-820.16 548.18,-823.32 548.18,-823.32 548.18,-829.64 548.18,-829.64 548.18,-832.8 545.02,-835.96 541.86,-835.96"></path>
+<text text-anchor="middle" x="517.02" y="-823.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">regex@6.0.1</text>
+</a>
+</g>
+</g>
+<!-- oniguruma&#45;to&#45;es@4.1.0&#45;&gt;regex@6.0.1 -->
+<g id="edge36" class="edge">
+<title>oniguruma-to-es@4.1.0-&gt;regex@6.0.1</title>
+<path fill="none" stroke="black" d="M393.05,-799.4C418.3,-804.96 449.59,-811.85 474.29,-817.29"></path>
+<polygon fill="black" stroke="black" points="473.48,-820.7 484,-819.43 474.99,-813.86 473.48,-820.7"></polygon>
+</g>
+<!-- hast&#45;util&#45;whitespace@3.0.0&#45;&gt;@types/hast@3.0.4 -->
+<g id="edge38" class="edge">
+<title>hast-util-whitespace@3.0.0-&gt;@types/hast@3.0.4</title>
+<path fill="none" stroke="black" d="M569.59,-390.44C595.37,-395.43 626.63,-401.47 653.06,-406.57"></path>
+<polygon fill="black" stroke="black" points="652.09,-409.95 662.57,-408.41 653.42,-403.08 652.09,-409.95"></polygon>
+</g>
+<!-- mdast&#45;util&#45;to&#45;hast@13.2.0&#45;&gt;@types/hast@3.0.4 -->
+<g id="edge39" class="edge">
+<title>mdast-util-to-hast@13.2.0-&gt;@types/hast@3.0.4</title>
+<path fill="none" stroke="black" d="M576.59,-241.42C583.72,-244.65 590.36,-248.89 595.71,-254.48 641.35,-302.12 584.93,-351.96 631.71,-398.48 637.74,-404.48 645.34,-408.7 653.4,-411.64"></path>
+<polygon fill="black" stroke="black" points="652.15,-414.92 662.73,-414.39 654.13,-408.21 652.15,-414.92"></polygon>
+</g>
+<!-- @types/mdast@4.0.4 -->
+<g id="node26" class="node" data-module="@types/mdast@4.0.4">
+<title>@types/mdast@4.0.4</title>
+<g id="a_node26"><a xlink:href="https://npmgraph.js.org/?q=%40types%2Fmdast%404.0.4" xlink:title="@types/mdast@4.0.4">
+<path fill="none" stroke="black" d="M1132.57,-278.96C1132.57,-278.96 1044.64,-278.96 1044.64,-278.96 1041.48,-278.96 1038.32,-275.8 1038.32,-272.64 1038.32,-272.64 1038.32,-266.32 1038.32,-266.32 1038.32,-263.16 1041.48,-260 1044.64,-260 1044.64,-260 1132.57,-260 1132.57,-260 1135.73,-260 1138.89,-263.16 1138.89,-266.32 1138.89,-266.32 1138.89,-272.64 1138.89,-272.64 1138.89,-275.8 1135.73,-278.96 1132.57,-278.96"></path>
+<text text-anchor="middle" x="1088.6" y="-266.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">@types/mdast@4.0.4</text>
+</a>
+</g>
+</g>
+<!-- mdast&#45;util&#45;to&#45;hast@13.2.0&#45;&gt;@types/mdast@4.0.4 -->
+<g id="edge42" class="edge">
+<title>mdast-util-to-hast@13.2.0-&gt;@types/mdast@4.0.4</title>
+<path fill="none" stroke="black" d="M578.12,-239.68C595.39,-241.82 614.28,-243.95 631.71,-245.48 772.82,-257.87 939.11,-264.66 1026.64,-267.63"></path>
+<polygon fill="black" stroke="black" points="1026.32,-271.12 1036.43,-267.95 1026.55,-264.12 1026.32,-271.12"></polygon>
+</g>
+<!-- @ungap/structured&#45;clone@1.3.0 -->
+<g id="node27" class="node" data-module="@ungap/structured-clone@1.3.0">
+<title>@ungap/structured-clone@1.3.0</title>
+<g id="a_node27"><a xlink:href="https://npmgraph.js.org/?q=%40ungap%2Fstructured-clone%401.3.0" xlink:title="@ungap/structured-clone@1.3.0">
+<path fill="none" stroke="black" d="M778.91,-203.96C778.91,-203.96 642.13,-203.96 642.13,-203.96 638.97,-203.96 635.81,-200.8 635.81,-197.64 635.81,-197.64 635.81,-191.32 635.81,-191.32 635.81,-188.16 638.97,-185 642.13,-185 642.13,-185 778.91,-185 778.91,-185 782.07,-185 785.23,-188.16 785.23,-191.32 785.23,-191.32 785.23,-197.64 785.23,-197.64 785.23,-200.8 782.07,-203.96 778.91,-203.96"></path>
+<text text-anchor="middle" x="710.52" y="-191.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">@ungap/structured-clone@1.3.0</text>
+</a>
+</g>
+</g>
+<!-- mdast&#45;util&#45;to&#45;hast@13.2.0&#45;&gt;@ungap/structured&#45;clone@1.3.0 -->
+<g id="edge41" class="edge">
+<title>mdast-util-to-hast@13.2.0-&gt;@ungap/structured-clone@1.3.0</title>
+<path fill="none" stroke="black" d="M569.59,-221.52C593.41,-216.91 621.91,-211.41 646.96,-206.57"></path>
+<polygon fill="black" stroke="black" points="647.55,-210.02 656.7,-204.68 646.22,-203.15 647.55,-210.02"></polygon>
+</g>
+<!-- devlop@1.1.0 -->
+<g id="node30" class="node" data-module="devlop@1.1.0">
+<title>devlop@1.1.0</title>
+<g id="a_node30"><a xlink:href="https://npmgraph.js.org/?q=devlop%401.1.0" xlink:title="devlop@1.1.0">
+<path fill="none" stroke="black" d="M738.11,-92.96C738.11,-92.96 682.93,-92.96 682.93,-92.96 679.77,-92.96 676.61,-89.8 676.61,-86.64 676.61,-86.64 676.61,-80.32 676.61,-80.32 676.61,-77.16 679.77,-74 682.93,-74 682.93,-74 738.11,-74 738.11,-74 741.27,-74 744.43,-77.16 744.43,-80.32 744.43,-80.32 744.43,-86.64 744.43,-86.64 744.43,-89.8 741.27,-92.96 738.11,-92.96"></path>
+<text text-anchor="middle" x="710.52" y="-80.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">devlop@1.1.0</text>
+</a>
+</g>
+</g>
+<!-- mdast&#45;util&#45;to&#45;hast@13.2.0&#45;&gt;devlop@1.1.0 -->
+<g id="edge44" class="edge">
+<title>mdast-util-to-hast@13.2.0-&gt;devlop@1.1.0</title>
+<path fill="none" stroke="black" d="M523.73,-221.58C538.34,-197.2 579.6,-134 631.71,-102.48 641.79,-96.38 653.73,-92.24 665.18,-89.42"></path>
+<polygon fill="black" stroke="black" points="665.87,-92.86 674.91,-87.35 664.4,-86.01 665.87,-92.86"></polygon>
+</g>
+<!-- micromark&#45;util&#45;sanitize&#45;uri@2.0.1 -->
+<g id="node31" class="node" data-module="micromark-util-sanitize-uri@2.0.1">
+<title>micromark-util-sanitize-uri@2.0.1</title>
+<g id="a_node31"><a xlink:href="https://npmgraph.js.org/?q=micromark-util-sanitize-uri%402.0.1" xlink:title="micromark-util-sanitize-uri@2.0.1">
+<path fill="none" stroke="black" d="M783.01,-389.96C783.01,-389.96 638.03,-389.96 638.03,-389.96 634.87,-389.96 631.71,-386.8 631.71,-383.64 631.71,-383.64 631.71,-377.32 631.71,-377.32 631.71,-374.16 634.87,-371 638.03,-371 638.03,-371 783.01,-371 783.01,-371 786.17,-371 789.33,-374.16 789.33,-377.32 789.33,-377.32 789.33,-383.64 789.33,-383.64 789.33,-386.8 786.17,-389.96 783.01,-389.96"></path>
+<text text-anchor="middle" x="710.52" y="-377.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">micromark-util-sanitize-uri@2.0.1</text>
+</a>
+</g>
+</g>
+<!-- mdast&#45;util&#45;to&#45;hast@13.2.0&#45;&gt;micromark&#45;util&#45;sanitize&#45;uri@2.0.1 -->
+<g id="edge46" class="edge">
+<title>mdast-util-to-hast@13.2.0-&gt;micromark-util-sanitize-uri@2.0.1</title>
+<path fill="none" stroke="black" d="M572.27,-241.35C580.71,-244.56 588.88,-248.83 595.71,-254.48 622.65,-276.8 608.88,-297.97 631.71,-324.48 645.74,-340.77 665.43,-354.88 681.49,-364.86"></path>
+<polygon fill="black" stroke="black" points="679.26,-367.61 689.64,-369.75 682.86,-361.6 679.26,-367.61"></polygon>
+</g>
+<!-- trim&#45;lines@3.0.1 -->
+<g id="node33" class="node" data-module="trim-lines@3.0.1">
+<title>trim-lines@3.0.1</title>
+<g id="a_node33"><a xlink:href="https://npmgraph.js.org/?q=trim-lines%403.0.1" xlink:title="trim-lines@3.0.1">
+<path fill="none" stroke="black" d="M744.53,-129.96C744.53,-129.96 676.51,-129.96 676.51,-129.96 673.35,-129.96 670.19,-126.8 670.19,-123.64 670.19,-123.64 670.19,-117.32 670.19,-117.32 670.19,-114.16 673.35,-111 676.51,-111 676.51,-111 744.53,-111 744.53,-111 747.69,-111 750.85,-114.16 750.85,-117.32 750.85,-117.32 750.85,-123.64 750.85,-123.64 750.85,-126.8 747.69,-129.96 744.53,-129.96"></path>
+<text text-anchor="middle" x="710.52" y="-117.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">trim-lines@3.0.1</text>
+</a>
+</g>
+</g>
+<!-- mdast&#45;util&#45;to&#45;hast@13.2.0&#45;&gt;trim&#45;lines@3.0.1 -->
+<g id="edge40" class="edge">
+<title>mdast-util-to-hast@13.2.0-&gt;trim-lines@3.0.1</title>
+<path fill="none" stroke="black" d="M527.03,-221.75C545.04,-202.9 587.57,-161.34 631.71,-139.48 640.22,-135.27 649.72,-131.95 659.09,-129.35"></path>
+<polygon fill="black" stroke="black" points="659.64,-132.82 668.48,-126.98 657.93,-126.03 659.64,-132.82"></polygon>
+</g>
+<!-- unist&#45;util&#45;position@5.0.0 -->
+<g id="node34" class="node" data-module="unist-util-position@5.0.0">
+<title>unist-util-position@5.0.0</title>
+<g id="a_node34"><a xlink:href="https://npmgraph.js.org/?q=unist-util-position%405.0.0" xlink:title="unist-util-position@5.0.0">
+<path fill="none" stroke="black" d="M951.59,-240.96C951.59,-240.96 847.51,-240.96 847.51,-240.96 844.35,-240.96 841.19,-237.8 841.19,-234.64 841.19,-234.64 841.19,-228.32 841.19,-228.32 841.19,-225.16 844.35,-222 847.51,-222 847.51,-222 951.59,-222 951.59,-222 954.75,-222 957.91,-225.16 957.91,-228.32 957.91,-228.32 957.91,-234.64 957.91,-234.64 957.91,-237.8 954.75,-240.96 951.59,-240.96"></path>
+<text text-anchor="middle" x="899.55" y="-228.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">unist-util-position@5.0.0</text>
+</a>
+</g>
+</g>
+<!-- mdast&#45;util&#45;to&#45;hast@13.2.0&#45;&gt;unist&#45;util&#45;position@5.0.0 -->
+<g id="edge43" class="edge">
+<title>mdast-util-to-hast@13.2.0-&gt;unist-util-position@5.0.0</title>
+<path fill="none" stroke="black" d="M578.31,-231.48C646.65,-231.48 757.82,-231.48 829.56,-231.48"></path>
+<polygon fill="black" stroke="black" points="829.2,-234.98 839.2,-231.48 829.2,-227.98 829.2,-234.98"></polygon>
+</g>
+<!-- unist&#45;util&#45;visit@5.0.0 -->
+<g id="node35" class="node" data-module="unist-util-visit@5.0.0">
+<title>unist-util-visit@5.0.0</title>
+<g id="a_node35"><a xlink:href="https://npmgraph.js.org/?q=unist-util-visit%405.0.0" xlink:title="unist-util-visit@5.0.0">
+<path fill="none" stroke="black" d="M754.31,-166.96C754.31,-166.96 666.73,-166.96 666.73,-166.96 663.57,-166.96 660.41,-163.8 660.41,-160.64 660.41,-160.64 660.41,-154.32 660.41,-154.32 660.41,-151.16 663.57,-148 666.73,-148 666.73,-148 754.31,-148 754.31,-148 757.47,-148 760.63,-151.16 760.63,-154.32 760.63,-154.32 760.63,-160.64 760.63,-160.64 760.63,-163.8 757.47,-166.96 754.31,-166.96"></path>
+<text text-anchor="middle" x="710.52" y="-154.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">unist-util-visit@5.0.0</text>
+</a>
+</g>
+</g>
+<!-- mdast&#45;util&#45;to&#45;hast@13.2.0&#45;&gt;unist&#45;util&#45;visit@5.0.0 -->
+<g id="edge45" class="edge">
+<title>mdast-util-to-hast@13.2.0-&gt;unist-util-visit@5.0.0</title>
+<path fill="none" stroke="black" d="M535.63,-221.51C557.55,-209.44 596.42,-189.16 631.71,-176.48 637.91,-174.25 644.49,-172.19 651.08,-170.33"></path>
+<polygon fill="black" stroke="black" points="651.93,-173.72 660.68,-167.75 650.11,-166.96 651.93,-173.72"></polygon>
+</g>
+<!-- vfile@6.0.3 -->
+<g id="node36" class="node" data-module="vfile@6.0.3">
+<title>vfile@6.0.3</title>
+<g id="a_node36"><a xlink:href="https://npmgraph.js.org/?q=vfile%406.0.3" xlink:title="vfile@6.0.3">
+<path fill="none" stroke="black" d="M733.22,-315.96C733.22,-315.96 687.82,-315.96 687.82,-315.96 684.66,-315.96 681.5,-312.8 681.5,-309.64 681.5,-309.64 681.5,-303.32 681.5,-303.32 681.5,-300.16 684.66,-297 687.82,-297 687.82,-297 733.22,-297 733.22,-297 736.38,-297 739.54,-300.16 739.54,-303.32 739.54,-303.32 739.54,-309.64 739.54,-309.64 739.54,-312.8 736.38,-315.96 733.22,-315.96"></path>
+<text text-anchor="middle" x="710.52" y="-303.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">vfile@6.0.3</text>
+</a>
+</g>
+</g>
+<!-- mdast&#45;util&#45;to&#45;hast@13.2.0&#45;&gt;vfile@6.0.3 -->
+<g id="edge47" class="edge">
+<title>mdast-util-to-hast@13.2.0-&gt;vfile@6.0.3</title>
+<path fill="none" stroke="black" d="M562.34,-241.37C573.57,-244.73 585.37,-249.06 595.71,-254.48 613.91,-264.02 613.51,-273.94 631.71,-283.48 643.68,-289.75 657.6,-294.55 670.33,-298.1"></path>
+<polygon fill="black" stroke="black" points="669.11,-301.4 679.67,-300.53 670.87,-294.63 669.11,-301.4"></polygon>
+</g>
+<!-- regex&#45;utilities@2.3.0 -->
+<g id="node32" class="node" data-module="regex-utilities@2.3.0">
+<title>regex-utilities@2.3.0</title>
+<g id="a_node32"><a xlink:href="https://npmgraph.js.org/?q=regex-utilities%402.3.0" xlink:title="regex-utilities@2.3.0">
+<path fill="none" stroke="black" d="M753.69,-853.96C753.69,-853.96 667.35,-853.96 667.35,-853.96 664.19,-853.96 661.03,-850.8 661.03,-847.64 661.03,-847.64 661.03,-841.32 661.03,-841.32 661.03,-838.16 664.19,-835 667.35,-835 667.35,-835 753.69,-835 753.69,-835 756.85,-835 760.01,-838.16 760.01,-841.32 760.01,-841.32 760.01,-847.64 760.01,-847.64 760.01,-850.8 756.85,-853.96 753.69,-853.96"></path>
+<text text-anchor="middle" x="710.52" y="-841.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">regex-utilities@2.3.0</text>
+</a>
+</g>
+</g>
+<!-- regex&#45;recursion@6.0.2&#45;&gt;regex&#45;utilities@2.3.0 -->
+<g id="edge48" class="edge">
+<title>regex-recursion@6.0.2-&gt;regex-utilities@2.3.0</title>
+<path fill="none" stroke="black" d="M570.85,-858.24C595.24,-855.82 624.31,-852.93 649.52,-850.43"></path>
+<polygon fill="black" stroke="black" points="649.68,-853.93 659.29,-849.46 648.99,-846.97 649.68,-853.93"></polygon>
+</g>
+<!-- regex@6.0.1&#45;&gt;regex&#45;utilities@2.3.0 -->
+<g id="edge49" class="edge">
+<title>regex@6.0.1-&gt;regex-utilities@2.3.0</title>
+<path fill="none" stroke="black" d="M548.36,-829.33C575.46,-831.88 615.95,-835.69 649.56,-838.84"></path>
+<polygon fill="black" stroke="black" points="648.88,-842.3 659.16,-839.75 649.54,-835.33 648.88,-842.3"></polygon>
+</g>
+<!-- character&#45;entities&#45;html4@2.1.0 -->
+<g id="node28" class="node" data-module="character-entities-html4@2.1.0">
+<title>character-entities-html4@2.1.0</title>
+<g id="a_node28"><a xlink:href="https://npmgraph.js.org/?q=character-entities-html4%402.1.0" xlink:title="character-entities-html4@2.1.0">
+<path fill="none" stroke="black" d="M775.67,-55.96C775.67,-55.96 645.37,-55.96 645.37,-55.96 642.21,-55.96 639.05,-52.8 639.05,-49.64 639.05,-49.64 639.05,-43.32 639.05,-43.32 639.05,-40.16 642.21,-37 645.37,-37 645.37,-37 775.67,-37 775.67,-37 778.83,-37 781.99,-40.16 781.99,-43.32 781.99,-43.32 781.99,-49.64 781.99,-49.64 781.99,-52.8 778.83,-55.96 775.67,-55.96"></path>
+<text text-anchor="middle" x="710.52" y="-43.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">character-entities-html4@2.1.0</text>
+</a>
+</g>
+</g>
+<!-- stringify&#45;entities@4.0.4&#45;&gt;character&#45;entities&#45;html4@2.1.0 -->
+<g id="edge51" class="edge">
+<title>stringify-entities@4.0.4-&gt;character-entities-html4@2.1.0</title>
+<path fill="none" stroke="black" d="M572.64,-46.48C589.67,-46.48 608.84,-46.48 627.32,-46.48"></path>
+<polygon fill="black" stroke="black" points="627.2,-49.98 637.2,-46.48 627.2,-42.98 627.2,-49.98"></polygon>
+</g>
+<!-- character&#45;entities&#45;legacy@3.0.0 -->
+<g id="node29" class="node" data-module="character-entities-legacy@3.0.0">
+<title>character-entities-legacy@3.0.0</title>
+<g id="a_node29"><a xlink:href="https://npmgraph.js.org/?q=character-entities-legacy%403.0.0" xlink:title="character-entities-legacy@3.0.0">
+<path fill="none" stroke="black" d="M777.19,-18.96C777.19,-18.96 643.85,-18.96 643.85,-18.96 640.69,-18.96 637.53,-15.8 637.53,-12.64 637.53,-12.64 637.53,-6.32 637.53,-6.32 637.53,-3.16 640.69,0 643.85,0 643.85,0 777.19,0 777.19,0 780.35,0 783.51,-3.16 783.51,-6.32 783.51,-6.32 783.51,-12.64 783.51,-12.64 783.51,-15.8 780.35,-18.96 777.19,-18.96"></path>
+<text text-anchor="middle" x="710.52" y="-6.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">character-entities-legacy@3.0.0</text>
+</a>
+</g>
+</g>
+<!-- stringify&#45;entities@4.0.4&#45;&gt;character&#45;entities&#45;legacy@3.0.0 -->
+<g id="edge50" class="edge">
+<title>stringify-entities@4.0.4-&gt;character-entities-legacy@3.0.0</title>
+<path fill="none" stroke="black" d="M569.59,-36.52C593.41,-31.91 621.91,-26.41 646.96,-21.57"></path>
+<polygon fill="black" stroke="black" points="647.55,-25.02 656.7,-19.68 646.22,-18.15 647.55,-25.02"></polygon>
+</g>
+<!-- @types/mdast@4.0.4&#45;&gt;@types/unist@3.0.3 -->
+<g id="edge52" class="edge">
+<title>@types/mdast@4.0.4-&gt;@types/unist@3.0.3</title>
+<path fill="none" stroke="black" d="M1139.12,-275.03C1155.84,-276.9 1174.65,-279.01 1191.98,-280.95"></path>
+<polygon fill="black" stroke="black" points="1191.29,-284.39 1201.62,-282.03 1192.07,-277.44 1191.29,-284.39"></polygon>
+</g>
+<!-- dequal@2.0.3 -->
+<g id="node37" class="node" data-module="dequal@2.0.3">
+<title>dequal@2.0.3</title>
+<g id="a_node37"><a xlink:href="https://npmgraph.js.org/?q=dequal%402.0.3" xlink:title="dequal@2.0.3">
+<path fill="none" stroke="black" d="M926.84,-92.96C926.84,-92.96 872.27,-92.96 872.27,-92.96 869.11,-92.96 865.95,-89.8 865.95,-86.64 865.95,-86.64 865.95,-80.32 865.95,-80.32 865.95,-77.16 869.11,-74 872.27,-74 872.27,-74 926.84,-74 926.84,-74 930,-74 933.16,-77.16 933.16,-80.32 933.16,-80.32 933.16,-86.64 933.16,-86.64 933.16,-89.8 930,-92.96 926.84,-92.96"></path>
+<text text-anchor="middle" x="899.55" y="-80.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">dequal@2.0.3</text>
+</a>
+</g>
+</g>
+<!-- devlop@1.1.0&#45;&gt;dequal@2.0.3 -->
+<g id="edge53" class="edge">
+<title>devlop@1.1.0-&gt;dequal@2.0.3</title>
+<path fill="none" stroke="black" d="M744.53,-83.48C775.01,-83.48 820.54,-83.48 854.19,-83.48"></path>
+<polygon fill="black" stroke="black" points="854.05,-86.98 864.05,-83.48 854.05,-79.98 854.05,-86.98"></polygon>
+</g>
+<!-- micromark&#45;util&#45;character@2.1.1 -->
+<g id="node38" class="node" data-module="micromark-util-character@2.1.1">
+<title>micromark-util-character@2.1.1</title>
+<g id="a_node38"><a xlink:href="https://npmgraph.js.org/?q=micromark-util-character%402.1.1" xlink:title="micromark-util-character@2.1.1">
+<path fill="none" stroke="black" d="M967.45,-463.96C967.45,-463.96 831.65,-463.96 831.65,-463.96 828.49,-463.96 825.33,-460.8 825.33,-457.64 825.33,-457.64 825.33,-451.32 825.33,-451.32 825.33,-448.16 828.49,-445 831.65,-445 831.65,-445 967.45,-445 967.45,-445 970.61,-445 973.77,-448.16 973.77,-451.32 973.77,-451.32 973.77,-457.64 973.77,-457.64 973.77,-460.8 970.61,-463.96 967.45,-463.96"></path>
+<text text-anchor="middle" x="899.55" y="-451.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">micromark-util-character@2.1.1</text>
+</a>
+</g>
+</g>
+<!-- micromark&#45;util&#45;sanitize&#45;uri@2.0.1&#45;&gt;micromark&#45;util&#45;character@2.1.1 -->
+<g id="edge56" class="edge">
+<title>micromark-util-sanitize-uri@2.0.1-&gt;micromark-util-character@2.1.1</title>
+<path fill="none" stroke="black" d="M766.75,-390.4C774.56,-392.81 782.31,-395.8 789.33,-399.48 808.29,-409.42 806.71,-420.93 825.33,-431.48 831.72,-435.1 838.75,-438.23 845.85,-440.9"></path>
+<polygon fill="black" stroke="black" points="844.21,-444.04 854.8,-444.02 846.5,-437.43 844.21,-444.04"></polygon>
+</g>
+<!-- micromark&#45;util&#45;encode@2.0.1 -->
+<g id="node39" class="node" data-module="micromark-util-encode@2.0.1">
+<title>micromark-util-encode@2.0.1</title>
+<g id="a_node39"><a xlink:href="https://npmgraph.js.org/?q=micromark-util-encode%402.0.1" xlink:title="micromark-util-encode@2.0.1">
+<path fill="none" stroke="black" d="M962.88,-389.96C962.88,-389.96 836.23,-389.96 836.23,-389.96 833.07,-389.96 829.91,-386.8 829.91,-383.64 829.91,-383.64 829.91,-377.32 829.91,-377.32 829.91,-374.16 833.07,-371 836.23,-371 836.23,-371 962.88,-371 962.88,-371 966.04,-371 969.2,-374.16 969.2,-377.32 969.2,-377.32 969.2,-383.64 969.2,-383.64 969.2,-386.8 966.04,-389.96 962.88,-389.96"></path>
+<text text-anchor="middle" x="899.55" y="-377.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">micromark-util-encode@2.0.1</text>
+</a>
+</g>
+</g>
+<!-- micromark&#45;util&#45;sanitize&#45;uri@2.0.1&#45;&gt;micromark&#45;util&#45;encode@2.0.1 -->
+<g id="edge54" class="edge">
+<title>micromark-util-sanitize-uri@2.0.1-&gt;micromark-util-encode@2.0.1</title>
+<path fill="none" stroke="black" d="M789.75,-380.48C799.15,-380.48 808.75,-380.48 818.18,-380.48"></path>
+<polygon fill="black" stroke="black" points="818.04,-383.98 828.04,-380.48 818.04,-376.98 818.04,-383.98"></polygon>
+</g>
+<!-- micromark&#45;util&#45;symbol@2.0.1 -->
+<g id="node40" class="node" data-module="micromark-util-symbol@2.0.1">
+<title>micromark-util-symbol@2.0.1</title>
+<g id="a_node40"><a xlink:href="https://npmgraph.js.org/?q=micromark-util-symbol%402.0.1" xlink:title="micromark-util-symbol@2.0.1">
+<path fill="none" stroke="black" d="M1152.55,-426.96C1152.55,-426.96 1024.65,-426.96 1024.65,-426.96 1021.49,-426.96 1018.33,-423.8 1018.33,-420.64 1018.33,-420.64 1018.33,-414.32 1018.33,-414.32 1018.33,-411.16 1021.49,-408 1024.65,-408 1024.65,-408 1152.55,-408 1152.55,-408 1155.71,-408 1158.87,-411.16 1158.87,-414.32 1158.87,-414.32 1158.87,-420.64 1158.87,-420.64 1158.87,-423.8 1155.71,-426.96 1152.55,-426.96"></path>
+<text text-anchor="middle" x="1088.6" y="-414.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">micromark-util-symbol@2.0.1</text>
+</a>
+</g>
+</g>
+<!-- micromark&#45;util&#45;sanitize&#45;uri@2.0.1&#45;&gt;micromark&#45;util&#45;symbol@2.0.1 -->
+<g id="edge55" class="edge">
+<title>micromark-util-sanitize-uri@2.0.1-&gt;micromark-util-symbol@2.0.1</title>
+<path fill="none" stroke="black" d="M768.41,-390.45C786.56,-393.36 806.75,-396.34 825.33,-398.48 885.84,-405.44 954.51,-410.31 1006.4,-413.37"></path>
+<polygon fill="black" stroke="black" points="1006.18,-416.87 1016.36,-413.95 1006.58,-409.88 1006.18,-416.87"></polygon>
+</g>
+<!-- unist&#45;util&#45;position@5.0.0&#45;&gt;@types/unist@3.0.3 -->
+<g id="edge57" class="edge">
+<title>unist-util-position@5.0.0-&gt;@types/unist@3.0.3</title>
+<path fill="none" stroke="black" d="M958.17,-230.29C1012.82,-230.44 1096.84,-234.03 1167.43,-251.48 1186.48,-256.19 1206.7,-264.9 1222.4,-272.57"></path>
+<polygon fill="black" stroke="black" points="1220.61,-275.59 1231.12,-276.97 1223.77,-269.34 1220.61,-275.59"></polygon>
+</g>
+<!-- unist&#45;util&#45;visit@5.0.0&#45;&gt;@types/unist@3.0.3 -->
+<g id="edge58" class="edge">
+<title>unist-util-visit@5.0.0-&gt;@types/unist@3.0.3</title>
+<path fill="none" stroke="black" d="M761.09,-165.39C781.05,-168.55 804.28,-172.22 825.33,-175.48 977.31,-199.05 1025.12,-169.18 1167.43,-227.48 1191.89,-237.5 1215.9,-256.14 1231.73,-270"></path>
+<polygon fill="black" stroke="black" points="1229.15,-272.38 1238.92,-276.49 1233.84,-267.19 1229.15,-272.38"></polygon>
+</g>
+<!-- unist&#45;util&#45;is@6.0.0 -->
+<g id="node41" class="node" data-module="unist-util-is@6.0.0">
+<title>unist-util-is@6.0.0</title>
+<g id="a_node41"><a xlink:href="https://npmgraph.js.org/?q=unist-util-is%406.0.0" xlink:title="unist-util-is@6.0.0">
+<path fill="none" stroke="black" d="M1126.59,-128.96C1126.59,-128.96 1050.61,-128.96 1050.61,-128.96 1047.45,-128.96 1044.29,-125.8 1044.29,-122.64 1044.29,-122.64 1044.29,-116.32 1044.29,-116.32 1044.29,-113.16 1047.45,-110 1050.61,-110 1050.61,-110 1126.59,-110 1126.59,-110 1129.75,-110 1132.91,-113.16 1132.91,-116.32 1132.91,-116.32 1132.91,-122.64 1132.91,-122.64 1132.91,-125.8 1129.75,-128.96 1126.59,-128.96"></path>
+<text text-anchor="middle" x="1088.6" y="-116.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">unist-util-is@6.0.0</text>
+</a>
+</g>
+</g>
+<!-- unist&#45;util&#45;visit@5.0.0&#45;&gt;unist&#45;util&#45;is@6.0.0 -->
+<g id="edge59" class="edge">
+<title>unist-util-visit@5.0.0-&gt;unist-util-is@6.0.0</title>
+<path fill="none" stroke="black" d="M760.98,-148.77C780.92,-145.49 804.17,-141.96 825.33,-139.48 896.74,-131.12 979.52,-125.48 1032.67,-122.37"></path>
+<polygon fill="black" stroke="black" points="1032.58,-125.89 1042.37,-121.82 1032.18,-118.9 1032.58,-125.89"></polygon>
+</g>
+<!-- unist&#45;util&#45;visit&#45;parents@6.0.1 -->
+<g id="node42" class="node" data-module="unist-util-visit-parents@6.0.1">
+<title>unist-util-visit-parents@6.0.1</title>
+<g id="a_node42"><a xlink:href="https://npmgraph.js.org/?q=unist-util-visit-parents%406.0.1" xlink:title="unist-util-visit-parents@6.0.1">
+<path fill="none" stroke="black" d="M961.06,-166.96C961.06,-166.96 838.04,-166.96 838.04,-166.96 834.88,-166.96 831.72,-163.8 831.72,-160.64 831.72,-160.64 831.72,-154.32 831.72,-154.32 831.72,-151.16 834.88,-148 838.04,-148 838.04,-148 961.06,-148 961.06,-148 964.22,-148 967.38,-151.16 967.38,-154.32 967.38,-154.32 967.38,-160.64 967.38,-160.64 967.38,-163.8 964.22,-166.96 961.06,-166.96"></path>
+<text text-anchor="middle" x="899.55" y="-154.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">unist-util-visit-parents@6.0.1</text>
+</a>
+</g>
+</g>
+<!-- unist&#45;util&#45;visit@5.0.0&#45;&gt;unist&#45;util&#45;visit&#45;parents@6.0.1 -->
+<g id="edge60" class="edge">
+<title>unist-util-visit@5.0.0-&gt;unist-util-visit-parents@6.0.1</title>
+<path fill="none" stroke="black" d="M760.66,-157.48C778.84,-157.48 799.93,-157.48 820.07,-157.48"></path>
+<polygon fill="black" stroke="black" points="819.94,-160.98 829.94,-157.48 819.94,-153.98 819.94,-160.98"></polygon>
+</g>
+<!-- vfile@6.0.3&#45;&gt;@types/unist@3.0.3 -->
+<g id="edge61" class="edge">
+<title>vfile@6.0.3-&gt;@types/unist@3.0.3</title>
+<path fill="none" stroke="black" d="M739.99,-313.39C827.02,-333.98 1088.39,-391.64 1167.43,-361.48 1196.43,-350.41 1221.71,-324.01 1236.49,-305.93"></path>
+<polygon fill="black" stroke="black" points="1238.86,-308.58 1242.29,-298.55 1233.36,-304.25 1238.86,-308.58"></polygon>
+</g>
+<!-- vfile&#45;message@4.0.2 -->
+<g id="node43" class="node" data-module="vfile-message@4.0.2">
+<title>vfile-message@4.0.2</title>
+<g id="a_node43"><a xlink:href="https://npmgraph.js.org/?q=vfile-message%404.0.2" xlink:title="vfile-message@4.0.2">
+<path fill="none" stroke="black" d="M942.72,-315.96C942.72,-315.96 856.38,-315.96 856.38,-315.96 853.22,-315.96 850.06,-312.8 850.06,-309.64 850.06,-309.64 850.06,-303.32 850.06,-303.32 850.06,-300.16 853.22,-297 856.38,-297 856.38,-297 942.72,-297 942.72,-297 945.88,-297 949.04,-300.16 949.04,-303.32 949.04,-303.32 949.04,-309.64 949.04,-309.64 949.04,-312.8 945.88,-315.96 942.72,-315.96"></path>
+<text text-anchor="middle" x="899.55" y="-303.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">vfile-message@4.0.2</text>
+</a>
+</g>
+</g>
+<!-- vfile@6.0.3&#45;&gt;vfile&#45;message@4.0.2 -->
+<g id="edge62" class="edge">
+<title>vfile@6.0.3-&gt;vfile-message@4.0.2</title>
+<path fill="none" stroke="black" d="M739.93,-306.48C765.98,-306.48 805.42,-306.48 838.45,-306.48"></path>
+<polygon fill="black" stroke="black" points="838.32,-309.98 848.32,-306.48 838.32,-302.98 838.32,-309.98"></polygon>
+</g>
+<!-- micromark&#45;util&#45;character@2.1.1&#45;&gt;micromark&#45;util&#45;symbol@2.0.1 -->
+<g id="edge63" class="edge">
+<title>micromark-util-character@2.1.1-&gt;micromark-util-symbol@2.0.1</title>
+<path fill="none" stroke="black" d="M950.68,-444.56C973.95,-439.96 1001.83,-434.45 1026.34,-429.6"></path>
+<polygon fill="black" stroke="black" points="1026.72,-433.09 1035.85,-427.72 1025.36,-426.22 1026.72,-433.09"></polygon>
+</g>
+<!-- micromark&#45;util&#45;types@2.0.2 -->
+<g id="node44" class="node" data-module="micromark-util-types@2.0.2">
+<title>micromark-util-types@2.0.2</title>
+<g id="a_node44"><a xlink:href="https://npmgraph.js.org/?q=micromark-util-types%402.0.2" xlink:title="micromark-util-types@2.0.2">
+<path fill="none" stroke="black" d="M1147.96,-463.96C1147.96,-463.96 1029.24,-463.96 1029.24,-463.96 1026.08,-463.96 1022.92,-460.8 1022.92,-457.64 1022.92,-457.64 1022.92,-451.32 1022.92,-451.32 1022.92,-448.16 1026.08,-445 1029.24,-445 1029.24,-445 1147.96,-445 1147.96,-445 1151.12,-445 1154.28,-448.16 1154.28,-451.32 1154.28,-451.32 1154.28,-457.64 1154.28,-457.64 1154.28,-460.8 1151.12,-463.96 1147.96,-463.96"></path>
+<text text-anchor="middle" x="1088.6" y="-451.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">micromark-util-types@2.0.2</text>
+</a>
+</g>
+</g>
+<!-- micromark&#45;util&#45;character@2.1.1&#45;&gt;micromark&#45;util&#45;types@2.0.2 -->
+<g id="edge64" class="edge">
+<title>micromark-util-character@2.1.1-&gt;micromark-util-types@2.0.2</title>
+<path fill="none" stroke="black" d="M974.21,-454.48C986.3,-454.48 998.85,-454.48 1011,-454.48"></path>
+<polygon fill="black" stroke="black" points="1010.99,-457.98 1020.99,-454.48 1010.99,-450.98 1010.99,-457.98"></polygon>
+</g>
+<!-- unist&#45;util&#45;is@6.0.0&#45;&gt;@types/unist@3.0.3 -->
+<g id="edge65" class="edge">
+<title>unist-util-is@6.0.0-&gt;@types/unist@3.0.3</title>
+<path fill="none" stroke="black" d="M1133.2,-126.14C1145.2,-129.55 1157.6,-134.7 1167.43,-142.48 1208.98,-175.36 1233.43,-235.19 1244.02,-266.73"></path>
+<polygon fill="black" stroke="black" points="1240.67,-267.77 1247.05,-276.23 1247.34,-265.64 1240.67,-267.77"></polygon>
+</g>
+<!-- unist&#45;util&#45;visit&#45;parents@6.0.1&#45;&gt;@types/unist@3.0.3 -->
+<g id="edge66" class="edge">
+<title>unist-util-visit-parents@6.0.1-&gt;@types/unist@3.0.3</title>
+<path fill="none" stroke="black" d="M967.86,-148.91C1024.54,-144.93 1105.98,-146.99 1167.43,-180.48 1203.21,-199.98 1228.54,-242.17 1241.15,-267.35"></path>
+<polygon fill="black" stroke="black" points="1237.92,-268.71 1245.39,-276.22 1244.23,-265.69 1237.92,-268.71"></polygon>
+</g>
+<!-- unist&#45;util&#45;visit&#45;parents@6.0.1&#45;&gt;unist&#45;util&#45;is@6.0.0 -->
+<g id="edge67" class="edge">
+<title>unist-util-visit-parents@6.0.1-&gt;unist-util-is@6.0.0</title>
+<path fill="none" stroke="black" d="M949.21,-147.6C974.88,-142.38 1006.45,-135.97 1032.96,-130.58"></path>
+<polygon fill="black" stroke="black" points="1033.39,-134.06 1042.5,-128.64 1032,-127.2 1033.39,-134.06"></polygon>
+</g>
+<!-- vfile&#45;message@4.0.2&#45;&gt;@types/unist@3.0.3 -->
+<g id="edge68" class="edge">
+<title>vfile-message@4.0.2-&gt;@types/unist@3.0.3</title>
+<path fill="none" stroke="black" d="M949.18,-303.84C1012.7,-300.39 1123.8,-294.35 1191.82,-290.66"></path>
+<polygon fill="black" stroke="black" points="1191.87,-294.16 1201.67,-290.12 1191.49,-287.17 1191.87,-294.16"></polygon>
+</g>
+<!-- unist&#45;util&#45;stringify&#45;position@4.0.0 -->
+<g id="node45" class="node" data-module="unist-util-stringify-position@4.0.0">
+<title>unist-util-stringify-position@4.0.0</title>
+<g id="a_node45"><a xlink:href="https://npmgraph.js.org/?q=unist-util-stringify-position%404.0.0" xlink:title="unist-util-stringify-position@4.0.0">
+<path fill="none" stroke="black" d="M1161.11,-352.96C1161.11,-352.96 1016.09,-352.96 1016.09,-352.96 1012.93,-352.96 1009.77,-349.8 1009.77,-346.64 1009.77,-346.64 1009.77,-340.32 1009.77,-340.32 1009.77,-337.16 1012.93,-334 1016.09,-334 1016.09,-334 1161.11,-334 1161.11,-334 1164.27,-334 1167.43,-337.16 1167.43,-340.32 1167.43,-340.32 1167.43,-346.64 1167.43,-346.64 1167.43,-349.8 1164.27,-352.96 1161.11,-352.96"></path>
+<text text-anchor="middle" x="1088.6" y="-340.18" font-family="Roboto Condensed, sans-serif" font-size="11.00">unist-util-stringify-position@4.0.0</text>
+</a>
+</g>
+</g>
+<!-- vfile&#45;message@4.0.2&#45;&gt;unist&#45;util&#45;stringify&#45;position@4.0.0 -->
+<g id="edge69" class="edge">
+<title>vfile-message@4.0.2-&gt;unist-util-stringify-position@4.0.0</title>
+<path fill="none" stroke="black" d="M949.21,-316.1C972.68,-320.75 1001.08,-326.37 1026.04,-331.3"></path>
+<polygon fill="black" stroke="black" points="1025.26,-334.72 1035.75,-333.22 1026.62,-327.85 1025.26,-334.72"></polygon>
+</g>
+<!-- unist&#45;util&#45;stringify&#45;position@4.0.0&#45;&gt;@types/unist@3.0.3 -->
+<g id="edge70" class="edge">
+<title>unist-util-stringify-position@4.0.0-&gt;@types/unist@3.0.3</title>
+<path fill="none" stroke="black" d="M1125.86,-333.51C1139.03,-329.7 1153.99,-325.13 1167.43,-320.48 1183.8,-314.82 1201.68,-307.8 1216.62,-301.7"></path>
+<polygon fill="black" stroke="black" points="1217.62,-305.08 1225.53,-298.03 1214.95,-298.6 1217.62,-305.08"></polygon>
+</g>
+</g>
+<style>:root{accent-color:var(--accent);--lightningcss-light:initial;--lightningcss-dark: ;--lightningcss-light:initial;--lightningcss-dark: ;color-scheme:light dark;--grey0:#000;--grey10:#1a1a1a;--grey20:#333;--grey30:#4d4d4d;--grey40:#666;--grey50:gray;--grey60:#999;--grey70:#b3b3b3;--grey80:#ccc;--grey90:#e6e6e6;--grey100:#fff;--root-color:white;--rad_sm:5px;--rad_lg:10px;--inspector-size:32em;--tabs-height:24pt;--bg-gradient:linear-gradient(to bottom,rgba(255,255,255,.2),transparent 100%);--text:#020303;--text-dim:#999;--bg-root:#fff;--bg0:#f1f4f4;--bg1:#bbb;--bg2:#ddd;--tabs-bg:#7e7e7d;--tabs-text:#fff;--tabs-border:rgba(203,203,203,.796);--accent:#da6200;--text-on-accent:#fff;--bg0-shadow-color:color-mix(in hsl,var(--bg0)90%,black);--stroke-L:40%;--stroke-S:100%;--stroke-blue:hsl(180,var(--stroke-S),var(--stroke-L));--stroke-orange:hsl(30,var(--stroke-S),var(--stroke-L));--stroke-green:hsl(120,var(--stroke-S),var(--stroke-L));--stroke-indigo:hsl(240,var(--stroke-S),var(--stroke-L));--stroke-red:hsl(0,var(--stroke-S),var(--stroke-L));--stroke-violet:hsl(300,var(--stroke-S),var(--stroke-L));--stroke-yellow:hsl(60,var(--stroke-S),var(--stroke-L));--bg-L:70%;--bg-S:100%;--bg-dark-L:50%;--bg-dark-S:60%;--bg-blue:hsl(180,var(--bg-S),var(--bg-L));--bg-green:hsl(120,var(--bg-S),var(--bg-L));--bg-indigo:hsl(240,var(--bg-S),var(--bg-L));--bg-orange:hsl(30,var(--bg-S),var(--bg-L));--bg-red:hsl(0,var(--bg-S),var(--bg-L));--bg-violet:hsl(300,var(--bg-S),var(--bg-L));--bg-yellow:hsl(60,var(--bg-S),var(--bg-L));--bg-darkblue:hsl(180,var(--bg-dark-S),var(--bg-dark-L));--bg-darkgreen:hsl(120,var(--bg-dark-S),var(--bg-dark-L));--bg-darkindigo:hsl(240,var(--bg-dark-S),var(--bg-dark-L));--bg-darkorange:hsl(30,var(--bg-dark-S),var(--bg-dark-L));--bg-darkred:hsl(0,var(--bg-dark-S),var(--bg-dark-L));--bg-darkviolet:hsl(300,var(--bg-dark-S),var(--bg-dark-L));--bg-darkyellow:hsl(60,var(--bg-dark-S),var(--bg-dark-L));--transition-duration:.5s}@media (prefers-color-scheme:dark){:root{--lightningcss-light: ;--lightningcss-dark:initial;--grey100:#000;--grey90:#1a1a1a;--grey80:#333;--grey70:#4d4d4d;--grey60:#666;--grey50:gray;--grey40:#999;--grey30:#b3b3b3;--grey20:#ccc;--grey10:#e6e6e6;--grey0:#fff;--root-color:black;--text:#f3f3f3;--text-dim:#766;--bg-root:#111;--bg0:#262222;--bg1:#696666;--bg2:#333;--stroke-L:60%;--bg-L:30%;--bg-dark-L:40%}}html{background:var(--bg-root);font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Cantarell,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:10pt}body{margin:0}#app{width:100vw;height:100svh;display:-ms-flexbox;display:flex}@media (max-aspect-ratio:2/3),(max-width:700px){html,body,#app{height:auto;min-height:100svh}#app{--inspector-size:auto;-ms-flex-direction:column;flex-direction:column}}p{line-height:1.5em}h2{border-radius:var(--rad_sm);font-size:14pt}hr{border:none;border-top:solid 1px var(--bg1);margin-top:1.2em;margin-bottom:1.2em}kbd{color:color-mix(in srgb,currentcolor 30%,transparent);white-space:nowrap;border:1px solid;border-radius:.3em;padding:.2em .3em;line-height:1}footer{color:var(--text-dim);text-align:center}.link{color:var(--accent);text-decoration:underline}</style><style>#graph{-webkit-user-select:none;-ms-user-select:none;user-select:none;--warning0:#f6f6e0;--warning1:#d9d9d9;--stub:red;-ms-flex-positive:1;flex-grow:1;position:relative;overflow:auto}#graph.centered{-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex}#graph.graphviz-loading,#graph.graphviz-failed{text-align:center;margin-top:20vh}#graph.graphviz-failed{color:var(--stroke-red)}@media (max-aspect-ratio:2/3),(max-width:700px){#graph{min-height:80vh}}@media (prefers-color-scheme:dark){#graph{--warning0:#101010;--warning1:#660}}#graph-controls{--padding:6px;gap:1em;display:-ms-flexbox;display:flex;position:fixed;top:auto;bottom:1em;left:1em;right:auto}@media (max-aspect-ratio:2/3),(max-width:700px){#graph-controls{top:1em;bottom:auto;left:auto;right:1em}}#graph-controls button{border:solid 1px var(--bg1);background:var(--bg0);padding:var(--padding);color:var(--text);display:inline-block}#graph-controls button svg{display:block}#graph-controls button.selected{background-color:var(--accent);color:var(--text-on-accent)}#zoom-buttons{display:-ms-flexbox;display:flex}#zoom-fit-width,#download-svg{border-top-left-radius:var(--rad_sm);border-bottom-left-radius:var(--rad_sm);padding-left:calc(var(--padding) + 1px)}#zoom-fit-height,#download-svg{border-top-right-radius:var(--rad_sm);border-bottom-right-radius:var(--rad_sm);padding-right:calc(var(--padding) + 1px)}#zoom-buttons,#download-svg{box-shadow:2px 2px 6px var(--bg0-shadow-color)}svg#graph-diagram{fill:var(--text)}pattern#warning .line0{stroke:var(--warning0)}pattern#warning .line1{stroke:var(--warning1)}g .stub{opacity:.6}g .stub>path{stroke-dasharray:4 4;stroke:var(--stub)}g.node text{fill:var(--text)}g.node path{stroke:var(--text);fill:var(--bg0)}g.node.collapsed{opacity:.5}g.node.selected path{stroke-width:3px;stroke:var(--accent)!important}g.node.downstream path{stroke:var(--accent)}g.node.unselected{opacity:.35}g.node.warning>path{fill:url(#warning)}g.node *{cursor:pointer}g.edge{--selected-edge-width:1}g.edge>path{stroke:var(--text)}g.edge>polygon{stroke:var(--text);fill:var(--text)}g.edge.downstream>path{stroke:var(--accent);stroke-width:var(--selected-edge-width)}g.edge.downstream>polygon{stroke:var(--accent);fill:var(--accent)}g.edge.unselected{opacity:.35}@media print{#graph-controls{display:none}}</style></svg>

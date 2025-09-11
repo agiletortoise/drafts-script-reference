@@ -96,14 +96,14 @@ declare class App {
     selectDraft(workspace?: Workspace): Draft | undefined
 
     /**
-     * Apply the Workspace as if it was selected in draft list. Calling this function with no arguments will clear filters and apply the default workspace.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.applyWorkspace`
+     * @category Deprecated
      **/
     applyWorkspace(workspace?: Workspace): boolean
 
     /**
-     * Returns a workspace object configured like the workspace currently loaded in the draft list of the active window. Useful when creating logic which reacts contextually to the workspace loaded.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.currentWorkspace`
+     * @category Deprecated
      */
     currentWorkspace: Workspace
 
@@ -190,7 +190,7 @@ declare class App {
     // MESSAGES FUNCTIONS
     /**
      * Show success banner notification with the message passed.
-     * @category Interface
+     * @category Messages
      */
     displaySuccessMessage(message: string): void
     /**

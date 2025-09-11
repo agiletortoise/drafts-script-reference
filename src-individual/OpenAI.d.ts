@@ -55,6 +55,8 @@
  * ${response.responseText}
  * `)
  * ```
+ * 
+ * Note that the `OpenAI` object can be used with any OpenAI API-compatible provider (such as Deep Seek) by overriding the `host` parameter when constructing the object.
 */
 declare class OpenAI {
     /**

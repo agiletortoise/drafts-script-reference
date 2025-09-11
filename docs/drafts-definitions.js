@@ -543,14 +543,14 @@ declare class App {
     selectDraft(workspace?: Workspace): Draft | undefined
 
     /**
-     * Apply the Workspace as if it was selected in draft list. Calling this function with no arguments will clear filters and apply the default workspace.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.applyWorkspace`
+     * @category Deprecated
      **/
     applyWorkspace(workspace?: Workspace): boolean
 
     /**
-     * Returns a workspace object configured like the workspace currently loaded in the draft list of the active window. Useful when creating logic which reacts contextually to the workspace loaded.
-     * @category Interface
+     * @deprecated Use `app.currentWindow.currentWorkspace`
+     * @category Deprecated
      */
     currentWorkspace: Workspace
 
@@ -637,7 +637,7 @@ declare class App {
     // MESSAGES FUNCTIONS
     /**
      * Show success banner notification with the message passed.
-     * @category Interface
+     * @category Messages
      */
     displaySuccessMessage(message: string): void
     /**
@@ -4171,6 +4171,8 @@ declare class OneDrive {
  * ${response.responseText}
  * `)
  * ```
+ * 
+ * Note that the `OpenAI` object can be used with any OpenAI API-compatible provider (such as Deep Seek) by overriding the `host` parameter when constructing the object.
 */
 declare class OpenAI {
     /**
@@ -4373,6 +4375,12 @@ declare class Prompt {
      * @category Display
      */
     message: string
+
+    /**
+     * The name of a valid SF Symbol available on the platform. It will be displayed as a small icon next to the prompt title, if provided. Valid symbol names can be found using Apple's [SF Symbols app](https://developer.apple.com/sf-symbols/) or other third party tools and [online references](https://github.com/andrewtavis/sf-symbols-online).
+     * @category Display
+     */
+    symbolName?: string
 
     /**
      * If set to a valid URL string, a help button which links to the URL will be visible in the prompt directing the user to web-based information about the action. Useful if prompting for options or configuration information that might require addition information to complete.
@@ -5160,6 +5168,184 @@ declare class Syntax {
     static find(type: syntaxType, name: string): Syntax | undefined
 }
 /**
+ * Prompt the on-device SystemLanguageModel, part of the [Foundation Models API](https://developer.apple.com/documentation/foundationmodels?changes=_10_5) introduced in iOS/macOS 26. Requires OS 26 and a device that supports (and has enabled) Apple Intelligence.
+ * 
+ * While not as powerful as larger, cloud-based LLMs, the local model is useful for a variety of smaller tasks, and operates completely privately and locally on the device.
+ * 
+ * Be aware that use of this class is best suited to small tasks, as it is subject to the 4k token limit per session.
+ * 
+ * > **NOTE:** Each instance of `SystemLanguageModel` operates as a session, so repeated calls to `respond` will maintain the context of previous calls – and are cummulatively subject to the 4k token limit.
+ * 
+ * @example
+ * 
+ * **Prompting the On-Device LLM**
+ * 
+ * ```javascript
+ * // create a prompt based on the content of the current draft
+ * let prompt = draft.processTemplate("[[draft]]")
+ * 
+ * // create model instance and submit prompt
+ * let lm = new SystemLanguageModel()
+ * let response = lm.respond(prompt)
+ * 
+ * if (!response) { // handle failure
+ * 	  alert(lm.lastError)
+ * 	  context.fail()
+ * }
+ * else { // update draft to include response
+ * 	  editor.setText(`${prompt}
+ * 
+ * ===
+ * 
+ * ${response}`)
+ * }
+ * ```
+ */
+declare class SystemLanguageModel {
+    /**
+     * Get a response from the on-device language model.
+     * @param prompt Text prompt to submit to the model.
+     * @param schema Optional schema object to get responses in a structured format. If schema is not passed, responses will be in string format.
+    */
+    respond(prompt: string, schema?: SystemLanguageModelSchema): object
+    
+    /**
+     * Optional array of Drafts' tools to make available to the model. Tools are experimental and likely to change in upcoming releases. Supported values:
+     * 
+     * - draft: Allows the model to query drafts in your draft library by tags or query string.
+     * - workspace: Allows the model to know the workspaces you have created.
+     */
+    tools?: [string]
+
+    /**
+     * If a previous function returned an error, the error description will be available in this property
+     */
+    lastError?: string
+
+    /**
+     * Create new instance
+     * @category Constructor
+     */
+    static create(tools?: [string]): SystemLanguageModel
+
+    /**
+     * Create new instance.
+     * @category Constructor
+     */
+    constructor(tools?: [string])
+}
+/**
+ * Create generable schema to provide to {@link SystemLanguageModel} objects to get back structured, non-string responses.
+ * 
+ * @example
+ * 
+ * **Getting Structured Responses**
+ * 
+ * ```javascript
+ * // CREATE A PROMPT TO SEND TO MODEL
+ * const prompt = `Generate tag suggestions to use classifying the  * text below:
+ * 
+ * ${draft.content}`
+ * 
+ * // CREATE MODEL OBJECT
+ * let m = new SystemLanguageModel()
+ * // CREATE SCHEMA TO GET BACK STRUCTURED DATA
+ * let schema = SystemLanguageModelSchema.create("Tag Suggestions", "A set of tag suggestions to classify a text.")
+ * schema.addStringArray("tags", "A list of tags to assign the text")
+ * // QUERY THE MODEL
+ * let response = m.respond(prompt, schema)
+ * ```
+ */
+declare class SystemLanguageModelSchema {
+    /**
+     * Add a string type property
+     * @param name Human-readable name for property. This will translate to a key for the value in returned object.
+     * @param description Details on the usage and meaning of the property to guide the model in creation of results.
+     * @category Values
+    */
+    addString(name: string, description: string)
+
+    /**
+     * Add a string type property
+     * @param name Human-readable name for property. This will translate to a key for the value in returned object.
+     * @param description Details on the usage and meaning of the property to guide the model in creation of results.
+     * @category Values
+    */
+    addString(name: string, description: string)
+
+    /**
+     * Add a boolean type property
+     * @param name Human-readable name for property. This will translate to a key for the value in returned object.
+     * @param description Details on the usage and meaning of the property to guide the model in creation of results.
+     * @category Values
+    */
+    addBoolean(name: string, description: string)
+
+    /**
+     * Add an integer type property
+     * @param name Human-readable name for property. This will translate to a key for the value in returned object.
+     * @param description Details on the usage and meaning of the property to guide the model in creation of results.
+     * @category Values
+    */
+    addInt(name: string, description: string)
+
+    /**
+     * Add a number type property
+     * @param name Human-readable name for property. This will translate to a key for the value in returned object.
+     * @param description Details on the usage and meaning of the property to guide the model in creation of results.
+     * @category Values
+    */
+    addNumber(name: string, description: string)
+
+    /**
+     * Add an array of strings type properties
+     * @param name Human-readable name for property. This will translate to a key for the value in returned object.
+     * @param description Details on the usage and meaning of the property to guide the model in creation of results.
+     * @category Values
+    */
+    addStringArray(name: string, description: string)
+
+    /**
+     * Add an array of boolean type properties
+     * @param name Human-readable name for property. This will translate to a key for the value in returned object.
+     * @param description Details on the usage and meaning of the property to guide the model in creation of results.
+     * @category Values
+    */
+    addBooleanArray(name: string, description: string)
+
+    /**
+     * Add an array of integer type properties
+     * @param name Human-readable name for property. This will translate to a key for the value in returned object.
+     * @param description Details on the usage and meaning of the property to guide the model in creation of results.
+     * @category Values
+    */
+    addIntArray(name: string, description: string)
+
+    /**
+     * Add an array of number type properties
+     * @param name Human-readable name for property. This will translate to a key for the value in returned object.
+     * @param description Details on the usage and meaning of the property to guide the model in creation of results.
+     * @category Values
+    */
+    addNumberArray(name: string, description: string)
+
+    /**
+     * Create new instance
+     * @param name Human-readable name for property
+     * @param description Detail regarding the use of the property
+     * @category Constructor
+     */
+    static create(name: string, description: string): SystemLanguageModelSchema
+
+    /**
+     * Create new instance.
+     * @param name Human-readable name for property
+     * @param description Detail regarding the use of the property
+     * @category Constructor
+     */
+    constructor(name: string, description: string)
+}
+/**
  * Tools for querying and working with tags.
  * 
  * @example
@@ -5658,6 +5844,38 @@ declare class Twitter {
     constructor(identifier?: string)
 }
 /**
+ * URL objects are used as a convenience in parsing values out of a URL string. This implementation closely mirrors the [Web API's `URL` object](https://developer.mozilla.org/en-US/docs/Web/API/URL) for compatibility purposes
+ * 
+ * @example
+ * 
+ * ```javascript
+ * let url = URL.parse("http://getdrafts.com?q=boo")
+ * let host = url.host // "getdrafts.com"
+ * let q = url.searchParams["q"] // "boo"
+ * ```
+ */
+declare class URL {
+    /**
+     * Host (domain name) portion of the URL
+     */
+    hostname: string
+
+    /**
+     * The hash string starting with a `#` of the URL, if present. When setting, if the string does not begin with a `#` it will be added, and the value
+     */
+    fragment: string
+
+
+    /**
+     * Creates a new URL object with provided URL.
+     * @param url A string representing an absolute URL or a relative reference to a base URL. If `url` is a relative reference, `base` is required.
+     * @param base A string representing the base URL to resolve against if `url` is a relative reference. 
+     */
+    static parse(url: string, base?: string): URL
+
+}
+
+/**
  * Version objects represent individual versions in a draft's [version history](https://docs.getdrafts.com/docs/drafts/versionhistory). Versions are accessed using the `versions` property of the {@link Draft} object.
  * 
  * @example
@@ -5724,6 +5942,18 @@ declare class Window {
     readonly isActionListVisible: boolean
 
     // UI FUNCTIONS
+
+    /**
+     * Apply the Workspace as if it was selected in draft list. Calling this function with no arguments will clear filters and apply the default workspace.
+     * @category Workspace
+     **/
+        applyWorkspace(workspace?: Workspace): boolean
+
+    /**
+     * Returns a workspace object configured like the workspace currently loaded in the draft list of the window. Useful when creating logic which reacts contextually to the workspace loaded.
+     * @category Workspace
+     */
+    currentWorkspace: Workspace
 
     /**
      * Open draft list side bar.
@@ -5975,6 +6205,12 @@ declare class Workspace {
      * @category Display
      */
     showPreview: boolean
+
+    /**
+     * When a `queryString` value is set for the workspace, replace the preview text content with a summary of matches in the text.
+     * @category Display
+     */
+    showSearchPreview: boolean
 
     /**
      * Show date information in list.

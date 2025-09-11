@@ -1,0 +1,92 @@
+import { i18n } from "#utils";
+import { ParameterType } from "../utils/options/declaration.js";
+import { nicePath } from "../utils/paths.js";
+export class Outputs {
+    application;
+    outputs = new Map();
+    defaultOutput = "html";
+    constructor(application) {
+        this.application = application;
+    }
+    addOutput(name, output) {
+        if (this.outputs.has(name)) {
+            throw new Error(`Output type '${name}' has already been defined`);
+        }
+        this.outputs.set(name, output);
+    }
+    setDefaultOutputName(name) {
+        this.defaultOutput = name;
+    }
+    getOutputSpecs() {
+        const options = this.application.options;
+        let outputs = [];
+        const outputShortcuts = options
+            .getDeclarations()
+            .filter((decl) => decl.type === ParameterType.Path && decl.outputShortcut);
+        // --out is a special case. It isn't marked as a shortcut as what it is
+        // a shortcut for may be modified by plugins. However, it is effectively
+        // treated as an output shortcut, so check it here.
+        if (options.isSet("out")) {
+            outputs.push({
+                name: this.defaultOutput,
+                path: options.getValue("out"),
+            });
+        }
+        for (const shortcut of outputShortcuts) {
+            if (options.isSet(shortcut.name)) {
+                outputs.push({
+                    name: shortcut.outputShortcut,
+                    path: options.getValue(shortcut.name),
+                });
+            }
+        }
+        // If no shortcuts have been defined, use the dedicated outputs option
+        if (outputs.length === 0) {
+            outputs = options.getValue("outputs") || [];
+        }
+        // If no outputs have been defined, just write the default output.
+        if (!outputs.length) {
+            outputs.push({
+                name: this.defaultOutput,
+                path: options.getValue("out"),
+            });
+        }
+        return outputs;
+    }
+    async writeOutputs(project) {
+        const outputs = this.getOutputSpecs();
+        for (const output of outputs) {
+            await this.writeOutput(output, project);
+        }
+    }
+    async writeOutput(output, project) {
+        const options = this.application.options;
+        const snap = options.snapshot();
+        const writer = this.outputs.get(output.name);
+        if (!writer) {
+            this.application.logger.error(i18n.specified_output_0_has_not_been_defined(output.name));
+            return;
+        }
+        if (!this.application.setOptions(output.options || {}, true)) {
+            options.restore(snap);
+            return;
+        }
+        const preErrors = this.application.logger.errorCount;
+        const start = Date.now();
+        try {
+            await writer(output.path, project);
+        }
+        catch (error) {
+            const message = error instanceof Error ? error.message : String(error);
+            this.application.logger.error(message);
+        }
+        if (this.application.logger.errorCount === preErrors) {
+            this.application.logger.info(i18n.output_0_generated_at_1(output.name, nicePath(output.path)));
+        }
+        else {
+            this.application.logger.error(i18n.output_0_could_not_be_generated(output.name));
+        }
+        this.application.logger.verbose(`${output.name} took ${Date.now() - start}ms`);
+        options.restore(snap);
+    }
+}
