@@ -5210,10 +5210,21 @@ declare class SystemLanguageModel {
     respond(prompt: string, schema?: SystemLanguageModelSchema): object
     
     /**
+     * Enable all known Drafts' tools for the session. Tools can also be enabled individually by setting `tools`
+    */
+    enableAllTools()
+
+    /**
      * Optional array of Drafts' tools to make available to the model. Tools are experimental and likely to change in upcoming releases. Supported values:
      * 
-     * - draft: Allows the model to query drafts in your draft library by tags or query string.
-     * - workspace: Allows the model to know the workspaces you have created.
+     * - `draft.query`: Allows the model to query drafts in your draft library by tags or query string.
+     * - `draft.find`: Allow locating individual drafts by UUID. 
+     * - `draft.create`: Supports creation of drafts with content.
+     * - `draft.append`: Supports appending content to a draft.
+     * - `draft.prepend`: Supports prepending content to a draft.
+     * - `editor.open`: Supports opening drafts in the editor.
+     * - `action.run`: Supports running actions by name.
+     * - `workspace`: Allows the model to know the workspaces you have created.
      */
     tools?: [string]
 

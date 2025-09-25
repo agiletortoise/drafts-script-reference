@@ -5,6 +5,8 @@
  * 
  * Be aware that use of this class is best suited to small tasks, as it is subject to the 4k token limit per session.
  * 
+ * For example actions, [see User Guide](https://docs.getdrafts.com/docs/actions/ai#on-device-ai-foundation-models)
+ * 
  * > **NOTE:** Each instance of `SystemLanguageModel` operates as a session, so repeated calls to `respond` will maintain the context of previous calls – and are cummulatively subject to the 4k token limit.
  * 
  * @example
@@ -17,6 +19,9 @@
  * 
  * // create model instance and submit prompt
  * let lm = new SystemLanguageModel()
+ * // only if you are using Drafts tools
+ * lm.enableAllTools()
+ * 
  * let response = lm.respond(prompt)
  * 
  * if (!response) { // handle failure
@@ -41,10 +46,21 @@ declare class SystemLanguageModel {
     respond(prompt: string, schema?: SystemLanguageModelSchema): object
     
     /**
-     * Optional array of Drafts' tools to make available to the model. Tools are experimental and likely to change in upcoming releases. Supported values:
+     * Enable all known Drafts' tools for the session. Tools can also be enabled individually by setting `tools`
+    */
+    enableAllTools()
+
+    /**
+     * Optional array of Drafts' tools to make available to the model. Tools are experimental and likely to change in upcoming releases. Use `enableAllTools()` to add all Drafts-specific tools. Supported values:
      * 
-     * - draft: Allows the model to query drafts in your draft library by tags or query string.
-     * - workspace: Allows the model to know the workspaces you have created.
+     * - `draft.query`: Allows the model to query drafts in your draft library by tags or query string.
+     * - `draft.find`: Allow locating individual drafts by UUID. 
+     * - `draft.create`: Supports creation of drafts with content.
+     * - `draft.append`: Supports appending content to a draft.
+     * - `draft.prepend`: Supports prepending content to a draft.
+     * - `editor.open`: Supports opening drafts in the editor.
+     * - `action.run`: Supports running actions by name.
+     * - `workspace.find`: Allows the model to know the workspaces you have created.
      */
     tools?: [string]
 
