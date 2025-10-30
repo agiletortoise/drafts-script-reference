@@ -5174,6 +5174,8 @@ declare class Syntax {
  * 
  * Be aware that use of this class is best suited to small tasks, as it is subject to the 4k token limit per session.
  * 
+ * For example actions, [see User Guide](https://docs.getdrafts.com/docs/actions/ai#on-device-ai-foundation-models)
+ * 
  * > **NOTE:** Each instance of `SystemLanguageModel` operates as a session, so repeated calls to `respond` will maintain the context of previous calls – and are cummulatively subject to the 4k token limit.
  * 
  * @example
@@ -5186,6 +5188,9 @@ declare class Syntax {
  * 
  * // create model instance and submit prompt
  * let lm = new SystemLanguageModel()
+ * // only if you are using Drafts tools
+ * lm.enableAllTools()
+ * 
  * let response = lm.respond(prompt)
  * 
  * if (!response) { // handle failure
@@ -5215,7 +5220,7 @@ declare class SystemLanguageModel {
     enableAllTools()
 
     /**
-     * Optional array of Drafts' tools to make available to the model. Tools are experimental and likely to change in upcoming releases. Supported values:
+     * Optional array of Drafts' tools to make available to the model. Tools are experimental and likely to change in upcoming releases. Use `enableAllTools()` to add all Drafts-specific tools. Supported values:
      * 
      * - `draft.query`: Allows the model to query drafts in your draft library by tags or query string.
      * - `draft.find`: Allow locating individual drafts by UUID. 
@@ -5224,7 +5229,7 @@ declare class SystemLanguageModel {
      * - `draft.prepend`: Supports prepending content to a draft.
      * - `editor.open`: Supports opening drafts in the editor.
      * - `action.run`: Supports running actions by name.
-     * - `workspace`: Allows the model to know the workspaces you have created.
+     * - `workspace.find`: Allows the model to know the workspaces you have created.
      */
     tools?: [string]
 
@@ -5952,6 +5957,12 @@ declare class Window {
      */
     readonly isActionListVisible: boolean
 
+    /**
+     * Toggle whether "Float on Top" is enabled for the window, keeping it above other apps. This property only has effect on macOS, and is ignored on iOS.
+     * @category Interface
+     */
+    floatOnTop: boolean
+    
     // UI FUNCTIONS
 
     /**

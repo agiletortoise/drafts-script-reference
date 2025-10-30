@@ -26,6 +26,12 @@ declare class Window {
      */
     readonly isActionListVisible: boolean
 
+    /**
+     * Toggle whether "Float on Top" is enabled for the window, keeping it above other apps. This property only has effect on macOS, and is ignored on iOS.
+     * @category Interface
+     */
+    floatOnTop: boolean
+    
     // UI FUNCTIONS
 
     /**
