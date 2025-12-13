@@ -1,4 +1,5 @@
 type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
+type draftFolder = 'inbox' | 'archive' | 'trash' 
 /**
  * The Draft object represents a single draft. When an action is run, the current draft is available as the global variable `draft`. Scripts can also create new drafts, access and set values, and update the draft to persist changes.
  * 
@@ -101,6 +102,11 @@ declare class Draft {
      */
     readonly tags: string[]
 
+    /**
+     * The folder the draft resides in. Values "inbox", "archive", "trash" are supported.
+     */
+    folder: draftFolder
+    
     /**
      * Is the draft current in the archive. If `false`, the draft is in the inbox.
      */
@@ -269,8 +275,8 @@ declare class Draft {
         tags: string[],
         omitTags: string[],
         sort: sortBy,
-        sortDescending: boolean,
-        sortFlaggedToTop: boolean
+        sortDescending?: boolean,
+        sortFlaggedToTop?: boolean
     ): Draft[]
 
     /**  
