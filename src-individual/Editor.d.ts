@@ -197,9 +197,10 @@ declare class Editor {
     /**
     * Open find mode in editor.
     * @param preferAdvancedFind If true, skip native find implementation and option Drafts advanced find directly.
+    * @param initialQuery If provided, this text will be the initial text in the find field.
     * @category Behavior and Interface
     */
-    showFind(preferAdvancedFind?: boolean): void
+    showFind(preferAdvancedFind?: boolean, initialQuery?: string): void
 
     /**
     * Open dictation mode in editor. This is a non-blocking method and returns immediately. It is intended only to mimic the tapping of the dictate button. Use `editor.dictate()` to wait for a result and use it in further scripting.

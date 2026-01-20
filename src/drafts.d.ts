@@ -420,7 +420,7 @@ declare class AnthropicAI {
     timeout: number
 
     /**
-     * Returns a list of current known model versions. Anthropic does not provide an API endpoint to request available models, so this list will be updated periodically with known models for the API. The list currently returns the current Clause Haiku, Sonnet, and Open model versions. If you are using these values to pass a model name to other functions, in general, the first model in this array will be the fastest, the last the most sophisticated. The only purpose of this function over statically defining model names in your actions is that it may be updated overtime if Anthropic releases updated model versions.
+     * Returns a list of current known model versions for the API key in use.
      */
     static knownModels(): [string]
 
@@ -428,7 +428,7 @@ declare class AnthropicAI {
      * Creates a new AnthropicAI object. 
      * @param apiKey A valid Anthropic API Key. This value is optional, and if not provided, the default Anthropic AI API key stored in Credentials will be used, or the user prompted to provide an API Key to store. Only provide a specific API Key if you desire to override the default.
      */
-    static create(apiKey?: string): OpenAI
+    static create(apiKey?: string): AnthropicAI
 
     /**
      * Create new instance.
@@ -2038,9 +2038,10 @@ declare class Editor {
     /**
     * Open find mode in editor.
     * @param preferAdvancedFind If true, skip native find implementation and option Drafts advanced find directly.
+    * @param initialQuery If provided, this text will be the initial text in the find field.
     * @category Behavior and Interface
     */
-    showFind(preferAdvancedFind?: boolean): void
+    showFind(preferAdvancedFind?: boolean, initialQuery?: string): void
 
     /**
     * Open dictation mode in editor. This is a non-blocking method and returns immediately. It is intended only to mimic the tapping of the dictate button. Use `editor.dictate()` to wait for a result and use it in further scripting.
@@ -2383,6 +2384,11 @@ declare class FileManager {
      * Check if a file already exists at the given path.
      */
     exists(path: string): boolean
+    
+    /**
+     * Test if a file path is a directory.
+     */
+    isDirectory(path: string): boolean
 
     /**
      * List files and directories at the specified path. Array of full path will be returned.

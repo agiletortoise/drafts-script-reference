@@ -81,6 +81,11 @@ declare class FileManager {
      * Check if a file already exists at the given path.
      */
     exists(path: string): boolean
+    
+    /**
+     * Test if a file path is a directory.
+     */
+    isDirectory(path: string): boolean
 
     /**
      * List files and directories at the specified path. Array of full path will be returned.

@@ -74,7 +74,7 @@ declare class AnthropicAI {
     timeout: number
 
     /**
-     * Returns a list of current known model versions. Anthropic does not provide an API endpoint to request available models, so this list will be updated periodically with known models for the API. The list currently returns the current Clause Haiku, Sonnet, and Open model versions. If you are using these values to pass a model name to other functions, in general, the first model in this array will be the fastest, the last the most sophisticated. The only purpose of this function over statically defining model names in your actions is that it may be updated overtime if Anthropic releases updated model versions.
+     * Returns a list of current known model versions for the API key in use.
      */
     static knownModels(): [string]
 
@@ -82,7 +82,7 @@ declare class AnthropicAI {
      * Creates a new AnthropicAI object. 
      * @param apiKey A valid Anthropic API Key. This value is optional, and if not provided, the default Anthropic AI API key stored in Credentials will be used, or the user prompted to provide an API Key to store. Only provide a specific API Key if you desire to override the default.
      */
-    static create(apiKey?: string): OpenAI
+    static create(apiKey?: string): AnthropicAI
 
     /**
      * Create new instance.
