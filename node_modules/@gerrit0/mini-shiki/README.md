@@ -1,6 +1,6 @@
 # @gerrit0/mini-shiki
 
-This is a re-bundled version of [Shiki](https://shiki.style/) which strips out
+This is a re-bundled version of [Shiki](https://shiki.style) which strips out
 the dependencies which aren't necessary for [TypeDoc](https://typedoc.org/)'s usage.
 
 ## Why?

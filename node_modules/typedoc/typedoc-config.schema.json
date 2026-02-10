@@ -1,0 +1,941 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema",
+	"title": "JSON Schema for typedoc.json",
+	"type": "object",
+	"properties": {
+		"options": {
+			"description": "Specify a json option file that should be loaded. If not specified TypeDoc will look for 'typedoc.json' in the current directory",
+			"type": "string"
+		},
+		"tsconfig": {
+			"description": "Specify a TypeScript config file that should be loaded. If not specified TypeDoc will look for 'tsconfig.json' in the current directory",
+			"type": "string"
+		},
+		"compilerOptions": {
+			"description": "Selectively override the TypeScript compiler options used by TypeDoc",
+			"type": "object",
+			"markedOptions": "object"
+		},
+		"lang": {
+			"description": "Sets the language to be used in generation and in TypeDoc's messages",
+			"type": "string",
+			"default": "en"
+		},
+		"locales": {
+			"description": "Add translations for a specified locale. This option is primarily intended to be used as a stopgap while waiting for official locale support to be added to TypeDoc",
+			"default": {}
+		},
+		"packageOptions": {
+			"description": "Set options which will be set within each package when entryPointStrategy is set to packages",
+			"default": {}
+		},
+		"entryPoints": {
+			"description": "The entry points of your documentation",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"entryPointStrategy": {
+			"description": "The strategy to be used to convert entry points into documentation modules",
+			"enum": [
+				"resolve",
+				"expand",
+				"packages",
+				"merge"
+			],
+			"default": "resolve"
+		},
+		"alwaysCreateEntryPointModule": {
+			"description": "When set, TypeDoc will always create a `Module` for entry points, even if only one is provided",
+			"type": "boolean",
+			"default": false
+		},
+		"projectDocuments": {
+			"description": "Documents which should be added as children to the root of the generated documentation. Supports globs to match multiple files",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"exclude": {
+			"description": "Define patterns to be excluded when expanding a directory that was specified as an entry point",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"externalPattern": {
+			"description": "Define patterns for files that should be considered being external",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"**/node_modules/**"
+			]
+		},
+		"excludeExternals": {
+			"description": "Prevent externally resolved symbols from being documented",
+			"type": "boolean",
+			"default": false
+		},
+		"excludeNotDocumented": {
+			"description": "Prevent symbols that are not explicitly documented from appearing in the results",
+			"type": "boolean",
+			"default": false
+		},
+		"excludeNotDocumentedKinds": {
+			"description": "Specify the type of reflections that can be removed by excludeNotDocumented",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"Module",
+				"Namespace",
+				"Enum",
+				"Variable",
+				"Function",
+				"Class",
+				"Interface",
+				"Constructor",
+				"Property",
+				"Method",
+				"CallSignature",
+				"IndexSignature",
+				"ConstructorSignature",
+				"Accessor",
+				"GetSignature",
+				"SetSignature",
+				"TypeAlias",
+				"Reference"
+			]
+		},
+		"excludeInternal": {
+			"description": "Prevent symbols that are marked with @internal from being documented",
+			"type": "boolean",
+			"default": false
+		},
+		"excludeCategories": {
+			"description": "Exclude symbols within this category from the documentation",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"excludePrivate": {
+			"description": "Ignore members marked with the private keyword and #private class fields, defaults to true.",
+			"type": "boolean",
+			"default": true
+		},
+		"excludePrivateClassFields": {
+			"description": "Ignore #private class fields, defaults to true.",
+			"type": "boolean",
+			"default": true
+		},
+		"excludeProtected": {
+			"description": "Ignore protected variables and methods",
+			"type": "boolean",
+			"default": false
+		},
+		"excludeReferences": {
+			"description": "If a symbol is exported multiple times, ignore all but the first export",
+			"type": "boolean",
+			"default": false
+		},
+		"externalSymbolLinkMappings": {
+			"description": "Define custom links for symbols not included in the documentation",
+			"default": {}
+		},
+		"readme": {
+			"description": "Path to the readme file that should be displayed on the index page. Pass `none` to disable the index page and start the documentation on the globals page",
+			"type": "string",
+			"default": ""
+		},
+		"basePath": {
+			"description": "Specifies a path which links may be resolved relative to.",
+			"type": "string",
+			"default": ""
+		},
+		"outputs": {
+			"description": "Specify the location the documentation for the default output should be written to. The default output type may be changed by plugins."
+		},
+		"out": {
+			"description": "Specify the location the documentation for the default output should be written to. The default output type may be changed by plugins.",
+			"type": "string",
+			"default": "./docs"
+		},
+		"html": {
+			"description": "Specify the location where html documentation should be written to.",
+			"type": "string",
+			"default": ""
+		},
+		"json": {
+			"description": "Specify the location and filename a JSON file describing the project is written to",
+			"type": "string",
+			"default": ""
+		},
+		"pretty": {
+			"description": "Specify whether the output JSON should be formatted with tabs",
+			"type": "boolean",
+			"default": true
+		},
+		"emit": {
+			"description": "Specify what TypeDoc should emit, 'docs', 'both', or 'none'",
+			"enum": [
+				"both",
+				"docs",
+				"none"
+			],
+			"default": "docs"
+		},
+		"theme": {
+			"description": "Specify the theme name to render the documentation with",
+			"type": "string",
+			"default": "default"
+		},
+		"router": {
+			"description": "Specify the router name to use to determine file names in the documentation",
+			"type": "string",
+			"default": "kind"
+		},
+		"lightHighlightTheme": {
+			"description": "Specify the code highlighting theme in light mode",
+			"type": "string",
+			"default": "light-plus"
+		},
+		"darkHighlightTheme": {
+			"description": "Specify the code highlighting theme in dark mode",
+			"type": "string",
+			"default": "dark-plus"
+		},
+		"highlightLanguages": {
+			"description": "Specify the languages which will be loaded to highlight code when rendering",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"bash",
+				"console",
+				"css",
+				"html",
+				"javascript",
+				"json",
+				"jsonc",
+				"json5",
+				"yaml",
+				"tsx",
+				"typescript"
+			]
+		},
+		"ignoredHighlightLanguages": {
+			"description": "Specify languages which will be accepted as valid highlight languages, but will not be highlighted at runtime",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"typePrintWidth": {
+			"description": "Width at which to wrap code to a new line when rendering a type",
+			"type": "number",
+			"default": 80
+		},
+		"customCss": {
+			"description": "Path to a custom CSS file to for the theme to import",
+			"type": "string",
+			"default": ""
+		},
+		"customJs": {
+			"description": "Path to a custom JS file to import",
+			"type": "string",
+			"default": ""
+		},
+		"markdownItOptions": {
+			"description": "Specify the options passed to markdown-it, the Markdown parser used by TypeDoc",
+			"default": {
+				"html": true,
+				"linkify": true
+			}
+		},
+		"markdownItLoader": {
+			"description": "Specify a callback to be called when loading the markdown-it instance. Will be passed the instance of the parser which TypeDoc will use"
+		},
+		"maxTypeConversionDepth": {
+			"description": "Set the maximum depth of types to be converted",
+			"type": "number",
+			"default": 10
+		},
+		"name": {
+			"description": "Set the name of the project that will be used in the header of the template",
+			"type": "string",
+			"default": ""
+		},
+		"includeVersion": {
+			"description": "Add the package version to the project name",
+			"type": "boolean",
+			"default": false
+		},
+		"disableSources": {
+			"description": "Disable setting the source of a reflection when documenting it",
+			"type": "boolean",
+			"default": false
+		},
+		"sourceLinkTemplate": {
+			"description": "Specify a link template to be used when generating source urls. If not set, will be automatically created using the git remote. Supports {path}, {line}, {gitRevision} placeholders",
+			"type": "string",
+			"default": ""
+		},
+		"gitRevision": {
+			"description": "Use specified revision instead of the last revision for linking to GitHub/Bitbucket source files. Has no effect if disableSources is set",
+			"type": "string",
+			"default": ""
+		},
+		"gitRemote": {
+			"description": "Use the specified remote for linking to GitHub/Bitbucket source files. Has no effect if disableGit or disableSources is set",
+			"type": "string",
+			"default": "origin"
+		},
+		"disableGit": {
+			"description": "Assume that all can be linked to with the sourceLinkTemplate, sourceLinkTemplate must be set if this is enabled. {path} will be rooted at basePath",
+			"type": "boolean",
+			"default": false
+		},
+		"displayBasePath": {
+			"description": "Specifies the base path to be used when displaying file paths. If not specified, basePath is used.",
+			"type": "string",
+			"default": ""
+		},
+		"cname": {
+			"description": "Set the CNAME file text, it's useful for custom domains on GitHub Pages",
+			"type": "string",
+			"default": ""
+		},
+		"favicon": {
+			"description": "Path to favicon to include as the site icon",
+			"type": "string",
+			"default": ""
+		},
+		"sourceLinkExternal": {
+			"description": "Specifies that source links should be treated as external links to be opened in a new tab",
+			"type": "boolean",
+			"default": false
+		},
+		"markdownLinkExternal": {
+			"description": "Specifies that http[s]:// links in comments and markdown files should be treated as external links to be opened in a new tab",
+			"type": "boolean",
+			"default": true
+		},
+		"githubPages": {
+			"description": "Generate a .nojekyll file to prevent 404 errors in GitHub Pages. Defaults to `true`",
+			"type": "boolean",
+			"default": true
+		},
+		"hostedBaseUrl": {
+			"description": "Specify a base URL to be used in generating a sitemap.xml in our output folder and canonical links. If not specified, no sitemap will be generated",
+			"type": "string",
+			"default": ""
+		},
+		"useHostedBaseUrlForAbsoluteLinks": {
+			"description": "If set, TypeDoc will produce absolute links to pages on your site using the hostedBaseUrl option",
+			"type": "boolean",
+			"default": false
+		},
+		"hideGenerator": {
+			"description": "Do not print the TypeDoc link at the end of the page",
+			"type": "boolean",
+			"default": false
+		},
+		"customFooterHtml": {
+			"description": "Custom footer after the TypeDoc link",
+			"type": "string",
+			"default": ""
+		},
+		"customFooterHtmlDisableWrapper": {
+			"description": "If set, disables the wrapper element for customFooterHtml",
+			"type": "boolean",
+			"default": false
+		},
+		"cacheBust": {
+			"description": "Include the generation time in links to static assets",
+			"type": "boolean",
+			"default": false
+		},
+		"searchInComments": {
+			"description": "If set, the search index will also include comments. This will greatly increase the size of the search index",
+			"type": "boolean",
+			"default": false
+		},
+		"searchInDocuments": {
+			"description": "If set, the search index will also include documents. This will greatly increase the size of the search index",
+			"type": "boolean",
+			"default": false
+		},
+		"cleanOutputDir": {
+			"description": "If set, TypeDoc will remove the output directory before writing output",
+			"type": "boolean",
+			"default": true
+		},
+		"titleLink": {
+			"description": "Set the link the title in the header points to. Defaults to the documentation homepage",
+			"type": "string",
+			"default": ""
+		},
+		"navigationLinks": {
+			"description": "Defines links to be included in the header",
+			"default": {}
+		},
+		"sidebarLinks": {
+			"description": "Defines links to be included in the sidebar",
+			"default": {}
+		},
+		"navigationLeaves": {
+			"description": "Branches of the navigation tree which should not be expanded",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"navigation": {
+			"description": "Determines how the navigation sidebar is organized",
+			"anyOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"includeCategories": {
+							"type": "boolean"
+						},
+						"includeGroups": {
+							"type": "boolean"
+						},
+						"includeFolders": {
+							"type": "boolean"
+						},
+						"compactFolders": {
+							"type": "boolean"
+						},
+						"excludeReferences": {
+							"type": "boolean"
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		},
+		"headings": {
+			"description": "Determines which optional headings are rendered",
+			"anyOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"readme": {
+							"type": "boolean"
+						},
+						"document": {
+							"type": "boolean"
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		},
+		"sluggerConfiguration": {
+			"description": "Determines how anchors within rendered HTML are determined.",
+			"anyOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"lowercase": {
+							"type": "boolean"
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		},
+		"includeHierarchySummary": {
+			"description": "If set, a reflections hierarchy summary will be rendered to a summary page. Defaults to `true`",
+			"type": "boolean",
+			"default": true
+		},
+		"visibilityFilters": {
+			"description": "Specify the default visibility for builtin filters and additional filters according to modifier tags",
+			"default": {
+				"protected": false,
+				"private": false,
+				"inherited": true,
+				"external": false
+			},
+			"type": "object",
+			"properties": {
+				"protected": {
+					"type": "boolean"
+				},
+				"private": {
+					"type": "boolean"
+				},
+				"inherited": {
+					"type": "boolean"
+				},
+				"external": {
+					"type": "boolean"
+				}
+			},
+			"patternProperties": {
+				"^@": {
+					"type": "boolean"
+				}
+			},
+			"additionalProperties": false
+		},
+		"searchCategoryBoosts": {
+			"description": "Configure search to give a relevance boost to selected categories",
+			"default": {}
+		},
+		"searchGroupBoosts": {
+			"description": "Configure search to give a relevance boost to selected kinds (eg \"class\")",
+			"default": {}
+		},
+		"useFirstParagraphOfCommentAsSummary": {
+			"description": "If set and no @summary tag is specified, TypeDoc will use the first paragraph of comments as the short summary in the module/namespace view",
+			"type": "boolean",
+			"default": false
+		},
+		"jsDocCompatibility": {
+			"description": "Sets compatibility options for comment parsing that increase similarity with JSDoc comments",
+			"anyOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"defaultTag": {
+							"type": "boolean"
+						},
+						"exampleTag": {
+							"type": "boolean"
+						},
+						"inheritDocTag": {
+							"type": "boolean"
+						},
+						"ignoreUnescapedBraces": {
+							"type": "boolean"
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		},
+		"suppressCommentWarningsInDeclarationFiles": {
+			"description": "Prevents warnings due to unspecified tags from being reported in comments within .d.ts files.",
+			"type": "boolean",
+			"default": true
+		},
+		"commentStyle": {
+			"description": "Determines how TypeDoc searches for comments",
+			"enum": [
+				"jsdoc",
+				"block",
+				"line",
+				"all"
+			],
+			"default": "jsdoc"
+		},
+		"useTsLinkResolution": {
+			"description": "Use TypeScript's link resolution when determining where @link tags point. This only applies to JSDoc style comments",
+			"type": "boolean",
+			"default": true
+		},
+		"preserveLinkText": {
+			"description": "If set, @link tags without link text will use the text content as the link. If not set, will use the target reflection name",
+			"type": "boolean",
+			"default": true
+		},
+		"blockTags": {
+			"description": "Block tags which TypeDoc should recognize when parsing comments",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"@defaultValue",
+				"@deprecated",
+				"@example",
+				"@jsx",
+				"@param",
+				"@privateRemarks",
+				"@remarks",
+				"@returns",
+				"@see",
+				"@throws",
+				"@typeParam",
+				"@author",
+				"@callback",
+				"@category",
+				"@categoryDescription",
+				"@default",
+				"@document",
+				"@extends",
+				"@augments",
+				"@yields",
+				"@group",
+				"@groupDescription",
+				"@import",
+				"@inheritDoc",
+				"@license",
+				"@module",
+				"@mergeModuleWith",
+				"@prop",
+				"@property",
+				"@return",
+				"@satisfies",
+				"@since",
+				"@sortStrategy",
+				"@template",
+				"@this",
+				"@type",
+				"@typedef",
+				"@summary",
+				"@preventInline",
+				"@inlineType",
+				"@preventExpand",
+				"@expandType"
+			]
+		},
+		"inlineTags": {
+			"description": "Inline tags which TypeDoc should recognize when parsing comments",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"@link",
+				"@inheritDoc",
+				"@label",
+				"@linkcode",
+				"@linkplain",
+				"@include",
+				"@includeCode"
+			]
+		},
+		"modifierTags": {
+			"description": "Modifier tags which TypeDoc should recognize when parsing comments",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"@alpha",
+				"@beta",
+				"@eventProperty",
+				"@experimental",
+				"@internal",
+				"@override",
+				"@packageDocumentation",
+				"@public",
+				"@readonly",
+				"@sealed",
+				"@virtual",
+				"@abstract",
+				"@class",
+				"@disableGroups",
+				"@enum",
+				"@event",
+				"@expand",
+				"@hidden",
+				"@hideCategories",
+				"@hideconstructor",
+				"@hideGroups",
+				"@ignore",
+				"@inline",
+				"@interface",
+				"@namespace",
+				"@function",
+				"@overload",
+				"@private",
+				"@protected",
+				"@showCategories",
+				"@showGroups",
+				"@useDeclaredType",
+				"@primaryExport"
+			]
+		},
+		"excludeTags": {
+			"description": "Remove the listed block/modifier tags from doc comments",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"@override",
+				"@virtual",
+				"@privateRemarks",
+				"@satisfies",
+				"@overload",
+				"@inline",
+				"@inlineType"
+			]
+		},
+		"notRenderedTags": {
+			"description": "Tags which will be preserved in doc comments, but not rendered when creating output",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"@showCategories",
+				"@showGroups",
+				"@hideCategories",
+				"@hideGroups",
+				"@disableGroups",
+				"@expand",
+				"@preventExpand",
+				"@expandType",
+				"@summary",
+				"@group",
+				"@groupDescription",
+				"@category",
+				"@categoryDescription"
+			]
+		},
+		"cascadedModifierTags": {
+			"description": "Modifier tags which should be copied to all children of the parent reflection",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"@alpha",
+				"@beta",
+				"@experimental"
+			]
+		},
+		"preservedTypeAnnotationTags": {
+			"description": "Block tags whose type annotations should be preserved in the output.",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"categorizeByGroup": {
+			"description": "Specify whether categorization will be done at the group level",
+			"type": "boolean",
+			"default": false
+		},
+		"groupReferencesByType": {
+			"description": "If set, references will be grouped with the type they refer to rather than in a 'References' group",
+			"type": "boolean",
+			"default": false
+		},
+		"defaultCategory": {
+			"description": "Specify the default category for reflections without a category",
+			"type": "string",
+			"default": "Other"
+		},
+		"categoryOrder": {
+			"description": "Specify the order in which categories appear. * indicates the relative order for categories not in the list",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"groupOrder": {
+			"description": "Specify the order in which groups appear. * indicates the relative order for groups not in the list",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"sort": {
+			"description": "Specify the sort strategy for documented values",
+			"type": "array",
+			"items": {
+				"enum": [
+					"source-order",
+					"alphabetical",
+					"alphabetical-ignoring-documents",
+					"enum-value-ascending",
+					"enum-value-descending",
+					"enum-member-source-order",
+					"static-first",
+					"instance-first",
+					"visibility",
+					"required-first",
+					"kind",
+					"external-last",
+					"documents-first",
+					"documents-last"
+				]
+			},
+			"default": [
+				"kind",
+				"instance-first",
+				"alphabetical-ignoring-documents"
+			]
+		},
+		"sortEntryPoints": {
+			"description": "If set, entry points will be subject to the same sorting rules as other reflections",
+			"type": "boolean",
+			"default": true
+		},
+		"kindSortOrder": {
+			"description": "Specify the sort order for reflections when 'kind' is specified",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"watch": {
+			"description": "Watch files for changes and rebuild docs on change",
+			"type": "boolean",
+			"default": false
+		},
+		"preserveWatchOutput": {
+			"description": "If set, TypeDoc will not clear the screen between compilation runs",
+			"type": "boolean",
+			"default": false
+		},
+		"skipErrorChecking": {
+			"description": "Do not run TypeScript's type checking before generating docs",
+			"type": "boolean",
+			"default": false
+		},
+		"showConfig": {
+			"description": "Print the resolved configuration and exit",
+			"type": "boolean",
+			"default": false
+		},
+		"plugin": {
+			"description": "Specify the npm plugins that should be loaded. Omit to load all installed plugins",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"logLevel": {
+			"description": "Specify what level of logging should be used",
+			"enum": [
+				"Verbose",
+				"Info",
+				"Warn",
+				"Error",
+				"None"
+			],
+			"default": "Info"
+		},
+		"treatWarningsAsErrors": {
+			"description": "If set, all warnings will be treated as errors",
+			"type": "boolean",
+			"default": false
+		},
+		"treatValidationWarningsAsErrors": {
+			"description": "If set, warnings emitted during validation will be treated as errors. This option cannot be used to disable treatWarningsAsErrors for validation warnings",
+			"type": "boolean",
+			"default": false
+		},
+		"intentionallyNotExported": {
+			"description": "A list of types which should not produce 'referenced but not documented' warnings",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"requiredToBeDocumented": {
+			"description": "A list of reflection kinds that must be documented",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"Enum",
+				"EnumMember",
+				"Variable",
+				"Function",
+				"Class",
+				"Interface",
+				"Property",
+				"Method",
+				"Accessor",
+				"TypeAlias"
+			]
+		},
+		"packagesRequiringDocumentation": {
+			"description": "A list of packages that must be documented",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"intentionallyNotDocumented": {
+			"description": "A list of full reflection names which should not produce warnings about not being documented",
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"validation": {
+			"description": "Specify which validation steps TypeDoc should perform on your generated documentation",
+			"anyOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"notExported": {
+							"type": "boolean"
+						},
+						"invalidLink": {
+							"type": "boolean"
+						},
+						"invalidPath": {
+							"type": "boolean"
+						},
+						"rewrittenLink": {
+							"type": "boolean"
+						},
+						"notDocumented": {
+							"type": "boolean"
+						},
+						"unusedMergeModuleWith": {
+							"type": "boolean"
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		},
+		"extends": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		}
+	},
+	"allowTrailingCommas": true
+}
