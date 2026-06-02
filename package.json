@@ -1,5 +1,6 @@
 {
   "devDependencies": {
-    "typedoc": "^0.28.19"
+    "typedoc": "^0.28.19",
+    "typedoc-theme-fresh": "^0.2.3"
   }
 }
