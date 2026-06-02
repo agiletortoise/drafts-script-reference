@@ -62,5 +62,5 @@ declare class ActionLog {
     /**
     * Delete the action log. This is permanent and should be used with caution
     */
-    delete()
+    delete(): void
 }

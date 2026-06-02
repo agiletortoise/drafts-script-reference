@@ -54,7 +54,7 @@ declare class Medium {
      * Creates a new Medium object.
      * @param identifier Optional string value used to identify a Medium account. Typically this can be omitted if you only work with one Medium account in Drafts. Each unique identifier used for Medium accounts will share credentials - across both action steps and scripts.
      */
-    static create(identifier: string)
+    static create(identifier: string): Medium
 
     /**
      * Create new instance.

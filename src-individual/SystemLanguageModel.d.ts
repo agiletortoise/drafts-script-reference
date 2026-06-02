@@ -48,7 +48,7 @@ declare class SystemLanguageModel {
     /**
      * Enable all known Drafts' tools for the session. Tools can also be enabled individually by setting `tools`
     */
-    enableAllTools()
+    enableAllTools(): void
 
     /**
      * Optional array of Drafts' tools to make available to the model. Tools are experimental and likely to change in upcoming releases. Use `enableAllTools()` to add all Drafts-specific tools. Supported values:

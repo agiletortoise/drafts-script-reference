@@ -27,5 +27,5 @@ declare class Script {
     /**
      * Inform Drafts the current script has completed execution. Used in combination with the "Allow asynchronous execution" option of the Script step type. If your script step has the asynchronous option enabled, you *must* call `script.complete()` to indicate completion or the script will timeout and fail.
      */
-    complete()
+    complete(): void
 }

@@ -2,7 +2,7 @@
   "type": "module",
   "license": "MIT",
   "name": "@gerrit0/mini-shiki",
-  "version": "3.22.0",
+  "version": "3.23.0",
   "exports": {
     ".": {
       "types": "./dist/shiki.d.ts",
@@ -28,7 +28,7 @@
     "rollup": "4.27.4",
     "rollup-plugin-dts": "^6.1.1",
     "semver": "7.6.3",
-    "shiki": "^3.22.0",
+    "shiki": "^3.23.0",
     "tslib": "^2.8.1"
   },
   "files": [
@@ -39,10 +39,10 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@shikijs/engine-oniguruma": "^3.22.0",
-    "@shikijs/langs": "^3.22.0",
-    "@shikijs/themes": "^3.22.0",
-    "@shikijs/types": "^3.22.0",
+    "@shikijs/engine-oniguruma": "^3.23.0",
+    "@shikijs/langs": "^3.23.0",
+    "@shikijs/themes": "^3.23.0",
+    "@shikijs/types": "^3.23.0",
     "@shikijs/vscode-textmate": "^10.0.2"
   }
 }

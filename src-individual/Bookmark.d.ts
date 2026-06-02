@@ -32,6 +32,6 @@ declare class Bookmark {
     /**
      * Forget the bookmark, resetting any associated permissions. Generally, this would be a function the user performs in the user interface, but could be useful in the case of an action which wishes to request and use a one-time bookmark and revoke permissions on completion of an action.
      */
-    forget()
+    forget(): void
 }
 

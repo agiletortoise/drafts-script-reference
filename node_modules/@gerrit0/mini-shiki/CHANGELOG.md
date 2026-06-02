@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.23.0 (2026-02-26)
+
+- Update to Shiki v3.23.0
+
 ## v3.22.0 (2026-01-31)
 
 - Update to Shiki v3.22.0

@@ -3,7 +3,6 @@
 [![CI](https://github.com/markdown-it/markdown-it/actions/workflows/ci.yml/badge.svg)](https://github.com/markdown-it/markdown-it/actions/workflows/ci.yml)
 [![NPM version](https://img.shields.io/npm/v/markdown-it.svg?style=flat)](https://www.npmjs.org/package/markdown-it)
 [![Coverage Status](https://coveralls.io/repos/markdown-it/markdown-it/badge.svg?branch=master&service=github)](https://coveralls.io/github/markdown-it/markdown-it?branch=master)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/markdown-it/markdown-it)
 
 > Markdown parser done right. Fast and easy to extend.
 
@@ -12,7 +11,7 @@ __[Live demo](https://markdown-it.github.io)__
 - Follows the __[CommonMark spec](http://spec.commonmark.org/)__ + adds syntax extensions & sugar (URL autolinking, typographer).
 - Configurable syntax! You can add new rules and even replace existing ones.
 - High speed.
-- [Safe](https://github.com/markdown-it/markdown-it/tree/master/docs/security.md) by default.
+- [Safe](https://github.com/markdown-it/markdown-it/tree/master/docs/safety.md) by default.
 - Community-written __[plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin)__ and [other packages](https://www.npmjs.org/browse/keyword/markdown-it) on npm.
 
 __Table of content__
@@ -28,7 +27,6 @@ __Table of content__
 - [Syntax extensions](#syntax-extensions)
   - [Manage rules](#manage-rules)
 - [Benchmark](#benchmark)
-- [markdown-it for enterprise](#markdown-it-for-enterprise)
 - [Authors](#authors)
 - [References / Thanks](#references--thanks)
 
@@ -40,10 +38,13 @@ __Table of content__
 npm install markdown-it
 ```
 
-**browser (CDN):**
-
-- [jsDeliver CDN](http://www.jsdelivr.com/#!markdown-it "jsDelivr CDN")
-- [cdnjs.com CDN](https://cdnjs.com/libraries/markdown-it "cdnjs.com")
+> [!NOTE]
+>
+> For a quick look at `dist/` folder contents, see
+> <https://unpkg.com/markdown-it/>.
+>
+> For browser you can use unpkg.com, esm.sh or any other CDN, wich mirror npm
+> registry
 
 
 ## Usage examples
@@ -144,7 +145,7 @@ const md = markdownit({
 ```js
 import markdownit from 'markdown-it'
 
-const md = markdownit
+const md = markdownit()
   .use(plugin1)
   .use(plugin2, opts, ...)
   .use(plugin3);
@@ -281,19 +282,14 @@ Sample: README.md (7774 bytes)
  > marked x 1,587 ops/sec ±4.31% (93 runs sampled)
 ```
 
-__Note.__ CommonMark version runs with [simplified link normalizers](https://github.com/markdown-it/markdown-it/blob/master/benchmark/implementations/current-commonmark/index.mjs)
-for more "honest" compare. Difference is ≈1.5×.
+> [!NOTE]
+>
+> CommonMark version runs with [simplified link normalizers](https://github.com/markdown-it/markdown-it/blob/master/benchmark/implementations/current-commonmark/index.mjs)
+> for more "honest" compare. Difference is ≈1.5×.
 
 As you can see, `markdown-it` doesn't pay with speed for its flexibility.
 Slowdown of "full" version caused by additional features not available in
 other implementations.
-
-
-## markdown-it for enterprise
-
-Available as part of the Tidelift Subscription.
-
-The maintainers of `markdown-it` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-markdown-it?utm_source=npm-markdown-it&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
 
 
 ## Authors

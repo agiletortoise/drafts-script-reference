@@ -188,7 +188,7 @@ declare class ActionLog {
     /**
     * Delete the action log. This is permanent and should be used with caution
     */
-    delete()
+    delete(): void
 }
 /**
  * Airtable objects can be used to work bases and tables in an [Airtable](http://airtable.com) account. Integration works via the [Airtable API](https://airtable.com/developers/web/api/introduction) so plan to reference their documentation for details on parameters and return value objects. Drafts will take care of the OAuth authentication, and conversion to and from JSON for passing parameters and receiving return values.
@@ -621,8 +621,8 @@ declare class App {
 
     /**
      * Get current contents of the system clipboard.
-     * @category Clipboard
      * @param clipboardType Optionally specify a data type to fetch from the clipboard. Default: "string"
+     * @category Clipboard
      */
     getClipboard(clipboardType?: clipboardType): string
 
@@ -885,7 +885,7 @@ declare class Bookmark {
     /**
      * Forget the bookmark, resetting any associated permissions. Generally, this would be a function the user performs in the user interface, but could be useful in the case of an action which wishes to request and use a one-time bookmark and revoke permissions on completion of an action.
      */
-    forget()
+    forget(): void
 }
 
 /**
@@ -1628,7 +1628,7 @@ declare class Draft {
      * Create a version in the version history representing the current state of the draft.
      * @category Version
      */
-    saveVersion()
+    saveVersion(): void
 
     /**
      * Create a new draft object. This is an in-memory object only, unless "update()" is called to save the draft.
@@ -3638,7 +3638,7 @@ declare class Medium {
      * Creates a new Medium object.
      * @param identifier Optional string value used to identify a Medium account. Typically this can be omitted if you only work with one Medium account in Drafts. Each unique identifier used for Medium accounts will share credentials - across both action steps and scripts.
      */
-    static create(identifier: string)
+    static create(identifier: string): Medium
 
     /**
      * Create new instance.
@@ -4921,7 +4921,7 @@ declare class Script {
     /**
      * Inform Drafts the current script has completed execution. Used in combination with the "Allow asynchronous execution" option of the Script step type. If your script step has the asynchronous option enabled, you *must* call `script.complete()` to indicate completion or the script will timeout and fail.
      */
-    complete()
+    complete(): void
 }
 /**
  * Methods to share via system share sheet.
@@ -5269,7 +5269,7 @@ declare class SystemLanguageModel {
     /**
      * Enable all known Drafts' tools for the session. Tools can also be enabled individually by setting `tools`
     */
-    enableAllTools()
+    enableAllTools(): void
 
     /**
      * Optional array of Drafts' tools to make available to the model. Tools are experimental and likely to change in upcoming releases. Use `enableAllTools()` to add all Drafts-specific tools. Supported values:
@@ -5304,17 +5304,17 @@ declare class SystemLanguageModel {
 }
 /**
  * Create generable schema to provide to {@link SystemLanguageModel} objects to get back structured, non-string responses.
- * 
+ *
  * @example
- * 
+ *
  * **Getting Structured Responses**
- * 
+ *
  * ```javascript
  * // CREATE A PROMPT TO SEND TO MODEL
  * const prompt = `Generate tag suggestions to use classifying the  * text below:
- * 
+ *
  * ${draft.content}`
- * 
+ *
  * // CREATE MODEL OBJECT
  * let m = new SystemLanguageModel()
  * // CREATE SCHEMA TO GET BACK STRUCTURED DATA
@@ -5331,7 +5331,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addString(name: string, description: string)
+    addString(name: string, description: string): void
 
     /**
      * Add a string type property
@@ -5339,7 +5339,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addString(name: string, description: string)
+    addString(name: string, description: string): void
 
     /**
      * Add a boolean type property
@@ -5347,7 +5347,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addBoolean(name: string, description: string)
+    addBoolean(name: string, description: string): void
 
     /**
      * Add an integer type property
@@ -5355,7 +5355,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addInt(name: string, description: string)
+    addInt(name: string, description: string): void
 
     /**
      * Add a number type property
@@ -5363,7 +5363,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addNumber(name: string, description: string)
+    addNumber(name: string, description: string): void
 
     /**
      * Add an array of strings type properties
@@ -5371,7 +5371,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addStringArray(name: string, description: string)
+    addStringArray(name: string, description: string): void
 
     /**
      * Add an array of boolean type properties
@@ -5379,7 +5379,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addBooleanArray(name: string, description: string)
+    addBooleanArray(name: string, description: string): void
 
     /**
      * Add an array of integer type properties
@@ -5387,7 +5387,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addIntArray(name: string, description: string)
+    addIntArray(name: string, description: string): void
 
     /**
      * Add an array of number type properties
@@ -5395,7 +5395,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addNumberArray(name: string, description: string)
+    addNumberArray(name: string, description: string): void
 
     /**
      * Create new instance
@@ -5988,7 +5988,7 @@ declare class Version {
     /**
     * Delete the version. This is permanent and should be used with caution
     */
-    delete()
+    delete(): void
     /**
     * The {@link Draft} object related to the version. Typically not needed, as versions are accessed through the `versions` property of a draft.
     */

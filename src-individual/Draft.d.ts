@@ -255,7 +255,7 @@ declare class Draft {
      * Create a version in the version history representing the current state of the draft.
      * @category Version
      */
-    saveVersion()
+    saveVersion(): void
 
     /**
      * Create a new draft object. This is an in-memory object only, unless "update()" is called to save the draft.

@@ -30,7 +30,7 @@ declare class Version {
     /**
     * Delete the version. This is permanent and should be used with caution
     */
-    delete()
+    delete(): void
     /**
     * The {@link Draft} object related to the version. Typically not needed, as versions are accessed through the `versions` property of a draft.
     */

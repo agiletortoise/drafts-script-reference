@@ -1,16 +1,16 @@
 /**
  * Create generable schema to provide to {@link SystemLanguageModel} objects to get back structured, non-string responses.
- * 
+ *
  * @example
- * 
+ *
  * **Getting Structured Responses**
- * 
+ *
  * ```javascript
  * // CREATE A PROMPT TO SEND TO MODEL
  * const prompt = `Generate tag suggestions to use classifying the  * text below:
- * 
+ *
  * ${draft.content}`
- * 
+ *
  * // CREATE MODEL OBJECT
  * let m = new SystemLanguageModel()
  * // CREATE SCHEMA TO GET BACK STRUCTURED DATA
@@ -27,7 +27,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addString(name: string, description: string)
+    addString(name: string, description: string): void
 
     /**
      * Add a string type property
@@ -35,7 +35,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addString(name: string, description: string)
+    addString(name: string, description: string): void
 
     /**
      * Add a boolean type property
@@ -43,7 +43,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addBoolean(name: string, description: string)
+    addBoolean(name: string, description: string): void
 
     /**
      * Add an integer type property
@@ -51,7 +51,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addInt(name: string, description: string)
+    addInt(name: string, description: string): void
 
     /**
      * Add a number type property
@@ -59,7 +59,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addNumber(name: string, description: string)
+    addNumber(name: string, description: string): void
 
     /**
      * Add an array of strings type properties
@@ -67,7 +67,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addStringArray(name: string, description: string)
+    addStringArray(name: string, description: string): void
 
     /**
      * Add an array of boolean type properties
@@ -75,7 +75,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addBooleanArray(name: string, description: string)
+    addBooleanArray(name: string, description: string): void
 
     /**
      * Add an array of integer type properties
@@ -83,7 +83,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addIntArray(name: string, description: string)
+    addIntArray(name: string, description: string): void
 
     /**
      * Add an array of number type properties
@@ -91,7 +91,7 @@ declare class SystemLanguageModelSchema {
      * @param description Details on the usage and meaning of the property to guide the model in creation of results.
      * @category Values
     */
-    addNumberArray(name: string, description: string)
+    addNumberArray(name: string, description: string): void
 
     /**
      * Create new instance
