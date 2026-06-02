@@ -168,8 +168,8 @@ declare class App {
 
     /**
      * Get current contents of the system clipboard.
-     * @category Clipboard
      * @param clipboardType Optionally specify a data type to fetch from the clipboard. Default: "string"
+     * @category Clipboard
      */
     getClipboard(clipboardType?: clipboardType): string
 

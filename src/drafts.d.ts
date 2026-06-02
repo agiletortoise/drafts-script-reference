@@ -33,6 +33,12 @@ declare class Action {
     static find(name: string): Action | undefined
 
     /**
+     * Array of recently used actions in reverse chronological order.
+     * @category Query
+     */
+    static recent(): Action[]
+    
+    /**
      * The display name of the action as displayed in the action list.
      * @category Identification
      */
@@ -1367,6 +1373,7 @@ declare class Device {
 declare const  device: Device
 type draftFolderTab = 'inbox' | 'flagged' | 'archive' | 'trash' | 'all'
 type draftFolder = 'inbox' | 'archive' | 'trash' 
+type draftFlagType = 0 | 1 | 2 | 3 | 4 | 5 | 6
 /**
  * The Draft object represents a single draft. When an action is run, the current draft is available as the global variable `draft`. Scripts can also create new drafts, access and set values, and update the draft to persist changes.
  * 
@@ -1387,6 +1394,10 @@ type draftFolder = 'inbox' | 'archive' | 'trash'
  * ```javascript
  * // query a list of drafts in the inbox with the tag "blue"
  * let drafts = Draft.query("", "inbox", ["blue"])
+ * // get all drafts with flags
+ * let drafts = Draft.flagged()
+ * // drafts with the "red" flag assigned
+ * let drafts = Draft.flagged("red")
  * ```
  */
 declare class Draft {
@@ -1488,6 +1499,11 @@ declare class Draft {
      * Current flagged status.
      */
     isFlagged: boolean
+    
+    /**
+     * Current flagged type. Setting this value will also set `isFlagged` to true if the draft is not already flagged. Supports integer values between 0 and 6.
+     */
+    flagType: draftFlagType
 
     /**
      * Date the draft was created. This property is generally maintained by Drafts automatically and is it not recommended it be set directly unless needed to maintain information from an external source when importing.
@@ -1644,6 +1660,15 @@ declare class Draft {
         sort: sortBy,
         sortDescending?: boolean,
         sortFlaggedToTop?: boolean
+    ): Draft[]
+    
+    /**
+     * Perform a search for drafts and return an array of matching draft objects.
+     * @param flagType Optionally limit to only flagged drafts assigned a specific type. Accepts string type labels (e.g. "red", "blue") or integer values 0-6.
+     * @category Querying
+     */
+    static flagged(
+        flagType?: string
     ): Draft[]
 
     /**  
@@ -2702,12 +2727,27 @@ declare function require(path: string): void
 
 /**
  * Format date using strftime format string. See [strftime format reference](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/strftime.3.html) for supported format strings.
+ *
+ * **Example:**
+ * ```javascript
+ * // get current date time as year-month-date, e.g. 2026-01-03
+ * let s = strftime(new Date(), "%Y-%m-%d")
+ * ```
+ * @param date Date object to format.
+ * @param format strftime format string.
  * @category Date
  */
 declare function strftime(date: Date, format: string): string
 
 /**
  * Move a date forward or backward in time based on the simple adjustment expression.
+ * **Example:**
+ * ```javascript
+ * // move date forward one month
+ * let d = Date.parse("2001-01-01")
+ * let adj = adjustDate(d, "+1 month")
+ * // adj now Feb. 1, 2001
+ * ```
  * @param date Valid date object
  * @param adjustmentExpression An series of date adjustment values in the format `(+|-)(integer) (unit)`, such as `"+1 year"`, `"-1 month -12 hours"`. Supported units: year, month, day, hour, minute, second. Units may be in singular or plural form.
  * @category Date

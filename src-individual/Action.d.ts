@@ -33,6 +33,12 @@ declare class Action {
     static find(name: string): Action | undefined
 
     /**
+     * Array of recently used actions in reverse chronological order.
+     * @category Query
+     */
+    static recent(): Action[]
+    
+    /**
      * The display name of the action as displayed in the action list.
      * @category Identification
      */

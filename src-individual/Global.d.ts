@@ -11,12 +11,27 @@ declare function require(path: string): void
 
 /**
  * Format date using strftime format string. See [strftime format reference](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/strftime.3.html) for supported format strings.
+ *
+ * **Example:**
+ * ```javascript
+ * // get current date time as year-month-date, e.g. 2026-01-03
+ * let s = strftime(new Date(), "%Y-%m-%d")
+ * ```
+ * @param date Date object to format.
+ * @param format strftime format string.
  * @category Date
  */
 declare function strftime(date: Date, format: string): string
 
 /**
  * Move a date forward or backward in time based on the simple adjustment expression.
+ * **Example:**
+ * ```javascript
+ * // move date forward one month
+ * let d = Date.parse("2001-01-01")
+ * let adj = adjustDate(d, "+1 month")
+ * // adj now Feb. 1, 2001
+ * ```
  * @param date Valid date object
  * @param adjustmentExpression An series of date adjustment values in the format `(+|-)(integer) (unit)`, such as `"+1 year"`, `"-1 month -12 hours"`. Supported units: year, month, day, hour, minute, second. Units may be in singular or plural form.
  * @category Date
